@@ -14,17 +14,6 @@ const InventoryControl: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const [infoVisible, setInfoVisible] = useState(false);
-  const [totalMoney, setTotalMoney] = useState(0);
-
-  useEffect(() => {
-    fetchNui('GetPlayerMoney')
-      .then((money) => {
-        if (typeof money === 'number') {
-          setTotalMoney(money);
-        }
-      })
-      .catch((err) => console.error('Error fetching money:', err));
-  }, []);
 
   const [, use] = useDrop<DragSource, void, any>(() => ({
     accept: 'SLOT',
@@ -63,12 +52,6 @@ const InventoryControl: React.FC = () => {
           </button>
           <button className="inventory-control-button" ref={give}>
             {Locale.ui_give || 'Give'}
-          </button>
-          <button className="inventory-control-button" onClick={() => fetchNui('getMoney')}>
-            $ {totalMoney.toFixed(2)}
-          </button>
-          <button className="inventory-control-button" onClick={() => fetchNui('exit')}>
-            {Locale.ui_close || 'Close'}
           </button>
         </div>
       </div>

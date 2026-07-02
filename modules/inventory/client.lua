@@ -324,17 +324,6 @@ RegisterNetEvent('ox_inventory:client:openEvidence', function()
 	openEvidence()
 end)
 
-local function promptCreate(point)
-    exports['rsg-core']:createPrompt("evidence_" .. point.promptName .. "_" .. point.id, point.coords, 0xF3830D8E, point.promptName, {
-        type = 'client',
-        event = 'ox_inventory:client:openEvidence',
-    })
-end
-
-local function promptDelete(point)
-	exports['rsg-core']:deletePrompt("evidence_" .. point.promptName .. "_" .. point.id)
-end
-
 Inventory.Evidence = setmetatable(lib.load('data.evidence'), {
 	__call = function(self)
 		for _, evidence in pairs(self) do
@@ -363,16 +352,25 @@ Inventory.Evidence = setmetatable(lib.load('data.evidence'), {
 
 					for i = 1, #evidence.coords do
 						local coords = evidence.coords[i]
+						local groupName = 'evidence_' .. evidence.name .. '_' .. i
+						local promptKey = evidence.promptKey
+
+						jo.prompt.create(groupName, evidence.name, promptKey, 1500)
 
 						evidence.point = lib.points.new({
 							coords = coords,
 							distance = 16,
 							inv = 'policeevidence',
-							-- nearby = nearbyEvidence
-							promptName = evidence.name,
-							promptKey = evidence.promptKey,
-							onEnter = promptCreate,
-							onExit = promptDelete,
+							promptGroup = groupName,
+							promptKey = promptKey,
+							nearby = function(self)
+								if self.currentDistance < 2 then
+									jo.prompt.displayGroup(self.promptGroup)
+									if jo.prompt.isCompleted(self.promptGroup, self.promptKey) then
+										openEvidence()
+									end
+								end
+							end,
 						})
 					end
 				end
@@ -380,23 +378,6 @@ Inventory.Evidence = setmetatable(lib.load('data.evidence'), {
 		end
 	end
 })
-
-local function nearbyStash(self)
-	---@diagnostic disable-next-line: param-type-mismatch
-	DrawMarker(2, self.coords.x, self.coords.y, self.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 30, 30, 150, 222, false, false, 0, true, false, false, false)
-end
-
-local function onStashEnter(point)
-    exports['rsg-core']:createPrompt("Prompt_" .. point.promptName, point.coords, 0xF3830D8E, point.promptLabel, {
-        type = 'client',
-        event = 'inventory:client:OpenInventory',
-        args = { point.inv, { id = point.invId } },
-    })
-end
-
-local function onStashExit(point)
-	exports['rsg-core']:deletePrompt("Prompt_" .. point.promptName)
-end
 
 Inventory.Stashes = setmetatable(lib.load('data.stashes'), {
 	__call = function(self)
@@ -419,7 +400,7 @@ Inventory.Stashes = setmetatable(lib.load('data.stashes'), {
                                 label = stash.target.label or locale('open_stash'),
                                 groups = stash.groups,
                                 onSelect = function()
-                                    exports.ox_inventory:openInventory('stash', stash.name)
+                                    exports.gm_inventory:openInventory('stash', stash.name)
                                 end,
                                 iconColor = stash.target.iconColor,
                             },
@@ -427,16 +408,28 @@ Inventory.Stashes = setmetatable(lib.load('data.stashes'), {
 					end
 				else
 					stash.target = nil
+					local groupName = 'stash_' .. stash.name
+					local promptKey = 0x5415BE48
+					local promptLabel = stash.promptLabel or locale('open_stash')
+
+					jo.prompt.create(groupName, promptLabel, promptKey, 1500)
+
 					stash.point = lib.points.new({
 						coords = stash.coords,
 						distance = 5,
 						inv = 'stash',
 						invId = stash.name,
-						-- nearby = nearbyStash
-						promptName = stash.name,
-						promptLabel = stash.promptLabel,
-						onEnter = onStashEnter,
-						onExit = onStashExit
+						promptGroup = groupName,
+						promptKey = promptKey,
+						promptLabel = promptLabel,
+						nearby = function(self)
+							if self.currentDistance < 2 then
+								jo.prompt.displayGroup(self.promptGroup, self.promptLabel)
+								if jo.prompt.isCompleted(self.promptGroup, self.promptKey) then
+									exports.gm_inventory:openInventory('stash', self.invId)
+								end
+							end
+						end,
 					})
 				end
 			end

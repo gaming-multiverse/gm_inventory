@@ -29,7 +29,7 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
 ) => {
   const manager = useDragDropManager();
   const dispatch = useAppDispatch();
-  const timerRef = useRef<NodeJS.Timer | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const canDrag = useCallback(() => {
     return canPurchaseItem(item, { type: inventoryType, groups: inventoryGroups }) && canCraftItem(item, inventoryType);
@@ -120,7 +120,9 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
   const refs = useMergeRefs([connectRef, ref]);
 
   const hasWeaponInName = item?.name?.toLocaleLowerCase().search("weapon")
+  const hasThrowableInName = item?.name?.toLocaleLowerCase().search("thrown")
   const isWeapon = hasWeaponInName != -1 && hasWeaponInName != undefined;
+  const isThrown = hasThrowableInName != -1 && hasThrowableInName != undefined;
 
   return (
     <div
@@ -134,11 +136,11 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
             ? 'brightness(80%) grayscale(100%)'
             : undefined,
         opacity: isDragging ? 0.4 : 1.0,
-        backgroundSize: '3.55rem',
+        backgroundSize: inventoryType === 'player' ? '80%' : '70%',
         backgroundImage: `url(${item?.name ? getItemUrl(item as SlotWithItem) : 'none'}`,
         border: isOver ? '1px solid rgba(255,255,255,0.5)' : '1px inset rgba(200,200,200,0.1)',
         borderColor: item.name == null ? 'rgba(200,200,200, 0.05)' : 'rgba(200,200,200,0.1)',
-        backgroundColor: item.name == null ? 'rgba(40, 40, 40, 0.20)' : 'rgba(60, 60, 60, 0.35)',
+        backgroundColor: item.name == null ? '#3e474e99' : 'rgba(62, 71, 78, 0.6)',
       }}
     >
       {isSlotWithItem(item) && (
@@ -159,7 +161,8 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
         >
           <p style={{
             position: 'absolute',
-            fontSize: '0.7rem',
+            fontSize: '0.8rem',
+            right: '0',
             padding: '0rem 0.3rem',
           }}>
             {item.weight > 0
@@ -179,7 +182,7 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
           >
             {inventoryType === 'player' && item.slot <= 5 && <div className="inventory-slot-number">{item.slot}</div>}
             <div className="item-slot-info-wrapper">
-              <p>
+              {/* <p>
                 {item.weight > 0
                   ? item.weight >= 1000
                     ? `${(item.weight / 1000).toLocaleString('en-us', {
@@ -189,18 +192,21 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
                         minimumFractionDigits: 0,
                       })}g `
                   : ''}
-              </p>
-                { isWeapon
-                  ? <span> { item.metadata?.ammo }</span>
-                  : <span>
-                    {item.name == "money"
-                      ? `${item.count.toFixed(0)}`  // Always show two decimal places for money
-                      : item.count > 1
-                        ? `${item.count.toLocaleString('en-us')}`  // For other items, use regular formatting
-                        : ''
-                    }
-                  </span>
-                }
+              </p> */}
+                { isWeapon && !isThrown ? (
+                    // Normal weapon → show ammo
+                    <span>{item.metadata?.ammo}</span>
+                ) : (
+                    // Throwable or normal item → show count
+                    <span>
+                      {item.name === "money"
+                        ? `${item.count.toFixed(0)}`
+                        : item.count > 1
+                          ? `${item.count.toLocaleString('en-us')}x`
+                          : ''
+                      }
+                    </span>
+                )}
             </div>
           </div>
           <div>
@@ -242,11 +248,6 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
                 )}
               </>
             )}
-            {/* <div className="inventory-slot-label-box">
-              <div className="inventory-slot-label-text">
-                {item.metadata?.label ? item.metadata.label : Items[item.name]?.label || item.name}
-              </div>
-            </div> */}
           </div>
         </div>
       )}

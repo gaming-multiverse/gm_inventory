@@ -13,32 +13,56 @@ $textColor: #c1c2c5;
   font-family: Redemption;
   src: url('./fonts/Redemption.ttf');
 }
+@font-face {
+  font-family: Rockstar;
+  src: url('./fonts/Rockstar.ttf');
+}
+@font-face {
+  font-family: hapna2;
+  src: url('./fonts/HapnaSlabSerif-Medium.ttf');
+}
+@font-face {
+  font-family: crock;
+  src: url('./fonts/crock.ttf');
+}
 
 $mainFont: Roboto;
-$secondFont: Hapna;
+$secondFont: crock;
 $thirdFont: Redemption;
+$forthFont: Hapna;
+$fifthFont: hapna2;
 
-$secondaryColor: rgb(43, 43, 43, 0.75);
+$secondaryColor: #3e474ea4;
 $secondaryColorHighlight: #33343F;
 $secondaryColorLight: rgba(0, 0, 0, 0.5);
 $secondaryColorDark: rgba(12, 12, 12, 0.8);
 
-$backgroundColor:rgba(0, 0, 0, 0.9);
+$backgroundColor:rgba(0, 0, 0, 1);
 $borderRadius: 0.25vh;
 
 $gridCols: 5;
-$gridRows: 5;
-$gridSize: 7.3vh;
-$gridGap: 3.7px;
-$containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
+$gridColsSecond: 3;
+$gridRows: 4;
+$gridRowsSecond: 1;
+$gridSize: 9vh;
+$gridSizeSecond: 6vh;
+$gridGap: 3px;
+$containerSize: calc(#{$gridRows} * #{$gridSize + 1vh} + #{$gridRows} * #{$gridGap});
+$containerSizeSecond: calc(#{$gridRows} * #{$gridSizeSecond + 0.22vh} + #{$gridRowsSecond} * #{$gridGap});
 
-body {
+@mixin sm {
+  @content
+}
+
+html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   background: none !important;
   overflow: hidden !important;
   user-select: none;
@@ -85,14 +109,18 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .context-menu-list {
-  min-width: 200px;
-  background-color: $mainColor;
-  color: $textColor;
-  padding: 4px;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: inset;
-  border-width: 1px;
-  border-radius: 4px;
+  min-width: 120px;
+  // background-color: $mainColor;
+  color: $secondaryColor;
+  padding: 5px;
+  // border-color: rgba(0, 0, 0, 0.2);
+  // border-style: inset;
+  // border-width: 1px;
+  // border-radius: 4px;
+  background: url(./background_new_inventario.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   outline: none;
   display: flex;
   flex-direction: column;
@@ -100,6 +128,8 @@ input[type='number']::-webkit-outer-spin-button {
 
 .context-menu-item  {
   padding: 8px;
+  margin-left: 3px;
+  margin-right: 3px;
   border-radius: 4px;
   background-color: transparent;
   outline: none;
@@ -112,7 +142,7 @@ input[type='number']::-webkit-outer-spin-button {
     transform: none;
   }
   &:hover {
-    background-color: $secondaryColorHighlight;
+    background-color: $secondaryColor;
     cursor: pointer;
   }
 }
@@ -143,8 +173,7 @@ button:active {
   image-rendering: -webkit-optimize-contrast;
 }
 
-.rootInventory
-{
+.rootInventory {
   display:flex;
   flex-direction: column;
 
@@ -156,11 +185,12 @@ button:active {
 .inventory_background {
   background-color: $backgroundColor;
   background: url(./background_new_inventario.png);
-  background-size: 100%;
-  background-position: center;
+  // background-size: 100%;
+  background-size: contain;
+  // background-position: center;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 2vh 2.2vh;
-  margin: 0 3vh;
+  padding: 2vh 3vh;
   display:none;
 }
 
@@ -170,8 +200,7 @@ button:active {
   justify-content: center;
   align-items: center;
   height: 100%;
-
-  gap: 20px;
+  gap: 50px;
 }
 
 .inventory-control {
@@ -185,7 +214,7 @@ button:active {
     max-width: 49vh;
     max-height: 5vh;
 
-    padding: 0.5vh 2vh;
+    padding: 0.5vh 3vh;
 
     background: url(./background_new_inventario.png);
     background-size: 100% 100%;
@@ -229,8 +258,8 @@ button:active {
     font-family: $secondFont;
 
     &:hover {
-        background-color: $mainColor;
-        opacity: 0.8;
+      background-color: $mainColor;
+      opacity: 0.8;
     }
   }
 }
@@ -286,7 +315,13 @@ button:active {
 .divider {
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.247);
+}
+
+.main-divider {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.699);
 }
 
 .useful-controls-button {
@@ -324,17 +359,125 @@ button:active {
 // inventory grids
 .inventory-grid-wrapper {
   display: none;
+  position: relative;
   flex-direction: column;
-  gap: calc($gridGap * 2);
+  // width: 85%;
+
+  .inventory-control-button-money {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: transparent;
+    border: 0px solid rgba(0, 0, 0, 0.0);
+    border-radius: $borderRadius;
+    // padding: 0.5vh 1.3vh;
+    text-align: center;
+    width: auto;
+    color: white;
+    font-family: $fifthFont;
+    font-size: 25px;
+  }
+
+  .inventory-control-button-money-other-player {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: transparent;
+    border: 0px solid rgba(0, 0, 0, 0.0);
+    border-radius: $borderRadius;
+    // padding: 0.5vh 1.3vh;
+    text-align: center;
+    width: auto;
+    color: white;
+    font-family: $fifthFont;
+    font-size: 25px;
+  }
+
+  .inventory-control-button-crafting {
+    background-image: url('./telegram.png');
+    background-size: 3rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    filter: invert(1);
+
+    // &:hover {
+    //     background-color: $mainColor;
+    //     opacity: 0.8;
+    // }
+  }
+
+  .inventory-control-button {
+    background-color: $secondaryColor;
+    border: 1px solid rgba(0, 0, 0, 0.0);
+    border-radius: $borderRadius;
+    text-align: center;
+    margin-top: 15vh;
+    width: auto;
+    color: $textColor;
+    font-family: $secondFont;
+    font-size: 20px;
+
+    &:hover {
+        background-color: #730202d7;
+        opacity: 0.8;
+    }
+  }
+
+  .inventory-control-input {
+    background-color: $secondaryColor;
+    border-radius: $borderRadius;
+    text-align: center;
+    width: 5vh;
+    font-size: 20px;
+    color: $textColor;
+    font-family: $fifthFont;
+
+    outline: none;
+    border: none;
+
+    &:hover {
+      background-color: $mainColor;
+      opacity: 0.8;
+    }
+    &:focus-within {
+      background-color: $mainColor;
+    }
+  }
+}
+
+.inventory-control-inpuit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inventory-grid-header-wrapper {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   p {
-    font-size: 16px;
+    font-size: 18px;
   }
+}
+
+.inventory-grid-header-wrapper-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  p {
+    font-size: 18px;
+  }
+}
+
+.money-and-weight {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .active{
@@ -343,27 +486,73 @@ button:active {
 
 .inventory-grid-container {
   display: grid;
-  height: $containerSize;
-  grid-template-columns: repeat($gridCols, $gridSize);
-  grid-auto-rows: $gridSize + 0.22vh;
-  gap: $gridGap;
-  overflow-y: scroll;
+  position: relative;
+  height: 40vh;                // now includes padding
+  width: 100%;
+  grid-template-columns: repeat($gridCols, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  overflow-y: auto;            // keeps scroll
+  overflow-x: hidden;            // keeps scroll
+  justify-items: stretch;
 }
 
 .inventory-grid-container::-webkit-scrollbar {
   display: block;
-  width: 3px;
+  width: 4px;
 }
 
-// inventory slots
+.inventory-grid-container-secondary {
+  display: grid;
+  position: relative;
+  height: 57vh;
+  width: 100%;
+  grid-template-columns: repeat($gridCols, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-items: stretch;
+}
+
+.inventory-grid-container-craft {
+  display: grid;
+  position: relative;
+  box-sizing: border-box;
+  width: 20vh;           // small width
+  max-height: 20vh;      // small height
+  margin: 0 auto;        // center it under the header
+  grid-template-columns: repeat(2, minmax(0, 1fr)); // 2 slots
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  overflow-y: auto;
+}
+.inventory-grid-container-craft .inventory-slot {
+  background-size: 60%;
+}
+
+.inventory-grid-container-secondary::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+
 .inventory-slot {
   background-color: $secondaryColor;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 2.5%;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
-  background-size: 7vh;
+
+  width: 98.5%;
+  aspect-ratio: 1 / 1;
+  background-size: 70%;
+
   color: $textColor;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: inset;
@@ -394,24 +583,21 @@ button:active {
 }
 
 .inventory-slot-number {
-  color: $textColor;
+  color: white;
 
   border-top-left-radius: 0.25vh;
   border-bottom-right-radius: 0.25vh;
 
   font-family: $thirdFont;
   position: absolute;
-  font-size: 5vh;
-
-  height: 100%;
-  width: 100%;
+  font-size: 1.5vh;
+  left: 0.5vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
 
-  opacity: 0.1;
   user-select: none;
   pointer-events: none;
 }
@@ -456,10 +642,10 @@ button:active {
       justify-content: center;
       align-items: center;
 
-      left:0;
+      right:0;
       bottom:0;
 
-      font-size: 0.70em;
+      font-size: 0.9vh;
       padding: 0.3em 0.6em;
 
       // background-color: rgba(255,255,255,1);
@@ -480,34 +666,30 @@ button:active {
 }
 
 .item-slot-price-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 3px;
+  padding-bottom: 10vh;
+  padding-left: 0.2vh;
   p {
-    font-size: 14px;
+    font-size: 0.9rem;
     text-shadow: 0.1vh 0.1vh 0 rgba(0, 0, 0, 0.7);
   }
 }
 
-
 .tooltip-wrapper {
   pointer-events: none;
   display: flex;
-  background-color: $mainColor;
-  width: 200px;
-  padding: 8px;
+  position: absolute;
+  text-align: center;
+  align-items: center;
   flex-direction: column;
-  min-width: 200px;
   color: $textColor;
   font-family: $mainFont;
-  border-radius: 4px;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: inset;
-  border-width: 1px;
+  bottom: 8.5vh;
+  width: 45vh;
+  left: 4.5vh;
+
   p {
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
   }
 }
 
@@ -517,7 +699,7 @@ button:active {
   justify-content: space-between;
   align-items: center;
   p {
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 400;
   }
 }
@@ -550,7 +732,20 @@ button:active {
   }
 }
 
-// hotbar
+
+/* keeps the grid styles, just tweaks the hot-bar copy */
+.inventory-hotbar {
+  grid-column: 1 / -1;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat($gridCols, $gridSize);
+  grid-auto-rows: $gridSize;
+  gap: 4px;
+}
+
 .hotbar-container {
   display: flex;
   align-items: center;
@@ -567,6 +762,7 @@ button:active {
   height: $gridSize;
 }
 
+
 .hotbar-slot-header-wrapper {
   display: flex;
   flex-direction: row;
@@ -577,7 +773,7 @@ button:active {
 
 .item-notification-container {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   flex-wrap: nowrap;
   gap: 2px;
   position: absolute;
@@ -598,9 +794,9 @@ button:active {
   border-top-right-radius: 0.25vh;
   font-family: $mainFont;
   p {
-    font-size: 11px;
+    font-size: 8px;
     padding: 2px;
-    font-weight: 600;
+    font-weight: 300;
   }
 }
 
@@ -616,14 +812,54 @@ button:active {
   overflow: hidden;
 }
 
-.bottom-weight {
+.top-weight {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-
   align-items: center;
-  margin-bottom: 0.5vh;
-  font-family: $secondFont;
+  font-size: 25px;
+  font-family: $fifthFont;
+  gap: 5px;
+}
+
+.top-weight-other-player {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 25px;
+  font-family: $fifthFont;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  gap: 5px;
+}
+
+.weight-image {
+  background-image: url('./weight.png');
+  background-size: 3rem;
+  background-repeat: no-repeat;
+  background-size: 1.7rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.tooltip-weight-image {
+  background-image: url('./tooltip-weight.png');
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.weight-shit {
+  display: flex;
+  gap: 5px;
+}
+
+.money-image {
+  background-image: url('./cash.png');
+  background-size: 3rem;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .weight-bar {
@@ -636,7 +872,7 @@ button:active {
 }
 
 .weight-label {
-  margin: 0 0.5em ;
+  margin: 0 0.1em ;
 }
 
 

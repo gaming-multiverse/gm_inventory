@@ -154,10 +154,9 @@ lib.callback.register('ox_inventory:openShop', function(source, data)
 end)
 
 local function canAffordItem(inv, currency, price)
-    local RSGCore = exports['rsg-core']:GetCoreObject()
-    local Player = RSGCore.Functions.GetPlayer(source)
+	local Player = server.GetPlayerFromId(source)
 
-	local canAfford = price >= 0 and Player.PlayerData.money.cash >= price
+	local canAfford = price >= 0 and Player and Player.PlayerData.money.cash >= price
 
 	return canAfford or {
 		type = 'error',
@@ -166,10 +165,13 @@ local function canAffordItem(inv, currency, price)
 end
 
 local function removeCurrency(inv, currency, price)
-	local RSGCore = exports['rsg-core']:GetCoreObject()
-	local User = RSGCore.Functions.GetPlayer(source)
-
-	User.Functions.RemoveMoney('cash', price, 'buy-Item')
+	local Player = server.GetPlayerFromId(source)
+	if not Player then return end
+	if currency == 'money' or currency == 'cash' then
+		Player.Functions.RemoveMoney('cash', price, 'shop-purchase')
+	else
+		Player.Functions.RemoveMoney(currency, price, 'shop-purchase')
+	end
 end
 
 local TriggerEventHooks = require 'modules.hooks.server'

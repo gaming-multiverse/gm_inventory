@@ -31,7 +31,7 @@ const InventoryHotbar: React.FC = () => {
           <div
             className="hotbar-item-slot"
             style={{
-              backgroundSize: '3.7rem',
+              backgroundSize: '80%',
               backgroundImage: `url(${item?.name ? getItemUrl(item as SlotWithItem) : 'none'}`,
             }}
             key={`hotbar-${item.slot}`}
@@ -70,9 +70,8 @@ const InventoryHotbar: React.FC = () => {
                       : ''}
                   </p>
                   {item?.name?.toLocaleLowerCase().search("weapon") != -1 && item?.name?.toLocaleLowerCase().search("weapon") != undefined
-                    ? <span> { item.metadata?.ammo }{/* /{ item.metadata?.ammoMaxClip ?? item.metadata?.ammo } */}</span>
+                    ? <span> { item.metadata?.ammo }</span>
                     : <span>
-                        {/* Show decimals for money, regular formatting for other items */}
                         {item.name == "money"
                           ? `${item.count.toFixed(2)}` // Always show two decimals for money
                           : item.count > 1
@@ -84,7 +83,7 @@ const InventoryHotbar: React.FC = () => {
 
 
                   { item?.name?.toLocaleLowerCase().search("weapon") != -1 && item?.name?.toLocaleLowerCase().search("weapon") != undefined
-                    ? item?.degradation !== undefined && <WeightBar percent={item.degradation} durability />
+                    ? item?.durability !== undefined && <WeightBar percent={item.durability} durability />
                     : item?.durability !== undefined && <WeightBar percent={item.durability} durability />
                   }
 

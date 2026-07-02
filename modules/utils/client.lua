@@ -127,7 +127,7 @@ end
 exports('weaponWheel', Utils.WeaponWheel)
 
 function Utils.CreateBlip(settings, coords)
-	local blip 
+	local blip
 
 	if IS_GTAV then
 		blip = AddBlipForCoord(coords.x, coords.y, coords.z)

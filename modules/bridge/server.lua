@@ -37,6 +37,22 @@ function server.buyLicense()
 	warn('Licenses are not supported for the current framework.')
 end
 
+---Returns the player's Discord clan tag, or nil if unavailable.
+---Framework/server bridges should override this.
+---@param source number
+---@return string?
+function server.getUserTag(source)
+	return nil
+end
+
+---Returns whether the player has VIP status.
+---Framework/server bridges should override this.
+---@param source number
+---@return boolean
+function server.hasVIP(source)
+	return false
+end
+
 local Inventory = require 'modules.inventory.server'
 
 function server.playerDropped(source)

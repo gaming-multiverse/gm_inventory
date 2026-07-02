@@ -13,6 +13,15 @@ local function setImagePath(path)
     end
 end
 
+function GetSelectedPedWeapon(playerPed)
+	local _, wep = GetCurrentPedWeapon(playerPed, true, 0, true)
+	return wep
+end
+
+RegisterNetEvent("ox_inventory:clearEquippedWeapons", function(item, attachPoint)
+	equippedWeapons = {}
+end)
+
 ---@param data OxItem
 local function newItem(data)
 	data.weight = data.weight or 0
@@ -86,6 +95,23 @@ for type, data in pairs(lib.load(string.format('data.weapons_%s', IS_GTAV and "G
 			v.stack = v.throwable and true or false
 			v.durability = v.durability or 0.05
 			v.weapon = true
+
+			if string.find(string.lower(v.name), "revolver") or string.find(string.lower(v.name), "pistol") then
+				v.buttons = {
+					{
+						label = "Right Holster",
+						action = function(slot)
+							TriggerEvent('ox_inventory:ReplaceAttachPoint', PlayerData.inventory[slot], 2)
+						end
+					},
+					{
+						label = "Left Holster",
+						action = function(slot)
+							TriggerEvent('ox_inventory:ReplaceAttachPoint', PlayerData.inventory[slot], 3)
+						end
+					}
+				}
+			end
 		else
 			v.stack = true
 		end

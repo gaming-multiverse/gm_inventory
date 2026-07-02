@@ -24,7 +24,9 @@ export const tooltipSlice = createSlice({
     },
     closeTooltip(state) {
       state.open = false;
-    },
+      state.item = null;
+      state.inventoryType = null;
+    }
   },
 });
 

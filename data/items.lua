@@ -1,11 +1,19 @@
-return {
-	["money"] = {
-		label = "Money",
+local items = {
+	-- ["money"] = {
+	-- 	label = "Money",
+	-- 	prop = "p_moneystack03x",
+	-- },
+	["wild_carrot_seed"] = {
+		label = "Wild_Carrot_Seed",
+		weight = 0, -- In Grams
+		stack = false,
+		close = false, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_moneystack03x",
 	},
 	["moneyclip"] = {
 		label = "Money Clip",
-		weight = 0, -- In Grams
+		weight = 1, -- In Grams
 		stack = false,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -21,7 +29,7 @@ return {
 	["bread"] = {
 		label = "Bread",
 		description = "Find me at General Store",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -30,35 +38,20 @@ return {
 		prop = "p_bread01x",
 	},
 
-	["peachpackage"] = {
-		label = "Peach Package",
-		description = "Find me at General Store",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_peach01x",
-		client = {
-			image = "peach.png",
-		},
-	},
-
 	["peach"] = {
 		label = "Peach Can",
 		description = "Find me at General Store",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_peach01x",
+		prop = "s_canpeaches01x",
 	},
 
 	["apple"] = {
-		label = "Apple Can",
+		label = "Apple",
 		description = "Find me at General Store",
 		weight = 150, -- In Grams
 		stack = true,
@@ -72,7 +65,7 @@ return {
 	["kidneybeans_can"] = {
 		label = "Kidneybeans Can",
 		description = "Find me at General Store",
-		weight = 150, -- In Grams
+		weight = 200, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -81,25 +74,10 @@ return {
 		prop = "p_can09x",
 	},
 
-	["coffeepackage"] = {
-		label = "Coffee Package",
-		description = "Find me at General Store",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_coffeetin01x",
-		client = {
-			image = "coffee.png",
-		},
-	},
-
 	["coffee"] = {
 		label = "Coffee",
 		description = "Find me at General Store",
-		weight = 150, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -108,25 +86,10 @@ return {
 		prop = "p_mugcoffee01x",
 	},
 
-	["waterpackage"] = {
-		label = "Water Package",
-		description = "Find me at General Store",
-		weight = 1000, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_gourdwater01x",
-		client = {
-			image = "water.png",
-		},
-	},
-
 	["water"] = {
 		label = "Water",
 		description = "Find me at General Store",
-		weight = 100, -- In Grams
+		weight = 80, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -135,22 +98,10 @@ return {
 		prop = "p_canteen01x",
 	},
 
-	["bandage"] = {
-		label = "Bandage",
-		description = "Find me at General Store",
-		weight = 150, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cs_bandage01x",
-	},
-
 	["hairpomade"] = {
 		label = "Hairpomade",
 		description = "Find me at General Store",
-		weight = 50, -- In Grams
+		weight = 200, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -160,7 +111,7 @@ return {
 	["soap"] = {
 		label = "High grade soap",
 		description = "Find me at General Store",
-		weight = 300, -- In Grams
+		weight = 90, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -169,10 +120,25 @@ return {
 		prop = "p_soap01x",
 	},
 
+	["deluxesoap"] = {
+		label = "Deluxe grade soap",
+		description = "A rare item that costs a lot",
+		weight = 90, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_soap01x",
+		client = {
+			image = "soap.png",
+		},
+	},
+
 	["pocket_watch"] = {
 		label = "Pocket Watch",
 		description = "Find me at General Store",
-		weight = 50, -- In Grams
+		weight = 350, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -184,7 +150,7 @@ return {
 	["compass"] = {
 		label = "Compass",
 		description = "Find me at General Store",
-		weight = 250, -- In Grams
+		weight = 220, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 21600, -- Minutes
@@ -196,7 +162,7 @@ return {
 	["map"] = {
 		label = "Map",
 		description = "Find me at General Store",
-		weight = 250, -- In Grams
+		weight = 180, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 21600, -- Minutes
@@ -205,36 +171,36 @@ return {
 		prop = "p_shopmap01x",
 	},
 
-	["campbook"] = {
-		label = "Camp Book",
-		description = "Find me at General Store",
-		weight = 500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 21600, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_book01x",
-	},
+	-- ["campbook"] = {
+	-- 	label = "Camp Book",
+	-- 	description = "Find me at General Store",
+	-- 	weight = 500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 21600, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_book01x",
+	-- },
 
-	["mineralbook"] = {
-		label = "Mineral Book",
-		description = "Find me at General Store",
-		weight = 500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 21600, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_book02x",
-	},
+	-- ["mineralbook"] = {
+	-- 	label = "Mineral Book",
+	-- 	description = "Find me at General Store",
+	-- 	weight = 500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 21600, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_book02x",
+	-- },
 
 	-- Doctor Items
 
 	["self_revive"] = {
-		label = "Carbolic Acid",
-		description = "Sir Joseph Lister, a pioneer in antiseptic surgery, introduced the use of carbolic acid to disinfect wounds and surgical instruments",
-		weight = 5000, -- In Grams
+		label = "Medical Wrap",
+		description = "A basic medical bandage used to revive a downed character.",
+		weight = 3500, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -258,7 +224,7 @@ return {
 	["ifak"] = {
 		label = "Arsenic",
 		description = "Law Enforcement Equipment",
-		weight = 2500, -- In Grams
+		weight = 500, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -268,21 +234,21 @@ return {
 	},
 
 	["processedopium"] = {
-		label = "Opium Pipe",
+		label = "Bandage",
 		description = "Made by doctors to improve your health",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_herbalpouch04x",
+		prop = "p_cs_bandage01x",
 	},
 
 	["herbalremedies"] = {
 		label = "Herbal Remedies",
-		description = "Made by doctors to improve your health",
-		weight = 250, -- In Grams
+		description = "Made by doctors to improve your stamina",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -650,8 +616,18 @@ return {
 
 	-- Horse Items
 
+	["apple1"] = {
+		label = "Apple Herb",
+		description = "A valuable herb",
+		weight = 50, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_apple01x",
+	},
+
 	["apple2"] = {
-		label = "Apple",
+		label = "Horse Apple",
 		description = "Apple For Horses",
 		weight = 50, -- In Grams
 		stack = true,
@@ -665,10 +641,10 @@ return {
 	["hay"] = {
 		label = "Hay",
 		description = "Dried grass used for animal feed and bedding",
-		weight = 50, -- In Grams
+		weight = 75, -- In Grams
 		stack = true,
 		decay = true,
-		degrade = 4320, -- Minutes
+		degrade = 8640, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_haypilepitchfork01x",
@@ -677,7 +653,7 @@ return {
 	["horsebrush"] = {
 		label = "Horse Brush",
 		description = "Clean your horse",
-		weight = 250, -- In Grams
+		weight = 200, -- In Grams
 		stack = false,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -689,7 +665,7 @@ return {
 	["horsetag"] = {
 		label = "Horse Tag",
 		description = "Change name your horse",
-		weight = 250, -- In Grams
+		weight = 50, -- In Grams
 		stack = false,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -698,9 +674,9 @@ return {
 	},
 
 	["feed_for_pet"] = {
-		label = "Pet food can",
-		description = "Good for your pets need",
-		weight = 200, -- In Grams
+		label = "Ranch animal food",
+		description = "Good for your animals needs",
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -710,9 +686,9 @@ return {
 	},
 
 	["drink_for_pet"] = {
-		label = "Water for pets",
-		description = "Good for your pets need",
-		weight = 200, -- In Grams
+		label = "Ranch animal water",
+		description = "Good for your animals needs",
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -722,9 +698,9 @@ return {
 	},
 
 	["medicine_for_pet"] = {
-		label = "Medicine for pets",
-		description = "Good for your pets need",
-		weight = 200, -- In Grams
+		label = "Ranch animal medicine",
+		description = "Good for your animals needs",
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
@@ -736,7 +712,7 @@ return {
 	["heal_for_horse"] = {
 		label = "Medicine for horse",
 		description = "Handy if your horse is injured",
-		weight = 400, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -746,7 +722,7 @@ return {
 	["boost_for_horse"] = {
 		label = "Tonic For Horse",
 		description = "Tonic to boost your horses stamina",
-		weight = 500, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -755,10 +731,70 @@ return {
 		prop = "p_cs_syringe01x",
 	},
 
+	["goldtonic"] = {
+		label = "Gold Tonic",
+		description = "Tonic your hunger and thirst",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_tonic02x",
+	},
+
+	["redtonic"] = {
+		label = "Red Tonic",
+		description = "Tonic your health",
+		weight = 250, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_beardtonic01x",
+	},
+
+	["lampytonic"] = {
+		label = "Lampy Tonic",
+		description = "Tonic your hunger",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_craftedtonic_01x",
+	},
+
+	["purpletonic"] = {
+		label = "Purple Tonic",
+		description = "Tonic your lifestyle",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_tonic01x",
+	},
+
+	["mistytonic"] = {
+		label = "Mystic Tonic",
+		description = "Tonic your thirst",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_craftedtonic_01x",
+	},
+
 	["gold_for_horse"] = {
 		label = "Horse stimulant",
 		description = "Gives the effect of cocaine to your horse",
-		weight = 500, -- In Grams
+		weight = 1000, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -770,7 +806,7 @@ return {
 	["sugarcube"] = {
 		label = "Sugar Cube",
 		description = "Your horse may like these",
-		weight = 120, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 7200, -- Minutes
@@ -782,7 +818,7 @@ return {
 	["horse_shoe"] = {
 		label = "Horse Shoe",
 		description = "This improves your horse",
-		weight = 250, -- In Grams
+		weight = 1500, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -802,22 +838,49 @@ return {
 	["hoof_hook"] = {
 		label = "Hoof Hook",
 		description = "Cleens your horses Hoofs",
-		weight = 250, -- In Grams
+		weight = 1250, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_hoofnippers01x",
+		prop = "p_hoofknife01x",
 	},
 
 	-- Random Items
 
-	["idcard"] = {
+	["printphoto"] = {
+		label = "Print ID Photo",
+		weight = 0,
+		stack = false,
+		close = true,
+		decay = true,
+		degrade = 2280, -- Minutes
+		allowArmed = false,
+		prop = "p_cs_smallnotecard01x",
+		client = {
+			image = "idcard.png",
+		},
+	},
+	["manidcard"] = {
 		label = "ID Card",
 		weight = 0,
 		stack = false,
 		close = true,
 		allowArmed = false,
 		prop = "p_cs_smallnotecard01x",
+		client = {
+			image = "idcard.png",
+		},
+	},
+	["womanidcard"] = {
+		label = "ID Card",
+		weight = 0,
+		stack = false,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_smallnotecard01x",
+		client = {
+			image = "idcard.png",
+		},
 	},
 
 	["thermometer"] = {
@@ -831,7 +894,7 @@ return {
 
 	["nails"] = {
 		label = "Nails",
-		weight = 50, -- In Grams
+		weight = 500, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -841,7 +904,7 @@ return {
 	["beartrap"] = {
 		label = "Bear Trap",
 		description = "Happy hunting.....",
-		weight = 5000, -- In Grams
+		weight = 7500, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -849,19 +912,78 @@ return {
 	},
 
 	["bpoarmoredwagon"] = {
-		label = "Riddle",
-		description = ".......",
-		weight = 5000, -- In Grams
+		label = "Wagon Robbery Plan",
+		description = "Find a dynamite",
+		weight = 1000, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_paper02x",
 	},
+	["trainrobberymap"] = {
+        label = "Train Robbery Plan",
+        description = ".......",
+        weight = 1000, -- In Grams
+        stack = true,
+        close = false, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+		decay = true,
+		degrade = 35000, -- Minutes
+        prop = "p_paper02x",
+    },
+
+	["bountypaper"] = {
+        label = "Bounty Paper",
+        description = ".......",
+        weight = 100, -- In Grams
+        stack = false,
+        close = false, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+		decay = true,
+		degrade = 1440, -- Minutes
+        prop = "p_paper02x",
+    },
+
+	["crowbar"] = {
+		label = "Crowbar",
+		description = "Marked for Law Enforcement seizure",
+		weight = 500, -- In Grams
+		decay = true,
+		degrade = 20160, -- Minutes
+		stack = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_prybar01x",
+	},
+
+	["dynamite"] = {
+		label = "Dynamite",
+		description = "Goes Kaboom",
+		weight = 2500, -- In Grams
+		decay = true,
+		degrade = 4320, -- Minutes
+		stack = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_dynamite02x",
+	},
+
+	["dynamite_train"] = {
+		label = "Big Dynamite",
+		description = "Goes Kaboom",
+		weight = 5000, -- In Grams
+		decay = true,
+		degrade = 4320, -- Minutes
+		stack = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_dynamite02x",
+	},
 
 	["repair_kit"] = {
 		label = "Wagon Repair Kit",
 		description = "Handy if your wagon is broken",
-		weight = 15000, -- In Grams
+		weight = 250, -- In Grams
 		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -869,11 +991,9 @@ return {
 	},
 
 	["pistolschematic"] = {
-		label = "Schematic",
+		label = "Pistol Schematic",
 		description = "A valuable papper",
-		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
+		weight = 250, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -881,11 +1001,9 @@ return {
 	},
 
 	["rifleschematic"] = {
-		label = "Schematic",
+		label = "Rifle Schematic",
 		description = "A valuable papper",
 		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -893,11 +1011,9 @@ return {
 	},
 
 	["repeaterschematic"] = {
-		label = "Schematic",
+		label = "Repeater Schematic",
 		description = "A valuable papper",
 		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -905,11 +1021,9 @@ return {
 	},
 
 	["revolverschematic"] = {
-		label = "Schematic",
+		label = "Revolver Schematic",
 		description = "A valuable papper",
-		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
+		weight = 250, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -917,11 +1031,9 @@ return {
 	},
 
 	["shotgunschematic"] = {
-		label = "Schematic",
+		label = "Shotgun Schematic",
 		description = "A valuable papper",
 		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -929,45 +1041,46 @@ return {
 	},
 
 	["toolschematic"] = {
-		label = "Schematic",
+		label = "Tool Schematic",
 		description = "A valuable papper",
 		weight = 500, -- In Grams
-		decay = true,
-		degrade = 20160, -- Minutes
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_spc_schematic01x",
 	},
 
-	["weaponcleaningkit"] = {
-		label = "Weapon Cleaning Kit",
+	["cleaningkitgun"] = {
+		label = "Gun Cleaning Kit",
 		description = "Clean your dirty weapons",
-		weight = 1000, -- In Grams
+		weight = 200, -- In Grams
 		decay = true,
 		degrade = 21600, -- Minutes
 		stack = true,
-		close = false, -- if should close inventory when used
+		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_firstaidkit_sm01x",
+		prop = "s_firstaidkit_sml01x",
+		client = {
+			image = "weaponcleaningkit.png",
+		},
 	},
 
 	["repairtool"] = {
         label = "Weapon Repair Tool",
         description = "Handy if you want to repair your weapon",
-        weight = 5000, -- In Grams
+        weight = 250, -- In Grams
         decay = true,
         degrade = 21600, -- Minutes
         stack = true,
         close = false, -- if should close inventory when used
         allowArmed = true, -- should we let them use with weapons?
-        prop = "s_firstaidkit_sm01x",
+        prop = "s_firstaidkit_sml01x",
     },
 
 	["goldbar"] = {
 		label = "Goldbar",
 		description = "Rare valuable item",
-		weight = 1500, -- In Grams
+		weight = 500, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -975,9 +1088,9 @@ return {
 	},
 
 	["campfire"] = {
-		label = "Camp Fire",
+		label = "Campfire",
 		description = "Cooking Tool",
-		weight = 100, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -987,7 +1100,7 @@ return {
 	["boatticket"] = {
 		label = "Boat Ticket",
 		description = "On the way to Guardma",
-		weight = 100, -- In Grams
+		weight = 2, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -997,10 +1110,8 @@ return {
 	["sussyticket"] = {
 		label = "Ticket",
 		description = "On the way to surprise",
-		weight = 250, -- In Grams
+		weight = 2, -- In Grams
 		stack = true,
-		decay = true,
-		degrade = 7200, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "s_inv_businesscard02x",
@@ -1033,72 +1144,18 @@ return {
 		description = "A note",
 		weight = 50, -- In Grams
 		stack = false,
-		decay = true,
-		degrade = 14400, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_cs_note02x",
 	},
 
-	["canteen100"] = {
+	["canteen"] = {
 		label = "Canteen",
-		description = "Canteen 100% Full",
-		weight = 250, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_canteen01x",
-		client = {
-			image = "canteen.png",
-		},
-	},
-
-	["canteen75"] = {
-		label = "Canteen",
-		description = "Canteen 75% Full",
-		weight = 200, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_canteen01x",
-		client = {
-			image = "canteen.png",
-		},
-	},
-
-	["canteen50"] = {
-		label = "Canteen",
-		description = "Canteen 50% Full",
-		weight = 200, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_canteen01x",
-		client = {
-			image = "canteen.png",
-		},
-	},
-
-	["canteen25"] = {
-		label = "Canteen",
-		description = "Canteen 25% Full",
+		description = "Usefull if you are thirsty",
 		weight = 150, -- In Grams
 		stack = false,
 		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_canteen01x",
-		client = {
-			image = "canteen.png",
-		},
-	},
-
-	["canteen0"] = {
-		label = "Canteen",
-		description = "Empty Canteen",
-		weight = 100, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
+		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_canteen01x",
 		client = {
 			image = "canteen.png",
@@ -1106,11 +1163,226 @@ return {
 	},
 
 	-- Criminal Items
+	["moonshinekey"] = {
+		label = "Brown Schematic",
+		description = "a mysterious papper, you will learn a very useful knowledge and more power.",
+		weight = 500, -- In Grams
+		stack = false,
+		decay = true,
+		degrade = 11520, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+	},
+
+	["pawnshopkey"] = {
+		label = "Black Key",
+		description = "a mysterious key, you will open a very useful door.",
+		weight = 500, -- In Grams
+		stack = false,
+		decay = true,
+		degrade = 15520, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+	},
+	["blackrustykey"] = {
+		label = "Rusty Black Key",
+		description = "A rare and valuable trophy.",
+		weight = 500, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+	},
+	["weedkey"] = {
+		label = "Green Schematic",
+		description = "a mysterious papper, you will learn a very useful knowledge and more power.",
+		weight = 500, -- In Grams
+		stack = false,
+		decay = true,
+		degrade = 15520, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+		client = {
+			image = "weedschematic.png",
+		},
+	},
+	["greenrustykey"] = {
+		label = "Rusty Green Schematic",
+		description = "A rare and valuable trophy.",
+		weight = 100, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+	},
+	["whitekey"] = {
+		label = "White Schematic",
+		description = "a mysterious papper, you will learn a very useful knowledge and more power.",
+		weight = 500, -- In Grams
+		stack = false,
+		decay = true,
+		degrade = 15520, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+		client = {
+			image = "cocaineschematic.png",
+		},
+	},
+	["whiterustykey"] = {
+		label = "Rusty White Schematic",
+		description = "A rare and valuable trophy.",
+		weight = 100, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+	},
+	["redkey"] = {
+		label = "Red Key",
+		description = "a mysterious key, you will open a very useful door and more power.",
+		weight = 500, -- In Grams
+		stack = false,
+		decay = true,
+		degrade = 11520, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+	},
+	["redrustykey"] = {
+		label = "Rusty Red Key",
+		description = "A rare and valuable trophy.",
+		weight = 500, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+	},
+	["mysteriouskey"] = {
+		label = "Key",
+		description = "a mysterious key, you will open a very useful chest.",
+		weight = 500, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_key02x",
+		client = {
+			image = "redkey.png",
+		},
+	},
+	["chest"] = {
+		label = "Chest",
+		description = "a mysterious ches, you need a very useful key.",
+		weight = 500, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_lootablemiscchest_wagon",
+	},
+	["headbag"] = {
+		label = "HeadBag",
+		description = "A fabric bag designed to be worn over the head, fully covering the face and restricting vision.",
+		weight = 2500, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_fabricfolded01x",
+	},
+	["piratemap"] = {
+		label = "Pirate Map",
+		description = "Find all the pieces",
+		weight = 100, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+	},
+	["onepieceofmap"] = {
+		label = "10 of spades",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crd_10_s01x",
+		client = {
+			image = "card10.png",
+		},
+	},
+	["twopieceofmap"] = {
+		label = "J of spades",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crd_j_s01x",
+		client = {
+			image = "cardj.png",
+		},
+	},
+	["threepieceofmap"] = {
+		label = "Q of spades",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crd_q_s01x",
+		client = {
+			image = "cardq.png",
+		},
+	},
+	["fourpieceofmap"] = {
+		label = "K of spades",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crd_k_s01x",
+		client = {
+			image = "cardk.png",
+		},
+	},
+	["fivepieceofmap"] = {
+		label = "A of spades",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crd_a_s01x",
+		client = {
+			image = "carda.png",
+		},
+	},
+	["sixthpieceofmap"] = {
+		label = "6th Piece of map",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+	},
+	["royalflush"] = {
+		label = "Royal Flush",
+		description = "A royal flush can only be made",
+		weight = 2000, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_pokerhand01x",
+	},
 
 	["lockpick"] = {
 		label = "Lockpick",
 		description = "Usable Tool",
-		weight = 750, -- In Grams
+		weight = 500, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -1132,7 +1404,7 @@ return {
 	["shovel"] = {
 		label = "Shovel",
 		description = "Usable Tool",
-		weight = 2500, -- In Grams
+		weight = 2000, -- In Grams
 		stack = false,
 		decay = true,
 		degrade = 20160, -- Minutes
@@ -1144,19 +1416,46 @@ return {
 	["joint"] = {
 		label = "Joint",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		decay = true,
-		degrade = 20160, -- Minutes
+		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cigarette01x",
 	},
 
+	["jointhigh"] = {
+		label = "Joint Gold",
+		description = "Marked for Law Enforcement seizure",
+		weight = 500, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cigarette01x",
+		client = {
+			image = "joint.png",
+		},
+	},
+
+	["dopegum"] = {
+		label = "Dope Gum",
+		description = "Good for your health",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_inv_cocainegum01x",
+	},
+
 	["line_of_coke"] = {
 		label = "Line Of Coke",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
@@ -1168,7 +1467,7 @@ return {
 	["coke_gum"] = {
 		label = "Cocaine Gum",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
@@ -1179,8 +1478,8 @@ return {
 
 	["opium_syringe"] = {
 		label = "Opium Syringe",
-		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		description = "a good time is always a good time",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
@@ -1188,9 +1487,23 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cs_syringe01x",
 	},
+	["heroine_syringe"] = {
+		label = "Heroine Syringe",
+		description = "a good time is always a good time",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 20160, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_syringe01x",
+		client = {
+			image = "opium_syringe.png",
+		},
+	},
 
 	["moonshine"] = {
-		label = "De Lobos Moonshine",
+		label = "Del Lobos Moonshine",
 		description = "Marked for Law Enforcement seizure",
 		weight = 500, -- In Grams
 		stack = true,
@@ -1201,22 +1514,32 @@ return {
 		prop = "p_moonshinebtl01x",
 	},
 
+	["stolengoods"] = {
+		label = "Stolen Goods",
+		description = "Marked for Law Enforcement seizure",
+		weight = 50, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_stolen04x",
+	},
+
 	["cokebrick"] = {
 		label = "Cocaine Brick",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 1500, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_drugpackage_02x",
+		prop = "sevenlife_plant_weed_pack_open",
 	},
 
 	["cocabag"] = {
 		label = "Cocaine Package",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
@@ -1226,15 +1549,30 @@ return {
 	},
 
 	["weedbag"] = {
-		label = "Marijuana Package",
+		label = "Marijuana Gold Package",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500, -- In Grams
+		weight = 75, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 20160, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_drugpackage_02x",
+	},
+
+	["weedbaglow"] = {
+		label = "Marijuana Package",
+		description = "Marked for Law Enforcement seizure",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 20160, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_drugpackage_02x",
+		client = {
+			image = "weedbag.png",
+		},
 	},
 
 	-- MAIN PUBLIC JOB
@@ -1252,7 +1590,7 @@ return {
 	["bark"] = {
 		label = "Bark",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1262,21 +1600,142 @@ return {
 	["branch"] = {
 		label = "Branch",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_cs_log01x",
+	},
+
+	["sap"] = {
+		label = "Sap",
+		description = "Valuable",
+		weight = 150, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_bark01x",
 	},
 
-	["sap"] = {
-		label = "Sap",
+	["woodenplanks"] = {
+		label = "Wooden Planks",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bark01x",
+		prop = "p_woodplank01x",
+	},
+
+	["woodengunparts"] = {
+		label = "Wooden Gunparts",
+		description = "Weapon crafting parts",
+		weight = 150, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart02x",
+	},
+
+	["silvergunparts"] = {
+		label = "Silver Gunparts",
+		description = "Weapon crafting parts",
+		weight = 150, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+
+	["cattleman_body"] = {
+		label = "Short Arm Body",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["cattleman_handle"] = {
+		label = "Short Arm Handle",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["cattleman_barrel"] = {
+		label = "Short Arm Barrel",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["cattleman_drum"] = {
+		label = "Short Arm Drum",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["winchester_body"] = {
+		label = "Long Arm Body",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["winchester_barrel"] = {
+		label = "Long Arm Barrel",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["winchester_butt_stock"] = {
+		label = "Long Arm Butt Stock",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+	["winchester_lever"] = {
+		label = "Long Arm Lever",
+		description = "gun part",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gunpart03x",
+	},
+
+
+
+
+
+
+
+
+
+	["cartridges"] = {
+		label = "Cart Ridge",
+		description = "Crafting parts",
+		weight = 5, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "s_ammo_9mm",
 	},
 
 	["pickaxe"] = {
@@ -1292,17 +1751,37 @@ return {
 	["rock"] = {
 		label = "Rock",
 		description = "Valuable",
-		weight = 200, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_rockthrow02x",
 	},
 
+	["coal"] = {
+		label = "Coal",
+		description = "Valuable",
+		weight = 100, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_coal01x",
+	},
+
+	["wool"] = {
+		label = "Wool",
+		description = "Valuable",
+		weight = 100, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_gndblnd_cotton01x",
+	},
+
 	["golden_nugget"] = {
 		label = "Golden Nugget",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1312,7 +1791,7 @@ return {
 	["ruby"] = {
 		label = "Ruby",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 350, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1322,7 +1801,7 @@ return {
 	["diamond"] = {
 		label = "Diamond",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 350, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1332,7 +1811,7 @@ return {
 	["emerald"] = {
 		label = "Emerald",
 		description = "Valuable",
-		weight = 250, -- In Grams
+		weight = 350, -- In Grams
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1346,7 +1825,16 @@ return {
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "s_scrap_metal01x",
+		prop = "p_ore01x",
+	},
+
+	["sulfur"] = {
+		label = "Sulfur",
+		description = "Valuable",
+		weight = 150, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
 	},
 
 	["ironore"] = {
@@ -1356,48 +1844,63 @@ return {
 		stack = true,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "s_scrap_metal01x",
+		prop = "s_skippingstone01x",
 	},
 
-	["sharpening_stonepackage"] = {
-		label = "Sharpening Stone Package",
+	["scrapmetal"] = {
+		label = "Scrap Metal",
 		description = "Valuable",
-		weight = 3000, -- In Grams
+		weight = 250, -- In Grams
 		stack = true,
-		close = true, -- if should close inventory when used
+		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "s_scrap_metal01x",
-		client = {
-			image = "package.png",
-		},
+		prop = "s_skippingstone01x",
 	},
+
+	["topsecret"] = {
+		label = "Top Secret",
+		description = "Plan for SD Bank",
+		weight = 250, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_map02x",
+	},
+
+	["ironbar"] = {
+        label = "Ironbar",
+        description = "Valuable",
+        weight = 300, -- In Grams
+        stack = true,
+        close = false, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_sharpeningstone01x",
+    },
+
+    ["silverbar"] = {
+        label = "Silverbar",
+        description = "Valuable",
+        weight = 300, -- In Grams
+        stack = true,
+        close = false, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_sharpeningstone01x",
+    },
 
 	["sharpening_stone"] = {
 		label = "Sharpening Stone",
 		description = "Valuable",
-		weight = 300, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "s_scrap_metal01x",
-	},
-
-	["goldpan"] = {
-		label = "Goldpan",
-		description = "Worktool",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_copperpan02x",
+		prop = "p_sharpeningstone01x",
 	},
 
 	["smallnugget"] = {
 		label = "Small Nugget",
 		description = "A naturally occurring lump of pure, raw gold",
-		weight = 200, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -1407,7 +1910,7 @@ return {
 	["mediumnugget"] = {
 		label = "Medium Nugget",
 		description = "A naturally occurring lump of pure, raw gold",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -1417,7 +1920,7 @@ return {
 	["largenugget"] = {
 		label = "Large Nugget",
 		description = "A naturally occurring lump of pure, raw gold",
-		weight = 300, -- In Grams
+		weight = 150, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
@@ -1426,177 +1929,183 @@ return {
 
 	-- Weapon Crafting Parts
 
-	["trigger"] = {
-		label = "Trigger",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?'
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["trigger"] = {
+	-- 	label = "Trigger",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?'
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["hammer"] = {
-		label = "Hammer",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["hammer"] = {
+	-- 	label = "Hammer",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["barrel"] = {
-		label = "Barrel",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["barrel"] = {
+	-- 	label = "Barrel",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["spring"] = {
-		label = "Spring",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["spring"] = {
+	-- 	label = "Spring",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["frame"] = {
-		label = "Frame",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["frame"] = {
+	-- 	label = "Frame",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["grip"] = {
-		label = "Grip",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["grip"] = {
+	-- 	label = "Grip",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["stock"] = {
-		label = "Stock",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["stock"] = {
+	-- 	label = "Stock",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["cylinder"] = {
-		label = "Cylinder",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["cylinder"] = {
+	-- 	label = "Cylinder",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["sight"] = {
-		label = "Sight",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["sight"] = {
+	-- 	label = "Sight",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["bolt"] = {
-		label = "Bolt",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["bolt"] = {
+	-- 	label = "Bolt",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["sling"] = {
-		label = "Sling",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
+	-- ["sling"] = {
+	-- 	label = "Sling",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
-	["action"] = {
-		label = "Action",
-		description = "Weapon crafting part",
-		weight = 250, -- In Grams
-		stack = true,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_boxsmlammo01x",
-		client = {
-			image = "toolbox.png",
-		},
-	},
-
-	-- Alcohol
-
-	["beer"] = {
-		label = "Beer",
-		description = "water",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlebeer02x",
-	},
+	-- ["action"] = {
+	-- 	label = "Action",
+	-- 	description = "Weapon crafting part",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	close = false, -- if should close inventory when used
+	-- 	allowArmed = false, -- should we let them use with weapons?
+	-- 	prop = "p_boxsmlammo01x",
+	-- 	client = {
+	-- 		image = "toolbox.png",
+	-- 	},
+	-- },
 
 	-- Saloon
+	["empty_glass"] = {
+		label = "Empty Glass",
+		description = "used by saloons",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_glass01x",
+	},
+
+	["woodbarrel"] = {
+		label = "Wood Barrel",
+		description = "Valuable",
+		weight = 500, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "mp001_p_group_barrelshot03",
+	},
+
 	["bottle"] = {
 		label = "Bottle",
 		description = "used by saloons",
@@ -1608,7 +2117,7 @@ return {
 	},
 
 	["vodka"] = {
-		label = "Vodka",
+		label = "Vodka Barrel",
 		description = "used by saloons",
 		weight = 50, -- In Grams
 		stack = true,
@@ -1616,23 +2125,26 @@ return {
 		degrade = 4320, -- Minutes
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bottle007x",
+		prop = "p_barrel01ax_sea",
+		client = {
+			image = "tequila.png",
+		},
 	},
 
 	["tequila"] = {
-		label = "Tequila",
+		label = "Tequila Barrel",
 		description = "used by saloons",
-		weight = 300, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_gen_bottletequila01x",
+		prop = "p_barrel01ax_sea",
 	},
 
 	["whiskey"] = {
-		label = "Whiskey",
+		label = "Whiskey Barrel",
 		description = "used by saloons",
 		weight = 50, -- In Grams
 		stack = true,
@@ -1640,11 +2152,14 @@ return {
 		degrade = 4320, -- Minutes
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bottle007x",
+		prop = "p_barrel01ax_sea",
+		client = {
+			image = "tequila.png",
+		},
 	},
 
 	["gin"] = {
-		label = "Gin",
+		label = "Gin Barrel",
 		description = "used by saloons",
 		weight = 50, -- In Grams
 		stack = true,
@@ -1652,11 +2167,14 @@ return {
 		degrade = 4320, -- Minutes
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bottle007x",
+		prop = "p_barrel01ax_sea",
+		client = {
+			image = "tequila.png",
+		},
 	},
 
 	["wine"] = {
-		label = "Wine",
+		label = "Wine Barrel",
 		description = "used by saloons",
 		weight = 50, -- In Grams
 		stack = true,
@@ -1664,11 +2182,14 @@ return {
 		degrade = 4320, -- Minutes
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bottle007x",
+		prop = "p_barrel01ax_sea",
+		client = {
+			image = "tequila.png",
+		},
 	},
 
 	["rum"] = {
-		label = "Rum",
+		label = "Rum Barrel",
 		description = "used by saloons",
 		weight = 50, -- In Grams
 		stack = true,
@@ -1676,26 +2197,19 @@ return {
 		degrade = 4320, -- Minutes
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_bottle007x",
-	},
-
-	["cheese"] = {
-		label = "Cheese",
-		description = "used by saloons",
-		weight = 50, -- In Grams
-		stack = true,
-		decay = false,
-		close = false, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_barrel01ax_sea",
+		client = {
+			image = "tequila.png",
+		},
 	},
 
 	-- tobacco factory
 
 	["cigar1"] = {
 		label = "H. Upmann",
-		description = "Renowned for its mild to medium strength, this brand offers a smooth and creamy smoke with subtle nutty and woody notes",
-		weight = 300, -- In Grams
-		stack = true,
+		description = "Renowned for its mild to medium strength, this brand offers a smooth and creamy smoke",
+		weight = 50, -- In Grams
+		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cigar02x",
@@ -1703,29 +2217,51 @@ return {
 
 	["cigar2"] = {
 		label = "Henry Clay",
-		description = "A rich, full-bodied cigar known for its deep, earthy flavors. Popular among aficionados for its robust and bold profile",
-		weight = 300, -- In Grams
-		stack = true,
+		description = "A rich, full-bodied cigar known for its deep, earthy flavors.",
+		weight = 50, -- In Grams
+		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cigar1x",
+		prop = "p_cigarthin01x",
 	},
 
 	["cigar3"] = {
 		label = "Partagás",
-		description = "Known for its strong, full-bodied cigars, Partagás offers a spicy, earthy smoke with deep flavors of tobacco and leather",
-		weight = 300, -- In Grams
-		stack = true,
+		description = "Known for its strong, full-bodied cigars, Partagás offers a spicy.",
+		weight = 50, -- In Grams
+		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cigar01x",
 	},
 
+	["cigar4"] = {
+		label = "El Rey del Mundo",
+		description = "The finest cigar is reserved for those who belong.",
+		weight = 50, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cigar01x",
+	},
+
+	["zippo"] = {
+		label = "Zippo",
+		description = "The good fire came from a good lighter",
+		weight = 25, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		decay = true,
+		degrade = 20160, -- Minutes
+		prop = "p_lighter01x",
+	},
+
 	["cigarette"] = {
 		label = "Cigarette Pack",
 		description = "Nicotine and producing a distinct smoke flavor",
-		weight = 250, -- In Grams
-		stack = true,
+		weight = 25, -- In Grams
+		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cigarettebox01x",
@@ -1734,7 +2270,7 @@ return {
 	["pipe"] = {
 		label = "Pipe",
 		description = "Smoking device, typically made of wood, featuring a bowl for holding tobacco",
-		weight = 700, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1744,7 +2280,7 @@ return {
 	["fan"] = {
 		label = "Fan",
 		description = "If you get hot this could help",
-		weight = 250, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1753,10 +2289,8 @@ return {
 
 	["cigarbox"] = {
 		label = "Cigar Box",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 43200, -- Minutes
+		weight = 5, -- In Grams
+		stack = false,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cigarbox02x",
@@ -1775,11 +2309,11 @@ return {
 	["emptybottle"] = {
 		label = "Empty Bottle",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 250,
+		weight = 50,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_bottle001x",
 		client = {
 			image = "bottle.png",
 		},
@@ -1788,91 +2322,111 @@ return {
 	["emptybag"] = {
 		label = "Empty Bag",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 250,
+		weight = 50,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_package09",
 	},
 
 	["gunpowder"] = {
 		label = "Gunpowder",
-		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 500,
+		description = "Usable tool.",
+		weight = 15,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_gunpowder01x",
 	},
 
 	["wick"] = {
 		label = "Wick",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "s_dynamitewick01x",
 	},
 
 	["snakeoil"] = {
 		label = "Snake Oil",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_bottlesnakeoil01x",
+	},
+
+	["acid"] = {
+		label = "Acid",
+		description = "Usable tool | Marked for Law Enforcement seizure.",
+		weight = 250,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_bottlesnakeoil01x",
 	},
 
 	["oil"] = {
 		label = "Oil",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_oil01x",
 	},
 
 	["gunoil"] = {
 		label = "Gun Oil",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "s_gunoil01x",
 	},
 
 	["rollingpaper"] = {
 		label = "Rolling Paper",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 100,
+		weight = 50,
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_package09",
 	},
 
 	["scale"] = {
 		label = "Scale",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 400,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_oldscale01x",
+	},
+
+	["grinder"] = {
+		label = "Grinder",
+		description = "Usable tool | Marked for Law Enforcement seizure.",
+		weight = 250,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_oldscale01x",
 	},
 
 	["rope"] = {
 		label = "Rope",
 		description = "Usable tool | Marked for Law Enforcement seizure.",
-		weight = 350,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_cs_rope06x",
 	},
 
 	["scissors"] = {
@@ -1882,7 +2436,7 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_sto_goods19x",
+		prop = "p_scissors01x",
 	},
 
 	--Farming Items
@@ -1890,33 +2444,27 @@ return {
 	["bberryseed"] = {
 		label = "Black Berry Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["cornseed"] = {
 		label = "Corn Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["corn"] = {
 		label = "Corn",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1926,21 +2474,17 @@ return {
 	["sugarseed"] = {
 		label = "Sugar Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack06x",
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["sugar"] = {
 		label = "Sugar",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1950,21 +2494,17 @@ return {
 	["tobaccoseed"] = {
 		label = "Tobacco Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack07x",
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["tobacco"] = {
 		label = "Tobacco",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1974,20 +2514,17 @@ return {
 	["carrotseed"] = {
 		label = "Carrot Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["carrot"] = {
 		label = "Carrot",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -1997,20 +2534,17 @@ return {
 	["tomatoseed"] = {
 		label = "Tomato Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["tomato"] = {
 		label = "Tomato",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2020,21 +2554,17 @@ return {
 	["broccoliseed"] = {
 		label = "Broccoli Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack06x",
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["broccoli"] = {
 		label = "Broccoli",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2044,20 +2574,17 @@ return {
 	["potatoseed"] = {
 		label = "Potato Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["potato"] = {
 		label = "Potato",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2067,114 +2594,97 @@ return {
 	["indtobaccoseed"] = {
 		label = "Indian Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack07x",
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["indtobacco"] = {
 		label = "Indian Tobacco",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "indtobacco_p",
 	},
 
 	["hopseed"] = {
 		label = "Hop Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack07x",
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["hop"] = {
 		label = "Hop",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "p_driedmushroom01x",
 	},
 
 	["agaritaseed"] = {
 		label = "Agarita Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["agarita"] = {
 		label = "Agarita",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "mp005_s_inv_agarita_01x",
 	},
 
 	["wildmintseed"] = {
 		label = "Wild Mint Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["wildmint"] = {
 		label = "Wild Mint",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "s_inv_wildmint01bx",
 	},
 
 	["ramsheadseed"] = {
 		label = "Rams Head Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["rams_head"] = {
 		label = "Rams Head Mushroom",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2184,20 +2694,17 @@ return {
 	["parasolmushroomseed"] = {
 		label = "Parasol Mushroom Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["parasol_mushroom"] = {
 		label = "Parasol Mushroom",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2207,20 +2714,17 @@ return {
 	["hummingbirdsageseed"] = {
 		label = "Hummingbird Sage Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["hummingbird_sage"] = {
 		label = "Hummingbird Sage",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2230,20 +2734,17 @@ return {
 	["evergreenhuckleberryseed"] = {
 		label = "Evergreen Huckleberry Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["evergreen_huckleberry"] = {
 		label = "Evergreen Huckleberry",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2253,43 +2754,62 @@ return {
 	["marijuana_seed"] = {
 		label = "Marijuana Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["marijuana"] = {
-		label = "Marijuana",
+		label = "Marijuana Gold",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 800, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "milkweed_p",
 	},
 
+	["marijuanabud"] = {
+		label = "Marijuana Goldbud",
+		description = "A valuable herb or a farming product",
+		weight = 200, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "sevenlife_plant_weed_bud",
+	},
+
+	["marijuanabudlow"] = {
+		label = "Marijuana Bud",
+		description = "A valuable herb or a farming product",
+		weight = 200, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "sevenlife_plant_weed_bud",
+		client = {
+			image = "marijuanabud.png",
+		},
+	},
+
 	["coca_seed"] = {
 		label = "Coca Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["coca"] = {
 		label = "Coca Leaf",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 800, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2299,43 +2819,50 @@ return {
 	["alaskanginsengseed"] = {
 		label = "Alaskanginseng Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["alaskangin"] = {
 		label = "Alaskan Ginseng",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "alaskanginseng_p",
 	},
 
+	["americangin"] = {
+		label = "American Ginseng",
+		description = "A valuable herb or a farming product",
+		weight = 100, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "alaskanginseng_p",
+		client = {
+			image = "alaskangin.png",
+		},
+	},
+
 	["grainseed"] = {
 		label = "Grain Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["grain"] = {
 		label = "Grain",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2345,20 +2872,17 @@ return {
 	["grapeseed"] = {
 		label = "Grape Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["grape"] = {
 		label = "Grape",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2368,20 +2892,17 @@ return {
 	["cabbageseed"] = {
 		label = "Cabbage Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["cabbage"] = {
 		label = "Cabbage",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2391,20 +2912,17 @@ return {
 	["onionseed"] = {
 		label = "Onion Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["onion"] = {
 		label = "Onion",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2414,20 +2932,17 @@ return {
 	["pepperseed"] = {
 		label = "Pepper Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["pepper"] = {
 		label = "Pepper",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2437,89 +2952,106 @@ return {
 	["appleseed"] = {
 		label = "Apple Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["chamomileseed"] = {
 		label = "Chamomile Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["chamomile"] = {
 		label = "Chamomile",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "oregano_p",
 	},
 
 	["oreganoseed"] = {
 		label = "Oregano Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
 	},
 
 	["oregano"] = {
 		label = "Oregano",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "s_inv_oregano01bx",
 	},
 
 	["thymeseed"] = {
 		label = "Thyme Seed",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
+		prop = "thyme_p",
 	},
 
 	["thyme"] = {
 		label = "Thyme",
 		description = "A valuable herb or a farming product",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
-		prop = "p_sack05x",
+		prop = "s_inv_thyme01bx",
+	},
+
+	["ricx_rotten_plant"] = {
+		label = "Rotten Plant piece",
+		description = "A dead herb or a farming product",
+		weight = 100, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "rdr_bush_dry_thin_aa_sim",
+	},
+
+	["poop"] = {
+		label = "Poop",
+		description = "Farming Tool",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_wolfpoop03x",
+	},
+
+	["root"] = {
+		label = "Root",
+		description = "Valuable",
+		weight = 50, -- In Grams
+		stack = true,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
 	},
 
 	["fertilizer"] = {
 		label = "Fertilizer",
 		description = "Farming Tool",
-		weight = 250, -- In Grams
+		weight = 50, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -2529,69 +3061,176 @@ return {
 	["big_fertilizer"] = {
 		label = "Big Fertilizer",
 		description = "Farming Tool",
+		weight = 75, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_sack06x",
+	},
+
+	["pigcrap"] = {
+		label = "Pig Crap",
+		description = "Farming Tool",
+		weight = 50, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_poop01x",
+	},
+
+	["ricx_waterpump"] = {
+		label = "Water Pump",
+		description = "Farming Tool",
 		weight = 250, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
 		prop = "p_sack06x",
-		client = {
-			image = "fertilizer.png",
-		},
+	},
+
+	["ricx_watertower"] = {
+		label = "Water Tower",
+		description = "Farming Tool",
+		weight = 250, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_sack06x",
+	},
+
+	-- ["rake"] = {
+	-- 	label = "NOT USE RAKE",
+	-- 	weight = 50,
+	-- 	allowArmed = false,
+	-- 	stack = false,
+	-- 	close = false,
+	-- 	description = "Farming Tool",
+	-- },
+
+	["ricx_rake2"] = {
+		label = "Rake",
+		weight = 50,
+		allowArmed = false,
+		stack = false,
+		close = false,
+		description = "Farming Tool",
+		prop = "p_rake02x",
 	},
 
 	["scarecrow"] = {
 		label = "Scarecrow",
 		description = "Farming Tool",
+		weight = 500, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		decay = true,
+		degrade = 10080, -- Minutes
+		prop = "p_scarecrow03x",
+	},
+
+	["empty_bucket"] = {
+		label = "Empty Bucket",
+		description = "Farming Tool",
+		weight = 150, -- In Grams
+		stack = true,
+		-- decay = true,
+		-- degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bucket06x",
+	},
+
+	["ricx_empty_spray"] = {
+		label = "Empty Spray",
+		description = "Farming Tool",
 		weight = 2500, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
+		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
-		prop = "s_hat_scarecrow01x",
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bugkiller01x",
 	},
 
-	["hoe"] = {
-		label = "Hoe",
+	["ricx_bugspray"] = {
+		label = "DONT USE",
 		description = "Farming Tool",
-		weight = 1050, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
+		weight = 2500, -- In Grams
+		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
-		prop = "p_hoe01x",
-	},
-
-	["watering_can"] = {
-		label = "Watering Can",
-		description = "Farming Tool",
-		weight = 250, -- In Grams
-		stack = false,
 		close = true, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-		decay = true,
-		degrade = 10080, -- Minutes
-		prop = "p_wateringcan01x",
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bugkiller01x",
 	},
 
-	["teapot_can"] = {
-		label = "Teapot Can",
+	["ricx_bugspray2"] = {
+		label = "Bug Spray",
 		description = "Farming Tool",
 		weight = 250, -- In Grams
-		stack = false,
-		close = true, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
+		stack = true,
 		decay = true,
 		degrade = 10080, -- Minutes
-		prop = "p_teapot01x",
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bugkiller01x",
+	},
+
+	["ricx_waterpump_pipe"] = {
+		label = "Water Pump Pipe",
+		description = "Farming Tool",
+		weight = 2500, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+	},
+
+	["ricx_hose"] = {
+		label = "Water Hose",
+		description = "Farming Tool",
+		weight = 2500, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+	},
+
+	-- ["water_bucket"] = {
+	-- 	label = "Water Bucket (Standard)",
+	-- 	description = "Farming Tool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bucket06x",
+	-- },
+
+	["ricx_bucket"] = {
+		label = "Water Bucket",
+		description = "Farming Tool",
+		weight = 2500, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bucket06x",
+		client = {
+			image = "water_bucket.png",
+		},
 	},
 
 	-- Herbs
 	["harrietum_officinalis"] = {
 		label = "Harrietum Officinalis",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2601,17 +3240,27 @@ return {
 	["bberry"] = {
 		label = "Black Berry",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_blackberry01x",
+	},
+
+	["prariepoppy"] = {
+		label = "Prarie Poppy",
+		description = "A valuable herb",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
 		prop = "p_sack05x",
 	},
 
-	["prariepoppy"] = {
-		label = "Prarie Poppy",
-		description = "A valuable herb",
-		weight = 250,
+	["milkweedseed"] = {
+		label = "Milkweed Seed",
+		description = "Farming Tool",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2621,17 +3270,17 @@ return {
 	["milkweed"] = {
 		label = "Milkweed",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sack05x",
+		prop = "s_milkweedpicked01x",
 	},
 
 	["berry"] = {
 		label = "Red Berry",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2641,7 +3290,27 @@ return {
 	["chocdaisy"] = {
 		label = "Chocolate Daisy",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_sack05x",
+	},
+
+	["desertsageseed"] = {
+		label = "Desert Sage Seed",
+		description = "Farming tool",
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_sack05x",
+	},
+
+	["redsageseed"] = {
+		label = "Red Sage Seed",
+		description = "Farming tool",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2651,17 +3320,17 @@ return {
 	["desertsage"] = {
 		label = "Desert Sage",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sack05x",
+		prop = "s_inv_desertsage01bx",
 	},
 
 	["redsage"] = {
 		label = "Red Sage",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2671,7 +3340,7 @@ return {
 	["bitterweed"] = {
 		label = "Bitterweed",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2681,7 +3350,7 @@ return {
 	["orleander"] = {
 		label = "Orleander",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2691,7 +3360,7 @@ return {
 	["engmace"] = {
 		label = "English Mace",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2701,7 +3370,7 @@ return {
 	["bloodflower"] = {
 		label = "Bloodflower",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2711,17 +3380,17 @@ return {
 	["chanterelles"] = {
 		label = "Chanterelles Mushroom",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sack05x",
+		prop = "s_inv_chanterelles",
 	},
 
 	["ginseng"] = {
 		label = "Ginseng",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2731,7 +3400,7 @@ return {
 	["wintergreen"] = {
 		label = "Wintergreen Berry",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2741,7 +3410,7 @@ return {
 	["burdock"] = {
 		label = "Burdock Root",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2751,7 +3420,7 @@ return {
 	["huckleberry"] = {
 		label = "Huckleberry",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2761,7 +3430,17 @@ return {
 	["bulrush"] = {
 		label = "Bulrush",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_sack05x",
+	},
+
+	["blackcurrantseed"] = {
+		label = "Black Currant Seed",
+		description = "Farming Tool",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2771,7 +3450,7 @@ return {
 	["blackcurrant"] = {
 		label = "Black Currant",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2781,7 +3460,7 @@ return {
 	["cardinalflower"] = {
 		label = "Cardinal Flower",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2791,7 +3470,17 @@ return {
 	["wisteria"] = {
 		label = "Wisteria",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_sack05x",
+	},
+
+	["yarrowseed"] = {
+		label = "Yarrow Seed",
+		description = "Farming tool",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2801,7 +3490,7 @@ return {
 	["yarrow"] = {
 		label = "Yarrow",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2811,7 +3500,17 @@ return {
 	["feverfew"] = {
 		label = "Wild Feverfew",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_sack05x",
+	},
+
+	["viosnwdrpseed"] = {
+		label = "Violet Snowdrop Seed",
+		description = "Farming Tool",
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2821,7 +3520,7 @@ return {
 	["viosnwdrp"] = {
 		label = "Violet Snowdrop",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2831,7 +3530,7 @@ return {
 	["creek_plum"] = {
 		label = "Creek Plum",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2841,7 +3540,7 @@ return {
 	["texasbon"] = {
 		label = "Texas Blue Bonnet",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2851,17 +3550,17 @@ return {
 	["bay_bolete"] = {
 		label = "Bay Bolete Mushroom",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
-		prop = "p_sack05x",
+		prop = "s_inv_baybolete",
 	},
 
 	["wrhubarb"] = {
 		label = "Wild Rhebarb",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2871,7 +3570,7 @@ return {
 	["goldencurrant"] = {
 		label = "Golden Currant",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
@@ -2881,12 +3580,35 @@ return {
 	["humbirdsage"] = {
 		label = "Hummingbird Sage",
 		description = "A valuable herb",
-		weight = 250,
+		weight = 100,
 		stack = true,
 		close = true,
 		allowArmed = false,
 		prop = "p_sack05x",
+		client = {
+			image = "wrhubarb.png",
+		},
 	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	-- Fishes
 	["fishmeat"] = {
@@ -2896,7 +3618,7 @@ return {
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cs_catfish_whole01x",
+		prop = "mp007_p_catfish_lrg01x",
 		client = {
 			image = "raw_fish.png",
 		},
@@ -2908,7 +3630,7 @@ return {
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cs_catfish_whole01x",
+		prop = "p_fish01x",
 	},
 
 	["mediumfish"] = {
@@ -2917,7 +3639,7 @@ return {
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cs_basfishonthewal01x",
+		prop = "p_fish01x",
 	},
 
 	["largefish"] = {
@@ -2926,7 +3648,7 @@ return {
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cs_basfishonthewal01x",
+		prop = "p_fish01x",
 	},
 
 	["fishbasin_ms"] = {
@@ -2962,9 +3684,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
 	},
 
 	["p_baitcorn01x"] = {
@@ -2975,9 +3694,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_corn.png",
-		},
 	},
 
 	["p_baitcheese01x"] = {
@@ -2988,9 +3704,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_cheese.png",
-		},
 	},
 
 	["p_baitworm01x"] = {
@@ -3001,9 +3714,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_worm.png",
-		},
 	},
 
 	["p_baitcricket01x"] = {
@@ -3014,9 +3724,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_cricket.png",
-		},
 	},
 
 	["p_crawdad01x"] = {
@@ -3027,9 +3734,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_crayfish.png",
-		},
 	},
 
 	["p_finishedragonfly01x"] = {
@@ -3040,9 +3744,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_leg_lure_river.png",
-		},
 	},
 
 	["p_finisdfishlure01x"] = {
@@ -3053,9 +3754,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_leg_lure_lake.png",
-		},
 	},
 
 	["p_finishdcrawd01x"] = {
@@ -3066,9 +3764,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_leg_lure_swamp.png",
-		},
 	},
 
 	["p_finishedragonflylegendary01x"] = {
@@ -3079,9 +3774,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_lure_lake.png",
-		},
 	},
 
 	["p_finisdfishlurelegendary01x"] = {
@@ -3092,9 +3784,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_lure_lake.png",
-		},
 	},
 
 	["p_finishdcrawdlegendary01x"] = {
@@ -3105,9 +3794,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_lure_lake.png",
-		},
 	},
 
 	["p_lgoc_spinner_v4"] = {
@@ -3118,9 +3804,6 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_leg_lure_lake.png",
-		},
 	},
 
 	["p_lgoc_spinner_v6"] = {
@@ -3131,12 +3814,322 @@ return {
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_lgoc_snipper_v6",
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-- Hunting Animals
+	["snaketongs"] = {
+		label = "Snake Tongs",
+		description = "Perfect (* * *)",
+		weight = 150,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "s_beavertoothtrinket01x",
+	},
+	["feather"] = {
+		label = "Feather",
+		description = "Perfect (* * *)",
+		weight = 150,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_feather01x",
+	},
+	["perfect_pelt"] = {
+		label = "Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
 		client = {
-			image = "upgrade_fsh_bait_leg_lure_lake.png",
+			image = "provision_loanshark_skins_3.png",
 		},
 	},
 
-	-- Hunting Animals
+	["smallanimal"] = {
+		label = "Small Animal",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+	},
+
+	["perfect_rabbit_pelt"] = {
+		label = "Rabbit Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_lance_pelt"] = {
+		label = "Fer-De-Lance Snake Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "snake_perfect_pelt.png",
+		},
+	},
+
+	["perfect_middle_water_pelt"] = {
+		label = "Middle Water Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_boa_pelt"] = {
+		label = "Red-Tailed Boa Rattlesnake Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "snake_perfect_pelt.png",
+		},
+	},
+
+	["perfect_american_muskrat_pelt"] = {
+		label = "American Muskrat Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_diamondback_rattlesnake_pelt"] = {
+		label = "Diamondback Rattlesnake Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "snake_perfect_pelt.png",
+		},
+	},
+
+	["perfect_ninebandedarmadillo_pelt"] = {
+		label = "Nine Banded Armadillo Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_striped_skunk_pelt"] = {
+		label = "Striped Skunk Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_blacktailed_rattlesnake_pelt"] = {
+		label = "Black-Tailed Rattlesnake Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "snake_perfect_pelt.png",
+		},
+	},
+
+	["perfect_virginia_opossum_pelt"] = {
+		label = "Virginia Opossum Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_green_iquana_pelt"] = {
+		label = "Green Iquana Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_desert_iquana_pelt"] = {
+		label = "Desert Iquana Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_banded_gila_monster_pelt"] = {
+		label = "Banded Gila Monster Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_little_brown_bat_pelt"] = {
+		label = "Little Brown Bat Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_badger_pelt"] = {
+		label = "Badger Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["perfect_beaver_pelt"] = {
+		label = "Beaver Pelt",
+		description = "Perfect (* * *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_3.png",
+		},
+	},
+
+	["good_beaver_pelt"] = {
+		label = "Beaver Pelt",
+		description = "Good (* *)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins_2.png",
+		},
+	},
+
+	["poor_beaver_pelt"] = {
+		label = "Beaver Pelt",
+		description = "Poor (*)",
+		weight = 1500,
+		stack = true,
+		close = true,
+		allowArmed = false,
+		prop = "p_cs_pelt_medlarge_roll",
+		client = {
+			image = "provision_loanshark_skins.png",
+		},
+	},
+
 	["perfect_bear_pelt"] = {
 		label = "Bear Pelt",
 		description = "Perfect (* * *)",
@@ -4072,7 +5065,7 @@ return {
 		},
 	},
 	["legendary_alligator_pelt"] = {
-		label = "Leg Alligator Pelt",
+		label = "Legendary Alligator Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4080,11 +5073,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_beaver_pelt"] = {
-		label = "Leg Beaver Pelt",
+		label = "Legendary Beaver Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4092,11 +5085,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_moon_beaver_pelt"] = {
-		label = "Leg Beaver Pelt",
+		label = "Legendary Beaver Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4104,11 +5097,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_zizi_beaver_pelt"] = {
-		label = "Leg Beaver Pelt",
+		label = "Legendary Beaver Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4116,11 +5109,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_night_beaver_pelt"] = {
-		label = "Leg Beaver Pelt",
+		label = "Legendary Beaver Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4128,11 +5121,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_boar_pelt"] = {
-		label = "Leg Boar Pelt",
+		label = "Legendary Boar Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4140,23 +5133,23 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_cougar_pelt"] = {
-		label = "Leg Cougar Pelt",
-		weight = 500,
+		label = "Legendary Cougar Pelt",
+		weight = 1500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
 		stack = true,
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_coyote_pelt"] = {
-		label = "Leg Coyote Pelt",
+		label = "Legendary Coyote Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4164,35 +5157,35 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_panther_pelt"] = {
-		label = "Leg Panther Pelt",
-		weight = 500,
+		label = "Legendary Panther Pelt",
+		weight = 1500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
 		stack = true,
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_wolf_pelt"] = {
-		label = "Leg Wolf Pelt",
-		weight = 500,
+		label = "Legendary Wolf Pelt",
+		weight = 1500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
 		stack = true,
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_tatanka_bison_pelt"] = {
-		label = "Leg Bison Pelt",
+		label = "Legendary Bison Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4200,11 +5193,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_bighorn_ram_pelt"] = {
-		label = "Leg Bighorn Ram Pelt",
+		label = "Legendary Bighorn Ram Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4212,11 +5205,11 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 	["legendary_fox_pelt"] = {
-		label = "Leg Fox Pelt",
+		label = "Legendary Fox Pelt",
 		weight = 500,
 		allowArmed = false,
 		prop = "p_cs_pelt_medlarge_roll",
@@ -4224,7 +5217,7 @@ return {
 		close = true,
 		description = "Perfect (* * *)",
 		client = {
-			image = "provision_loanshark_skins_3.png",
+			image = "animal_lengedery_pelt.png",
 		},
 	},
 
@@ -4235,9 +5228,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_bluegill.png",
-		},
 	},
 	["a_c_fishbluegil_01_sm"] = {
 		label = "Blue Gil (S)",
@@ -4246,9 +5236,7 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_bluegill.png",
-		},
+
 	},
 	["a_c_fishbullheadcat_01_ms"] = {
 		label = "Bullhead Cat (M)",
@@ -4257,9 +5245,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_bullhead_catfish.png",
-		},
 	},
 	["a_c_fishbullheadcat_01_sm"] = {
 		label = "Bullhead Cat (S)",
@@ -4268,9 +5253,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_bullhead_catfish.png",
-		},
 	},
 	["a_c_fishchainpickerel_01_ms"] = {
 		label = "Chain Pickerel (M)",
@@ -4279,9 +5261,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_chain_pickerel.png",
-		},
 	},
 	["a_c_fishchainpickerel_01_sm"] = {
 		label = "Chain Pickerel (S)",
@@ -4290,9 +5269,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_chain_pickerel.png",
-		},
 	},
 	["a_c_fishchannelcatfish_01_lg"] = {
 		label = "Channel Catfish (L)",
@@ -4301,9 +5277,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_channel_catfish.png",
-		},
 	},
 	["a_c_fishchannelcatfish_01_xl"] = {
 		label = "Channel Catfish (EL)",
@@ -4312,9 +5285,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_channel_catfish.png",
-		},
 	},
 	["a_c_fishlakesturgeon_01_lg"] = {
 		label = "Lake Sturgeon (L)",
@@ -4323,9 +5293,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_lake_sturgeon.png",
-		},
 	},
 	["a_c_fishlargemouthbass_01_lg"] = {
 		label = "Large Mouth Bass (L)",
@@ -4334,9 +5301,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_largemouth_bass.png",
-		},
 	},
 	["a_c_fishlargemouthbass_01_ms"] = {
 		label = "Large Mouth Bass (M)",
@@ -4345,9 +5309,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_largemouth_bass.png",
-		},
 	},
 	["a_c_fishlongnosegar_01_lg"] = {
 		label = "Long Nose Gar (L)",
@@ -4356,9 +5317,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_longnose_gar.png",
-		},
 	},
 	["a_c_fishmuskie_01_lg"] = {
 		label = "Muskie (L)",
@@ -4367,9 +5325,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_muskie.png",
-		},
 	},
 	["a_c_fishnorthernpike_01_lg"] = {
 		label = "Northern Pike (L)",
@@ -4378,9 +5333,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_northern_pike.png",
-		},
 	},
 	["a_c_fishperch_01_ms"] = {
 		label = "Perch (M)",
@@ -4389,9 +5341,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_perch.png",
-		},
 	},
 	["a_c_fishperch_01_sm"] = {
 		label = "Perch (S)",
@@ -4400,9 +5349,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_perch.png",
-		},
 	},
 	["a_c_fishrainbowtrout_01_lg"] = {
 		label = "Rainbow Trout (L)",
@@ -4411,9 +5357,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_perch.png",
-		},
 	},
 	["a_c_fishrainbowtrout_01_ms"] = {
 		label = "Rainbow Trout (M)",
@@ -4430,9 +5373,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_redfin_pickerel.png",
-		},
 	},
 	["a_c_fishredfinpickerel_01_sm"] = {
 		label = "Red Fin Pickerel (S)",
@@ -4441,9 +5381,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_redfin_pickerel.png",
-		},
 	},
 	["a_c_fishrockbass_01_ms"] = {
 		label = "Rock Bass (M)",
@@ -4452,9 +5389,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_rock_bass.png",
-		},
 	},
 	["a_c_fishrockbass_01_sm"] = {
 		label = "Rock Bass (S)",
@@ -4463,9 +5397,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_rock_bass.png",
-		},
 	},
 	["a_c_fishsalmonsockeye_01_lg"] = {
 		label = "Salmon Sockeye (L)",
@@ -4474,9 +5405,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_salmon_legendary.png",
-		},
 	},
 	["a_c_fishsalmonsockeye_01_ml"] = {
 		label = "Salmon Sockeye (ML)",
@@ -4485,9 +5413,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_salmon_legendary.png",
-		},
 	},
 	["a_c_fishsalmonsockeye_01_ms"] = {
 		label = "Salmon Sockeye (M)",
@@ -4496,9 +5421,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_salmon_legendary.png",
-		},
 	},
 	["a_c_fishsmallmouthbass_01_lg"] = {
 		label = "Small Mouth Bass (L)",
@@ -4507,9 +5429,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_smallmouth_bass.png",
-		},
 	},
 	["a_c_fishsmallmouthbass_01_ms"] = {
 		label = "Small Mouth Bass (M)",
@@ -4518,9 +5437,6 @@ return {
 		stack = true,
 		close = true,
 		description = "used for fishing",
-		client = {
-			image = "provision_fish_smallmouth_bass.png",
-		},
 	},
 
 	--Meats
@@ -4531,9 +5447,11 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 	["roasted_bear_meat"] = {
@@ -4543,7 +5461,13 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "roastedmeat.png",
+		},
+
 	},
 
 	["beaver_meat"] = {
@@ -4553,9 +5477,11 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 	["roasted_beaver_meat"] = {
@@ -4565,9 +5491,11 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
 		client = {
-			image = "roasted_bear_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4578,9 +5506,11 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 	["roasted_owl_meat"] = {
@@ -4590,7 +5520,12 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "rawmeat1.png",
+		},
 	},
 
 	["maskart_meat"] = {
@@ -4600,9 +5535,11 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 	["roasted_maskart_meat"] = {
@@ -4613,8 +5550,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4626,8 +5565,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 	["roasted_iguana_meat"] = {
@@ -4638,8 +5579,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4651,8 +5594,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -4664,8 +5609,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4677,8 +5624,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4690,8 +5639,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4703,8 +5654,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4716,8 +5669,70 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
+		},
+	},
+
+	["panther_meat"] = {
+		label = "Panther Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat2.png",
+		},
+	},
+
+	["roasted_panther_meat"] = {
+		label = "Panther Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+	["pig_meat"] = {
+		label = "Pig Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat1.png",
+		},
+	},
+
+	["roasted_pig_meat"] = {
+		label = "Pig Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4729,8 +5744,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4743,7 +5760,7 @@ return {
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
 		client = {
-			image = "roasted_owl_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4755,8 +5772,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -4768,6 +5787,9 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["snake_meat"] = {
@@ -4778,8 +5800,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -4792,7 +5816,7 @@ return {
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
 		client = {
-			image = "roasted_skunk_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4804,8 +5828,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -4817,8 +5843,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_skunk_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4830,8 +5858,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4843,8 +5873,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_skunk_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4856,8 +5888,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4869,8 +5903,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_skunk_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4882,8 +5918,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4895,8 +5933,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_skunk_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4908,8 +5948,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -4921,8 +5963,40 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_bison_meat.png",
+			image = "roastedmeat.png",
+		},
+	},
+
+	["chicken_meat"] = {
+		label = "Chicken Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat3.png",
+		},
+	},
+
+	["roasted_chicken_meat"] = {
+		label = "Chicken Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -4934,8 +6008,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -4946,7 +6022,12 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["boar_meat"] = {
@@ -4957,8 +6038,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -4969,7 +6052,12 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["buck_meat"] = {
@@ -4980,8 +6068,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -4992,7 +6082,12 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
+		decay = true,
+		degrade = 7200, -- Minutes
 		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["buffalo_meat"] = {
@@ -5003,8 +6098,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5016,8 +6113,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_boar_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5029,8 +6128,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5042,8 +6143,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_boar_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5055,8 +6158,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5067,7 +6172,42 @@ return {
 		stack = true,
 		close = false,
 		allowArmed = false,
-		prop = "p_redefleshymeat01xb"
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+	["badger_meat"] = {
+		label = "Badger Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat3.png",
+		},
+	},
+
+	["roasted_badger_meat"] = {
+		label = "Badger Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["cow_meat"] = {
@@ -5079,7 +6219,7 @@ return {
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5091,21 +6231,23 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_buck_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
 	["raw_meat"] = {
 		label = "Raw Meat",
-		description = "Raw Meat",
+		description = nil,
 		weight = 200,
 		stack = true,
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5117,8 +6259,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5130,8 +6274,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_buck_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5143,8 +6289,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5156,6 +6304,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["doe_meat"] = {
@@ -5166,8 +6319,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5179,6 +6334,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["elk_meat"] = {
@@ -5189,8 +6349,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5202,6 +6364,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["fox_meat"] = {
@@ -5212,8 +6379,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5225,8 +6394,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_goat_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5238,8 +6409,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5251,6 +6424,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["hawk_meat"] = {
@@ -5261,8 +6439,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -5274,8 +6454,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_goat_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5287,8 +6469,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5300,8 +6484,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_goat_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5313,8 +6499,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5326,8 +6514,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_raccoon_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5339,8 +6529,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -5352,8 +6544,40 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_raccoon_meat.png",
+			image = "roastedmeat.png",
+		},
+	},
+
+	["rat_meat"] = {
+		label = "Rat Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat3.png",
+		},
+	},
+
+	["roasted_rat_meat"] = {
+		label = "Rat Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5365,8 +6589,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5378,6 +6604,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["sheep_meat"] = {
@@ -5388,8 +6619,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5401,8 +6634,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_turkey_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5414,8 +6649,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5427,6 +6664,101 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+	["armadillo_meat"] = {
+		label = "Armadillo Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat2.png",
+		},
+	},
+
+	["roasted_armadillo_meat"] = {
+		label = "Armadillo Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+	["americancrow_meat"] = {
+		label = "American Crow Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat1.png",
+		},
+	},
+
+	["roasted_americancrow_meat"] = {
+		label = "American Crow Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+	["bullfrog_meat"] = {
+		label = "Bullfrog Crow Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat3.png",
+		},
+	},
+
+	["roasted_bullfrog_meat"] = {
+		label = "Bullfrog Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["wolf_meat"] = {
@@ -5437,8 +6769,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5450,8 +6784,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_alligator_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5463,8 +6799,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat2.png",
 		},
 	},
 
@@ -5476,6 +6814,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["racoon_meat"] = {
@@ -5486,8 +6829,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5499,8 +6844,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_bird_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
@@ -5512,8 +6859,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat3.png",
 		},
 	},
 
@@ -5525,6 +6874,11 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
 	},
 
 	["crab_meat"] = {
@@ -5535,8 +6889,10 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
 		client = {
-			image = "rawmeat.png",
+			image = "rawmeat1.png",
 		},
 	},
 
@@ -5548,18 +6904,199 @@ return {
 		close = false,
 		allowArmed = false,
 		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
 		client = {
-			image = "roasted_bird_meat.png",
+			image = "roastedmeat.png",
 		},
 	},
 
+	["squirrel_meat"] = {
+		label = "Squirrel Meat",
+		description = "Raw Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_cs_steakslice02x",
+		--decay = true,
+		--degrade = 7200, -- Minutes
+		client = {
+			image = "rawmeat2.png",
+		},
+	},
+
+	["roasted_squirrel_meat"] = {
+		label = "Squirrel Meat",
+		description = "Roasted Meat",
+		weight = 200,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		decay = true,
+		degrade = 7200, -- Minutes
+		client = {
+			image = "roastedmeat.png",
+		},
+	},
+
+
+
+
+	-- FOOD FILLET
+	["deer_fillet"] = {
+		label = "Deer Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["buck_fillet"] = {
+		label = "Buck Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["alligator_fillet"] = {
+		label = "Alligator Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["duck_fillet"] = {
+		label = "Duck Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["sheep_fillet"] = {
+		label = "Sheep Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["moose_fillet"] = {
+		label = "Moose Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["bird_fillet"] = {
+		label = "Bird Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["buffalo_fillet"] = {
+		label = "Buffalo Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+	["crab_fillet"] = {
+		label = "Crab Fillet",
+		--description = "Fillet Meat",
+		weight = 150,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+		client = {
+			image = "fillet_meat.png",
+		},
+	},
+
+
+
+
+
+	["yeast"] = {
+		label = "Yeast",
+		--description = "Fillet Meat",
+		weight = 50,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_redefleshymeat01xb",
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	-- SALOON Food
 
-	-- first dish
-
-	["mushroomsoup"] = {
-		label = "Mushroom soup",
-		description = "a savory and comforting dish made from a flavorful broth infused with various types of mushrooms",
+	-- Appetizers
+	["deviledeggs"] = {
+		label = "Deviled Eggs",
+		description = "Hard-boiled eggs were halved, the yolks removed and finely mashed with butter, salt, pepper, onions",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
@@ -5569,9 +7106,9 @@ return {
 		prop = "p_cs_platestew01x",
 	},
 
-	["grilledpotatoes"] = {
-		label = "Grilled potatoes with cheese",
-		description = "a delectable dish featuring tender, crispy potatoes cooked on the grill and topped with melted cheese",
+	["cheesebiscuits"] = {
+		label = "Cheese Biscuits",
+		description = "Small, crisp biscuits delicately flavored with grated cheese and butter, baked until lightly golden.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
@@ -5581,59 +7118,10 @@ return {
 		prop = "p_cs_platestew01x",
 	},
 
-	["friedeggsbeacon"] = {
-		label = "Fried Eggs & Beacon",
-		description = "a classic breakfast combination that features sunny-side-up or over-easy eggs cooked in sizzling bacon fat",
+	["fundycheese"] = {
+		label = "Fundy Cheese",
+		description = "A rich preparation of melted cheese blended smoothly with butter and oregano, gently warmed and served for dipping bread or biscuits.",
 		weight = 150, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food01ax",
-	},
-
-	["grilledsausage"] = {
-		label = "Grilled Sausage",
-		description = "a flavorful and savory delight created by cooking seasoned sausages on an open flame or grill",
-		weight = 150, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food01ax",
-	},
-
-	["cornbread"] = {
-		label = "Corn Bread",
-		description = "a moist and slightly crumbly bread made from cornmeal, giving it a distinctively sweet and hearty flavor",
-		weight = 150, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food01ax",
-	},
-
-	-- Main dish
-
-	["grilledsteak"] = {
-		label = "Grilled steak",
-		description = "a culinary delight featuring a thick, well-seasoned cut of beef cooked over an open flame or on a grill",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
-	},
-	["sweetpotatostew"] = {
-		label = "Sweet Potato Stew",
-		description = "a hearty and flavorful dish made with chunks of sweet potatoes, vegetables, and often protein like beans or meat, all simmered in a savory broth",
-		weight = 250, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -5641,10 +7129,11 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cs_platestew01x",
 	},
-	["frenchfriescheese"] = {
-		label = "French Fries & Cheese",
-		description = "delectable treat featuring golden and crispy fries topped with melted cheese",
-		weight = 250, -- In Grams
+
+	["chickensalad"] = {
+		label = "Chicken Salad",
+		description = "Finely chopped cold chicken lightly dressed with a simple dressing of oil and delicate seasonings.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -5652,48 +7141,360 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "p_cs_platestew01x",
 	},
-	["chickenpotpie"] = {
-		label = "Chicken Pot Pie",
-		description = "a classic comfort dish comprising tender chunks of chicken, mixed vegetables, and a creamy sauce encased in a flaky pastry crust",
-		weight = 250, -- In Grams
+
+	-- Dishes
+
+	["roastbeefwithpotatoes"] = {
+		label = "Roast Beef with Potatoes",
+		description = "Carefully roasted beef served tender and well-browned, accompanied by plainly prepared potatoes.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food01x",
+		prop = "p_cs_platestew01x",
 	},
 
-	-- Unique dish
-
-	["tbone"] = {
-		label = "T-Bone Steak",
-		description = "a premium cut of beef known for its T-shaped bone, separating the tenderloin and New York strip sections. Grilled or pan-seared to perfection",
-		weight = 250, -- In Grams
+	["beefstew"] = {
+		label = "Beef Stew",
+		description = "Slow-cooked beef gently simmered with potatoes and root vegetables until tender and well flavored.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
+		prop = "p_cs_platestew01x",
 	},
 
-	["boiledfishwithsauce"] = {
-		label = "Boiled Fish With Sauce",
-		description = "a simple yet flavorful dish featuring tender fish cooked in simmering water and accompanied by a savory sauce",
-		weight = 250, -- In Grams
+	["eggswithsausages"] = {
+		label = "Eggs with sausages",
+		description = "Fresh eggs plainly cooked and served alongside well-seasoned pork sausages.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_oyster_plate",
+		prop = "p_cs_platestew01x",
 	},
 
-	["crabsoup"] = {
-		label = "Crab Soup",
-		description = "a delightful culinary creation, blending the sweet and delicate flavors of crab meat with a savory broth",
-		weight = 250, -- In Grams
+	["fishchowder"] = {
+		label = "Fish Chowder",
+		description = "A hearty, creamy soup of tender fish, potatoes, and aromatic vegetables, gently simmered to bring out a rich, savory flavor.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["cornedporkandcabbage"] = {
+		label = "Corned pork and Cabbage",
+		description = "Salt-cured pork slowly cooked with fresh cabbage and root vegetables until tender.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["chickenanddumpling"] = {
+		label = "Chicken and Dumpling",
+		description = "Tender pieces of chicken simmered in a savory broth with soft, delicate dumplings.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	-- Desserts
+
+	["blackcurrantyogurt"] = {
+		label = "Blackcurrant Yogurt",
+		description = "Creamy, tangy yogurt gently flavored with ripe blackcurrants.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["applejello"] = {
+		label = "Apple Jello",
+		description = "Delicately set gelatin flavored with fresh apple, offering a light, sweet, and refreshing dessert.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["blancmange"] = {
+		label = "Blancmange",
+		description = "A smooth, creamy dessert made from milk, sugar, and a light thickening, often subtly flavored with vanilla.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	-- Emerald Ranch Unique
+	["chickeninbrowngravy"] = {
+		label = "Chicken In Brown Gravy",
+		description = "Hearty chicken meat simmered with Brown Gravy and a blend of bold spices.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_redbeanrice01x",
+	},
+
+	["stewedinredwine"] = {
+		label = "Stewed In Red Wine",
+		description = "Prepared quickly in the red wine for rich flavor and tender texture.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_capicola_meat",
+	},
+
+	["emeraldsteak"] = {
+		label = "Emerald Steak",
+		description = "A tradition Emerald Ranch food.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	-- Box Club
+	["hotdog"] = {
+		label = "Hotdog",
+		description = "Tender strips of bison quickly sautéed with fresh broccoli and savory seasonings for a flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bread_08_ab_slice_a",
+	},
+	["popcorn"] = {
+		label = "Popcorn",
+		description = "Tender strips of bison quickly sautéed with fresh broccoli and savory seasonings for a flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_candybag01x_red",
+	},
+	["cheesepie"] = {
+		label = "Cheese Pie",
+		description = "Tender strips of bison quickly sautéed with fresh broccoli and savory seasonings for a flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cornbread01x",
+	},
+	["boxing_bucket"] = {
+		label = "Boxing Bucket",
+		description = "Help Tool",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bucket06x",
+	},
+
+
+	-- Blackwater Unique
+	["instantpotbisonchili"] = {
+		label = "Instant Pot Bison Chili",
+		description = "Hearty bison meat simmered with beans, tomatoes, and a blend of bold spices, prepared quickly in the Instant Pot for rich flavor and tender texture.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_redbeanrice01x",
+	},
+
+	["bisonmeatloaf"] = {
+		label = "Deer Stir-Fry with Broccoli",
+		description = "Tender strips of bison quickly sautéed with fresh broccoli and savory seasonings for a flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_capicola_meat",
+	},
+
+	["deermeatloaf"] = {
+		label = "Deer Meatloaf",
+		description = "Tender strips of bison quickly sautéed with fresh broccoli and savory seasonings for a flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	-- Valentine Unique
+
+	["lampribs"] = {
+		label = "Lamp Ribs",
+		description = "Juicy lamb ribs seasoned and slow-cooked until tender, offering a rich, savory flavor.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_food02ax",
+	},
+
+	["pottedmixedmeat"] = {
+		label = "Potted Mixed Meat",
+		description = "A savory blend of finely chopped meats combined with tender potatoes and rich cheese, baked into a hearty, flavorful dish.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_food01ax_eaten",
+	},
+
+	["chilibeefstew"] = {
+		label = "Chili Beef Stew",
+		description = "Tender beef simmered with beans, tomatoes, and a blend of chili spices for a hearty, flavorful stew.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_tutlesoup01x",
+	},
+
+	-- Rhodes Unique
+
+	["venisonraguwithpappardelle"] = {
+		label = "Venison Ragu with Pappardelle",
+		description = "Slow-cooked venison in a rich, savory sauce, served over wide pappardelle.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "mp007_p_nat_plate_01x",
+	},
+
+	["skewerswithapplesandbacon"] = {
+		label = "Skewers with apples and bacon",
+		description = "Juicy skewers wrapped in crispy bacon, paired with sweet, caramelized apples. Smoky, savory, and perfectly balanced.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_food02x_eaten",
+	},
+
+	["alligatorstew"] = {
+		label = "Alligator Stew",
+		description = "Tender alligator meat simmered to perfection with hearty vegetables and rich, savory spices.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_tutlesoup01x",
+	},
+
+	-- St Denis Unique
+
+	["salmonhollandaise"] = {
+		label = "Salmon à la Hollandaise",
+		description = "Fresh, flaky salmon draped in a silky, buttery Hollandaise sauce.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_whitefishfilet01xb",
+	},
+
+	["poulardecreme"] = {
+		label = "Poularde à la Crème",
+		description = "Succulent chicken simmered in a rich, creamy sauce—decadent, comforting, and full of classic French flavor.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_redbeanrice01x",
+	},
+
+	["veauorloff"] = {
+		label = "Veau Orloff",
+		description = "Succulent chicken simmered in a rich, creamy sauce—decadent, comforting, and full of classic French flavor.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_capicola_meat",
+	},
+
+	-- Van Horn Unique
+
+	["stewedcrab"] = {
+		label = "Stewed Crab",
+		description = "Sweet, succulent crab simmered in a savory, spiced broth.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -5702,118 +7503,22 @@ return {
 		prop = "p_crab_plate",
 	},
 
-	["cowbowsteak"] = {
-		label = "Cowbow Steak",
-		description = "a thick, bone-in ribeye steak known for its generous marbling and robust flavor",
-		weight = 250, -- In Grams
+	["fishpie"] = {
+		label = "Fish Pie",
+		description = "Flaky fish baked in a creamy, savory filling under a golden, buttery crust.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
+		prop = "p_crab_cakes01x",
 	},
 
-	["cottagepie"] = {
-		label = "Cottage Pie",
-		description = "a comforting British dish comprised of seasoned ground meat—usually beef—mixed with vegetables and topped with a layer of creamy mashed potatoes",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food01x",
-	},
-
-	["smokedcornedbeef"] = {
-		label = "Smoked Corned Beef",
-		description = "a delicious twist on the classic, featuring corned beef brisket that has been seasoned, cured, and then smoked to perfection",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food03x",
-	},
-
-	["vegetablestew"] = {
-		label = "Vegetable Stew",
-		description = "a wholesome and flavorful dish featuring a medley of assorted vegetables cooked in a savory broth",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_camp_plate_01x",
-	},
-
-	["spaghettiallevongole"] = {
-		label = "Spaghetti Alle Vongole",
-		description = "a classic Italian pasta dish featuring perfectly cooked spaghetti tossed with fresh clams, garlic, white wine, and parsley",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_camp_plate_01x",
-	},
-
-	["hotbeansoup"] = {
-		label = "Hot Bean Soup",
-		description = "a comforting and flavorful dish made from a hearty blend of beans, vegetables, and often spices, served piping hot",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_camp_plate_01x",
-	},
-
-	["pumpkinsoup"] = {
-		label = "Pumpkin Soup",
-		description = "a velvety and flavorful dish made from pureed pumpkin, often blended with aromatic spices, broth, and cream",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_camp_plate_01x",
-	},
-
-	["bbqribs"] = {
-		label = "BBQ Ribs",
-		description = "a mouthwatering delight, featuring pork or beef ribs slow-cooked to perfection and generously coated in smoky and tangy barbecue sauce",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
-	},
-
-	["ribeyesteak"] = {
-		label = "Ribeye Steak",
-		description = "a premium cut of beef celebrated for its exceptional tenderness and rich marbling. This succulent steak, often grilled or pan-seared",
-		weight = 250, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
-	},
-
-	["oysters"] = {
-		label = "Oysters",
-		description = "prized shellfish known for their briny and delicate flavor. Served fresh on the half shell, these mollusks offer a unique taste of the sea",
-		weight = 250, -- In Grams
+	["pickledfish"] = {
+		label = "Pickled Fish",
+		description = "Delicately cured fish with tangy, zesty pickling spices.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -5822,23 +7527,72 @@ return {
 		prop = "p_oyster_plate",
 	},
 
-	["filetmignon"] = {
-		label = "Filet Mignon",
-		description = "a tender and premium cut of beef, taken from the smaller end of the tenderloin. Renowned for its exceptional tenderness and mild flavor",
-		weight = 250, -- In Grams
+
+	-- GAMO TIN OKUR KAI YUKI
+
+	["smokydelight"] = {
+		label = "Smoky Delight",
+		description = "Crispy bacon stacked between fresh bread for a hearty, savory bite that satisfies every time.",
+		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_food02x",
+		prop = "prop_sandwich_01",
 	},
 
-	-- Desert dish
+	["staltedstack"] = {
+		label = "Stalted Stack",
+		description = "Soft, golden pancakes infused with savory herbs and seasonings, perfect for a comforting and flavorful meal.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_main_breastmutton01x",
+	},
 
-	["applepie"] = {
+	["morningmelt"] = {
+		label = "Morning Melt",
+		description = "A warm, toasted bagel filled with fluffy eggs, perfectly cooked and packed with comforting breakfast flavor.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_liversandwich01x",
+	},
+
+	["countrychickenpie"] = {
+		label = "Country Chicken Pie",
+		description = "Tender chicken and mixed vegetables cooked in a rich, savory sauce, baked inside a flaky.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_pie01x",
+	},
+
+	["crosssavory"] = {
+		label = "Cross & Savory",
+		description = "Buttery, layered croissant filled with rich, melted cheese and smoky bacon.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_crab_cakes01x",
+	},
+
+	["gapplepie"] = {
 		label = "Apple Pie",
-		description = "a classic dessert that features sweet and spiced apple filling encased in a flaky pie crust",
+		description = "Grannys Secret, gently spiced and caramelized for a perfectly balanced dessert.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
@@ -5848,182 +7602,741 @@ return {
 		prop = "p_pie01x",
 	},
 
-	["trifle"] = {
-		label = "Trifle",
-		description = "a delightful and layered dessert, typically composed of sponge cake or ladyfingers, custard, fruit, and whipped cream",
+	["applejuice"] = {
+		label = "Apple Juice",
+		description = "Fresh apple juice sweet and refreshing.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_pie01x",
+		prop = "p_cs_bottleslim01x",
 	},
 
-	["floatingisland"] = {
-		label = "Floating Island",
-		description = "a delicate dessert consisting of a poached meringue floating on a sea of vanilla custard",
+
+
+
+
+
+
+
+	-- Strawberry Unique
+
+	["stewedduck"] = {
+		label = "Stewed Duck",
+		description = "A whole duck stuffed with breadcrumbs, tomato, thyme, parsley, onion, and honey,",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_biscuits01x",
+		prop = "p_tutlesoup01x",
 	},
 
-	["irishlemonpudding"] = {
-		label = "Irish Lemon Pudding",
-		description = "a delightful dessert featuring a light and tangy lemon-flavored sponge cake atop a layer of zesty lemon sauce",
+	["stuffedroastduck"] = {
+		label = "Stuffed Roast Duck",
+		description = "A half duck stuffed with breadcrumbs, butter, onion, parsley, and thyme, then roasted until tender.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cornbread01x",
+		prop = "p_food02ax",
 	},
 
-	["chocolatemousse"] = {
-		label = "Chocolate Mousse",
-		description = "a luxurious and velvety dessert made from rich, melted chocolate folded into whipped cream or egg whites",
+	["roastwildduckwithsaltpork"] = {
+		label = "Stuffed Roast Deer",
+		description = "Wild deer tends to be lean, so thin slices of salt pork were laid over the breast during roasting to prevent dryness.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_re_chocolate01x",
+		prop = "p_whitefishfilet01xb",
 	},
 
-	["gingerbread"] = {
-		label = "Gingerbread",
-		description = "a warmly spiced and sweetened cake or cookie, often made with molasses and ginger",
+	-- Valentine Tavern
+
+	["spicychickensausages"] = {
+		label = "Spicy Chicken Sausages",
+		description = "Juicy chicken sausages with a fiery kick, packed with bold spices for a smoky, savory bite.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_cornbread01x",
+		prop = "p_cs_sausage01x",
 	},
 
-	["mincepie"] = {
-		label = "Mince Pie",
-		description = "a festive and traditional British pastry filled with a mixture called mincemeat, typically made of dried fruits, spices, suet, and sometimes a hint of brandy or citrus",
+	["dicedchicken"] = {
+		label = "Diced Chicken",
+		description = "Tender chicken cubes tossed with fresh, vibrant vegetables.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_pie01x",
+		prop = "p_cs_platestew01x",
 	},
 
-	["icecream"] = {
-		label = "Ice Cream",
-		description = "a creamy and frozen dessert enjoyed worldwide. Made from a mixture of milk, cream, sugar, and flavorings, it comes in various flavors and textures",
+	["beercanchicken"] = {
+		label = "Beer Can Chicken",
+		description = "Whole chicken roasted to juicy perfection on a can of beer.",
 		weight = 150, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_pie01x",
+		prop = "p_jerkydressing",
 	},
+
+	-- SD Tavern
+
+	["boiledmuttonwithturnips"] = {
+		label = "Boiled Mutton",
+		description = "Juicy mutton with turn nips.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_tutlesoup01x",
+	},
+
+	["rabbitsew"] = {
+		label = "Rabbit Stew",
+		description = "Tender rabbit stew tossed with fresh, vibrant vegetables.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["spaggettimeatballs"] = {
+		label = "Spaggetti Meatballs",
+		description = "Whole meatballs roasted to juicy perfection on a can of beer.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_food02ax",
+	},
+
+	-- Thieves Landing Saloon
+
+	["spicykettlesausages"] = {
+		label = "Spicy Kettle Sausages",
+		description = "Juicy kettle sausages with a fiery kick, packed with bold spices for a smoky, savory bite.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_sausage01x",
+	},
+
+	["dicedrattler"] = {
+		label = "Diced Rattler",
+		description = "Tender chicken cubes tossed with fresh, vibrant vegetables.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_cs_platestew01x",
+	},
+
+	["iltorosteak"] = {
+		label = "Il Toro Steak",
+		description = "Eat more than 2 and you will go to speranza.",
+		weight = 150, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_jerkydressing",
+	},
+
+
+
+	-- ["mushroomsoup"] = {
+	-- 	label = "Mushroom soup",
+	-- 	description = "a savory and comforting dish made from a flavorful broth infused with various types of mushrooms",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cs_platestew01x",
+	-- },
+
+	-- ["grilledpotatoes"] = {
+	-- 	label = "Grilled potatoes with cheese",
+	-- 	description = "a delectable dish featuring tender, crispy potatoes cooked on the grill and topped with melted cheese",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cs_platestew01x",
+	-- },
+
+	-- ["friedeggsbeacon"] = {
+	-- 	label = "Fried Eggs & Beacon",
+	-- 	description = "a classic breakfast combination that features sunny-side-up or over-easy eggs cooked in sizzling bacon fat",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food01ax",
+	-- },
+
+	-- ["grilledsausage"] = {
+	-- 	label = "Grilled Sausage",
+	-- 	description = "a flavorful and savory delight created by cooking seasoned sausages on an open flame or grill",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food01ax",
+	-- },
+
+	-- ["cornbread"] = {
+	-- 	label = "Corn Bread",
+	-- 	description = "a moist and slightly crumbly bread made from cornmeal, giving it a distinctively sweet and hearty flavor",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food01ax",
+	-- },
+
+	-- -- Main dish
+
+	-- ["grilledsteak"] = {
+	-- 	label = "Grilled steak",
+	-- 	description = "a culinary delight featuring a thick, well-seasoned cut of beef cooked over an open flame or on a grill",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+	-- ["sweetpotatostew"] = {
+	-- 	label = "Sweet Potato Stew",
+	-- 	description = "a hearty and flavorful dish made with chunks of sweet potatoes, vegetables, and often protein like beans or meat, all simmered in a savory broth",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cs_platestew01x",
+	-- },
+	-- ["frenchfriescheese"] = {
+	-- 	label = "French Fries & Cheese",
+	-- 	description = "delectable treat featuring golden and crispy fries topped with melted cheese",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cs_platestew01x",
+	-- },
+	-- ["chickenpotpie"] = {
+	-- 	label = "Chicken Pot Pie",
+	-- 	description = "a classic comfort dish comprising tender chunks of chicken, mixed vegetables, and a creamy sauce encased in a flaky pastry crust",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food01x",
+	-- },
+
+	-- -- Unique dish
+
+	-- ["tbone"] = {
+	-- 	label = "T-Bone Steak",
+	-- 	description = "a premium cut of beef known for its T-shaped bone, separating the tenderloin and New York strip sections. Grilled or pan-seared to perfection",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+
+	-- ["boiledfishwithsauce"] = {
+	-- 	label = "Boiled Fish With Sauce",
+	-- 	description = "a simple yet flavorful dish featuring tender fish cooked in simmering water and accompanied by a savory sauce",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_oyster_plate",
+	-- },
+
+	-- ["crabsoup"] = {
+	-- 	label = "Crab Soup",
+	-- 	description = "a delightful culinary creation, blending the sweet and delicate flavors of crab meat with a savory broth",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_crab_plate",
+	-- },
+
+	-- ["cowbowsteak"] = {
+	-- 	label = "Cowbow Steak",
+	-- 	description = "a thick, bone-in ribeye steak known for its generous marbling and robust flavor",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+
+	-- ["cottagepie"] = {
+	-- 	label = "Cottage Pie",
+	-- 	description = "a comforting British dish comprised of seasoned ground meat—usually beef—mixed with vegetables and topped with a layer of creamy mashed potatoes",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food01x",
+	-- },
+
+	-- ["smokedcornedbeef"] = {
+	-- 	label = "Smoked Corned Beef",
+	-- 	description = "a delicious twist on the classic, featuring corned beef brisket that has been seasoned, cured, and then smoked to perfection",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food03x",
+	-- },
+
+	-- ["vegetablestew"] = {
+	-- 	label = "Vegetable Stew",
+	-- 	description = "a wholesome and flavorful dish featuring a medley of assorted vegetables cooked in a savory broth",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_camp_plate_01x",
+	-- },
+
+	-- ["spaghettiallevongole"] = {
+	-- 	label = "Spaghetti Alle Vongole",
+	-- 	description = "a classic Italian pasta dish featuring perfectly cooked spaghetti tossed with fresh clams, garlic, white wine, and parsley",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_camp_plate_01x",
+	-- },
+
+	-- ["hotbeansoup"] = {
+	-- 	label = "Hot Bean Soup",
+	-- 	description = "a comforting and flavorful dish made from a hearty blend of beans, vegetables, and often spices, served piping hot",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_camp_plate_01x",
+	-- },
+
+	-- ["pumpkinsoup"] = {
+	-- 	label = "Pumpkin Soup",
+	-- 	description = "a velvety and flavorful dish made from pureed pumpkin, often blended with aromatic spices, broth, and cream",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_camp_plate_01x",
+	-- },
+
+	-- ["bbqribs"] = {
+	-- 	label = "BBQ Ribs",
+	-- 	description = "a mouthwatering delight, featuring pork or beef ribs slow-cooked to perfection and generously coated in smoky and tangy barbecue sauce",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+
+	-- ["ribeyesteak"] = {
+	-- 	label = "Ribeye Steak",
+	-- 	description = "a premium cut of beef celebrated for its exceptional tenderness and rich marbling. This succulent steak, often grilled or pan-seared",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+
+	-- ["oysters"] = {
+	-- 	label = "Oysters",
+	-- 	description = "prized shellfish known for their briny and delicate flavor. Served fresh on the half shell, these mollusks offer a unique taste of the sea",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_oyster_plate",
+	-- },
+
+	-- ["filetmignon"] = {
+	-- 	label = "Filet Mignon",
+	-- 	description = "a tender and premium cut of beef, taken from the smaller end of the tenderloin. Renowned for its exceptional tenderness and mild flavor",
+	-- 	weight = 250, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_food02x",
+	-- },
+
+	-- -- Desert dish
+
+	-- ["applepie"] = {
+	-- 	label = "Apple Pie",
+	-- 	description = "a classic dessert that features sweet and spiced apple filling encased in a flaky pie crust",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_pie01x",
+	-- },
+
+	-- ["trifle"] = {
+	-- 	label = "Trifle",
+	-- 	description = "a delightful and layered dessert, typically composed of sponge cake or ladyfingers, custard, fruit, and whipped cream",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_pie01x",
+	-- },
+
+	-- ["floatingisland"] = {
+	-- 	label = "Floating Island",
+	-- 	description = "a delicate dessert consisting of a poached meringue floating on a sea of vanilla custard",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_biscuits01x",
+	-- },
+
+	-- ["irishlemonpudding"] = {
+	-- 	label = "Irish Lemon Pudding",
+	-- 	description = "a delightful dessert featuring a light and tangy lemon-flavored sponge cake atop a layer of zesty lemon sauce",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cornbread01x",
+	-- },
+
+	-- ["chocolatemousse"] = {
+	-- 	label = "Chocolate Mousse",
+	-- 	description = "a luxurious and velvety dessert made from rich, melted chocolate folded into whipped cream or egg whites",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_re_chocolate01x",
+	-- },
+
+	-- ["gingerbread"] = {
+	-- 	label = "Gingerbread",
+	-- 	description = "a warmly spiced and sweetened cake or cookie, often made with molasses and ginger",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_cornbread01x",
+	-- },
+
+	-- ["mincepie"] = {
+	-- 	label = "Mince Pie",
+	-- 	description = "a festive and traditional British pastry filled with a mixture called mincemeat, typically made of dried fruits, spices, suet, and sometimes a hint of brandy or citrus",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_pie01x",
+	-- },
+
+	-- ["icecream"] = {
+	-- 	label = "Ice Cream",
+	-- 	description = "a creamy and frozen dessert enjoyed worldwide. Made from a mixture of milk, cream, sugar, and flavorings, it comes in various flavors and textures",
+	-- 	weight = 150, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_pie01x",
+	-- },
 
 	-- SALOON Drink
 
 	-- first dish
 
-	["austinsvodka"] = {
-		label = "Austins Vodka",
-		description = "a premium spirit crafted with meticulous attention to detail. Distilled from high-quality grains",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["austinsvodka"] = {
+	-- 	label = "Austins Vodka",
+	-- 	description = "a premium spirit crafted with meticulous attention to detail. Distilled from high-quality grains",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["oldwestvodka"] = {
-		label = "Old West Vodka",
-		description = "a tribute to the timeless spirit of the American frontier. Crafted with care and distilled from select grains",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["oldwestvodka"] = {
+	-- 	label = "Old West Vodka",
+	-- 	description = "a tribute to the timeless spirit of the American frontier. Crafted with care and distilled from select grains",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["elixirvodka"] = {
-		label = "Elixir Vodka",
-		description = "a refined and premium spirit, expertly crafted for a distinctive drinking experience. Distilled with precision and care",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["elixirvodka"] = {
+	-- 	label = "Elixir Vodka",
+	-- 	description = "a refined and premium spirit, expertly crafted for a distinctive drinking experience. Distilled with precision and care",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["goldsandvodka"] = {
-		label = "Gold Sand Vodka",
-		description = "an exquisite spirit that combines purity with a touch of luxury. Distilled to perfection",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["goldsandvodka"] = {
+	-- 	label = "Gold Sand Vodka",
+	-- 	description = "an exquisite spirit that combines purity with a touch of luxury. Distilled to perfection",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["vistavodka"] = {
-		label = "Vista Vodka",
-		description = "a finely crafted spirit that embodies purity and sophistication. Distilled with precision and care",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["vistavodka"] = {
+	-- 	label = "Vista Vodka",
+	-- 	description = "a finely crafted spirit that embodies purity and sophistication. Distilled with precision and care",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["laternlorevodka"] = {
-		label = "Lantern Lore Vodka",
-		description = "an artisanal spirit that marries tradition with innovation. Distilled with precision and passion, this vodka embodies a harmonious blend of smoothness",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["laternlorevodka"] = {
+	-- 	label = "Lantern Lore Vodka",
+	-- 	description = "an artisanal spirit that marries tradition with innovation. Distilled with precision and passion, this vodka embodies a harmonious blend of smoothness",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["colonialvodka"] = {
-		label = "Colonial Vodka",
-		description = "a refined spirit that pays homage to the past with a modern twist. Crafted with precision and care, this vodka offers a smooth and versatile profile",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottle010x",
-	},
+	-- ["colonialvodka"] = {
+	-- 	label = "Colonial Vodka",
+	-- 	description = "a refined spirit that pays homage to the past with a modern twist. Crafted with precision and care, this vodka offers a smooth and versatile profile",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottle010x",
+	-- },
 
-	["buffalotracewhiskey"] = {
-		label = "Buffalo Trace Whiskey",
-		description = "a distinguished American whiskey known for its rich and complex flavor profile, this bourbon offers a balance of sweetness, spice, and oaky notes",
-		weight = 300, -- In Grams
+	-- ["buffalotracewhiskey"] = {
+	-- 	label = "Buffalo Trace Whiskey",
+	-- 	description = "a distinguished American whiskey known for its rich and complex flavor profile, this bourbon offers a balance of sweetness, spice, and oaky notes",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["oldforesterwhiskey"] = {
+	-- 	label = "Old Forester Whiskey",
+	-- 	description = "a renowned American whiskey with a storied history, produced by the Brown-Forman Corporation. Recognized for its consistency and rich flavor",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["jamesonwhiskey"] = {
+	-- 	label = "Jameson Whiskey",
+	-- 	description = "a globally recognized and beloved spirit. Distilled in Ireland, it is celebrated for its smooth and approachable character",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["fourroseswhiskey"] = {
+	-- 	label = "Four Roses Whiskey",
+	-- 	description = "a distinguished American bourbon known for its exceptional quality and distinctive character. Crafted with a unique blend of ten meticulously selected recipes",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["wildturkeywhiskey"] = {
+	-- 	label = "Wild Turkey Whiskey",
+	-- 	description = "a bold and robust American bourbon renowned for its full-bodied flavor and high proof. Crafted with a unique blend of corn, rye and barley",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["jackdanielwhiskey"] = {
+	-- 	label = "Jack Daniels Whiskey",
+	-- 	description = "an iconic American spirit recognized worldwide. Distilled in Lynchburg, Tennessee, its renowned for its smooth and mellow character",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["oldgrandwhiskey"] = {
+	-- 	label = "Old Grand - Dad Whiskey",
+	-- 	description = "a classic American whiskey with a legacy known for its bold and robust flavor profile, this bourbon features a high rye mash bill",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_whiskey01x",
+	-- },
+
+	-- ["sauzatequila"] = {
+	-- 	label = "Sauza Tequila",
+	-- 	description = "A classic tequila produced on Jalisco, Mexico",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_gen_bottletequila01x",
+	-- },
+	["bayoubarrelreserve"] = {
+		label = "Bayou Reserve",
+		description = "a whiskey made in Saint Denis Tavern",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6031,11 +8344,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["oldforesterwhiskey"] = {
-		label = "Old Forester Whiskey",
-		description = "a renowned American whiskey with a storied history, produced by the Brown-Forman Corporation. Recognized for its consistency and rich flavor",
-		weight = 300, -- In Grams
+	["thiefswhiskey"] = {
+		label = "Dam",
+		description = "a whiskey made in Thieves Landing Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6043,11 +8355,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["jamesonwhiskey"] = {
-		label = "Jameson Whiskey",
-		description = "a globally recognized and beloved spirit. Distilled in Ireland, it is celebrated for its smooth and approachable character",
-		weight = 300, -- In Grams
+	["blackwaterwhiskey"] = {
+		label = "Old Soul",
+		description = "a whiskey made in Blackwater Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6055,11 +8366,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["fourroseswhiskey"] = {
-		label = "Four Roses Whiskey",
-		description = "a distinguished American bourbon known for its exceptional quality and distinctive character. Crafted with a unique blend of ten meticulously selected recipes",
-		weight = 300, -- In Grams
+	["strawberrywhiskey"] = {
+		label = "The Slow Burn",
+		description = "a whiskey made in Strawberry Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6067,11 +8377,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["wildturkeywhiskey"] = {
-		label = "Wild Turkey Whiskey",
-		description = "a bold and robust American bourbon renowned for its full-bodied flavor and high proof. Crafted with a unique blend of corn, rye and barley",
-		weight = 300, -- In Grams
+	["valentinewhiskey"] = {
+		label = "Ironwood & Co.",
+		description = "a whiskey made in Valentine Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6079,11 +8388,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["jackdanielwhiskey"] = {
-		label = "Jack Daniels Whiskey",
-		description = "an iconic American spirit recognized worldwide. Distilled in Lynchburg, Tennessee, its renowned for its smooth and mellow character",
-		weight = 300, -- In Grams
+	["valentinetavernwhiskey"] = {
+		label = "Golden Lantern",
+		description = "a whiskey made in Valentine Tavern",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6091,11 +8399,10 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["oldgrandwhiskey"] = {
-		label = "Old Grand - Dad Whiskey",
-		description = "a classic American whiskey with a legacy known for its bold and robust flavor profile, this bourbon features a high rye mash bill",
-		weight = 300, -- In Grams
+	["rhodeswhiskey"] = {
+		label = "King Shade",
+		description = "a whiskey made in Rhodes Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6103,41 +8410,511 @@ return {
 		allowArmed = true, -- should we let them use with weapons?
 		prop = "s_inv_whiskey01x",
 	},
-
-	["sauzatequila"] = {
-		label = "Sauza Tequila",
-		description = "A classic tequila produced on Jalisco, Mexico",
-		weight = 300, -- In Grams
+	["saintdeniswhiskey"] = {
+		label = "Crown & Grain",
+		description = "a whiskey made in Saint Denis Saloon",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_gen_bottletequila01x",
+		prop = "s_inv_whiskey01x",
 	},
-
+	["vanhornwhiskey"] = {
+		label = "Dust & Lead",
+		description = "a whiskey made in Van Horn Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_inv_whiskey01x",
+	},
+	["emeraldwhiskey"] = {
+		label = "Green Cow",
+		description = "a whiskey made in Emerald Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_inv_whiskey01x",
+	},
+	["thiefsrum"] = {
+		label = "Blue Gate",
+		description = "a rum made in Thieves Landing Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["emeraldrum"] = {
+		label = "Green Horizon",
+		description = "a rum made in Emerald Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["blackwaterum"] = {
+		label = "Black Horizon",
+		description = "a rum made in Blackwater Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["strawberryrum"] = {
+		label = "Marrow Bay",
+		description = "a rum made in Strawberry Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["valentinerum"] = {
+		label = "Marooned",
+		description = "a rum made in Valentine Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["valentinetavernrum"] = {
+		label = "Dead Star",
+		description = "a rum made in Valentine Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["rhodesrum"] = {
+		label = "Coral Ember",
+		description = "a rum made in Rhodes Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["saintdenisrum"] = {
+		label = "Meridian",
+		description = "a rum made in Saint Denis Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["vanhornrum"] = {
+		label = "Black Corsair",
+		description = "a rum made in Van Horn Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlenavyrum01x",
+	},
+	["lemoyneblacktide"] = {
+		label = "Lemoyne Blacktide",
+		description = "a rum made in Saint Denis Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["thiefstequila"] = {
+		label = "Space Tower",
+		description = "a tequila made in Thieves Landing Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["emeraldtequila"] = {
+		label = "Yellow Love",
+		description = "a tequila made in Emerald Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["blackwatertequila"] = {
+		label = "Sol De Hierro",
+		description = "a tequila made in Blackwater Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["strawberrytequila"] = {
+		label = "Cuatro Valles",
+		description = "a tequila made in Strawberry Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["valentinetequila"] = {
+		label = "Tierra Viva",
+		description = "a tequila made in Valentine Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["valentinemcshinetequila"] = {
+		label = "Sadie McShine's Tequila",
+		description = "Let's drink to this",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["valentinetaverntequila"] = {
+		label = "La Sombra",
+		description = "a tequila made in Valentine Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["rhodestequila"] = {
+		label = "JNoche Brava",
+		description = "a tequila made in Rhodes Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["saintdenistequila"] = {
+		label = "Rey Del Agave ",
+		description = "a tequila made in Saint Denis Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["vanhorntequila"] = {
+		label = "Hijo De Viento",
+		description = "a tequila made in Van Horn Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottletequila01x",
+	},
+	["thiefswhitewine"] = {
+		label = "White in Bird",
+		description = "a white wine made in Thieves Landing Saloon ",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["thiefsredwine"] = {
+		label = "Red in Bird",
+		description = "a white wine made in Thieves Landing Saloon ",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["emeralwhitewine"] = {
+		label = "White in Ranch",
+		description = "a white wine made in Emerald Saloon ",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["blackwaterwhitewine"] = {
+		label = "Monte Chiaro",
+		description = "a white wine made in Blackwater Saloon ",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["strawberrywhitewin"] = {
+		label = "Morning Fog",
+		description = "a white wine made in Strawberry Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["silverbloom"] = {
+		label = "Silver Blood",
+		description = "a white wine made in Saint Denis Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["valentinewhitewine"] = {
+		label = "Willow Blanc",
+		description = "a white wine made in Valentine Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["valentinetavernwhitewine"] = {
+		label = "Lightbrook",
+		description = "a white wine made in Valentine Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["rhodeswhitewine"] = {
+		label = "Moon Lore",
+		description = "a white wine made in Rhodes Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["saintdeniswhitewine"] = {
+		label = "Seraphine",
+		description = "a white wine made in Saint Denis Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["vanhornwhitewine"] = {
+		label = "Bandit Blanc",
+		description = "a white wine made in Van Horn Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine03x",
+	},
+	["emeraldredwine"] = {
+		label = "Gura Bradock",
+		description = "a red wine made in Emerald Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["blackwaterredwine"] = {
+		label = "Luna Rubra",
+		description = "a red wine made in Blackwater Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["valentineredwine"] = {
+		label = "Red Dominion",
+		description = "a red wine made in Valentine Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["strawberryredwine"] = {
+		label = "Bloodoak",
+		description = "a red wine made in Strawberry Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["valentinetavernredwine"] = {
+		label = " Wild Rubis",
+		description = "a red wine made in Valentine Tavern",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["rhodesredwine"] = {
+		label = "Velvet Ember",
+		description = "a red wine made in Rhodes Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["saintdenisredwine"] = {
+		label = "Rouge Amour",
+		description = "a red wine made in Saint Denis Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["vanhornredwine"] = {
+		label = "Red Viper",
+		description = "a red wine made in Van Horn Saloon",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlewine02x",
+	},
+	["mcfaddenbeer"] = {
+		label = "McFadden Beer",
+		description = "Red head beer from far away.",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 8320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlebeer01a_3",
+	},
+	["beer"] = {
+		label = "Beer",
+		description = "A rough-and-ready brew with a bitter bite. Best enjoyed after hard work or harder living.",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_bottlebeer01a",
+	},
 	["stoutbeer"] = {
 		label = "Stout Beer",
-		description = "a dark and rich brew with a robust flavor profile. Typically characterized by notes of roasted malt, chocolate, and coffee, stout is known for its full-bodied",
-		weight = 300, -- In Grams
+		description = "a dark and rich brew with a robust flavor profile.",
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlebeer02x",
+		prop = "p_bottle008x",
 	},
-
 	["sprucebeer"] = {
 		label = "Spruce Beer",
-		description = "a traditional beverage made from the tips or essence of spruce trees. Dating back to colonial times, this non-alcoholic drink boasts a distinctive piney and resinous flavor",
-		weight = 300, -- In Grams
+		description = "a traditional beverage made from the tips or essence of spruce trees.",
+		weight = 50, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlebeer03x",
+		prop = "p_bottlebeer01x",
 		client = {
 			image = "beer.png",
 		},
@@ -6146,7 +8923,7 @@ return {
 	["lemonadeandfruitpunch"] = {
 		label = "Lemonade And Fruit Punch",
 		description = "refreshing non-alcoholic beverages that combine the tartness of lemon with a medley of fruity flavors",
-		weight = 300, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6155,93 +8932,105 @@ return {
 		prop = "p_bottlejd_used01x",
 	},
 
-	["barbadosrum"] = {
-		label = "Barbados Rum",
-		description = "a distinguished Caribbean spirit, celebrated for its smooth and nuanced flavor profile. Crafted with sugarcane molasses or juice",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["barbadosrum"] = {
+	-- 	label = "Barbados Rum",
+	-- 	description = "a distinguished Caribbean spirit, celebrated for its smooth and nuanced flavor profile. Crafted with sugarcane molasses or juice",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["navyrum"] = {
-		label = "Navy Rum",
-		description = "associated with naval traditions, is a robust and full-bodied spirit. Often aged for prolonged periods, it carries a deep, rich flavor profile with notes of molasses, caramel, and oak",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["navyrum"] = {
+	-- 	label = "Navy Rum",
+	-- 	description = "associated with naval traditions, is a robust and full-bodied spirit. Often aged for prolonged periods, it carries a deep, rich flavor profile with notes of molasses, caramel, and oak",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["cubanrum"] = {
-		label = "Cuban Rum",
-		description = "a renowned Caribbean spirit celebrated for its smooth and vibrant character. Crafted from sugarcane molasses, it undergoes meticulous aging in tropical conditions",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["cubanrum"] = {
+	-- 	label = "Cuban Rum",
+	-- 	description = "a renowned Caribbean spirit celebrated for its smooth and vibrant character. Crafted from sugarcane molasses, it undergoes meticulous aging in tropical conditions",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["martiniquerum"] = {
-		label = "Martinique Rum",
-		description = "a distinctive Caribbean spirit known for its French Caribbean influence and unique production methods. Produced on the island of Martinique",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["martiniquerum"] = {
+	-- 	label = "Martinique Rum",
+	-- 	description = "a distinctive Caribbean spirit known for its French Caribbean influence and unique production methods. Produced on the island of Martinique",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["rhumbullionrum"] = {
-		label = "Rhumbullion Rum",
-		description = "a distinctive and spiced Caribbean spirit that adds a unique twist to traditional rum. Crafted with a blend of rich Caribbean rums, it features notes of orange peel, cinnamon, and vanilla",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["rhumbullionrum"] = {
+	-- 	label = "Rhumbullion Rum",
+	-- 	description = "a distinctive and spiced Caribbean spirit that adds a unique twist to traditional rum. Crafted with a blend of rich Caribbean rums, it features notes of orange peel, cinnamon, and vanilla",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["demerararum"] = {
-		label = "Demerara Rum",
-		description = "a renowned Caribbean spirit, hailing from the Demerara region of Guyana. Distinctive for its deep and rich flavor profile, it is often characterized by notes of molasses, toffee, and dark chocolate",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
-	},
+	-- ["demerararum"] = {
+	-- 	label = "Demerara Rum",
+	-- 	description = "a renowned Caribbean spirit, hailing from the Demerara region of Guyana. Distinctive for its deep and rich flavor profile, it is often characterized by notes of molasses, toffee, and dark chocolate",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
 
-	["newenglandrum"] = {
-		label = "New England Rum",
-		description = "a distinct American spirit rooted in the regions maritime history. Crafted with a combination of molasses and a variety of spices, it offers a nuanced and flavorful profile",
+	-- ["newenglandrum"] = {
+	-- 	label = "New England Rum",
+	-- 	description = "a distinct American spirit rooted in the regions maritime history. Crafted with a combination of molasses and a variety of spices, it offers a nuanced and flavorful profile",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "s_inv_rum01x",
+	-- },
+
+	["crimsonofcaligahall"] = {
+		label = "Crimson Of Calica Hall",
+		description = "a gin made in Saint Denis Tavern",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_inv_rum01x",
+		prop = "s_inv_gin02x",
 	},
 
 	["tanquerygin"] = {
 		label = "Tanquery Gin",
-		description = "a classic London Dry Gin renowned for its crisp and refreshing taste. Distilled with botanicals such as juniper, coriander, angelica root, and citrus peels, it delivers a well-balanced and aromatic profile",
+		description = "a gin made in Emerald Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6253,7 +9042,7 @@ return {
 
 	["oldtomgin"] = {
 		label = "Old Tom Gin",
-		description = "a traditional and slightly sweeter style of gin with a history dating, it features botanicals like juniper, coriander, and citrus, and often includes a touch of sweetness",
+		description = "a gin made in Black Water Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6265,7 +9054,7 @@ return {
 
 	["hollandsgin"] = {
 		label = "Hollands Gin",
-		description = "referred to as Genever or Dutch Gin, is a traditional spirit with roots in the Netherlands. Distinct from London Dry Gin, it typically features a maltier and more robust flavor profile",
+		description = "a gin made in Saint Denis Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6277,7 +9066,7 @@ return {
 
 	["boothsgin"] = {
 		label = "Booths Gin",
-		description = "a classic and significant London Dry Gin known for its traditional and balanced flavor profile, it incorporates a blend of botanicals, including juniper, coriander, and citrus peels",
+		description = "a gin made in Rhodes Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6289,7 +9078,7 @@ return {
 
 	["plymouthgin"] = {
 		label = "Plymouth Gin",
-		description = "a distinctive and historic English gin with a legacy known for its smooth and slightly sweet profile, it features a harmonious blend of botanicals, including juniper, coriander, and cardamom",
+		description = "a gin made in Strawberry Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6301,7 +9090,7 @@ return {
 
 	["beefeatergin"] = {
 		label = "Beefeater Gin",
-		description = "a renowned London Dry Gin known for its iconic bottle and crisp, well-balanced flavor. Distilled in the heart of London since 1863, it features a classic botanical blend, including juniper, citrus, and angelica root",
+		description = "a gin made in Valentine Saloon",
 		weight = 300, -- In Grams
 		stack = true,
 		decay = true,
@@ -6313,8 +9102,7 @@ return {
 
 	["gordongin"] = {
 		label = "Gordons Gin",
-		description = "a classic London Dry Gin with a heritage dating back to 1769. Recognized for its timeless quality, it boasts a juniper-forward profile complemented by citrus notes and a blend of botanicals",
-		weight = 300, -- In Grams
+		description = "a gin made in Valentine Tavern",
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -6323,336 +9111,339 @@ return {
 		prop = "s_inv_gin02x",
 	},
 
-	["sparklingwine"] = {
-		label = "Sparkling Wine",
-		description = "a bubbly and effervescent beverage, celebrated for its lively carbonation, typically made using traditional methods or in stainless steel tanks",
-		weight = 300, -- In Grams
+	["horngin"] = {
+		label = "Horn Gin",
+		description = "a gin made in Van Horn Saloon",
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine04x",
+		prop = "s_inv_gin02x",
 	},
 
-	["greatwesternredwine"] = {
-		label = "Great Western Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
+	["stellmontisgin"] = {
+		label = "Stella Montis Gin",
+		description = "a gin made in Thieves Landing Saloon",
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
+		prop = "s_inv_gin02x",
 	},
 
-	["greatwesternwhitewine"] = {
-		label = "Great Western White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["oldmissionredwine"] = {
-		label = "Old Mission Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["oldmissionwhitewine"] = {
-		label = "Old Mission White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["almadenredwine"] = {
-		label = "Almaden Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["almadenwhitewine"] = {
-		label = "Almaden White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["buenavistawredwine"] = {
-		label = "Buena Vista Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["buenavistawhitewine"] = {
-		label = "Buena Vista White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["inglenookredwine"] = {
-		label = "Inglenook Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["inglenookwhitewine"] = {
-		label = "Inglenook White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["montebelloredwine"] = {
-		label = "Montebello Red Wine",
-		description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
-	["montebellowhitewine"] = {
-		label = "Montebello White Wine",
-		description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
-		weight = 300, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_bottlewine01x",
-		client = {
-			image = "sparklingwine.png",
-		},
-	},
+	-- ["sparklingwine"] = {
+	-- 	label = "Sparkling Wine",
+	-- 	description = "a bubbly and effervescent beverage, celebrated for its lively carbonation, typically made using traditional methods or in stainless steel tanks",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine04x",
+	-- },
+
+	-- ["greatwesternredwine"] = {
+	-- 	label = "Great Western Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+
+	-- ["greatwesternwhitewine"] = {
+	-- 	label = "Great Western White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["oldmissionredwine"] = {
+	-- 	label = "Old Mission Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["oldmissionwhitewine"] = {
+	-- 	label = "Old Mission White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["almadenredwine"] = {
+	-- 	label = "Almaden Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["almadenwhitewine"] = {
+	-- 	label = "Almaden White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["buenavistawredwine"] = {
+	-- 	label = "Buena Vista Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["buenavistawhitewine"] = {
+	-- 	label = "Buena Vista White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["inglenookredwine"] = {
+	-- 	label = "Inglenook Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["inglenookwhitewine"] = {
+	-- 	label = "Inglenook White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["montebelloredwine"] = {
+	-- 	label = "Montebello Red Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our red wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
+	-- ["montebellowhitewine"] = {
+	-- 	label = "Montebello White Wine",
+	-- 	description = "Indulge in the rich and velvety experience of our white wine, a symphony of flavors encapsulated in each glass. Sourced from select vineyards",
+	-- 	weight = 300, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 4320, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bottlewine01x",
+	-- 	client = {
+	-- 		image = "sparklingwine.png",
+	-- 	},
+	-- },
 
 	["gunpowdertea"] = {
 		label = "Gunpowder Tea",
 		description = "a distinctive Chinese green tea known for its unique appearance and bold flavor. The tightly rolled, pellet-like leaves resemble gunpowder pellets, hence the name",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["oolongtea"] = {
 		label = "Bohea Tea",
 		description = "a partially oxidized tea, capturing the essence between green and black tea. With leaves ranging from tightly rolled to open, Oolong offers a diverse flavor spectrum, from floral and fruity to creamy and toasty",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["boheatea"] = {
 		label = "Bohea Tea",
 		description = "Grown in the Wuyi Mountains, this dark tea offers a rich, complex taste with a hint of earthiness. Its leaves, tightly curled or twisted, unfurl during steeping, releasing a bold and distinctive aroma",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["hysontea"] = {
 		label = "Hyson Tea",
 		description = "a green tea variety originating from China. Known for its youthful leaves and a mild, fresh taste, Hyson is valued for its delicate flavor and slightly floral aroma",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["greentea"] = {
 		label = "Green Tea",
 		description = "a light and refreshing beverage, celebrated for its clean taste and health benefits. Made from minimally processed tea leaves, it retains its natural green color and is characterized by a grassy and slightly vegetal flavor",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["blacktea"] = {
 		label = "Black Tea",
 		description = "a robust and full-bodied infusion, is the most oxidized of all tea types. With leaves fully fermented, black tea delivers a deep amber hue and a bold, rich flavor",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["englishtea"] = {
 		label = "English Tea",
 		description = "a strong black tea, often enjoyed in the United Kingdom. Known for its robust flavor and depth, English tea is commonly served with milk and sometimes sugar",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "tea.png",
-		},
+		prop = "p_teacup02x",
 	},
 
 	["havanacoffee"] = {
 		label = "Havana Tea",
 		description = "a coffee blend or style inspired by the coffee culture in Havana, Cuba, it could be associated with rich, dark roasts often enjoyed in Cuban cafes",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "coffee.png",
-		},
+		prop = "p_mugcoffee01x",
 	},
 
 	["turkishcoffee"] = {
 		label = "Turkish Coffee",
 		description = "a strong and aromatic coffee with a thick and rich texture. Typically served in small cups, Turkish coffee is known for its unique preparation",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "coffee.png",
-		},
+		prop = "p_mugcoffee01x",
 	},
 
 	["irishcoffee"] = {
 		label = "Irish Coffee",
 		description = "a classic and warming beverage that combines hot coffee with Irish whiskey, sugar, and a layer of whipped cream on top. Known for its comforting and indulgent qualities",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "coffee.png",
-		},
+		prop = "p_mugcoffee01x",
 	},
 
 	["arabianmocha"] = {
 		label = "Arabian Coffee",
 		description = "this coffee is known for its unique flavor profile, featuring rich, wine-like acidity and a distinct chocolatey and spicy undertone",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_mugcoffee01x",
 		client = {
 			image = "coffee.png",
 		},
@@ -6661,12 +9452,13 @@ return {
 	["chicorycoffee"] = {
 		label = "Chicory Coffee",
 		description = "unique and flavorful beverage made by blending roasted chicory root with coffee beans, enjoyed with milk or served black",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_mugcoffee01x",
 		client = {
 			image = "coffee.png",
 		},
@@ -6675,12 +9467,13 @@ return {
 	["viennaroastcoffee"] = {
 		label = "Vienna Roast Coffee",
 		description = "unique and flavorful beverage made by blending roasted chicory root with coffee beans, enjoyed with milk or served black",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_mugcoffee01x",
 		client = {
 			image = "coffee.png",
 		},
@@ -6695,9 +9488,6 @@ return {
 		close = true,
 		description = "Useful for building houses",
 		prop = "p_book06x",
-		client = {
-			image = "campbook",
-		},
 	},
 
 	["interior_book"] = {
@@ -6717,7 +9507,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6729,7 +9518,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6741,7 +9529,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6753,7 +9540,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6765,7 +9551,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6777,7 +9562,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6789,7 +9573,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6801,7 +9584,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6813,7 +9595,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6825,7 +9606,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6837,7 +9617,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6849,7 +9628,17 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_cat"] = {
+		label = "Cat",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
 		client = {
 			image = "furniture.png",
 		},
@@ -6861,7 +9650,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6873,7 +9661,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6885,7 +9672,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6897,7 +9683,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6909,7 +9694,6 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6921,11 +9705,12 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
+
+
 	["furniture_1"] = {
 		label = "Cabinet 1",
 		weight = 0,
@@ -6933,7 +9718,7 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cabinet03x",
 		client = {
 			image = "furniture.png",
 		},
@@ -6945,283 +9730,643 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_kitchenhutch01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_3"] = {
-		label = "cabinet 3",
+		label = "Cabinet 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_guncabinet02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_4"] = {
-		label = "cabinet 4",
+		label = "Cabinet 4",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cabinet09x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_5"] = {
-		label = "cabinet 5",
+		label = "Cabinet 5",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cabinetdoctor01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_6"] = {
-		label = "cabinet 6",
+		label = "Cabinet 6",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chest02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_7"] = {
-		label = "cabinet 7",
+		label = "Cabinet 7",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_nbmchinacabinet02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_328"] = {
+		label = "White cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_drmedcabinet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_329"] = {
+		label = "White corner cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboardcorner01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_400"] = {
+		label = "Cabinet with glass doors",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_nbmchinacabinet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_401"] = {
+		label = "Decorated cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinetchina04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_402"] = {
+		label = "Segmented cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinetpostal01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_403"] = {
+		label = "Corner cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cornercabinet02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_404"] = {
+		label = "Night table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_405"] = {
+		label = "Secretary desk",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_filecabinet02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_406"] = {
+		label = "Dresser with mirror",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_407"] = {
+		label = "Dresser 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinet15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_106"] = {
+		label = "Cabinet 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_107"] = {
+		label = "Cabinet 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_111"] = {
+		label = "Shelf",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelf06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_102"] = {
+		label = "Cabinet 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_commodini01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_103"] = {
+		label = "Cabinet 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_163"] = {
+		label = "Stand 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinet13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_164"] = {
+		label = "Stand 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pedestalstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_94"] = {
+		label = "Dresser 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinet11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_593"] = {
+		label = "Black dresser",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_598"] = {
+		label = "Stable gate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gate_stable02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_596"] = {
+		label = "Library door",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_clothingcasedoor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_597"] = {
+		label = "Cabinet door",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_p_mshine_int_door01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_8"] = {
-		label = "fireplace",
+		label = "Fireplace",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fireplacelogs02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_9"] = {
-		label = "lamp",
+		label = "Lamp",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_lampstanding03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_10"] = {
-		label = "candle",
+		label = "Candle",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_candlestick03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_11"] = {
-		label = "wall light",
+		label = "Wall light",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_sconcelight01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_195"] = {
+		label = "Outdoor Lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lampexterior04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_165"] = {
+		label = "Hanging lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_166"] = {
+		label = "Red lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp32x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_167"] = {
+		label = "Standing lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lampstanding09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_168"] = {
+		label = "Hanging lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_169"] = {
+		label = "Street lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_streetlampnbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_170"] = {
+		label = "Wall lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lampwall08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_171"] = {
+		label = "Red lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gnomeoillamp03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_98"] = {
+		label = "Fireplace",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_campfire03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_99"] = {
+		label = "Burning log",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_splitfirelog01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_12"] = {
-		label = "mailbox",
+		label = "Mailbox",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_mailbox01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_13"] = {
-		label = "portable toilet",
+		label = "Outhouse",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_hng_toi",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_14"] = {
-		label = "clothes rack",
+		label = "Clothesline",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_clothesline01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_66"] = {
-		label = "flower",
+		label = "Flower",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_pot_flowerarng08x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_67"] = {
-		label = "flower",
+		label = "Flower",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_plantpothangnbx01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_68"] = {
-		label = "flower",
+		label = "Flower",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_potfernbalcony01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_69"] = {
-		label = "flower",
+		label = "Flower",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_pot_flowerarng16x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_112"] = {
-		label = "grinding stone",
+		label = "Grinding Stone",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_grindingwheel01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_113"] = {
-		label = "coal bin",
+		label = "Coal Container",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_coalbin01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_114"] = {
-		label = "anvil",
+		label = "Anvil",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_anvil01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_115"] = {
-		label = "stump for anvil",
+		label = "Anvil Stump",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_stump",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_116"] = {
-		label = "forge",
+		label = "Forge",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_301"] = {
-		label = "water trough 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_302"] = {
-		label = "water trough 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_forge01x",
 		client = {
 			image = "furniture.png",
 		},
@@ -7233,7 +10378,7 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_barrel04b",
 		client = {
 			image = "furniture.png",
 		},
@@ -7245,2947 +10390,13135 @@ return {
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_barrel02_opencs01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_305"] = {
-		label = "older barrel",
+	["furniture_480"] = {
+		label = "Cart",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cart03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_298"] = {
-		label = "pergola base",
+	["furniture_483"] = {
+		label = "Long stakes",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_ofw_post_01",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_297"] = {
-		label = "pergola top",
+	["furniture_484"] = {
+		label = "White stake",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_299"] = {
-		label = "pergola curtains",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_15"] = {
-		label = "bed 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_16"] = {
-		label = "bed 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_17"] = {
-		label = "bed 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_18"] = {
-		label = "bed 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_19"] = {
-		label = "bed 5",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_20"] = {
-		label = "table 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_21"] = {
-		label = "table 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_22"] = {
-		label = "table 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_23"] = {
-		label = "table 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_24"] = {
-		label = "table 5",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_25"] = {
-		label = "garden table",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_26"] = {
-		label = "writing desk",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_27"] = {
-		label = "prestigious table",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_28"] = {
-		label = "table 6",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_29"] = {
-		label = "table 7",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_253"] = {
-		label = "table with tablecloth 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_254"] = {
-		label = "table with tablecloth 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_255"] = {
-		label = "decorated table 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_256"] = {
-		label = "decorated table 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_257"] = {
-		label = "tea table",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_258"] = {
-		label = "nightstand 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_259"] = {
-		label = "nightstand",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_260"] = {
-		label = "natural table",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_261"] = {
-		label = "light table",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_262"] = {
-		label = "table with tablecloth 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_30"] = {
-		label = "clock",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_31"] = {
-		label = "stove",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_32"] = {
-		label = "piano",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_33"] = {
-		label = "coat rack",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_278"] = {
-		label = "poster",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_279"] = {
-		label = "painting deer",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_280"] = {
-		label = "painting lake",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_281"] = {
-		label = "painting harbor",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_282"] = {
-		label = "painting villa rhodes",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_283"] = {
-		label = "painting deer",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_284"] = {
-		label = "painting rocks",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_285"] = {
-		label = "painting fox",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_286"] = {
-		label = "painting emerald",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_287"] = {
-		label = "painting bear",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_288"] = {
-		label = "painting chapel",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_289"] = {
-		label = "painting waterfall",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_291"] = {
-		label = "painting lion",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_292"] = {
-		label = "painting deer 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_293"] = {
-		label = "painting new austin",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_294"] = {
-		label = "painting river",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_295"] = {
-		label = "painting deer",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_296"] = {
-		label = "painting alligator",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_300"] = {
-		label = "red pillow",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_34"] = {
-		label = "chair 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_35"] = {
-		label = "chair 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_36"] = {
-		label = "comfy chair 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_37"] = {
-		label = "wooden chair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_38"] = {
-		label = "piano chair 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_39"] = {
-		label = "rocking chair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_40"] = {
-		label = "chair 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_41"] = {
-		label = "comfy chair 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_42"] = {
-		label = "comfy chair 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_43"] = {
-		label = "stool",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_44"] = {
-		label = "armchair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_45"] = {
-		label = "outdoor chair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_263"] = {
-		label = "piano chair 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_264"] = {
-		label = "pink armchair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_265"] = {
-		label = "grey armchair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_266"] = {
-		label = "flower armchair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_267"] = {
-		label = "rattan chair 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_268"] = {
-		label = "rattan chair 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_269"] = {
-		label = "rocking chair 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_271"] = {
-		label = "decorated chair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_272"] = {
-		label = "chair with handles",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_46"] = {
-		label = "outdoor bench",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_47"] = {
-		label = "sofa 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_48"] = {
-		label = "sofa 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_49"] = {
-		label = "bench",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_50"] = {
-		label = "sofa 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_51"] = {
-		label = "sofa 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_52"] = {
-		label = "outdoor bench 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_275"] = {
-		label = "long bench",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_276"] = {
-		label = "light bench",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_277"] = {
-		label = "metal bench",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_53"] = {
-		label = "storage 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_54"] = {
-		label = "storage 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_55"] = {
-		label = "storage 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_56"] = {
-		label = "horse post",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_57"] = {
-		label = "mirror",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_58"] = {
-		label = "bathtub 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_59"] = {
-		label = "sink",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_60"] = {
-		label = "sink 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_61"] = {
-		label = "sink 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_62"] = {
-		label = "bear skin",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_63"] = {
-		label = "skin",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_65"] = {
-		label = "board",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_70"] = {
-		label = "pump",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cal_gatel01x_post",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_71"] = {
-		label = "trash bin",
+		label = "Bin",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_trashbin01bx",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_72"] = {
-		label = "gunsmith tools",
+	["furniture_70"] = {
+		label = "Pump",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_waterpump01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_73"] = {
-		label = "medical box",
+	["furniture_297"] = {
+		label = "Pergola top",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_canopycloth",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_74"] = {
-		label = "toolbox",
+	["furniture_298"] = {
+		label = "Pergola base",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_canopy66x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_75"] = {
-		label = "gun stand",
+	["furniture_299"] = {
+		label = "Pergola curtains",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_canopycloth03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_76"] = {
-		label = "blacksmith tools",
+	["furniture_15"] = {
+		label = "Bed 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cs_bed20madex",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_77"] = {
-		label = "tool wall",
+	["furniture_16"] = {
+		label = "Bed 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed12x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_78"] = {
-		label = "drill",
+	["furniture_17"] = {
+		label = "Bed 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_79"] = {
-		label = "cash register",
+	["furniture_18"] = {
+		label = "Bed 4",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed05x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_80"] = {
-		label = "safe",
+	["furniture_19"] = {
+		label = "Bed 5",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_81"] = {
-		label = "small safe",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_82"] = {
-		label = "mortar",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_83"] = {
-		label = "cigar box",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_84"] = {
-		label = "wine box",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_85"] = {
-		label = "vice",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_86"] = {
-		label = "box with gatling",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_87"] = {
-		label = "box with ammunition",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_88"] = {
-		label = "fence 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_89"] = {
-		label = "fence 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_90"] = {
-		label = "fence 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_91"] = {
-		label = "fence 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_92"] = {
-		label = "decorative stove",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_93"] = {
-		label = "deck chair",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_94"] = {
-		label = "chest of drawers",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_95"] = {
-		label = "table 8",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_96"] = {
-		label = "shelf",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_97"] = {
-		label = "bouquet",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_98"] = {
-		label = "fireplace",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_99"] = {
-		label = "burning log",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed21x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_100"] = {
-		label = "bed 6",
+		label = "Bed 6",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed10x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_101"] = {
-		label = "bed 7",
+		label = "Bed 7",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bed20x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_102"] = {
-		label = "cabinet 8",
+	["furniture_594"] = {
+		label = "Bed 8",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bedking02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_103"] = {
-		label = "cabinet 9",
+	["furniture_20"] = {
+		label = "Table 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_table41x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_104"] = {
-		label = "comfortable chair 4",
+	["furniture_21"] = {
+		label = "Table 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_table48x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_22"] = {
+		label = "Table 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableannsaloon01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_23"] = {
+		label = "Table 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_man01x_tableround",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_24"] = {
+		label = "Table 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_workbenchdesk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_25"] = {
+		label = "Garden table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawbucktable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_26"] = {
+		label = "Writing desk",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_desk07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_27"] = {
+		label = "Elegant table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_desk09bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_28"] = {
+		label = "Table 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tabledining05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_29"] = {
+		label = "Table 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_desk13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_253"] = {
+		label = "Table with cloth 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table51x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_254"] = {
+		label = "Table with cloth 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_255"] = {
+		label = "Decorated table 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablebooth01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_256"] = {
+		label = "Decorated table 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tabledining04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_257"] = {
+		label = "Tea table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablecoffee05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_258"] = {
+		label = "Nightstand 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablework02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_259"] = {
+		label = "Nightstand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablebedside02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_260"] = {
+		label = "Natural table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_261"] = {
+		label = "Light table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableprep01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_262"] = {
+		label = "Table with cloth 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_485"] = {
+		label = "Small table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_95"] = {
+		label = "Table 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table01x_norpass03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_105"] = {
-		label = "table 8",
+		label = "Table 9",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_tablemahogany01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_106"] = {
-		label = "cabinet 10",
+	["furniture_34"] = {
+		label = "Chair 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_windsorchair03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_107"] = {
-		label = "cabinet 11",
+	["furniture_35"] = {
+		label = "Chair 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chair05x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_108"] = {
-		label = "toilet",
+	["furniture_36"] = {
+		label = "Comfy chair 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy11x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_109"] = {
-		label = "bathtub 2",
+	["furniture_37"] = {
+		label = "Wooden chair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_woodendeskchair01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_110"] = {
-		label = "bathtub 3",
+	["furniture_38"] = {
+		label = "Piano chair 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_pianochair01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_111"] = {
-		label = "shelf",
+	["furniture_39"] = {
+		label = "Rocking chair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chairrocking03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_117"] = {
-		label = "work table",
+	["furniture_40"] = {
+		label = "Chair 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chair07x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_118"] = {
-		label = "pot with logs",
+	["furniture_41"] = {
+		label = "Comfy chair 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy12x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_119"] = {
-		label = "log table",
+	["furniture_42"] = {
+		label = "Comfy chair 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chairdining01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_120"] = {
-		label = "horseshoes",
+	["furniture_43"] = {
+		label = "Stool",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bench20x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_121"] = {
-		label = "tree",
+	["furniture_44"] = {
+		label = "Armchair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy23x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_122"] = {
-		label = "christmas lollipop",
+	["furniture_45"] = {
+		label = "Outdoor chair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bistrochair01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_123"] = {
-		label = "christmas gingerbread",
+	["furniture_263"] = {
+		label = "Piano chair 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_benchpiano02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_124"] = {
-		label = "gift",
+	["furniture_264"] = {
+		label = "Pink armchair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy22x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_125"] = {
-		label = "christmas wreath",
+	["furniture_265"] = {
+		label = "Grey armchair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy02",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_126"] = {
-		label = "dypsis lutescens",
+	["furniture_266"] = {
+		label = "Floral armchair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chaircomfy01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_127"] = {
-		label = "aloe barbadensis",
+	["furniture_267"] = {
+		label = "Rattan chair 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chairwicker02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_128"] = {
-		label = "nerium oleander",
+	["furniture_268"] = {
+		label = "Rattan chair 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chairwicker03x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_129"] = {
-		label = "mix 2",
+	["furniture_269"] = {
+		label = "Rocking chair 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_rockingchair01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_130"] = {
-		label = "nerium oleander 2",
+	["furniture_271"] = {
+		label = "Decorated chair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chair11x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_131"] = {
-		label = "moonshine",
+	["furniture_272"] = {
+		label = "Chair with handles",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chair15x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_132"] = {
-		label = "arctium lappa",
+	["furniture_482"] = {
+		label = "Small stool",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_133"] = {
-		label = "monstera deliciosa",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_134"] = {
-		label = "mix 5",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_135"] = {
-		label = "strelitzia nicolai",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_136"] = {
-		label = "obtipan bicolor",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_137"] = {
-		label = "mix 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_138"] = {
-		label = "chlorophytum variegatum",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_139"] = {
-		label = "carex morrowii",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_140"] = {
-		label = "dryopteris filix-mas",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_141"] = {
-		label = "mix 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_142"] = {
-		label = "mix 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_143"] = {
-		label = "pachira aquatica",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_144"] = {
-		label = "spathiphyllum friedrichsthalii",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_145"] = {
-		label = "syringa vulgaris",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_146"] = {
-		label = "spathiphyllum cannifolium",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_147"] = {
-		label = "trachycarpus fortunei",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_148"] = {
-		label = "ficus benjamina",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_330"] = {
-		label = "hanging pot white",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_306"] = {
-		label = "hanging pot mix",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_307"] = {
-		label = "fern",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_308"] = {
-		label = "ornamental flower",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_309"] = {
-		label = "rose bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_310"] = {
-		label = "purple bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_311"] = {
-		label = "white bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_312"] = {
-		label = "pink bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_313"] = {
-		label = "red bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_314"] = {
-		label = "hedge bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_315"] = {
-		label = "tall bush",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_316"] = {
-		label = "tree",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_317"] = {
-		label = "thuja",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_318"] = {
-		label = "golden thuja",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_319"] = {
-		label = "small golden thuja",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_320"] = {
-		label = "tall palm",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_321"] = {
-		label = "short palm",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_322"] = {
-		label = "tall monstera",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_323"] = {
-		label = "short monstera",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_324"] = {
-		label = "tall date palm",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_325"] = {
-		label = "short date palm",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_326"] = {
-		label = "tall fig",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_327"] = {
-		label = "short fig",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_328"] = {
-		label = "yucca",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_329"] = {
-		label = "bakery sign",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_149"] = {
-		label = "bale of hay",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_151"] = {
-		label = "bales of hay",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_152"] = {
-		label = "heap of hay",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_153"] = {
-		label = "baking oven",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_154"] = {
-		label = "large gold sieve",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_155"] = {
-		label = "metal horse hitch",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_156"] = {
-		label = "obstacle 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_157"] = {
-		label = "obstacle 2",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_158"] = {
-		label = "obstacle 3",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_159"] = {
-		label = "obstacle 4",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_160"] = {
-		label = "obstacle 5",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_161"] = {
-		label = "obstacle 6",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_162"] = {
-		label = "obstacle 7",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_163"] = {
-		label = "stand 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_164"] = {
-		label = "stand 1",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_165"] = {
-		label = "hanging lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_166"] = {
-		label = "red lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_167"] = {
-		label = "standing lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_168"] = {
-		label = "hanging lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_169"] = {
-		label = "street lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_170"] = {
-		label = "wall lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_171"] = {
-		label = "red lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_stool02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_172"] = {
-		label = "leather chair",
+		label = "Leather armchair",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_chairdesk02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_104"] = {
+		label = "Comfy chair 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_46"] = {
+		label = "Outdoor bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sit_chairwicker01a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_47"] = {
+		label = "Sofa 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_victoriansofa01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_48"] = {
+		label = "Sofa 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sofa01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_49"] = {
+		label = "Bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchch01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_50"] = {
+		label = "Sofa 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_51"] = {
+		label = "Sofa 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_52"] = {
+		label = "Outdoor bench 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchironnbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_275"] = {
+		label = "Long bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchannsaloon01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_276"] = {
+		label = "Light bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchnbx03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_277"] = {
+		label = "Metal bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchironnbx02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_93"] = {
+		label = "Sun lounger",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_trad_chair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_53"] = {
+		label = "Storage 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_re_rcboatbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_54"] = {
+		label = "Storage 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_trunk02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_55"] = {
+		label = "Storage 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_lootablemiscchest_wagon",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_30"] = {
+		label = "Clock",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_nbmclock01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_31"] = {
+		label = "Stove",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_stove04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_32"] = {
+		label = "Piano",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_nbxpiano01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_33"] = {
+		label = "Coat stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_coatstandrack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_278"] = {
+		label = "Poster",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_col_posters01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_300"] = {
+		label = "Red pillow",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pilloweagle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_410"] = {
+		label = "Wall clock 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_nbx_doc_wallclocklrg01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_412"] = {
+		label = "Wall clock 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_wallclocklrg01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_413"] = {
+		label = "Wall clock 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_regulatorclock02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_414"] = {
+		label = "Wall clock 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clock09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_415"] = {
+		label = "Clock 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clock10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_416"] = {
+		label = "Clock 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clockset01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_173"] = {
-		label = "coat rack",
+		label = "Coat stand",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_coatstand01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_174"] = {
-		label = "carpet 1",
+		label = "Rug 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_cs_rug01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_175"] = {
-		label = "carpet 2",
+		label = "Rug 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "s_rc_camprug01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_176"] = {
-		label = "carpet 3",
+		label = "Rug 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "mp005_s_posse_col_cloth02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_177"] = {
-		label = "curtain 1",
+		label = "Curtain 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "mp006_p_mshine_int_curtain01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_178"] = {
-		label = "curtain 2",
+		label = "Curtain 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_curtainslace01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_179"] = {
-		label = "curtain 3",
+		label = "Curtain 3",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_curtainslace02b",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_180"] = {
-		label = "curtain 4",
+		label = "Curtain 4",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_curtainslace02x_static",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_181"] = {
-		label = "curtain 5",
+		label = "Curtain 5",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_valhot_curtain01d",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_182"] = {
-		label = "curtain 6",
+		label = "Curtain 6",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_val_peepcurtain01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_190"] = {
-		label = "large picture stand",
+	["furniture_96"] = {
+		label = "Shelf",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_shelfwall02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
-	["furniture_191"] = {
-		label = "small picture stand",
+	["furniture_83"] = {
+		label = "Cigar box",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_int_gen_tobacco03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_84"] = {
+		label = "Wine box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_champholder01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_779"] = {
+		label = "Fan",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fandesk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_92"] = {
+		label = "Decorative stove",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambstove01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_550"] = {
+		label = "Deer antler chandelier",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_deerantchandelier01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_192"] = {
-		label = "fence 5",
+		label = "Fence 5",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fence01ax",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_193"] = {
-		label = "fence 6",
+		label = "Fence 6",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_wallnbd01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_194"] = {
-		label = "fence 6",
+		label = "Fence 7",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["furniture_195"] = {
-		label = "outdoor lamp",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fencetall_04ax",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_241"] = {
-		label = "brown fence",
+		label = "Brown fence",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_val_fencez_flata",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_242"] = {
-		label = "light fence 1",
+		label = "Light fence 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "val_fencepen01_ex",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_243"] = {
-		label = "light fence 2",
+		label = "Light fence 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_emrfence03ax",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_244"] = {
-		label = "white enclosure 1",
+		label = "White enclosure 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_bra_fence01x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_245"] = {
-		label = "white enclosure 2",
+		label = "White enclosure 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_gate_wornbarn04x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_246"] = {
-		label = "picket fence",
+		label = "Plank fence",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fence_picket_w_01",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_247"] = {
-		label = "white fence 1",
+		label = "White fence 1",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fence_picket_02_rhoa",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_248"] = {
-		label = "white fence 2",
+		label = "White fence 2",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fence_picket_01_rhoa",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_249"] = {
-		label = "decorative fence",
+		label = "Decorated fence",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "rho_sal_trellis_btm_root",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_250"] = {
-		label = "narrow enclosure",
+		label = "Narrow enclosure",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_fence04ax",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_251"] = {
-		label = "dark fence",
+		label = "Dark fence",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_gate_wornbarn02x",
 		client = {
 			image = "furniture.png",
 		},
 	},
 	["furniture_252"] = {
-		label = "stable fence",
+		label = "Stable fence",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
 		description = "furniture for houses",
-		prop = "p_chair02x",
+		prop = "p_gate_horse02a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_88"] = {
+		label = "Fence 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fence06ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_89"] = {
+		label = "Fence 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fence10cx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_90"] = {
+		label = "Fence 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fence_wall01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_91"] = {
+		label = "Fence 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fence_wall02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_476"] = {
+		label = "Long white fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "prop_fncwood_09d",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_477"] = {
+		label = "Chicken fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chickenfence01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_478"] = {
+		label = "Short fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "val_fencepen01_dx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_479"] = {
+		label = "Brown fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "val_fencepen01_ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_570"] = {
+		label = "Base gate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cor_fences_lod_06",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_58"] = {
+		label = "Bath 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bath03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_59"] = {
+		label = "Sink",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sink02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_60"] = {
+		label = "Sink 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_drysink01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_61"] = {
+		label = "Sink 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_sink03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_62"] = {
+		label = "Bearskin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bearskin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_63"] = {
+		label = "Fur",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambfloorfur01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_409"] = {
+		label = "Washboard",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_410"] = {
+		label = "Sink 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washbasndoctor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_108"] = {
+		label = "Toilet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_toiletchair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_109"] = {
+		label = "Bath 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bath02bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_110"] = {
+		label = "Bath 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bath02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_72"] = {
+		label = "Gunsmith Tools",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gunsmithkit01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_73"] = {
+		label = "Medical Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxmedmedical01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_74"] = {
+		label = "Toolbox",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_toolbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_75"] = {
+		label = "Gun stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gundisplay02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_76"] = {
+		label = "Blacksmith tools",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_veh_pg_vl_blacksmith01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_77"] = {
+		label = "Tool wall",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_toolpegboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_78"] = {
+		label = "Drill press",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_drillpress01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_79"] = {
+		label = "Cash register",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_register05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_80"] = {
+		label = "Safe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_safe01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_153"] = {
+		label = "Smelting Oven",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_breadoven01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_154"] = {
+		label = "Gold Washing Large Sieve",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_goldcradlestand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_81"] = {
+		label = "Small Safe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_safe_ser",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_82"] = {
+		label = "Mortar and Pestle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_mortarpestle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_64"] = {
+		label = "Distillery",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_p_moonshiner_still03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_85"] = {
+		label = "Vise",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gunsmithprops09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_86"] = {
+		label = "Gatling Gun Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_maximcrate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_87"] = {
+		label = "Ammo Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_rc_exconfederates1_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_119"] = {
+		label = "Log Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawhorse04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_117"] = {
+		label = "Workbench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchwork01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_118"] = {
+		label = "Kettle with logs",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_kettle03_fire01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_490"] = {
+		label = "No Guns Sign",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_racesignpost08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_491"] = {
+		label = "Sign",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_roadsign08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_65"] = {
+		label = "Board",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_p_mp_bountyboard02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_501"] = {
+		label = "School board",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chalkboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_502"] = {
+		label = "School pad",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_deskpad01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_486"] = {
+		label = "Market Board L",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sandwichboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_487"] = {
+		label = "Market Board R",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sandwichboard04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_488"] = {
+		label = "Menu Board",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sandwichboard07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_489"] = {
+		label = "Open Board",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sandwichboard02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_121"] = {
+		label = "Christmas Tree",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_p_xmastree01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_122"] = {
+		label = "Christmas Candy Cane",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_s_markercandycane",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_123"] = {
+		label = "Christmas Gingerbread",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_s_markergingerbread",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_124"] = {
+		label = "Present",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_s_lootablechest03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_125"] = {
+		label = "Christmas Wreath",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp006_p_wreath01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_97"] = {
+		label = "Bouquet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_126"] = {
+		label = "Dypsis lutescens",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_127"] = {
+		label = "Aloe vera",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plant04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_128"] = {
+		label = "Nerium oleander",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planternbx04b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_129"] = {
+		label = "Mix 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_130"] = {
+		label = "Nerium oleander 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planternbx04a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_131"] = {
+		label = "Moonshine",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_belljarplant01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_132"] = {
+		label = "Arctium lappa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planter03a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_133"] = {
+		label = "Monstera deliciosa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plant_int_04a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_134"] = {
+		label = "Mix 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planter",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_135"] = {
+		label = "Strelitzia nicolai",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_05a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_136"] = {
+		label = "Dracaena reflexa var. angustifolia",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_137"] = {
+		label = "Mix 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_138"] = {
+		label = "Chlorophytum comosum",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_139"] = {
+		label = "Carex morrowii",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotwallnbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_140"] = {
+		label = "Dryopteris filix-mas",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_01b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_141"] = {
+		label = "Mix 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_142"] = {
+		label = "Mix 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_03b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_143"] = {
+		label = "Pachira aquatica",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plant_moneytree",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_144"] = {
+		label = "Spathiphyllum wallisii",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng09bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_145"] = {
+		label = "Lilac",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_146"] = {
+		label = "Peace lily",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_147"] = {
+		label = "Trachycarpus fortunei",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_148"] = {
+		label = "Ficus benjamina",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_156"] = {
+		label = "Obstacle 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_haybaleshort01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_157"] = {
+		label = "Obstacle 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_fenceshort02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_158"] = {
+		label = "Obstacle 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_sackshort01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_305"] = {
+		label = "Hanging pot white",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_7_static",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_306"] = {
+		label = "Hanging pot mix",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_7c",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_307"] = {
+		label = "Fern",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_fern_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_308"] = {
+		label = "Decorative flower",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_paradise_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_309"] = {
+		label = "Rose bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_ae_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_310"] = {
+		label = "Purple bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_ac_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_311"] = {
+		label = "White bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_ba_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_312"] = {
+		label = "Pink bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_bc_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_313"] = {
+		label = "Red bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_bb_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_314"] = {
+		label = "Hedge bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_hedgecore_aa",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_315"] = {
+		label = "Tall bush",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_neat_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_316"] = {
+		label = "Small tree",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_decor_aa",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_317"] = {
+		label = "Thuja",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_cedar_decor_02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_318"] = {
+		label = "Golden thuja",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_junip_ac_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_319"] = {
+		label = "Small golden thuja",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_junip_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_320"] = {
+		label = "Tall palm",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_arec_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_321"] = {
+		label = "Short palm",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_arec_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_322"] = {
+		label = "Tall monstera",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_palm_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_323"] = {
+		label = "Short monstera",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_palm_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_324"] = {
+		label = "Tall date palm",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_soga_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_325"] = {
+		label = "Short date palm",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_soga_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_326"] = {
+		label = "Tall ficus",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_broad_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_327"] = {
+		label = "Short ficus",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_broad_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_328"] = {
+		label = "Yucca",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_yucca_aa_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_592"] = {
+		label = "Leafy vase",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_leafyvase",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_196"] = {
+		label = "Barber Chair",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barberchair03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_197"] = {
+		label = "Doctor's Chair 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdoctor02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_198"] = {
+		label = "Doctor's Chair 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdoctor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_199"] = {
+		label = "Doctor's Bed",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_examtbledoctor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_201"] = {
+		label = "Doctor's Sign",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_signdoctorrho_b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_202"] = {
+		label = "Doctor's Bed 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_medbed01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_203"] = {
+		label = "Doctor's Scale",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_drmedscale02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_204"] = {
+		label = "Doctor's Stethoscope and Injection",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_syringeset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_205"] = {
+		label = "Doctor's Microscope",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_microscope01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_206"] = {
+		label = "Doctor's Lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_medlight02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_207"] = {
+		label = "Doctor's Accessories",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_stack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_208"] = {
+		label = "Doctor's Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp009_s_mp_medicinebox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_209"] = {
+		label = "Doctor's Wheelchair",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_medwheelchair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_210"] = {
+		label = "Doctor's Scale 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_scalemedicine01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_211"] = {
+		label = "Doctor's Sign",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_signdoctorrho_a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_564"] = {
+		label = "X-ray",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_studiocamera01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_212"] = {
+		label = "Bakery Goods 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_bread02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_213"] = {
+		label = "Bakery Goods 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_bread08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_214"] = {
+		label = "Bakery Goods 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_bread01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_215"] = {
+		label = "Bakery Goods 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bread_13_ab",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_216"] = {
+		label = "Bread Basket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_breadbasketsm",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_217"] = {
+		label = "Tray of Bakery Goods",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_food06",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_218"] = {
+		label = "Flour Sack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_w_tra_floursack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_219"] = {
+		label = "Milk Container",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_milkcan03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_417"] = {
+		label = "Spoons",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spoonsshelf01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_420"] = {
+		label = "Wall Coat Rack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coatrack04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_421"] = {
+		label = "Book Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_books03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_422"] = {
+		label = "Books with Writing",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookset05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_423"] = {
+		label = "Book with Writing",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_papercert01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_424"] = {
+		label = "Book",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_book03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_425"] = {
+		label = "Glass Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlecrate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_426"] = {
+		label = "Laundry Basket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketcloth01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_427"] = {
+		label = "Basket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxlrgwoven01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_428"] = {
+		label = "Sewing Basket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sewingkit01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_429"] = {
+		label = "Linen Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_blanketbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_430"] = {
+		label = "Fabrics 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambclothseat01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_431"] = {
+		label = "Fabrics 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_blankets01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_432"] = {
+		label = "Fabrics 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fabricstack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_433"] = {
+		label = "Metal Buckets",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washtub02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_434"] = {
+		label = "Metal Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_strongbox01x_lrg",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_435"] = {
+		label = "Bird Cage",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_p_mp_shadybirdcage01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_436"] = {
+		label = "Pot",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_437"] = {
+		label = "Kettle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_boiler01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_438"] = {
+		label = "Kitchen Utensils",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cookingtools01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_439"] = {
+		label = "Lantern",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lantern05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_440"] = {
+		label = "Small Lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp25x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_441"] = {
+		label = "Coffee Grinder",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffeegrinder02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_442"] = {
+		label = "Pot Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_cpot02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_443"] = {
+		label = "Frying Pan",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_panlg01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_445"] = {
+		label = "Typewriter",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_typewriter01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_446"] = {
+		label = "Water Bowl",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_nat_plate_02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_447"] = {
+		label = "Food Bowl",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_nat_plate_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_448"] = {
+		label = "Alarm Clock",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_alarmclock01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_468"] = {
+		label = "Older Barrel",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrel05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_469"] = {
+		label = "Lantern",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lantern09xint",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_504"] = {
+		label = "Sailboat",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shipcutter1x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_505"] = {
+		label = "Sailboat",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shipsloop3x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_506"] = {
+		label = "Sailboat",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shipsmal2x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_474"] = {
+		label = "Windmill 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_windmill_sm_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_475"] = {
+		label = "Windmill 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_windmill_med_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_590"] = {
+		label = "Wooden Floor",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_foundationwood01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_190"] = {
+		label = "Large Painting Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_easel02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_191"] = {
+		label = "Small Painting Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_easel01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_183"] = {
+		label = "Painting 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_painting_newgala_sml01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_184"] = {
+		label = "Painting 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_painting_newgala_lrg01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_185"] = {
+		label = "Painting 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_paintings01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_186"] = {
+		label = "Painting 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spainting_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_187"] = {
+		label = "Painting 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_painting02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_188"] = {
+		label = "Painting 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_nat_pictureframe02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_189"] = {
+		label = "Painting 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_nat_pictureframe01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_492"] = {
+		label = "Man Painting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_493"] = {
+		label = "Woman Painting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame02ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_494"] = {
+		label = "Woman Painting 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame03ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_495"] = {
+		label = "Woman Painting 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame06ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_496"] = {
+		label = "Woman Painting 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame07ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_497"] = {
+		label = "Woman Painting 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame08ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_498"] = {
+		label = "Woman Painting 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_499"] = {
+		label = "Woman Painting 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame09ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_500"] = {
+		label = "Woman Painting 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame05ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_503"] = {
+		label = "Child's Drawing",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_jackdrawing01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_581"] = {
+		label = "Newspaper Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_newspaper03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_582"] = {
+		label = "Newspaper Crates",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_newspaper01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_583"] = {
+		label = "Newspaper Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_newspaperbox_cs01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_584"] = {
+		label = "Newspaper Sheet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_newspaper_03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_585"] = {
+		label = "Newspaper Bundle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_newspaperroll01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_586"] = {
+		label = "Newspaper Board",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_newspapernbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_587"] = {
+		label = "Newspaper Pack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_newspapergroup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_588"] = {
+		label = "Newspaper Machine",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_paperrollcutter01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_589"] = {
+		label = "Newspaper Cart",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_newspapercart01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_603"] = {
+		label = "Paper Boxes",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_paperbinset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_604"] = {
+		label = "Paper Stack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_paperset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_605"] = {
+		label = "Papers",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_paperstack01a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_606"] = {
+		label = "Book Press",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ironbookpress01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_607"] = {
+		label = "Book Cart",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_bookcart01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_608"] = {
+		label = "Glass Bookcase",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookcasenb01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_609"] = {
+		label = "Empty Bookcase",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookcase03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_610"] = {
+		label = "Book Bundle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_gen_books01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_611"] = {
+		label = "Book Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_612"] = {
+		label = "Bible",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_book01x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_613"] = {
+		label = "Notebook",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_s_book_emote02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_614"] = {
+		label = "Red Book",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sketchbook02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_615"] = {
+		label = "Book Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookset04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_616"] = {
+		label = "Book Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_508"] = {
+		label = "Badger 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_badger01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_509"] = {
+		label = "Badger 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_badger02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_510"] = {
+		label = "Heron 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_heron01bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_511"] = {
+		label = "Heron 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_heron01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_512"] = {
+		label = "Alligator 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tuxyoungaligator01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_513"] = {
+		label = "Alligator 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tuxyoungaligator02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_514"] = {
+		label = "Fox 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_515"] = {
+		label = "Fox 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fox02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_516"] = {
+		label = "Fox 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fox03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_517"] = {
+		label = "Fox with Pheasant",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_foxpheasant01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_518"] = {
+		label = "Pheasant",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermypheasant02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_519"] = {
+		label = "Owl",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyowl01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_520"] = {
+		label = "Rabbit",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_rabbit01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_521"] = {
+		label = "Duck",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_duckdead01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_522"] = {
+		label = "Hawk 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyhawk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_523"] = {
+		label = "Hawk 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyhawk02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_524"] = {
+		label = "Hawk 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyhawk03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_525"] = {
+		label = "Vulture 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyvulture01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_526"] = {
+		label = "Vulture 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyvulture02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_527"] = {
+		label = "Vulture 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyvulture03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_528"] = {
+		label = "Vulture 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermyvulture04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_529"] = {
+		label = "Cardinal 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cardinal01bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_530"] = {
+		label = "Cardinal 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cardinal01cx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_531"] = {
+		label = "Coyote 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermycoyote01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_532"] = {
+		label = "Coyote 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermycoyote02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_533"] = {
+		label = "Coyote 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermycoyote03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_534"] = {
+		label = "Catfish",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_catfish_lrg01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_535"] = {
+		label = "Small Catfish",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_catfish_sml01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_536"] = {
+		label = "Large Catfish",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_bigfishbythefire01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_537"] = {
+		label = "Deer Head",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_taxidermydeer01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_538"] = {
+		label = "Skunk Fur",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_skunkpelt01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_539"] = {
+		label = "Fox Fur",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_foxpelt01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_540"] = {
+		label = "Antlers 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_antlers01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_541"] = {
+		label = "Bear Hatstand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hatstandbear01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_542"] = {
+		label = "Eagle Chair",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaireagle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_543"] = {
+		label = "Bear Bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchbear01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_544"] = {
+		label = "Log Bed",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bedlog01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_545"] = {
+		label = "Dog Stool",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coalhod02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_546"] = {
+		label = "Wooden Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chestmedlog01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_547"] = {
+		label = "Stand 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_taxidermy_base01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_548"] = {
+		label = "Stand 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_taxidermy_base03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_549"] = {
+		label = "Deer Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_deerhanging02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1000"] = {
+		label = "Tipi",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_wap_rainsfalls",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1001"] = {
+		label = "Open Tipi 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "tippi1",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1002"] = {
+		label = "Open Tipi 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "tippi2",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1003"] = {
+		label = "Small Fur Tent",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambtenthide01b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1004"] = {
+		label = "Large Fur Tent",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_tentbison01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1005"] = {
+		label = "Campfire",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_finishline_bonfire01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1006"] = {
+		label = "Indian Shelter",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cookfirestructure02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1007"] = {
+		label = "Backrest",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indianbackrest01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1011"] = {
+		label = "Cross with Skulls",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_skullpost02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1012"] = {
+		label = "Spike with Skulls",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookyskulls07bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1013"] = {
+		label = "Spike with a Skull",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookyskulls07ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1014"] = {
+		label = "Small Skull Totem",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookyskulls04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1015"] = {
+		label = "Stone Tomahawk",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indianartifact01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1016"] = {
+		label = "Dreamcatcher",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indiandream01x_a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1017"] = {
+		label = "Spike with Feathers",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1018"] = {
+		label = "Hanging Rattle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1019"] = {
+		label = "Branch Shelter",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_leantopine01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1020"] = {
+		label = "Beaded Dreamcatcher",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indiandream01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1021"] = {
+		label = "Feather Decoration",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indianfan01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1022"] = {
+		label = "Meat Dryer",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dryingmeat01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1023"] = {
+		label = "Water Container",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gourdwater01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1024"] = {
+		label = "Skull Totem",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_skull01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1025"] = {
+		label = "Spear with Skulls and Spikes",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookyskulls02x_a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1026"] = {
+		label = "Tanner",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_p_mp_hideframe02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1027"] = {
+		label = "Branch Tent",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambtentswamp01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1028"] = {
+		label = "Leaf Tent",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambtentmulch01b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1029"] = {
+		label = "Skull Dreamcatcher",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hangingbones01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1030"] = {
+		label = "Hanging Totem",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_target06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1032"] = {
+		label = "Trading Cart",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cartvend02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1033"] = {
+		label = "Basket 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketindian01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1034"] = {
+		label = "Basket 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketindian02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1035"] = {
+		label = "Container 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1036"] = {
+		label = "Container 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1037"] = {
+		label = "Container 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1038"] = {
+		label = "Container 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowlna01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1039"] = {
+		label = "Stack of Cloth",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_clothpile01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1040"] = {
+		label = "Rolled Hide",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_cvan_hideroll01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1041"] = {
+		label = "Animal Skull",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_skullcattle03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1042"] = {
+		label = "Totem 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1043"] = {
+		label = "Totem 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1044"] = {
+		label = "Totem 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_staffindian03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1045"] = {
+		label = "Totem 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1046"] = {
+		label = "Totem 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spookynative12x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1048"] = {
+		label = "Torch",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_torchpostalwayson01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_1049"] = {
+		label = "Wooden Tie Post",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hitchingpost04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture111"] = {
+		label = "Native Chair 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairrusticsav01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture488"] = {
+		label = "Native Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_exoticprops06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture169"] = {
+		label = "Native Pottery 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture170"] = {
+		label = "Native Pottery 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture171"] = {
+		label = "Native Pottery 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potteryindian09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_120"] = {
+		label = "Horseshoes",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrelhalf01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_301"] = {
+		label = "Water Trough 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_watertrough01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_302"] = {
+		label = "Water Trough 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_watertrough02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_480"] = {
+		label = "Feeding Trough",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_feedtroughsml01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_149"] = {
+		label = "Hay Bale",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haybale01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_151"] = {
+		label = "Hay Bales",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_haybalecover03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_152"] = {
+		label = "Hay Pile",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haypile02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_591"] = {
+		label = "Harnesses 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_harness02xcar_bla",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_592"] = {
+		label = "Bridles 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_harness04xcar_bla",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_593"] = {
+		label = "Bridles 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_harness01xcar_bla",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_551"] = {
+		label = "Rope in a Bucket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketrope01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_552"] = {
+		label = "Wooden Sawhorse",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawhorse02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_553"] = {
+		label = "Saddle Stand 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saddlestand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_554"] = {
+		label = "Saddle Stand 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saddlestand02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_555"] = {
+		label = "Saddle Stand 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saddlestand03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_556"] = {
+		label = "Saddle Stand 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_sdlstand01x_car_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_558"] = {
+		label = "Saddle 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_saddle02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_559"] = {
+		label = "Saddle 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_saddle03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_560"] = {
+		label = "Saddle 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_horsesaddle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_561"] = {
+		label = "Saddle 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_saddlewinter10_03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_562"] = {
+		label = "Saddle 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_saddlewinter05_03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_563"] = {
+		label = "Saddle with Cover",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_saddlebundle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_567"] = {
+		label = "Harnesses 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_harness05xcar_bla",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_568"] = {
+		label = "Hitching Post for Horses",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hitchingpost01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_595"] = {
+		label = "Hay",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haypile01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_600"] = {
+		label = "Large Log for Sitting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench_log05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_601"] = {
+		label = "Small Log for Sitting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench_log03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_602"] = {
+		label = "Medium Log for Sitting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench_log04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_618"] = {
+		label = "Table from Crates and Planks Dark",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cratetable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_619"] = {
+		label = "Table from Crates and Planks Light",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cratetablemil01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_620"] = {
+		label = "Toolbox 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cratetools01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_621"] = {
+		label = "Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crate22x_a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_622"] = {
+		label = "Worn Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crate22x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_623"] = {
+		label = "Worn Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crate14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_624"] = {
+		label = "Three Empty Small Boxes",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crategroup03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_625"] = {
+		label = "Climbing Ivy",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_kudzu_wall_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_626"] = {
+		label = "Climbing Ivy 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_kudzu_top_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_627"] = {
+		label = "Cat Tail Grass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_cat_tail_ab_sim",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_628"] = {
+		label = "Canvas Awning",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_awningbills01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_630"] = {
+		label = "Sun Lounger 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_col_chair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_631"] = {
+		label = "High White Fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plankwall_02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_632"] = {
+		label = "Chaise Lounge",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_seatbench01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_633"] = {
+		label = "Striped Sofa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_settee02bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_634"] = {
+		label = "Luxurious Sofa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_settee02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_635"] = {
+		label = "Worn Sofa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_settee_05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_636"] = {
+		label = "Shelf",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelf09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_637"] = {
+		label = "Dirty Kitchen Counter",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelfwall07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_638"] = {
+		label = "Outdoor Umbrella",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_umbrellanbx02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_639"] = {
+		label = "Bath 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_val_hotel_int_tub_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_640"] = {
+		label = "Kitchen Cabinet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hutchwhite01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_641"] = {
+		label = "White Lace Pillow",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lacepillow01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_642"] = {
+		label = "Floral Sofa",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_loveseat01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_643"] = {
+		label = "Salt and Pepper Shakers",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_mansionprops19x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_644"] = {
+		label = "Shaving Mirror",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_mirror_shave01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_645"] = {
+		label = "Embroidered Picture",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_needlework01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_646"] = {
+		label = "Solid Bed with Canopy",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_nightbedking01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_647"] = {
+		label = "Preacher's Pulpit",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_podium_02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_648"] = {
+		label = "Worn Painted Wardrobe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_649"] = {
+		label = "Bed",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bed13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_650"] = {
+		label = "Striped Carpet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_blanketground02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_651"] = {
+		label = "Patterned Carpet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_blanketground05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_652"] = {
+		label = "Lamp Post",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamppost01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_653"] = {
+		label = "Kitchen Curtain",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_abefrmint_curt05a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_654"] = {
+		label = "Garlic and Pans",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_hang02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_655"] = {
+		label = "Herbs and Mugs",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_hang01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_656"] = {
+		label = "Shovel (Decoration)",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shovelhang05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_657"] = {
+		label = "Hanging Garlic",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hanggarlicgroup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_658"] = {
+		label = "Hanging Bag and Drinking Horn",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gun_hangitem01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_659"] = {
+		label = "Rack with Hat and Bag",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gun_hangitem02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_660"] = {
+		label = "Wooden Tricycle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tricycle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_661"] = {
+		label = "Empty Flowerpot",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_terracottapot01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_662"] = {
+		label = "Flowerpot with Branches",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_05b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_663"] = {
+		label = "Pile of Flowerpots",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_pot01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_664"] = {
+		label = "Flowerpot with Soil",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dirtpot01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_665"] = {
+		label = "Box with Tableware",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_buysellbox02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_666"] = {
+		label = "Butterfly Collection",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_specimenbox02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_667"] = {
+		label = "Beetle Collection",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_specimenbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_668"] = {
+		label = "Grave 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravefresh01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_669"] = {
+		label = "Grave 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone14ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_670"] = {
+		label = "Grave 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone12x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_671"] = {
+		label = "Grave 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_672"] = {
+		label = "Grave 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestoneclean02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_673"] = {
+		label = "Grave 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grvestne_v_04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_674"] = {
+		label = "Grave 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grvestne_v_05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_675"] = {
+		label = "Grave 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grvestne_v_02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_676"] = {
+		label = "Grave 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grvestne_v_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_677"] = {
+		label = "Grave 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestoneclean03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_678"] = {
+		label = "Grave 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestoneclean04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_679"] = {
+		label = "Grave 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grave06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_680"] = {
+		label = "Gravestone",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_681"] = {
+		label = "Stone Bench",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_new_stonebench02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_682"] = {
+		label = "Wood Grave",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_683"] = {
+		label = "Small Cross 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravemarker02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_684"] = {
+		label = "Small Cross 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_685"] = {
+		label = "Soil",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravemound03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_686"] = {
+		label = "Cross with Flowers",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp008_p_mp_gravemarker01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_687"] = {
+		label = "Large Soil",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravedugcover02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_688"] = {
+		label = "Small Soil",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravedug03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_689"] = {
+		label = "Large Angel Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_new_cem_statue02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_690"] = {
+		label = "Woman Statue 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gen_statue01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_691"] = {
+		label = "Woman Statue 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gen_statue02b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_692"] = {
+		label = "Child Statue 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cherubstatuenbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_693"] = {
+		label = "Child Statue 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sc_cupid_statue01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_694"] = {
+		label = "Small Child Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_statue08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_695"] = {
+		label = "Small Angel Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_statue07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_696"] = {
+		label = "Nailed Coffin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffin02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_697"] = {
+		label = "Closed Coffin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_698"] = {
+		label = "Slightly Open Coffin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffin01x_open",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_699"] = {
+		label = "Open Coffin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffinempty01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_700"] = {
+		label = "Coffin with Lining",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp004_s_mp_coffin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_701"] = {
+		label = "Coffin with Flowers",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp004_s_mp_coffindecor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_702"] = {
+		label = "Dark Coffin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravefresh01xp_coffin03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_703"] = {
+		label = "Coffin Lid",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffinlid01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_704"] = {
+		label = "Fabrics 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fabricroll05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_705"] = {
+		label = "Sandbag",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_hotairballoon_sandbag",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_604"] = {
+		label = "Workbench 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_workbench01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_706"] = {
+		label = "Workbench 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_workbench02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_57"] = {
+		label = "Mirror",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_mirror04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_449"] = {
+		label = "Tableware Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_plate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_450"] = {
+		label = "Tableware Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_451"] = {
+		label = "Tableware Set 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_plate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_453"] = {
+		label = "Decorative Tableware 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_456"] = {
+		label = "Plate 1a",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_457"] = {
+		label = "Plate 1b",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saladplate02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_458"] = {
+		label = "Plate 2a",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dinnerplate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_460"] = {
+		label = "Plate 3a",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_461"] = {
+		label = "Plate 3b",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_462"] = {
+		label = "Tea Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teacup02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_463"] = {
+		label = "Mug 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teacup",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_464"] = {
+		label = "Mug 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shavingcup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_465"] = {
+		label = "Mug 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teacup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_707"] = {
+		label = "Decorative Goblet",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_glassfancy01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_708"] = {
+		label = "Shot Glass Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_whglass01x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_709"] = {
+		label = "Glass Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sal_glasset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_711"] = {
+		label = "Glass Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sal_glasset02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_712"] = {
+		label = "Glass Set 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_glass01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_713"] = {
+		label = "Wine Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sal_glasset03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_714"] = {
+		label = "Beer Mug Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_beermug01x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_715"] = {
+		label = "Beer Mug Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bal_beermug01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_716"] = {
+		label = "Set of Jars",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barberbottles01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_717"] = {
+		label = "Small Wine Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sal_glasset04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_718"] = {
+		label = "Small Wine Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_glass01x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_719"] = {
+		label = "Pharmacy Set",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp007_p_nat_bottles01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_720"] = {
+		label = "Beer Mug",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_beermugglass01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_721"] = {
+		label = "Champagne Glass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_champglass01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_722"] = {
+		label = "Wine Glass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_glass04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_723"] = {
+		label = "Small Glass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_glass05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_724"] = {
+		label = "Shot Glass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shotglass01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_725"] = {
+		label = "Large Shot Glass",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_glass02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_726"] = {
+		label = "Blue Container 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottle011x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_727"] = {
+		label = "Blue Container 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlesnakeoil03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_728"] = {
+		label = "Green Container 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottle013x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_729"] = {
+		label = "Green Container 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_730"] = {
+		label = "Green Container 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_731"] = {
+		label = "Green Container 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlesnakeoil02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_732"] = {
+		label = "Brown Container 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_734"] = {
+		label = "Brown Container 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine23x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_737"] = {
+		label = "Brown Container 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_738"] = {
+		label = "Brown Container 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine27x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_739"] = {
+		label = "White Container",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_740"] = {
+		label = "Dark Container",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shopbottlesmall01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_741"] = {
+		label = "Box of Glasses 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlecrate05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_741"] = {
+		label = "Box of Glasses 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlecrate03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_742"] = {
+		label = "Fertility Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_fertilitystatue01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_743"] = {
+		label = "Lady Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_statue01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_748"] = {
+		label = "Terrarium",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_bottleterrarium01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_744"] = {
+		label = "Bottle Opener",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottleopener01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_745"] = {
+		label = "Coffee Grinder 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffee_grinder_001",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_746"] = {
+		label = "Coffee Grinder 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_coffeegrinder03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_747"] = {
+		label = "Set of Coffee Grinders",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_cgrinder02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_749"] = {
+		label = "Red and White Fence",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlebeer01x_fus1_mcs2_p2_t06_shot_2",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_750"] = {
+		label = "Iron Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_craftedtable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_751"] = {
+		label = "Fur on the Ground",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_craftedrool01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_752"] = {
+		label = "Furry Pillow",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_craftedpillow01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_753"] = {
+		label = "Leather Bed",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_craftedbed01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_754"] = {
+		label = "Broom",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_broom02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_755"] = {
+		label = "Hand Saw",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawhand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_756"] = {
+		label = "Saw",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saw01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_757"] = {
+		label = "Machete",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_machete01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_758"] = {
+		label = "Bone Saw",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawmeat01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_759"] = {
+		label = "Sledgehammer",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sledgehammer01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_760"] = {
+		label = "Axe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_axe01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_761"] = {
+		label = "Crowbar",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_prybar01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_762"] = {
+		label = "Cleaver",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cleaver01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_763"] = {
+		label = "Butcher Knife",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_butcherknife01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_764"] = {
+		label = "Shovel",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shovel04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_780"] = {
+		label = "Rock 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_781"] = {
+		label = "Rock 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_782"] = {
+		label = "Rock 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_783"] = {
+		label = "Rock 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_04",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_784"] = {
+		label = "Rock 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_05",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_785"] = {
+		label = "Rock 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_06",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_786"] = {
+		label = "Rock 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_07",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_787"] = {
+		label = "Rock 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_08",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_788"] = {
+		label = "Rock 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_09",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_789"] = {
+		label = "Rock 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_10",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_790"] = {
+		label = "Rock 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_11",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_791"] = {
+		label = "Rock 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_12",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture_792"] = {
+		label = "Rock 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "cumb_rock_scree_sim_02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture01"] = {
+		label = "Decorative Lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp35x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture02"] = {
+		label = "Decorative Lamp 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lampstanding04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture03"] = {
+		label = "Decorative Lamp 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp20x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture04"] = {
+		label = "Desk Lamp",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp18x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture05"] = {
+		label = "Ceiling Light",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture06"] = {
+		label = "Ceiling Light 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamphanging12x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture07"] = {
+		label = "Hanging Light2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamphanging06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture09"] = {
+		label = "Small Bed 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bed22x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture10"] = {
+		label = "Cabinet 30",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinetdoctor02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture15"] = {
+		label = "Cabinet 35",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cornercabinet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture17"] = {
+		label = "Cabinet 37",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chinacabinet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture18"] = {
+		label = "Cabinet 38",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_delidisplaycabinet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture19"] = {
+		label = "Cabinet 39",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cabinet04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture20"] = {
+		label = "Cabinet 40",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_filecabinet66x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture22"] = {
+		label = "Flower Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_flowertable01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture23"] = {
+		label = "Fancy Dinner Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_man01x_longtable",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture24"] = {
+		label = "Doctor Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_doctortable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture25"] = {
+		label = "Coffee Table 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablecoffee04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture26"] = {
+		label = "Side Table 30",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture27"] = {
+		label = "Wine Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_man01x_smltable",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture28"] = {
+		label = "Marble Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_privatelounge_table01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture29"] = {
+		label = "Covered Table 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_itable03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture30"] = {
+		label = "Covered Table 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table_sd_theater01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture31"] = {
+		label = "Table Clock 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clocktable03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture32"] = {
+		label = "Kitchen Prep Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableprep02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture34"] = {
+		label = "Side Table 32",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table40x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture35"] = {
+		label = "Blue Table",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table55x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture36"] = {
+		label = "Side Table 33",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture37"] = {
+		label = "Coffee Table 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablecoffee06a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture38"] = {
+		label = "Fancy Sidetable 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablegiltconsole01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture39"] = {
+		label = "Fancy Sidetable 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableconsole01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture40"] = {
+		label = "Side Table 34",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture41"] = {
+		label = "Round Table 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableconsole05bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture42"] = {
+		label = "Side Table 34",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture43"] = {
+		label = "Table Clock 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clocktable04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture44"] = {
+		label = "Side Table 35",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture45"] = {
+		label = "Fancy Round Table 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable18x_privateobs",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture46"] = {
+		label = "Table Clock 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clocktable02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture47"] = {
+		label = "End Table 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_endtable01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture48"] = {
+		label = "End Table 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_endtable02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture49"] = {
+		label = "End Table 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableconsole03bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture50"] = {
+		label = "Plate 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_platestew01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture51"] = {
+		label = "Plate 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_stewplate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture52"] = {
+		label = "Plate 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crab_plate_03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture53"] = {
+		label = "Plate 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_platechickenrstd01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture54"] = {
+		label = "Dishes 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plates_dishes_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture55"] = {
+		label = "Dishes 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_plate10x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture56"] = {
+		label = "Decorative Plate 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture57"] = {
+		label = "Plate 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_oyster_plate",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture58"] = {
+		label = "Group of Plates 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_plate04x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture59"] = {
+		label = "Plate 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crab_plate_eaten",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture60"] = {
+		label = "Decorative Plate 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_pu_plate13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture61"] = {
+		label = "Blue Stack of Plates",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plate12x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture62"] = {
+		label = "Beer Bottle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlebeer01a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture63"] = {
+		label = "Wine Bottle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlewine01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture64"] = {
+		label = "Group Wine Bottles 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_bottlewine03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture65"] = {
+		label = "Bottle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottletequilafull02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture66"] = {
+		label = "Medicine Bottle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture67"] = {
+		label = "Cognac Bottle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlecognac01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture68"] = {
+		label = "Bottle Crate 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cratebottles01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture70"] = {
+		label = "Bottle Crate 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_bottlecrate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture71"] = {
+		label = "Bottle Absinthe 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottleabsinthe01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture72"] = {
+		label = "Group Wine Bottles 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_bottlewine05x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture73"] = {
+		label = "Medicine Bottle 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine21x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture74"] = {
+		label = "Medicine Bottle 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine20x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture75"] = {
+		label = "Medicine Bottle 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine16x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture76"] = {
+		label = "Face Wash 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlefacewash01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture77"] = {
+		label = "Bottle 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture78"] = {
+		label = "Wine Bottle 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlewine03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture79"] = {
+		label = "Wine Bottle 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_bottlewine01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture80"] = {
+		label = "Snake Oil Bottle 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlesnakeoil_cs01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture81"] = {
+		label = "Group Wine Bottles 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_bottle03x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture82"] = {
+		label = "Group Wine Bottles 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_bottle08x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture83"] = {
+		label = "Medicine Bottle 05",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bottlemedicine14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture84"] = {
+		label = "Tea Cups 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_teacup01x_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture85"] = {
+		label = "Tea Cups 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture86"] = {
+		label = "Cupboard 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboard05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture87"] = {
+		label = "Cupboard 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboard02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture88"] = {
+		label = "Cupboard 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboard06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture89"] = {
+		label = "Cupboard 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture91"] = {
+		label = "Cupboard 06",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_caboose03x_cupboard",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture92"] = {
+		label = "Cupboard 07",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cupboardfac01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture93"] = {
+		label = "Tea Set 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teatraycombo01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture94"] = {
+		label = "Tea Set Sugar",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teasugar",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture95"] = {
+		label = "Pottery 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teamster_break01x_med",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture96"] = {
+		label = "Tea Set 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teatraycombo02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture97"] = {
+		label = "Tea Tin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tin_tea01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture98"] = {
+		label = "Pottery 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teamster_break01x_sml",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture99"] = {
+		label = "Tea Tray 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_teatray01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture100"] = {
+		label = "Books 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doctorsbookpile01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture103"] = {
+		label = "Books 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_bookset05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture105"] = {
+		label = "Books 06",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookset03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture106"] = {
+		label = "Books 07",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookstwo01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture108"] = {
+		label = "Books 09",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_book04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture109"] = {
+		label = "Books End 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bookend01x_train",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture110"] = {
+		label = "Chair 51",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairoffice02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture112"] = {
+		label = "Chair 52",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair37x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture113"] = {
+		label = "Chair 53",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairrustic05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture114"] = {
+		label = "Chair 54",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdesk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture115"] = {
+		label = "Chair 55",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_theaterchair01b01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture116"] = {
+		label = "Chair 56",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture117"] = {
+		label = "Chair 57",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairrustic03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture118"] = {
+		label = "Chair 58",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture119"] = {
+		label = "Chair 59",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairwicker01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture120"] = {
+		label = "Chair 60",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair_privatedining01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture121"] = {
+		label = "Chair 61",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdining03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture122"] = {
+		label = "Chair 62",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairrustic02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture123"] = {
+		label = "Chair 63",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair30x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture124"] = {
+		label = "Chair 64",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_privatelounge_chair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture125"] = {
+		label = "Chair 65",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture126"] = {
+		label = "Chair 66",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairpokerfancy01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture127"] = {
+		label = "Chair 67",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairtall01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture128"] = {
+		label = "Chair 68",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_oldarmchair01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture129"] = {
+		label = "Chair 69",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture130"] = {
+		label = "Chair 70",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairsalon01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture131"] = {
+		label = "Chair 71",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture132"] = {
+		label = "Chair 72",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair12bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture133"] = {
+		label = "Chair 73",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair18x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture134"] = {
+		label = "Chair 74",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair_10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture135"] = {
+		label = "Chair 75",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_diningchairs01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture136"] = {
+		label = "Chair 76",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chaircomfy03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture137"] = {
+		label = "Chair 77",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdining02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture138"] = {
+		label = "Chair 78",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chair38x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture139"] = {
+		label = "Chair 79",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_windsorchair02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture140"] = {
+		label = "Deck Chair 22",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairdeck01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture141"] = {
+		label = "Medical Chair 20",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chairmed02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture143"] = {
+		label = "Mirrored Dresser 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture144"] = {
+		label = "Mirrored Dresser 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture145"] = {
+		label = "Mirrored Dresser 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture147"] = {
+		label = "Sewing Dresser 11 ",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sewing_dresser01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture148"] = {
+		label = "Dresser 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture149"] = {
+		label = "Dresser 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresser01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture150"] = {
+		label = "Dresser 14",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dresserval01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture151"] = {
+		label = "Vanity 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_vanity01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture153"] = {
+		label = "Mail Shelf 20",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelfmail01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture154"] = {
+		label = "Mail Shelf 21",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelfpostal01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture155"] = {
+		label = "Wall Shelf 20",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shelfwall01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture156"] = {
+		label = "Potted Plant 30",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture158"] = {
+		label = "Potted Plant 32",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture159"] = {
+		label = "Potted Plant 33",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarngdead02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture160"] = {
+		label = "Potted Plant 34",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_6a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture161"] = {
+		label = "Potted Plant 35",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng23x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture162"] = {
+		label = "Potted Plant 36",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_flowerarng20x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture163"] = {
+		label = "Potted Plant 37",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_6b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture164"] = {
+		label = "Potted Plant 38",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot_plant_01e",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture165"] = {
+		label = "Potted Plant 39",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_plantpotnbx03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture175"] = {
+		label = "Basket of Potatoes 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketpotato01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture176"] = {
+		label = "Basket of Apples 10 ",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketapple01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture177"] = {
+		label = "Basket of Dishes 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_basketdishes02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture178"] = {
+		label = "Basket of Tomatos 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_baskettomato02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture179"] = {
+		label = "Basket of Onions 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketonion02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture180"] = {
+		label = "Basket of Fish 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basketfish01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture182"] = {
+		label = "Pot 41",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pot05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture183"] = {
+		label = "Pot 42",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potcrawfish01xb",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture184"] = {
+		label = "Pot 43 ",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_copperpot01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture186"] = {
+		label = "Pot 45",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cast_iron_pot_001",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture187"] = {
+		label = "Pot 46",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "proc_potsm01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture188"] = {
+		label = "Pot 47",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_pot02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture189"] = {
+		label = "Pot 48",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_basket06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture190"] = {
+		label = "Clay Pot 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potclay02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture191"] = {
+		label = "Indian Tobacco Crate 33",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_inv_tabaccopotntset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture192"] = {
+		label = "Clay Pot 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potclay05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture194"] = {
+		label = "Clay Pot 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_potterynbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture195"] = {
+		label = "Toilet 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chamberpot01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture196"] = {
+		label = "Basket 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basket03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture197"] = {
+		label = "Basket 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basket01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture198"] = {
+		label = "No Trespassing 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bra_01_cardell_sgn01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture200"] = {
+		label = "Shelf of Cards",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_playingcardset01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture202"] = {
+		label = "Poker Chips 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pokerchipavarage03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture203"] = {
+		label = "Poker Chips 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pokerchipwinningstack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture204"] = {
+		label = "Poker Cards 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pokerhand03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture205"] = {
+		label = "Poker Caddy",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pokercaddy02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture206"] = {
+		label = "Blackjack Caddy",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_blackjackcaddy01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture207"] = {
+		label = "Tobacco Tin 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_tobaccotin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture208"] = {
+		label = "Tin Cup 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cuptin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture209"] = {
+		label = "Fancy Wall Light 20",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lightind01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture210"] = {
+		label = "Coffee Tin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_coffeetin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture211"] = {
+		label = "Group Tobacco Tins 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_gamble_tobacotin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture212"] = {
+		label = "Cutting Board 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cuttingboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture213"] = {
+		label = "Tobacco Tin 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tobaccotin03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture214"] = {
+		label = "Tobacco Tin 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tobaccotin02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture215"] = {
+		label = "Station Clock 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bcstationclockvalentine",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture216"] = {
+		label = "Kidney Beans 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tin_kidney01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture217"] = {
+		label = "Gelatin Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxgelatin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture218"] = {
+		label = "Biscuit Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxlrgtin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture219"] = {
+		label = "Tin Can 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tincan01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture220"] = {
+		label = "Tin Jug 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_jugtin01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture221"] = {
+		label = "Medical Salve 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tin_salve01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture222"] = {
+		label = "Group Canned Veggies 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_tinstack03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture223"] = {
+		label = "Knitting 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_knitting01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture224"] = {
+		label = "Cigar Box",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cigarbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture225"] = {
+		label = "Medical Suitcase 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxmedsuitcase01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture226"] = {
+		label = "Letter Box Set 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_letterboxset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture227"] = {
+		label = "Jewelry Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_jewelrybox02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture228"] = {
+		label = "Tool Box 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxlrgtool01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture229"] = {
+		label = "Wicker Box 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_wickerbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture230"] = {
+		label = "Jewelry Box 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_jewelrybox02bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture231"] = {
+		label = "Hat Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hatbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture232"] = {
+		label = "Chocolate Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_chocolatebox01group03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture233"] = {
+		label = "Jewelry Box 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_brassbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture234"] = {
+		label = "Bird Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_re_birdbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture235"] = {
+		label = "Hat Box 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_hatbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture236"] = {
+		label = "Shaving Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shavingbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture237"] = {
+		label = "Strong Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_strongbox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture238"] = {
+		label = "Cereal Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxcereal01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture239"] = {
+		label = "Dairy Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxlrgice01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture240"] = {
+		label = "Hat Box 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hatbox04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture241"] = {
+		label = "Tackle Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_boxsmltackle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture242"] = {
+		label = "Cologne Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_colognebox01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture243"] = {
+		label = "Shaving Set Closed",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_shavingboxclosed01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture244"] = {
+		label = "Horse Brush 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_brushhorse01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture245"] = {
+		label = "Horse Brush 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_brushhorse02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture246"] = {
+		label = "Seer Sign 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_p_mp_collectorsign02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture247"] = {
+		label = "Gun Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gunbarrelset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture248"] = {
+		label = "Apple Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrelapples01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture249"] = {
+		label = "Wine Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_winebarrel01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture250"] = {
+		label = "Farming Tool Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_barrelcor01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture251"] = {
+		label = "Potato Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrelpotatoes01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture252"] = {
+		label = "Wheel Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_wheelbarrel01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture253"] = {
+		label = "Wheel Barrel 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_wheelbarrow03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture254"] = {
+		label = "Salt Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrelsalt01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture255"] = {
+		label = "Barrel Group 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrel02x_group_03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture256"] = {
+		label = "Blue Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrel_cor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture257"] = {
+		label = "Barber Tools 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barber_propset08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture258"] = {
+		label = "Half Barrel 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barrelhalf03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture259"] = {
+		label = "Barber Props 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barber_propset02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture260"] = {
+		label = "Barber Props 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barber_propset09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture261"] = {
+		label = "Barber Props 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barber_propset07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture262"] = {
+		label = "Barber Props 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_barber_propset06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture263"] = {
+		label = "Arrow Display 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_arrowdisplay02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture264"] = {
+		label = "Bow Display 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowdisplay01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture265"] = {
+		label = "Meat Bowl 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_meatbowl01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture266"] = {
+		label = "Stew Bowl 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowl04x_stew",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture267"] = {
+		label = "Soup Bowl 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_soupbowl01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture268"] = {
+		label = "Decorative Planter",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowlplantbra01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture270"] = {
+		label = "Meat Bowl 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_rabbitmeatbowl01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture271"] = {
+		label = "Bowl 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowl03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture272"] = {
+		label = "Stack of Bowls 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowlstack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture273"] = {
+		label = "Planter Box 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowlplantnbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture274"] = {
+		label = "Stack of Bowls 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowl02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture275"] = {
+		label = "Stack of Bowls 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bowl01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture276"] = {
+		label = "Bed 60",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bed17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture277"] = {
+		label = "Table 61",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_tablepierson01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture278"] = {
+		label = "Prep Table Crafting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table44x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture279"] = {
+		label = "Table 62",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_mtsaloontable",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture280"] = {
+		label = "Table 63",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table43xb",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture282"] = {
+		label = "Table 65",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tablework03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture283"] = {
+		label = "Table 66",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table_saloon01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture284"] = {
+		label = "Table 67",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tableconsole03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture285"] = {
+		label = "Table 68",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture286"] = {
+		label = "Table 69",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_table39x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture287"] = {
+		label = "Table 70",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sidetable01x_norpass01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture288"] = {
+		label = "Letter 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_letter02x_bundle",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture289"] = {
+		label = "Letter 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_letterboxcombo01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture290"] = {
+		label = "Letter 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_uniqletterbundle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture291"] = {
+		label = "Letter 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lettertray01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture292"] = {
+		label = "Letter 05",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_w_tra_letterbundle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture293"] = {
+		label = "Letter 06",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_letterbundlecombo01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture294"] = {
+		label = "Tree 07",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_maple_s_04",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture295"] = {
+		label = "Tree 08",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_maple_s_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture296"] = {
+		label = "Tree 09",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_joshua_01d",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture297"] = {
+		label = "Tree 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_cactus_01a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture298"] = {
+		label = "Tree 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_magnolia_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture299"] = {
+		label = "Tree 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tree_cactus_01b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture300"] = {
+		label = "Counter 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_counterdoctor01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture301"] = {
+		label = "Desk 14",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_deskstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture302"] = {
+		label = "Cart 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cartstreetvendor01b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture309"] = {
+		label = "No Tresspassing 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bra_cal_sgn_tress4a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture310"] = {
+		label = "Wood Burning Stove Crafting",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_woodburningstove01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture311"] = {
+		label = "Can of Beans 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_canbeans01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture312"] = {
+		label = "Planter Box 06",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planternbx04c",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture316"] = {
+		label = "Cigar Stand 05",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sto_cigarstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture317"] = {
+		label = "Guitar 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_guitar01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture318"] = {
+		label = "Fireplace Tools",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fireplacetoolset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture320"] = {
+		label = "Dream Catcher 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_disdreamcatcherwind05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture321"] = {
+		label = "Piano 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "sha_man_piano01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture322"] = {
+		label = "Money Stack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_moneystack02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture323"] = {
+		label = "Wolf Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_whittlingwolf01d",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture324"] = {
+		label = "Gun Case",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_guncase04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture325"] = {
+		label = "Rug Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_rugstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture327"] = {
+		label = "Fountain 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fountain02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture328"] = {
+		label = "Pig Roast",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pigroast",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture331"] = {
+		label = "Hanging Lamp 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamphanging11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture332"] = {
+		label = "Sack of Sugar",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sacksugar01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture333"] = {
+		label = "Room Divider 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_divider05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture334"] = {
+		label = "Sign 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sign01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture335"] = {
+		label = "Sign 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sign_open_close02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture336"] = {
+		label = "Wanted Poster",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pos_wanteddead01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture338"] = {
+		label = "Food 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_food01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture339"] = {
+		label = "Salami 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_salami_a_meat_b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture340"] = {
+		label = "Frame 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture341"] = {
+		label = "Planter 43",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_planter03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture342"] = {
+		label = "Prop 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saloonpropgroup04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture343"] = {
+		label = "Piano 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_piano02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture344"] = {
+		label = "No Tresspassing Sign 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bra_cal_sgn_tress3b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture345"] = {
+		label = "Drum Kit",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_drumkit01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture347"] = {
+		label = "Couch 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture348"] = {
+		label = "Couch 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture349"] = {
+		label = "Couch 12",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture350"] = {
+		label = "Couch 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture351"] = {
+		label = "Couch 14",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_couch09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture352"] = {
+		label = "Bench 30 ",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture355"] = {
+		label = "Bench 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_benchnbx02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture357"] = {
+		label = "Bench 13",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_woodbench02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture358"] = {
+		label = "Bench 14",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture359"] = {
+		label = "Bench 15",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture360"] = {
+		label = "Bench 16",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bench17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture363"] = {
+		label = "Clock 42",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clockkorrigan01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture365"] = {
+		label = "Clock 44",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "val_bank_clock",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture366"] = {
+		label = "Doctor Set 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_botset20x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture367"] = {
+		label = "Wash Basin 41",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washbasinregal01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture368"] = {
+		label = "Dolls",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_doll01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture369"] = {
+		label = "Mortar and Pestle",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_mortarpestle02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture370"] = {
+		label = "Wash Basin 42",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washstand02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture372"] = {
+		label = "Newspaper 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_newspapergroup02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture373"] = {
+		label = "Chandelier 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chandelier15x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture374"] = {
+		label = "Horse Meds 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_horsemedsgroup02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture375"] = {
+		label = "Ash Tray",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ashtray02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture376"] = {
+		label = "Bags",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_bagstrauss01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture377"] = {
+		label = "Fire Guard",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fireguard02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture378"] = {
+		label = "Display Tux",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_displaytux01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture380"] = {
+		label = "Podium",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_podium02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture381"] = {
+		label = "Voodoo Drum",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_voodoodrum01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture382"] = {
+		label = "Dreamcatcher 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_disdreamcatcherwind01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture384"] = {
+		label = "Divider 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_divider01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture385"] = {
+		label = "Crucifix",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crucifix02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture386"] = {
+		label = "Loveseat 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_settee01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture387"] = {
+		label = "Gunrack 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gunrack04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture388"] = {
+		label = "Kettle 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_kettlecopper01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture390"] = {
+		label = "Sign 09",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "val_p_shackai_sgn1",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture391"] = {
+		label = "Sign 20",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bra_cal_sgn_tress4b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture392"] = {
+		label = "Desk 22",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bw_desk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture393"] = {
+		label = "Desk 23",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_desk17x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture394"] = {
+		label = "Hanging Lamp 40",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamphanging13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture395"] = {
+		label = "Wall Phone",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_phonewall01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture396"] = {
+		label = "Hanging Lamp 41",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamphanging14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture397"] = {
+		label = "Lamp 50",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp27x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture398"] = {
+		label = "Toy Horse",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_toyhorse",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture399"] = {
+		label = "Horse Meds 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_horsemedsgroup03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture400"] = {
+		label = "Horse 04",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_horse01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture402"] = {
+		label = "Weapon Crate 07",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crateweapons02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture403"] = {
+		label = "Whiskey Crate 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_whiskeycrate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture404"] = {
+		label = "Crate 05",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture405"] = {
+		label = "Jugs",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_n_grocery_jug02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture406"] = {
+		label = "Folded Blanket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_foldedblanket01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture420"] = {
+		label = "Tent 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_tent_trader07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture421"] = {
+		label = "Tent 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_tent_bountyhunter04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture423"] = {
+		label = "Tent 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambtentburlap01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture424"] = {
+		label = "Tent 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambtentleather01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture425"] = {
+		label = "Tent 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_tentplain01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture426"] = {
+		label = "Tent 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_tent_bountyhunter06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture427"] = {
+		label = "Tent 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_tent_collector06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture428"] = {
+		label = "Tent 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_tentrandomevent01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture429"] = {
+		label = "Tent 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp005_s_posse_tent_trader04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture431"] = {
+		label = "Hanging Pots 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_hanging02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture432"] = {
+		label = "Hanging Pots 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_hanging03",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture433"] = {
+		label = "Hanging Pots 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_hanging01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture435"] = {
+		label = "Fishing Items 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_fishhangi01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture436"] = {
+		label = "Fishing Items 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_fishing01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture437"] = {
+		label = "Fishing Items 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_veh_pg_vl_fisherman01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture438"] = {
+		label = "Fishing Items 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_fishstall01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture439"] = {
+		label = "Fishing Items 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_bucketfish01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture441"] = {
+		label = "Wash Basin Set 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washbasinset01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture442"] = {
+		label = "Wash Basin Set 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washbasinset01ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture443"] = {
+		label = "Wash Basin 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washboard_01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture444"] = {
+		label = "Wash Basin 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_washbasinset01bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture445"] = {
+		label = "Soap",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_package_soap01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture446"] = {
+		label = "Cart 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cart03b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture447"] = {
+		label = "Serving Cart",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_servingcart01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture448"] = {
+		label = "Supply Cart",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_drsupplycart01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture449"] = {
+		label = "Grinding Wheel",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_grindingwheelx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture450"] = {
+		label = "Spinning Wheel",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_spinningwheel01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture451"] = {
+		label = "Cactus 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr2_bush_pricklypearcactus",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture452"] = {
+		label = "Bush 05",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "rdr_bush_decor_ab",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture453"] = {
+		label = "Scarecrow 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_scarecrow02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture454"] = {
+		label = "Cooking Fire",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_sav_cookfire01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture456"] = {
+		label = "Haybale Stack 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haybalestack03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture457"] = {
+		label = "Wood Pile 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_woodpile01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture458"] = {
+		label = "Pelt 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambpelt03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture460"] = {
+		label = "Log Pile",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_logpile01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture461"] = {
+		label = "Furnace 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_furnace01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture462"] = {
+		label = "Milk Can",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_milkcan01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture463"] = {
+		label = "Haybale 07",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haybalecover01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture464"] = {
+		label = "Pelt 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_ambpelt01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture465"] = {
+		label = "Sconce Light 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dblsconcelight01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture466"] = {
+		label = "Paper 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_papergroup07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture469"] = {
+		label = "Cloth 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_clothhorseonwheels01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture471"] = {
+		label = "Dog Toy",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_dogtoy01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture472"] = {
+		label = "Well pump",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_wellpumpnbx01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture473"] = {
+		label = "Hat Stand 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_hatstand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture474"] = {
+		label = "Doll",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doll01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture475"] = {
+		label = "Feed Bags",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_feedbags01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture476"] = {
+		label = "File Cabinet 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_filecabinet04bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture477"] = {
+		label = "Corn",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_corn02group01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture479"] = {
+		label = "Divider 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_divider04x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture480"] = {
+		label = "Lamp 26",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp26x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture481"] = {
+		label = "Scare Crow 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_scarecrow03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture483"] = {
+		label = "Cauldron",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cauldron01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture484"] = {
+		label = "Globe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_globe02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture485"] = {
+		label = "Food 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_int_food02",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture486"] = {
+		label = "Garlic",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_indiangarlic01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture487"] = {
+		label = "Scarecrow 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_scarecrow05x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture489"] = {
+		label = "Hanging Meat",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pork_meat_b",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture490"] = {
+		label = "Eagle Statue",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_eagle01bx",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture491"] = {
+		label = "Ceiling Fan",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fanceiling01ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture493"] = {
+		label = "Chandelier 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chandelier14x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture494"] = {
+		label = "Saw Horse",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sawhorse01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture496"] = {
+		label = "Salad Plate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saladplate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture497"] = {
+		label = "Books 21",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_booksgroup02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture498"] = {
+		label = "Feed Bag",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_mp_feedbaghang01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture499"] = {
+		label = "chandelier 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chandelier13x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture501"] = {
+		label = "Saloon Props",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_lset01x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture502"] = {
+		label = "Clothes Basin",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_valbasin01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture503"] = {
+		label = "Sideboard 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_sideboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture504"] = {
+		label = "Curtian 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_rhogen_curtain01a",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture505"] = {
+		label = "Frame 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame04ax",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture506"] = {
+		label = "Chandelier 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chandelier24x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture507"] = {
+		label = "Rifle Rack",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_riflerack01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture509"] = {
+		label = "Statue 22",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_headbust03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture510"] = {
+		label = "Lamp 25",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_lamp28x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture511"] = {
+		label = "Saloon Prop",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_grp_cellar01x_sal_sd",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture512"] = {
+		label = "Pillow 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pillow08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture513"] = {
+		label = "Fireguard 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_fireguard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture514"] = {
+		label = "Milk Bucket",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_bucketmilk02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture515"] = {
+		label = "Pillow 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pillow11x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture516"] = {
+		label = "Vase 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_vase06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture517"] = {
+		label = "Fire Grate 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_firegrate01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture518"] = {
+		label = "Vase 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_vase01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture519"] = {
+		label = "Saloon Prop 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_saloonpropgroup01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture520"] = {
+		label = "Newspaper Stack 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_group_newspaperstack",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture521"] = {
+		label = "Pillow 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_pillow06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture522"] = {
+		label = "Basket 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_basket07x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture523"] = {
+		label = "Frame 30",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture525"] = {
+		label = "Chandelier 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_chandelier09x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture527"] = {
+		label = "Duck kitchen",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_duckdead02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture528"] = {
+		label = "Gatling Crate",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_crategatling02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture529"] = {
+		label = "Help Wanted Sign",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_helpwanted01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture530"] = {
+		label = "Trunk 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_trunkvar01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture531"] = {
+		label = "Shelf 33",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_apothecary01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture532"] = {
+		label = "Buffet 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_buffet01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture533"] = {
+		label = "Cuttingboard 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_cuttingboard01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture534"] = {
+		label = "Grave 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone10x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture535"] = {
+		label = "Serving Dish",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_servingdish01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture536"] = {
+		label = "Armoir 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture537"] = {
+		label = "Traveling Trunk",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_traveltrunk02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture538"] = {
+		label = "Frame 34",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_frame02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture539"] = {
+		label = "Candleabra 01",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_candelabra02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture540"] = {
+		label = "Cutlery",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cutlery02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture541"] = {
+		label = "Grave 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_susans_grave",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture542"] = {
+		label = "Trunk 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_trunk01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture543"] = {
+		label = "Pie Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_piestand01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture544"] = {
+		label = "Grave 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gravestone02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture545"] = {
+		label = "Armoir 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoiroffice66x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture546"] = {
+		label = "Armoir 3",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture548"] = {
+		label = "Armoir 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir08x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture549"] = {
+		label = "Armoir 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_armoir06x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture552"] = {
+		label = "Chest 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_waterloggedchest01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture553"] = {
+		label = "Secretary Desk",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_inlaidsecretary01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture556"] = {
+		label = "Saddle 1",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "s_saddlewinter07_01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture557"] = {
+		label = "Saddle 2",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_cs_saddle01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture559"] = {
+		label = "Haybale 60",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_haybalecover03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture560"] = {
+		label = "Gun Display 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_gundisplay01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture561"] = {
+		label = "Doctors Bottles",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_doc_botset18x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture562"] = {
+		label = "Music Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_musicstand02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture564"] = {
+		label = "Buffet 02",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_buffet03x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture565"] = {
+		label = "Buffet 03",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_buffet02x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture566"] = {
+		label = "Obstacle 4",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_barrellong01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture567"] = {
+		label = "Obstacle 5",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_barrelshort01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture568"] = {
+		label = "Obstacle 6",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_fenceshort01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture569"] = {
+		label = "Obstacle 7",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_logshort01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture570"] = {
+		label = "Obstacle 8",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_dock01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture571"] = {
+		label = "Obstacle 9",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_jumphurdles01x",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture572"] = {
+		label = "Obstacle 10",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "mp001_p_mp_jump_blocksmall01",
+		client = {
+			image = "furniture.png",
+		},
+	},
+	["furniture5673"] = {
+		label = "Obstacle 11",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "furniture for houses",
+		prop = "p_jumphurdles01x",
 		client = {
 			image = "furniture.png",
 		},
@@ -10203,9 +23536,89 @@ return {
 		},
 	},
 
-	--Furniture CAMPS
-	["camping_1"] = {
-		label = "Wooden Crate Chair",
+
+	-- Camping Peds
+	["cs_valprostitute_01"] = {
+		label = "Doctor",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["u_m_m_valbutcher_01"] = {
+		label = "Butcher",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["u_m_m_sdtrapper_01"] = {
+		label = "Trapper",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["re_lostdrunk_females_01"] = {
+		label = "Telegram",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["u_m_m_dorhomesteadhusband_01"] = {
+		label = "test",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["cs_herbalist"] = {
+		label = "Herbalist",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+	["am_valentinedoctors_females_01"] = {
+		label = "General Store",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Employee for camps",
+		client = {
+			image = "npc.png",
+		},
+	},
+
+	-- New Camping Props
+	["p_chair02x"] = {
+		label = "Tanners Canopy",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
@@ -10216,1471 +23629,14154 @@ return {
 			image = "furniture.png",
 		},
 	},
-	["camping_2"] = {
-		label = "Normal Tent",
+	["p_cabinet03x"] = {
+	label = "Cabinet 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_kitchenhutch01x"] = {
+	label = "Cabinet 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_kitchenhutch01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_guncabinet02x"] = {
+	label = "Cabinet 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_guncabinet02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinet09x"] = {
+	label = "Cabinet 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinetdoctor01x"] = {
+	label = "Cabinet 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinetdoctor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chest02x"] = {
+	label = "Cabinet 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chest02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nbmchinacabinet02x"] = {
+	label = "Cabinet 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nbmchinacabinet02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_drmedcabinet01x"] = {
+	label = "White cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_drmedcabinet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboardcorner01x"] = {
+	label = "White corner cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboardcorner01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nbmchinacabinet01x"] = {
+	label = "Cabinet with glass doors",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nbmchinacabinet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinetchina04x"] = {
+	label = "Decorated cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinetchina04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinetpostal01x"] = {
+	label = "Segmented cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinetpostal01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cornercabinet02x"] = {
+	label = "Corner cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cornercabinet02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable02x"] = {
+	label = "Night table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_filecabinet02x"] = {
+	label = "Secretary desk",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_filecabinet02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser09x"] = {
+	label = "Dresser with mirror",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinet15x"] = {
+	label = "Dresser 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser07x"] = {
+	label = "Cabinet 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir04x"] = {
+	label = "Cabinet 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelf06x"] = {
+	label = "Shelf",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelf06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_commodini01x"] = {
+	label = "Cabinet 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_commodini01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable10x"] = {
+	label = "Cabinet 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinet13x"] = {
+	label = "Stand 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinet11x"] = {
+	label = "Dresser 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser11x"] = {
+	label = "Black dresser",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gate_stable02x"] = {
+	label = "Stable gate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gate_stable02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_clothingcasedoor01x"] = {
+	label = "Library door",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_clothingcasedoor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp006_p_mshine_int_door01x"] = {
+	label = "Cabinet door",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp006_p_mshine_int_door01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fireplacelogs02x"] = {
+	label = "Fireplace",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fireplacelogs02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lampstanding03x"] = {
+	label = "Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lampstanding03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_candlestick03x"] = {
+	label = "Candle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_candlestick03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sconcelight01x"] = {
+	label = "Wall light",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sconcelight01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lampexterior04x"] = {
+	label = "Outdoor Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lampexterior04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp03x"] = {
+	label = "Hanging lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp32x"] = {
+	label = "Red lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp32x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lampstanding09x"] = {
+	label = "Standing lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lampstanding09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp17x"] = {
+	label = "Hanging lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_streetlampnbx01x"] = {
+	label = "Street lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_streetlampnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lampwall08x"] = {
+	label = "Wall lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lampwall08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gnomeoillamp03x"] = {
+	label = "Red lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gnomeoillamp03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_campfire03x"] = {
+	label = "Fireplace",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_campfire03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_splitfirelog01x"] = {
+	label = "Burning log",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_splitfirelog01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mailbox01x"] = {
+	label = "Mailbox",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mailbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hng_toi"] = {
+	label = "Outhouse",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hng_toi",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clothesline01x"] = {
+	label = "Clothesline",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clothesline01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng08x"] = {
+	label = "Flower",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpothangnbx01x"] = {
+	label = "Flower",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpothangnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potfernbalcony01x"] = {
+	label = "Flower",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potfernbalcony01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng16x"] = {
+	label = "Flower",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng16x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrel04b"] = {
+	label = "small barrel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrel04b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrel02_opencs01x"] = {
+	label = "large barrel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrel02_opencs01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cart03x"] = {
+	label = "Cart",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cart03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ofw_post_01"] = {
+	label = "Long stakes",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ofw_post_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cal_gatel01x_post"] = {
+	label = "White stake",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cal_gatel01x_post",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_trashbin01bx"] = {
+	label = "Bin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_trashbin01bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_canopycloth"] = {
+	label = "Pergola top",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_canopycloth",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_canopy66x"] = {
+	label = "Pergola base",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_canopy66x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_canopycloth03x"] = {
+	label = "Pergola curtains",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_canopycloth03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_bed20madex"] = {
+	label = "Bed 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_bed20madex",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed12x"] = {
+	label = "Bed 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed12x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed03x"] = {
+	label = "Bed 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed05x"] = {
+	label = "Bed 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed21x"] = {
+	label = "Bed 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed21x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed10x"] = {
+	label = "Bed 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed20x"] = {
+	label = "Bed 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bedking02x"] = {
+	label = "Bed 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bedking02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table41x"] = {
+	label = "Table 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table41x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table48x"] = {
+	label = "Table 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table48x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableannsaloon01x"] = {
+	label = "Table 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableannsaloon01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableannsaloon01x"] = {
+	label = "Table 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_man01x_tableround",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_workbenchdesk01x"] = {
+	label = "Table 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_workbenchdesk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sawbucktable01x"] = {
+	label = "Garden table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sawbucktable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_desk07x"] = {
+	label = "Writing desk",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_desk07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_desk09bx"] = {
+	label = "Elegant table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_desk09bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tabledining05x"] = {
+	label = "Table 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tabledining05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_desk13x"] = {
+	label = "Table 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_desk13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table51x"] = {
+	label = "Table with cloth 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table51x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table10x"] = {
+	label = "Table with cloth 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablebooth01x"] = {
+	label = "Decorated table 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablebooth01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tabledining04x"] = {
+	label = "Decorated table 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tabledining04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablecoffee05x"] = {
+	label = "Tea table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablecoffee05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablework02x"] = {
+	label = "Nightstand 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablework02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablebedside02x"] = {
+	label = "Nightstand 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablebedside02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableprep01x"] = {
+	label = "Light table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableprep01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table14x"] = {
+	label = "Table with cloth 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantstand01x"] = {
+	label = "Small table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table01x_norpass03x"] = {
+	label = "Table 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table01x_norpass03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablemahogany01x"] = {
+	label = "Table 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablemahogany01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_windsorchair03x"] = {
+	label = "Chair 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_windsorchair03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair05x"] = {
+	label = "Chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy11x"] = {
+	label = "Comfy chair 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_woodendeskchair01x"] = {
+	label = "Wooden chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_woodendeskchair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pianochair01x"] = {
+	label = "Piano chair 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pianochair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairrocking03x"] = {
+	label = "Rocking chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairrocking03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair07x"] = {
+	label = "Chair 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy12x"] = {
+	label = "Comfy chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy12x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdining01x"] = {
+	label = "Comfy chair 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdining01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bench20x"] = {
+	label = "Stool",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bench20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy23x"] = {
+	label = "Armchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy23x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bistrochair01x"] = {
+	label = "Outdoor chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bistrochair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchpiano02x"] = {
+	label = "Piano chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchpiano02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy22x"] = {
+	label = "Pink armchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy22x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy02"] = {
+	label = "Grey armchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy01x"] = {
+	label = "Floral armchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairwicker02x"] = {
+	label = "Rattan chair 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairwicker02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairwicker03x"] = {
+	label = "Rattan chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairwicker03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_rockingchair01x"] = {
+	label = "Rocking chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_rockingchair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair11x"] = {
+	label = "Decorated chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair15x"] = {
+	label = "Chair with handles",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_stool02x"] = {
+	label = "Small stool",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_stool02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdesk02x"] = {
+	label = "Leather armchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdesk02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy05x"] = {
+	label = "Comfy chair 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sit_chairwicker01a"] = {
+	label = "Outdoor bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sit_chairwicker01a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_victoriansofa01x"] = {
+	label = "Sofa 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_victoriansofa01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sofa01x"] = {
+	label = "Sofa 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sofa01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchch01x"] = {
+	label = "Bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchch01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch05x"] = {
+	label = "Sofa 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch10x"] = {
+	label = "Sofa 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchironnbx01x"] = {
+	label = "Outdoor bench 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchironnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchannsaloon01x"] = {
+	label = "Long bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchannsaloon01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchannsaloon01x"] = {
+	label = "Light bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchnbx03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchironnbx02x"] = {
+	label = "Metal bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchironnbx02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_trad_chair01x"] = {
+	label = "Sun lounger",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_trad_chair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_re_rcboatbox01x"] = {
+	label = "Storage 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_re_rcboatbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_trunk02x"] = {
+	label = "Storage 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_trunk02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_lootablemiscchest_wagon"] = {
+	label = "Storage 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_lootablemiscchest_wagon",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nbmclock01x"] = {
+	label = "Clock",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nbmclock01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_stove04x"] = {
+	label = "Stove",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_stove04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nbxpiano01x"] = {
+	label = "Piano",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nbxpiano01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_coatstandrack01x"] = {
+	label = "Coat stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_coatstandrack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_col_posters01x"] = {
+	label = "Poster",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_col_posters01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pilloweagle01x"] = {
+	label = "Red pillow",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pilloweagle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nbx_doc_wallclocklrg01x"] = {
+	label = "Wall clock 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nbx_doc_wallclocklrg01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wallclocklrg01x"] = {
+	label = "Wall clock 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wallclocklrg01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_regulatorclock02x"] = {
+	label = "Wall clock 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_regulatorclock02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clock09x"] = {
+	label = "Wall clock 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clock09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clock10x"] = {
+	label = "Clock 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clock10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clockset01x"] = {
+	label = "Clock 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clockset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coatstand01x"] = {
+	label = "Coat stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coatstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_rug01x"] = {
+	label = "Rug 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_rug01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_rc_campsrug01x"] = {
+	label = "Rug 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_rc_campsrug01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_col_cloth02x"] = {
+	label = "Rug 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_col_cloth02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp006_p_mshine_int_curtain01x"] = {
+	label = "Curtain 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp006_p_mshine_int_curtain01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_curtainslace01x"] = {
+	label = "Curtain 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_curtainslace01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_curtainslace02b"] = {
+	label = "Curtain 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_curtainslace02b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_curtainslace02x_static"] = {
+	label = "Curtain 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_curtainslace02x_static",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_valhot_curtain01d"] = {
+	label = "Curtain 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_valhot_curtain01d",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_val_peepcurtain01x"] = {
+	label = "Curtain 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_val_peepcurtain01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelfwall02x"] = {
+	label = "Shelf",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelfwall02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_gen_tobacco03"] = {
+	label = "Cigar box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_gen_tobacco03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_champholder01x"] = {
+	label = "Wine box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_champholder01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fandesk01x"] = {
+	label = "Fan",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fandesk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambstove01x"] = {
+	label = "Decorative stove",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambstove01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_deerantchandelier01x"] = {
+	label = "Deer antler chandelier",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_deerantchandelier01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fence01ax"] = {
+	label = "Fence 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fence01ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wallnbd01x"] = {
+	label = "Fence 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wallnbd01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fencetall_04ax"] = {
+	label = "Fence 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fencetall_04ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_val_fencez_flata"] = {
+	label = "Brown fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_val_fencez_flata",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["val_fencepen01_ex"] = {
+	label = "Light fence 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "val_fencepen01_ex",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_emrfence03ax"] = {
+	label = "Light fence 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_emrfence03ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bra_fence01x"] = {
+	label = "White enclosure 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bra_fence01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gate_wornbarn04x"] = {
+	label = "White enclosure 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gate_wornbarn04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fence_picket_w_01"] = {
+	label = "Plank fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fence_picket_w_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fence_picket_02_rhoa"] = {
+	label = "White fence 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fence_picket_02_rhoa",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fence_picket_01_rhoa"] = {
+	label = "White fence 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fence_picket_01_rhoa",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rho_sal_trellis_btm_root"] = {
+	label = "Decorated fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rho_sal_trellis_btm_root",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fence04ax"] = {
+	label = "Narrow enclosure",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fence04ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gate_wornbarn02x"] = {
+	label = "Dark fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gate_wornbarn02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gate_horse02a"] = {
+	label = "Stable fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gate_horse02a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["prop_fncwood_09d"] = {
+	label = "Long white fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "prop_fncwood_09d",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chickenfence01x"] = {
+	label = "Chicken fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chickenfence01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["val_fencepen01_dx"] = {
+	label = "Short fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "val_fencepen01_dx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["val_fencepen01_ax"] = {
+	label = "Brown fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "val_fencepen01_ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cor_fences_lod_06"] = {
+	label = "Base gate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cor_fences_lod_06",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bath03x"] = {
+	label = "Bath 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bath03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sink02x"] = {
+	label = "Sink",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sink02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_drysink01x"] = {
+	label = "Sink 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_drysink01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_sink03x"] = {
+	label = "Sink 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_sink03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambfloorfur01x"] = {
+	label = "Fur",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambfloorfur01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washboard01x"] = {
+	label = "Washboard",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washbasndoctor01x"] = {
+	label = "Sink 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washbasndoctor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_toiletchair01x"] = {
+	label = "Toilet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_toiletchair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bath02bx"] = {
+	label = "Bath 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bath02bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bath02x"] = {
+	label = "Bath 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bath02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gunsmithkit01x"] = {
+	label = "Gunsmith Tools",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gunsmithkit01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxmedmedical01x"] = {
+	label = "Medical Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxmedmedical01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_toolbox01x"] = {
+	label = "Toolbox",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_toolbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gundisplay02x"] = {
+	label = "Gun stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gundisplay02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_veh_pg_vl_blacksmith01x"] = {
+	label = "Blacksmith tools",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_veh_pg_vl_blacksmith01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_toolpegboard01x"] = {
+	label = "Tool wall",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_toolpegboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_drillpress01x"] = {
+	label = "Drill press",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_drillpress01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_register05x"] = {
+	label = "Cash register",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_register05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_safe01x"] = {
+	label = "Safe",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_safe01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_safe_ser"] = {
+	label = "Small Safe",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_safe_ser",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_mortarpestle01x"] = {
+	label = "Mortar and Pestle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_mortarpestle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp006_p_moonshiner_still03x"] = {
+	label = "Distillery",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp006_p_moonshiner_still03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gunsmithprops09x"] = {
+	label = "Vise",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gunsmithprops09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_maximcrate01x"] = {
+	label = "Gatling Gun Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_maximcrate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_rc_exconfederates1_01x"] = {
+	label = "Ammo Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_rc_exconfederates1_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_racesignpost08x"] = {
+	label = "No Guns Sign",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_racesignpost08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_roadsign08x"] = {
+	label = "Sign",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_roadsign08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chalkboard01x"] = {
+	label = "School board",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chalkboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_deskpad01x"] = {
+	label = "School pad",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_deskpad01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sandwichboard01x"] = {
+	label = "Market Board L",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sandwichboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sandwichboard04x"] = {
+	label = "Market Board R",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sandwichboard04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sandwichboard07x"] = {
+	label = "Menu Board",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sandwichboard07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sandwichboard02x"] = {
+	label = "Open Board",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sandwichboard02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng05x"] = {
+	label = "Bouquet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng17x"] = {
+	label = "Dypsis lutescens",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plant04x"] = {
+	label = "Aloe vera",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plant04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planternbx04b"] = {
+	label = "Nerium oleander",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planternbx04b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx04x"] = {
+	label = "Mix 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planternbx04a"] = {
+	label = "Nerium oleander 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planternbx04a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_belljarplant01x"] = {
+	label = "Moonshine",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_belljarplant01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planter03a"] = {
+	label = "Arctium lappa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planter03a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plant_int_04a"] = {
+	label = "Monstera deliciosa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plant_int_04a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planter"] = {
+	label = "Mix 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planter",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_05a"] = {
+	label = "Strelitzia nicolai",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_05a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx05x"] = {
+	label = "Dracaena reflexa var. angustifolia",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx06x"] = {
+	label = "Mix 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx07x"] = {
+	label = "Chlorophytum comosum",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotwallnbx01x"] = {
+	label = "Carex morrowii",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotwallnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_01b"] = {
+	label = "Dryopteris filix-mas",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_01b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng01x"] = {
+	label = "Mix 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_03b"] = {
+	label = "Mix 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_03b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plant_moneytree"] = {
+	label = "Pachira aquatica",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plant_moneytree",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng09bx"] = {
+	label = "Spathiphyllum wallisii",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng09bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng03x"] = {
+	label = "Lilac",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng02x"] = {
+	label = "Peace lily",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng06x"] = {
+	label = "Trachycarpus fortunei",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng07x"] = {
+	label = "Ficus benjamina",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_7_static"] = {
+	label = "Hanging pot white",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_7_static",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_7c"] = {
+	label = "Hanging pot mix",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_7c",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_fern_aa_sim"] = {
+	label = "Fern",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_fern_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_paradise_aa_sim"] = {
+	label = "Decorative flower",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_paradise_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_neat_ae_sim"] = {
+	label = "Rose bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_neat_ae_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_neat_ac_sim"] = {
+	label = "Purple bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_neat_ac_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_neat_bc_sim"] = {
+	label = "Pink bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_neat_bc_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_neat_bb_sim"] = {
+	label = "Red bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_neat_bb_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_hedgecore_aa"] = {
+	label = "Hedge bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_hedgecore_aa",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_neat_ab_sim"] = {
+	label = "Tall bush",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_neat_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_decor_aa"] = {
+	label = "Small tree",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_decor_aa",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_cedar_decor_02"] = {
+	label = "Thuja",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_cedar_decor_02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_junip_ac_sim"] = {
+	label = "Golden thuja",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_junip_ac_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_junip_ab_sim"] = {
+	label = "Small golden thuja",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_junip_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_arec_aa_sim"] = {
+	label = "Tall palm",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_arec_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_arec_ab_sim"] = {
+	label = "Short palm",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_arec_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_palm_aa_sim"] = {
+	label = "Tall monstera",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_palm_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_palm_ab_sim"] = {
+	label = "Short monstera",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_palm_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_soga_ab_sim"] = {
+	label = "Tall date palm",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_soga_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_soga_aa_sim"] = {
+	label = "Short date palm",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_soga_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_broad_aa_sim"] = {
+	label = "Tall ficus",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_broad_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_broad_ab_sim"] = {
+	label = "Short ficus",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_broad_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_yucca_aa_sim"] = {
+	label = "Yucca",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_yucca_aa_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_leafyvase"] = {
+	label = "Leafy vase",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_leafyvase",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barberchair03x"] = {
+	label = "Barber Chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barberchair03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdoctor02x"] = {
+	label = "Doctor's Chair 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdoctor02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdoctor01x"] = {
+	label = "Doctor's Chair 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdoctor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_examtbledoctor01x"] = {
+	label = "Doctor's Bed",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_examtbledoctor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_signdoctorrho_b"] = {
+	label = "Doctor's Sign",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_signdoctorrho_b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_medbed01x"] = {
+	label = "Doctor's Bed 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_medbed01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_drmedscale02x"] = {
+	label = "Doctor's Scale",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_drmedscale02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_syringeset01x"] = {
+	label = "Doctor's Stethoscope and Injection",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_syringeset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_microscope01x"] = {
+	label = "Doctor's Microscope",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_microscope01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_medlight02x"] = {
+	label = "Doctor's Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_medlight02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_stack01x"] = {
+	label = "Doctor's Accessories",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_stack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp009_s_mp_medicinebox01x"] = {
+	label = "Doctor's Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp009_s_mp_medicinebox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_medwheelchair01x"] = {
+	label = "Doctor's Wheelchair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_medwheelchair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_scalemedicine01x"] = {
+	label = "Doctor's Scale 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_scalemedicine01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_signdoctorrho_a"] = {
+	label = "Doctor's Sign",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_signdoctorrho_a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_studiocamera01x"] = {
+	label = "X-ray",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_studiocamera01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_bread02x"] = {
+	label = "Bakery Goods 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_bread02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_bread08x"] = {
+	label = "Bakery Goods 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_bread08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_bread01x"] = {
+	label = "Bakery Goods 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_bread01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bread_13_ab"] = {
+	label = "Bakery Goods 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bread_13_ab",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_breadbasketsm"] = {
+	label = "Bread Basket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_breadbasketsm",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_food06"] = {
+	label = "Tray of Bakery Goods",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_food06",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_w_tra_floursack01x"] = {
+	label = "Flour Sack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_w_tra_floursack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_milkcan03x"] = {
+	label = "Milk Container",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_milkcan03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_spoonsshelf01x"] = {
+	label = "Spoons",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_spoonsshelf01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coatrack04x"] = {
+	label = "Wall Coat Rack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coatrack04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_books03x"] = {
+	label = "Book Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_books03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookset05x"] = {
+	label = "Books with Writing",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookset05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_papercert01x"] = {
+	label = "Book with Writing",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_papercert01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_book03x"] = {
+	label = "Book",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_book03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlecrate01x"] = {
+	label = "Glass Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlecrate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basketcloth01x"] = {
+	label = "Laundry Basket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basketcloth01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxlrgwoven01x"] = {
+	label = "Basket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxlrgwoven01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sewingkit01x"] = {
+	label = "Sewing Basket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sewingkit01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_blanketbox01x"] = {
+	label = "Linen Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_blanketbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambclothseat01x"] = {
+	label = "Fabrics 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambclothseat01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_blankets01x"] = {
+	label = "Fabrics 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_blankets01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fabricstack01x"] = {
+	label = "Fabrics 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fabricstack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washtub02x"] = {
+	label = "Metal Buckets",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washtub02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_strongbox01x_lrg"] = {
+	label = "Metal Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_strongbox01x_lrg",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_p_mp_shadybirdcage01x"] = {
+	label = "Bird Cage",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_p_mp_shadybirdcage01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot02x"] = {
+	label = "Pot",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_boiler01x"] = {
+	label = "Kettle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_boiler01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cookingtools01x"] = {
+	label = "Kitchen Utensils",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cookingtools01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lantern05x"] = {
+	label = "Lantern",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lantern05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp25x"] = {
+	label = "Small Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp25x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffeegrinder02x"] = {
+	label = "Coffee Grinder",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffeegrinder02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_cpot02x"] = {
+	label = "Pot Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_cpot02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_panlg01x"] = {
+	label = "Frying Pan",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_panlg01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_typewriter01x"] = {
+	label = "Typewriter",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_typewriter01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_nat_plate_02x"] = {
+	label = "Water Bowl",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_nat_plate_02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_nat_plate_01x"] = {
+	label = "Food Bowl",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_nat_plate_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_alarmclock01x"] = {
+	label = "Alarm Clock",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_alarmclock01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrel05x"] = {
+	label = "Older Barrel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrel05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shipcutter1x"] = {
+	label = "Sailboat",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shipcutter1x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shipsloop3x"] = {
+	label = "Sailboat 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shipsloop3x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shipsmal2x"] = {
+	label = "Sailboat 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shipsmal2x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_windmill_sm_01"] = {
+	label = "Windmill 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_windmill_sm_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_windmill_med_01"] = {
+	label = "Windmill 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_windmill_med_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_foundationwood01x"] = {
+	label = "Wooden Floor",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_foundationwood01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_easel02x"] = {
+	label = "Large Painting Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_easel02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_easel01x"] = {
+	label = "Small Painting Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_easel01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_painting_newgala_sml01x"] = {
+	label = "Painting 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_painting_newgala_sml01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_painting_newgala_lrg01x"] = {
+	label = "Painting 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_painting_newgala_lrg01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_paintings01x"] = {
+	label = "Painting 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_paintings01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_spainting_01"] = {
+	label = "Painting 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_spainting_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_painting02x"] = {
+	label = "Painting 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_painting02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_nat_pictureframe02x"] = {
+	label = "Painting 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_nat_pictureframe02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_nat_pictureframe01x"] = {
+	label = "Painting 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_nat_pictureframe01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame01x"] = {
+	label = "Man Painting",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame02ax"] = {
+	label = "Woman Painting",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame02ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame03ax"] = {
+	label = "Woman Painting 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame03ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame06ax"] = {
+	label = "Woman Painting 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame06ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame07ax"] = {
+	label = "Woman Painting 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame07ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame08ax"] = {
+	label = "Woman Painting 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame08ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame04x"] = {
+	label = "Woman Painting 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame09ax"] = {
+	label = "Woman Painting 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame09ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame05ax"] = {
+	label = "Woman Painting 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame05ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_jackdrawing01x"] = {
+	label = "Child's Drawing",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_jackdrawing01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_newspaper03"] = {
+	label = "Newspaper Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_newspaper03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_newspaper01"] = {
+	label = "Newspaper Crates",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_newspaper01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_newspaperbox_cs01x"] = {
+	label = "Newspaper Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_newspaperbox_cs01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_newspaper_03x"] = {
+	label = "Newspaper Sheet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_newspaper_03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_newspaperroll01x"] = {
+	label = "Newspaper Bundle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_newspaperroll01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_newspapernbx01x"] = {
+	label = "Newspaper Board",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_newspapernbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_newspapergroup01x"] = {
+	label = "Newspaper Pack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_newspapergroup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_paperrollcutter01x"] = {
+	label = "Newspaper Machine",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_paperrollcutter01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_newspapercart01x"] = {
+	label = "Newspaper Cart",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_newspapercart01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_paperbinset01x"] = {
+	label = "Paper Boxes",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_paperbinset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_paperset01x"] = {
+	label = "Paper Stack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_paperset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_paperstack01a"] = {
+	label = "Papers",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_paperstack01a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ironbookpress01x"] = {
+	label = "Book Press",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ironbookpress01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_bookcart01x"] = {
+	label = "Book Cart",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_bookcart01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookcasenb01x"] = {
+	label = "Glass Bookcase",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookcasenb01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookcase03x"] = {
+	label = "Empty Bookcase",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookcase03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_gen_books01"] = {
+	label = "Book Bundle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_gen_books01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookbox01x"] = {
+	label = "Book Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_book01x_sal_sd"] = {
+	label = "Bible",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_book01x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_s_book_emote02x"] = {
+	label = "Notebook",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_s_book_emote02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sketchbook02x"] = {
+	label = "Red Book",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sketchbook02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookset04x"] = {
+	label = "Book Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookset04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookset01x"] = {
+	label = "Book Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_badger01x"] = {
+	label = "Badger 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_badger01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_badger02x"] = {
+	label = "Badger 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_badger02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_heron01bx"] = {
+	label = "Heron 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_heron01bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_heron01x"] = {
+	label = "Heron 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_heron01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tuxyoungaligator01x"] = {
+	label = "Alligator 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tuxyoungaligator01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tuxyoungaligator02x"] = {
+	label = "Alligator 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tuxyoungaligator02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fox01x"] = {
+	label = "Fox 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fox02x"] = {
+	label = "Fox 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fox02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fox03x"] = {
+	label = "Fox 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fox03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_foxpheasant01x"] = {
+	label = "Fox with Pheasant",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_foxpheasant01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermypheasant02x"] = {
+	label = "Pheasant",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermypheasant02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyowl01x"] = {
+	label = "Owl",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyowl01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_rabbit01x"] = {
+	label = "Rabbit",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_rabbit01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_duckdead01x"] = {
+	label = "Duck",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_duckdead01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyhawk01x"] = {
+	label = "Hawk 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyhawk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyhawk02x"] = {
+	label = "Hawk 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyhawk02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyhawk03x"] = {
+	label = "Hawk 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyhawk03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyvulture01x"] = {
+	label = "Vulture 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyvulture01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyvulture02x"] = {
+	label = "Vulture 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyvulture02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyvulture03x"] = {
+	label = "Vulture 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyvulture03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermyvulture04x"] = {
+	label = "Vulture 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermyvulture04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cardinal01bx"] = {
+	label = "Cardinal 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cardinal01bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cardinal01cx"] = {
+	label = "Cardinal 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cardinal01cx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermycoyote01x"] = {
+	label = "Coyote 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermycoyote01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermycoyote02x"] = {
+	label = "Coyote 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermycoyote02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermycoyote03x"] = {
+	label = "Coyote 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermycoyote03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_catfish_lrg01x"] = {
+	label = "Catfish",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_catfish_lrg01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_catfish_sml01x"] = {
+	label = "Small Catfish",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_catfish_sml01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_bigfishbythefire01x"] = {
+	label = "Large Catfish",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_bigfishbythefire01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_taxidermydeer01x"] = {
+	label = "Deer Head",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_taxidermydeer01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_skunkpelt01x"] = {
+	label = "Skunk Fur",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_skunkpelt01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_foxpelt01x"] = {
+	label = "Fox Fur",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_foxpelt01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_antlers01x"] = {
+	label = "Antlers 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_antlers01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hatstandbear01x"] = {
+	label = "Bear Hatstand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hatstandbear01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaireagle01x"] = {
+	label = "Eagle Chair",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaireagle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchbear01x"] = {
+	label = "Bear Bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchbear01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bedlog01x"] = {
+	label = "Log Bed",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bedlog01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coalhod02x"] = {
+	label = "Dog Stool",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coalhod02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chestmedlog01x"] = {
+	label = "Wooden Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chestmedlog01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_taxidermy_base01x"] = {
+	label = "Stand 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_taxidermy_base01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_taxidermy_base03x"] = {
+	label = "Stand 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_taxidermy_base03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_deerhanging02x"] = {
+	label = "Deer Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_deerhanging02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["tippi1"] = {
+	label = "Open Tipi 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "tippi1",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["tippi2"] = {
+	label = "Open Tipi 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "tippi2",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_torchpostalwayson01x"] = {
+	label = "Torch",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_torchpostalwayson01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hitchingpost04x"] = {
+	label = "Wooden Tie Post",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hitchingpost04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairrusticsav01x"] = {
+	label = "Native Chair 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairrusticsav01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_exoticprops06x"] = {
+	label = "Native Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_exoticprops06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potteryindian02x"] = {
+	label = "Native Pottery 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potteryindian02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potteryindian03x"] = {
+	label = "Native Pottery 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potteryindian03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potteryindian09x"] = {
+	label = "Native Pottery 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potteryindian09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrelhalf01x"] = {
+	label = "Horseshoes",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrelhalf01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_watertrough01x"] = {
+	label = "Water Trough 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_watertrough01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_watertrough02x"] = {
+	label = "Water Trough 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_watertrough02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_feedtroughsml01x"] = {
+	label = "Feeding Trough",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_feedtroughsml01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haybale01x"] = {
+	label = "Hay Bale",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haybale01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_haybalecover03x"] = {
+	label = "Hay Bales",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_haybalecover03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haypile02x"] = {
+	label = "Hay Pile",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haypile02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_harness02xcar_bla"] = {
+	label = "Harnesses 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_harness02xcar_bla",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_harness04xcar_bla"] = {
+	label = "Bridles 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_harness04xcar_bla",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_harness01xcar_bla"] = {
+	label = "Bridles 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_harness01xcar_bla",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sawhorse02x"] = {
+	label = "Wooden Sawhorse",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sawhorse02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saddlestand01x"] = {
+	label = "Saddle Stand 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saddlestand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saddlestand02x"] = {
+	label = "Saddle Stand 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saddlestand02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saddlestand03x"] = {
+	label = "Saddle Stand 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saddlestand03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_sdlstand01x_car_sd"] = {
+	label = "Saddle Stand 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_sdlstand01x_car_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_saddle02x"] = {
+	label = "Saddle 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_saddle02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_saddle03x"] = {
+	label = "Saddle 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_saddle03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_horsesaddle01x"] = {
+	label = "Saddle 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_horsesaddle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_saddlewinter10_03x"] = {
+	label = "Saddle 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_saddlewinter10_03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_saddlewinter05_03x"] = {
+	label = "Saddle 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_saddlewinter05_03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_saddlebundle01x"] = {
+	label = "Saddle with Cover",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_saddlebundle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_harness05xcar_bla"] = {
+	label = "Harnesses 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_harness05xcar_bla",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haypile01x"] = {
+	label = "Hay",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haypile01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cratetable01x"] = {
+	label = "Table from Crates and Planks Dark",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cratetable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cratetablemil01x"] = {
+	label = "Table from Crates and Planks Light",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cratetablemil01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cratetools01x"] = {
+	label = "Toolbox 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cratetools01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crate22x_a"] = {
+	label = "Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crate22x_a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crate22x"] = {
+	label = "Worn Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crate22x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crate14x"] = {
+	label = "Worn Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crate14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crategroup03x"] = {
+	label = "Three Empty Small Boxes",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crategroup03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_kudzu_wall_01"] = {
+	label = "Climbing Ivy",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_kudzu_wall_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_kudzu_top_01"] = {
+	label = "Climbing Ivy 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_kudzu_top_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_cat_tail_ab_sim"] = {
+	label = "Cat Tail Grass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_cat_tail_ab_sim",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_awningbills01x"] = {
+	label = "Canvas Awning",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_awningbills01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_col_chair01x"] = {
+	label = "Sun Lounger 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_col_chair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plankwall_02"] = {
+	label = "High White Fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plankwall_02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_seatbench01x"] = {
+	label = "Chaise Lounge",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_seatbench01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_settee02bx"] = {
+	label = "Striped Sofa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_settee02bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_settee02x"] = {
+	label = "Luxurious Sofa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_settee02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_settee_05x"] = {
+	label = "Worn Sofa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_settee_05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelf09x"] = {
+	label = "Shelf",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelf09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelfwall07x"] = {
+	label = "Dirty Kitchen Counter",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelfwall07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_umbrellanbx02x"] = {
+	label = "Outdoor Umbrella",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_umbrellanbx02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_val_hotel_int_tub_01x"] = {
+	label = "Bath 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_val_hotel_int_tub_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hutchwhite01x"] = {
+	label = "Kitchen Cabinet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hutchwhite01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lacepillow01x"] = {
+	label = "White Lace Pillow",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lacepillow01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_loveseat01x"] = {
+	label = "Floral Sofa",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_loveseat01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mansionprops19x"] = {
+	label = "Salt and Pepper Shakers",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mansionprops19x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mirror_shave01x"] = {
+	label = "Shaving Mirror",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mirror_shave01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_needlework01x"] = {
+	label = "Embroidered Picture",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_needlework01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_nightbedking01x"] = {
+	label = "Solid Bed with Canopy",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_nightbedking01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_podium_02x"] = {
+	label = "Preacher's Pulpit",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_podium_02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir05x"] = {
+	label = "Worn Painted Wardrobe",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed13x"] = {
+	label = "Bed",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_blanketground02x"] = {
+	label = "Striped Carpet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_blanketground02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_blanketground05x"] = {
+	label = "Patterned Carpet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_blanketground05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamppost01x"] = {
+	label = "Lamp Post",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamppost01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_abefrmint_curt05a"] = {
+	label = "Kitchen Curtain",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_abefrmint_curt05a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_hang02x"] = {
+	label = "Garlic and Pans",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_hang02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_hang01x"] = {
+	label = "Herbs and Mugs",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_hang01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shovelhang05x"] = {
+	label = "Shovel (Decoration)",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shovelhang05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hanggarlicgroup01x"] = {
+	label = "Hanging Garlic",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hanggarlicgroup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gun_hangitem01x"] = {
+	label = "Hanging Bag and Drinking Horn",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gun_hangitem01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gun_hangitem02x"] = {
+	label = "Rack with Hat and Bag",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gun_hangitem02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tricycle01x"] = {
+	label = "Wooden Tricycle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tricycle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_terracottapot01x"] = {
+	label = "Empty Flowerpot",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_terracottapot01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_05b"] = {
+	label = "Flowerpot with Branches",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_05b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_pot01x"] = {
+	label = "Pile of Flowerpots",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_pot01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dirtpot01x"] = {
+	label = "Flowerpot with Soil",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dirtpot01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_buysellbox02x"] = {
+	label = "Box with Tableware",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_buysellbox02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_specimenbox02x"] = {
+	label = "Butterfly Collection",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_specimenbox02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_specimenbox01x"] = {
+	label = "Beetle Collection",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_specimenbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravefresh01x"] = {
+	label = "Grave 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravefresh01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone14ax"] = {
+	label = "Grave 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone14ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone12x"] = {
+	label = "Grave 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone12x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone13x"] = {
+	label = "Grave 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestoneclean02x"] = {
+	label = "Grave 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestoneclean02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grvestne_v_04x"] = {
+	label = "Grave 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grvestne_v_04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grvestne_v_05x"] = {
+	label = "Grave 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grvestne_v_05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grvestne_v_02x"] = {
+	label = "Grave 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grvestne_v_02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grvestne_v_01x"] = {
+	label = "Grave 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grvestne_v_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestoneclean03x"] = {
+	label = "Grave 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestoneclean03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestoneclean04x"] = {
+	label = "Grave 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestoneclean04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grave06x"] = {
+	label = "Grave 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grave06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone15x"] = {
+	label = "Gravestone",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_new_stonebench02x"] = {
+	label = "Stone Bench",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_new_stonebench02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone04x"] = {
+	label = "Wood Grave",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravemarker02x"] = {
+	label = "Small Cross 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravemarker02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone06x"] = {
+	label = "Small Cross 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravemound03x"] = {
+	label = "Soil",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravemound03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp008_p_mp_gravemarker01x"] = {
+	label = "Cross with Flowers",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp008_p_mp_gravemarker01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravedugcover02x"] = {
+	label = "Large Soil",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravedugcover02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravedug03x"] = {
+	label = "Small Soil",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravedug03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_new_cem_statue02x"] = {
+	label = "Large Angel Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_new_cem_statue02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gen_statue01x"] = {
+	label = "Woman Statue 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gen_statue01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gen_statue02b"] = {
+	label = "Woman Statue 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gen_statue02b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cherubstatuenbx01x"] = {
+	label = "Child Statue 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cherubstatuenbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sc_cupid_statue01x"] = {
+	label = "Child Statue 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sc_cupid_statue01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_statue08x"] = {
+	label = "Small Child Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_statue08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_statue07x"] = {
+	label = "Small Angel Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_statue07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffin02x"] = {
+	label = "Nailed Coffin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffin02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffin01x"] = {
+	label = "Closed Coffin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffin01x_open"] = {
+	label = "Slightly Open Coffin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffin01x_open",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffinempty01x"] = {
+	label = "Open Coffin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffinempty01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp004_s_mp_coffin01x"] = {
+	label = "Coffin with Lining",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp004_s_mp_coffin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp004_s_mp_coffindecor01x"] = {
+	label = "Coffin with Flowers",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp004_s_mp_coffindecor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravefresh01xp_coffin03x"] = {
+	label = "Dark Coffin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravefresh01xp_coffin03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffinlid01x"] = {
+	label = "Coffin Lid",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffinlid01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fabricroll05x"] = {
+	label = "Fabrics 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fabricroll05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_hotairballoon_sandbag"] = {
+	label = "Sandbag",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_hotairballoon_sandbag",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_workbench01x"] = {
+	label = "Workbench 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_workbench01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_workbench02x"] = {
+	label = "Workbench 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_workbench02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mirror04x"] = {
+	label = "Mirror",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mirror04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_plate01x"] = {
+	label = "Tableware Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_plate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate11x"] = {
+	label = "Tableware Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_plate01x"] = {
+	label = "Tableware Set 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_plate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate04x"] = {
+	label = "Decorative Tableware 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate01x"] = {
+	label = "Plate 1a",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saladplate02x"] = {
+	label = "Plate 1b",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saladplate02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dinnerplate01x"] = {
+	label = "Plate 2a",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dinnerplate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate14x"] = {
+	label = "Plate 3a",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate15x"] = {
+	label = "Plate 3b",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teacup02x"] = {
+	label = "Tea Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teacup02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teacup"] = {
+	label = "Mug 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teacup",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shavingcup01x"] = {
+	label = "Mug 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shavingcup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teacup01x"] = {
+	label = "Mug 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teacup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_glassfancy01x"] = {
+	label = "Decorative Goblet",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_glassfancy01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_whglass01x_sal_sd"] = {
+	label = "Shot Glass Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_whglass01x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sal_glasset01x"] = {
+	label = "Glass Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sal_glasset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sal_glasset02x"] = {
+	label = "Glass Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sal_glasset02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_glass01x"] = {
+	label = "Glass Set 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_glass01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sal_glasset03x"] = {
+	label = "Wine Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sal_glasset03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_beermug01x_sd"] = {
+	label = "Beer Mug Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_beermug01x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bal_beermug01x"] = {
+	label = "Beer Mug Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bal_beermug01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barberbottles01x"] = {
+	label = "Set of Jars",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barberbottles01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sal_glasset04x"] = {
+	label = "Small Wine Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sal_glasset04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_glass01x_sd"] = {
+	label = "Small Wine Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_glass01x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp007_p_nat_bottles01x"] = {
+	label = "Pharmacy Set",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp007_p_nat_bottles01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_beermugglass01x"] = {
+	label = "Beer Mug",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_beermugglass01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_champglass01x"] = {
+	label = "Champagne Glass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_champglass01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_glass04x"] = {
+	label = "Wine Glass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_glass04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_glass05x"] = {
+	label = "Small Glass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_glass05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shotglass01x"] = {
+	label = "Shot Glass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shotglass01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_glass02x"] = {
+	label = "Large Shot Glass",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_glass02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottle011x"] = {
+	label = "Blue Container 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottle011x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlesnakeoil03x"] = {
+	label = "Blue Container 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlesnakeoil03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottle013x"] = {
+	label = "Green Container 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottle013x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine03x"] = {
+	label = "Green Container 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine04x"] = {
+	label = "Green Container 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlesnakeoil02x"] = {
+	label = "Green Container 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlesnakeoil02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine06x"] = {
+	label = "Brown Container 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine23x"] = {
+	label = "Brown Container 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine23x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine13x"] = {
+	label = "Brown Container 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine27x"] = {
+	label = "Brown Container 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine27x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine01x"] = {
+	label = "White Container",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shopbottlesmall01x"] = {
+	label = "Dark Container",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shopbottlesmall01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlecrate05x"] = {
+	label = "Box of Glasses 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlecrate05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlecrate03x"] = {
+	label = "Box of Glasses 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlecrate03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_fertilitystatue01x"] = {
+	label = "Fertility Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_fertilitystatue01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_statue01x"] = {
+	label = "Lady Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_statue01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_bottleterrarium01x"] = {
+	label = "Terrarium",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_bottleterrarium01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottleopener01x"] = {
+	label = "Bottle Opener",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottleopener01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffee_grinder_001"] = {
+	label = "Coffee Grinder 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffee_grinder_001",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_coffeegrinder03x"] = {
+	label = "Coffee Grinder 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_coffeegrinder03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_cgrinder02x"] = {
+	label = "Set of Coffee Grinders",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_cgrinder02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlebeer01x_fus1_mcs2_p2_t06_shot_2"] = {
+	label = "Red and White Fence",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlebeer01x_fus1_mcs2_p2_t06_shot_2",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_craftedtable01x"] = {
+	label = "Iron Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_craftedtable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_craftedrool01x"] = {
+	label = "Fur on the Ground",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_craftedrool01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_craftedpillow01x"] = {
+	label = "Furry Pillow",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_craftedpillow01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_craftedbed01x"] = {
+	label = "Leather Bed",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_craftedbed01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_broom02x"] = {
+	label = "Broom",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_broom02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sawhand01x"] = {
+	label = "Hand Saw",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sawhand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saw01"] = {
+	label = "Saw",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saw01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_machete01x"] = {
+	label = "Machete",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_machete01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sawmeat01x"] = {
+	label = "Bone Saw",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sawmeat01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sledgehammer01x"] = {
+	label = "Sledgehammer",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sledgehammer01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_axe01x"] = {
+	label = "Axe",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_axe01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_prybar01x"] = {
+	label = "Crowbar",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_prybar01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cleaver01x"] = {
+	label = "Cleaver",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cleaver01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_butcherknife01x"] = {
+	label = "Butcher Knife",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_butcherknife01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shovel04x"] = {
+	label = "Shovel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shovel04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_01"] = {
+	label = "Rock 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_02"] = {
+	label = "Rock 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_03"] = {
+	label = "Rock 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_04"] = {
+	label = "Rock 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_04",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_05"] = {
+	label = "Rock 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_05",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_06"] = {
+	label = "Rock 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_06",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_07"] = {
+	label = "Rock 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_07",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_08"] = {
+	label = "Rock 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_08",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_09"] = {
+	label = "Rock 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_09",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_10"] = {
+	label = "Rock 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_10",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_11"] = {
+	label = "Rock 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_11",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_12"] = {
+	label = "Rock 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_12",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["cumb_rock_scree_sim_02"] = {
+	label = "Rock 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "cumb_rock_scree_sim_02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp35x"] = {
+	label = "Decorative Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp35x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lampstanding04x"] = {
+	label = "Decorative Lamp 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lampstanding04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp20x"] = {
+	label = "Decorative Lamp 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp18x"] = {
+	label = "Desk Lamp",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp18x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp08x"] = {
+	label = "Ceiling Light",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamphanging12x"] = {
+	label = "Ceiling Light 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamphanging12x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamphanging06x"] = {
+	label = "Hanging Light 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamphanging06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed22x"] = {
+	label = "Small Bed 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed22x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinetdoctor02x"] = {
+	label = "Cabinet 30",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinetdoctor02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cornercabinet01x"] = {
+	label = "Cabinet 35",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cornercabinet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chinacabinet01x"] = {
+	label = "Cabinet 37",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chinacabinet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_delidisplaycabinet01x"] = {
+	label = "Cabinet 38",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_delidisplaycabinet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cabinet04x"] = {
+	label = "Cabinet 39",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cabinet04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_filecabinet66x"] = {
+	label = "Cabinet 40",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_filecabinet66x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_flowertable01"] = {
+	label = "Flower Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_flowertable01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_man01x_longtable"] = {
+	label = "Fancy Dinner Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_man01x_longtable",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_doctortable01x"] = {
+	label = "Doctor Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_doctortable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablecoffee04x"] = {
+	label = "Coffee Table 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablecoffee04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable11x"] = {
+	label = "Side Table 30",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_man01x_smltable"] = {
+	label = "Wine Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_man01x_smltable",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_privatelounge_table01x"] = {
+	label = "Marble Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_privatelounge_table01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_itable03x"] = {
+	label = "Covered Table 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_itable03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table_sd_theater01x"] = {
+	label = "Covered Table 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table_sd_theater01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clocktable03x"] = {
+	label = "Table Clock 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clocktable03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableprep02x"] = {
+	label = "Kitchen Prep Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableprep02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table40x"] = {
+	label = "Side Table 32",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table40x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table55x"] = {
+	label = "Blue Table",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table55x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable06x"] = {
+	label = "Side Table 33",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablecoffee06a"] = {
+	label = "Coffee Table 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablecoffee06a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablegiltconsole01x"] = {
+	label = "Fancy Sidetable 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablegiltconsole01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableconsole01x"] = {
+	label = "Fancy Sidetable 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableconsole01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable13x"] = {
+	label = "Side Table 34",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableconsole05bx"] = {
+	label = "Round Table 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableconsole05bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable01x"] = {
+	label = "Side Table 34",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clocktable04x"] = {
+	label = "Table Clock 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clocktable04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable03x"] = {
+	label = "Side Table 35",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable18x_privateobs"] = {
+	label = "Fancy Round Table 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable18x_privateobs",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clocktable02x"] = {
+	label = "Table Clock 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clocktable02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_endtable01x"] = {
+	label = "End Table 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_endtable01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_endtable02x"] = {
+	label = "End Table 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_endtable02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableconsole03bx"] = {
+	label = "End Table 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableconsole03bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_platestew01x"] = {
+	label = "Plate 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_platestew01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_stewplate01x"] = {
+	label = "Plate 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_stewplate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crab_plate_03"] = {
+	label = "Plate 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crab_plate_03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_platechickenrstd01x"] = {
+	label = "Plate 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_platechickenrstd01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plates_dishes_01x"] = {
+	label = "Dishes 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plates_dishes_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_plate10x_sd"] = {
+	label = "Dishes 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_plate10x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate13x"] = {
+	label = "Decorative Plate 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_oyster_plate"] = {
+	label = "Plate 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_oyster_plate",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_plate04x_sd"] = {
+	label = "Group of Plates 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_plate04x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crab_plate_eaten"] = {
+	label = "Plate 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crab_plate_eaten",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_pu_plate13x"] = {
+	label = "Decorative Plate 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_pu_plate13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plate12x"] = {
+	label = "Blue Stack of Plates",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plate12x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlebeer01a"] = {
+	label = "Beer Bottle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlebeer01a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlewine01x"] = {
+	label = "Wine Bottle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlewine01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_bottlewine03x"] = {
+	label = "Group Wine Bottles 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_bottlewine03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottletequilafull02x"] = {
+	label = "Bottle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottletequilafull02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine09x"] = {
+	label = "Medicine Bottle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlecognac01x"] = {
+	label = "Cognac Bottle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlecognac01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cratebottles01x"] = {
+	label = "Bottle Crate 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cratebottles01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_bottlecrate01x"] = {
+	label = "Bottle Crate 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_bottlecrate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottleabsinthe01x"] = {
+	label = "Bottle Absinthe 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottleabsinthe01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_bottlewine05x_sd"] = {
+	label = "Group Wine Bottles 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_bottlewine05x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine21x"] = {
+	label = "Medicine Bottle 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine21x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine20x"] = {
+	label = "Medicine Bottle 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine16x"] = {
+	label = "Medicine Bottle 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine16x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlefacewash01x"] = {
+	label = "Face Wash 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlefacewash01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine15x"] = {
+	label = "Bottle 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlewine03x"] = {
+	label = "Wine Bottle 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlewine03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_bottlewine01x"] = {
+	label = "Wine Bottle 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_bottlewine01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlesnakeoil_cs01x"] = {
+	label = "Snake Oil Bottle 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlesnakeoil_cs01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_bottle03x_sal_sd"] = {
+	label = "Group Wine Bottles 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_bottle03x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_bottle08x_sal_sd"] = {
+	label = "Group Wine Bottles 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_bottle08x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bottlemedicine14x"] = {
+	label = "Medicine Bottle 05",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bottlemedicine14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_teacup01x_sd"] = {
+	label = "Tea Cups 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_teacup01x_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cup01x"] = {
+	label = "Tea Cups 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboard05x"] = {
+	label = "Cupboard 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboard05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboard02x"] = {
+	label = "Cupboard 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboard02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboard06x"] = {
+	label = "Cupboard 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboard06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboard01x"] = {
+	label = "Cupboard 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_caboose03x_cupboard"] = {
+	label = "Cupboard 06",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_caboose03x_cupboard",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cupboardfac01x"] = {
+	label = "Cupboard 07",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cupboardfac01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teatraycombo01x"] = {
+	label = "Tea Set 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teatraycombo01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teasugar"] = {
+	label = "Tea Set Sugar",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teasugar",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teamster_break01x_med"] = {
+	label = "Pottery 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teamster_break01x_med",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teatraycombo02x"] = {
+	label = "Tea Set 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teatraycombo02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tin_tea01x"] = {
+	label = "Tea Tin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tin_tea01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teamster_break01x_sml"] = {
+	label = "Pottery 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teamster_break01x_sml",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_teatray01"] = {
+	label = "Tea Tray 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_teatray01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doctorsbookpile01x"] = {
+	label = "Books 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doctorsbookpile01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_bookset05x"] = {
+	label = "Books 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_bookset05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookset03x"] = {
+	label = "Books 06",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookset03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookstwo01x"] = {
+	label = "Books 07",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookstwo01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_book04x"] = {
+	label = "Books 09",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_book04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bookend01x_train"] = {
+	label = "Books End 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bookend01x_train",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairoffice02x"] = {
+	label = "Chair 51",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairoffice02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair37x"] = {
+	label = "Chair 52",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair37x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairrustic05x"] = {
+	label = "Chair 53",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairrustic05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdesk01x"] = {
+	label = "Chair 54",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdesk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_theaterchair01b01x"] = {
+	label = "Chair 55",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_theaterchair01b01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy17x"] = {
+	label = "Chair 56",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairrustic03x"] = {
+	label = "Chair 57",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairrustic03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy09x"] = {
+	label = "Chair 58",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairwicker01x"] = {
+	label = "Chair 59",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairwicker01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair_privatedining01x"] = {
+	label = "Chair 60",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair_privatedining01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdining03x"] = {
+	label = "Chair 61",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdining03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairrustic02x"] = {
+	label = "Chair 62",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairrustic02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair30x"] = {
+	label = "Chair 63",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair30x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_privatelounge_chair01x"] = {
+	label = "Chair 64",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_privatelounge_chair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy07x"] = {
+	label = "Chair 65",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairpokerfancy01x"] = {
+	label = "Chair 66",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairpokerfancy01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairtall01x"] = {
+	label = "Chair 67",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairtall01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_oldarmchair01x"] = {
+	label = "Chair 68",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_oldarmchair01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair13x"] = {
+	label = "Chair 69",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairsalon01x"] = {
+	label = "Chair 70",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairsalon01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy06x"] = {
+	label = "Chair 71",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair12bx"] = {
+	label = "Chair 72",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair12bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair18x"] = {
+	label = "Chair 73",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair18x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair_10x"] = {
+	label = "Chair 74",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair_10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_diningchairs01x"] = {
+	label = "Chair 75",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_diningchairs01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chaircomfy03x"] = {
+	label = "Chair 76",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chaircomfy03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdining02x"] = {
+	label = "Chair 77",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdining02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chair38x"] = {
+	label = "Chair 78",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chair38x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_windsorchair02x"] = {
+	label = "Chair 79",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_windsorchair02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairdeck01x"] = {
+	label = "Deck Chair 22",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairdeck01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chairmed02x"] = {
+	label = "Medical Chair 20",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chairmed02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser03x"] = {
+	label = "Mirrored Dresser 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser05x"] = {
+	label = "Mirrored Dresser 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser06x"] = {
+	label = "Mirrored Dresser 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sewing_dresser01x"] = {
+	label = "Sewing Dresser 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sewing_dresser01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser04x"] = {
+	label = "Dresser 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresser01x"] = {
+	label = "Dresser 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresser01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dresserval01x"] = {
+	label = "Dresser 14",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dresserval01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_vanity01x"] = {
+	label = "Vanity 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_vanity01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelfmail01x"] = {
+	label = "Mail Shelf 20",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelfmail01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelfpostal01x"] = {
+	label = "Mail Shelf 21",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelfpostal01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shelfwall01x"] = {
+	label = "Wall Shelf 20",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shelfwall01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng09x"] = {
+	label = "Potted Plant 30",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx08x"] = {
+	label = "Potted Plant 32",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarngdead02"] = {
+	label = "Potted Plant 33",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarngdead02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_6a"] = {
+	label = "Potted Plant 34",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_6a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng23x"] = {
+	label = "Potted Plant 35",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng23x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_flowerarng20x"] = {
+	label = "Potted Plant 36",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_flowerarng20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_6b"] = {
+	label = "Potted Plant 37",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_6b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot_plant_01e"] = {
+	label = "Potted Plant 38",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot_plant_01e",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_plantpotnbx03x"] = {
+	label = "Potted Plant 39",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_plantpotnbx03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basketpotato01x"] = {
+	label = "Basket of Potatoes 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basketpotato01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basketapple01x"] = {
+	label = "Basket of Apples 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basketapple01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_basketdishes02x"] = {
+	label = "Basket of Dishes 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_basketdishes02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_baskettomato02x"] = {
+	label = "Basket of Tomatos 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_baskettomato02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basketonion02x"] = {
+	label = "Basket of Onions 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basketonion02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basketfish01x"] = {
+	label = "Basket of Fish 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basketfish01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pot05x"] = {
+	label = "Pot 41",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pot05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potcrawfish01xb"] = {
+	label = "Pot 42",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potcrawfish01xb",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_copperpot01x"] = {
+	label = "Pot 43 ",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_copperpot01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cast_iron_pot_001"] = {
+	label = "Pot 45",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cast_iron_pot_001",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["proc_potsm01x"] = {
+	label = "Pot 46",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "proc_potsm01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_pot02x"] = {
+	label = "Pot 47",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_pot02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_basket06x"] = {
+	label = "Pot 48",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_basket06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potclay02x"] = {
+	label = "Clay Pot 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potclay02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_inv_tabaccopotntset01x"] = {
+	label = "Indian Tobacco Crate 33",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_inv_tabaccopotntset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potclay05x"] = {
+	label = "Clay Pot 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potclay05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_potterynbx01x"] = {
+	label = "Clay Pot 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_potterynbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chamberpot01x"] = {
+	label = "Toilet 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chamberpot01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basket03x"] = {
+	label = "Basket 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basket03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basket01x"] = {
+	label = "Basket 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basket01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bra_01_cardell_sgn01x"] = {
+	label = "No Trespassing 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bra_01_cardell_sgn01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_playingcardset01"] = {
+	label = "Shelf of Cards",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_playingcardset01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pokerchipavarage03x"] = {
+	label = "Poker Chips 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pokerchipavarage03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pokerchipwinningstack01x"] = {
+	label = "Poker Chips 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pokerchipwinningstack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pokerhand03x"] = {
+	label = "Poker Cards 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pokerhand03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pokercaddy02x"] = {
+	label = "Poker Caddy",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pokercaddy02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_blackjackcaddy01x"] = {
+	label = "Blackjack Caddy",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_blackjackcaddy01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_tobaccotin01x"] = {
+	label = "Tobacco Tin 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_tobaccotin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cuptin01x"] = {
+	label = "Tin Cup 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cuptin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lightind01x"] = {
+	label = "Fancy Wall Light 20",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lightind01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_coffeetin01x"] = {
+	label = "Coffee Tin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_coffeetin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_gamble_tobacotin01x"] = {
+	label = "Group Tobacco Tins 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_gamble_tobacotin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cuttingboard01x"] = {
+	label = "Cutting Board 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cuttingboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tobaccotin03x"] = {
+	label = "Tobacco Tin 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tobaccotin03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tobaccotin02x"] = {
+	label = "Tobacco Tin 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tobaccotin02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bcstationclockvalentine"] = {
+	label = "Station Clock 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bcstationclockvalentine",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tin_kidney01x"] = {
+	label = "Kidney Beans 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tin_kidney01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxgelatin01x"] = {
+	label = "Gelatin Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxgelatin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxlrgtin01x"] = {
+	label = "Biscuit Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxlrgtin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tincan01x"] = {
+	label = "Tin Can 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tincan01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_jugtin01x"] = {
+	label = "Tin Jug 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_jugtin01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tin_salve01x"] = {
+	label = "Medical Salve 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tin_salve01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_tinstack03x"] = {
+	label = "Group Canned Veggies 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_tinstack03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_knitting01x"] = {
+	label = "Knitting 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_knitting01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cigarbox01x"] = {
+	label = "Cigar Box",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cigarbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxmedsuitcase01x"] = {
+	label = "Medical Suitcase 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxmedsuitcase01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_letterboxset01x"] = {
+	label = "Letter Box Set 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_letterboxset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_jewelrybox02x"] = {
+	label = "Jewelry Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_jewelrybox02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxlrgtool01x"] = {
+	label = "Tool Box 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxlrgtool01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wickerbox01x"] = {
+	label = "Wicker Box 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wickerbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_jewelrybox02bx"] = {
+	label = "Jewelry Box 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_jewelrybox02bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hatbox01x"] = {
+	label = "Hat Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hatbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_chocolatebox01group03"] = {
+	label = "Chocolate Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_chocolatebox01group03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_brassbox01x"] = {
+	label = "Jewelry Box 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_brassbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_re_birdbox01x"] = {
+	label = "Bird Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_re_birdbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_hatbox01x"] = {
+	label = "Hat Box 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_hatbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shavingbox01x"] = {
+	label = "Shaving Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shavingbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_strongbox01x"] = {
+	label = "Strong Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_strongbox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxcereal01x"] = {
+	label = "Cereal Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxcereal01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxlrgice01x"] = {
+	label = "Dairy Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxlrgice01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hatbox04x"] = {
+	label = "Hat Box 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hatbox04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_boxsmltackle01x"] = {
+	label = "Tackle Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_boxsmltackle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_colognebox01x"] = {
+	label = "Cologne Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_colognebox01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_shavingboxclosed01x"] = {
+	label = "Shaving Set Closed",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_shavingboxclosed01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_brushhorse01x"] = {
+	label = "Horse Brush 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_brushhorse01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_brushhorse02x"] = {
+	label = "Horse Brush 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_brushhorse02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_p_mp_collectorsign02x"] = {
+	label = "Seer Sign 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_p_mp_collectorsign02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gunbarrelset01x"] = {
+	label = "Gun Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gunbarrelset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrelapples01x"] = {
+	label = "Apple Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrelapples01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_winebarrel01x"] = {
+	label = "Wine Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_winebarrel01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_barrelcor01"] = {
+	label = "Farming Tool Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_barrelcor01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrelpotatoes01x"] = {
+	label = "Potato Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrelpotatoes01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wheelbarrel01x"] = {
+	label = "Wheel Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wheelbarrel01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wheelbarrow03x"] = {
+	label = "Wheel Barrel 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wheelbarrow03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrelsalt01x"] = {
+	label = "Salt Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrelsalt01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrel02x_group_03"] = {
+	label = "Barrel Group 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrel02x_group_03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrel_cor01x"] = {
+	label = "Blue Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrel_cor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barber_propset08x"] = {
+	label = "Barber Tools 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barber_propset08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barrelhalf03x"] = {
+	label = "Half Barrel 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barrelhalf03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barber_propset02x"] = {
+	label = "Barber Props 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barber_propset02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barber_propset09x"] = {
+	label = "Barber Props 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barber_propset09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barber_propset07x"] = {
+	label = "Barber Props 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barber_propset07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_barber_propset06x"] = {
+	label = "Barber Props 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_barber_propset06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_arrowdisplay02x"] = {
+	label = "Arrow Display 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_arrowdisplay02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowdisplay01x"] = {
+	label = "Bow Display 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowdisplay01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_meatbowl01x"] = {
+	label = "Meat Bowl 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_meatbowl01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowl04x_stew"] = {
+	label = "Stew Bowl 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowl04x_stew",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_soupbowl01x"] = {
+	label = "Soup Bowl 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_soupbowl01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowlplantbra01x"] = {
+	label = "Decorative Planter",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowlplantbra01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_rabbitmeatbowl01x"] = {
+	label = "Meat Bowl 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_rabbitmeatbowl01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowl03x"] = {
+	label = "Bowl 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowl03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowlstack01x"] = {
+	label = "Stack of Bowls 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowlstack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowlplantnbx01x"] = {
+	label = "Planter Box 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowlplantnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowl02x"] = {
+	label = "Stack of Bowls 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowl02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bowl01x"] = {
+	label = "Stack of Bowls 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bowl01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bed17x"] = {
+	label = "Bed 60",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bed17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_tablepierson01x"] = {
+	label = "Table 61",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_tablepierson01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table44x"] = {
+	label = "Prep Table Crafting",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table44x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_mtsaloontable"] = {
+	label = "Table 62",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_mtsaloontable",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table43xb"] = {
+	label = "Table 63",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table43xb",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tablework03x"] = {
+	label = "Table 65",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tablework03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table_saloon01x"] = {
+	label = "Table 66",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table_saloon01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tableconsole03x"] = {
+	label = "Table 67",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tableconsole03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable07x"] = {
+	label = "Table 68",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_table39x"] = {
+	label = "Table 69",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_table39x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sidetable01x_norpass01x"] = {
+	label = "Table 70",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sidetable01x_norpass01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_letter02x_bundle"] = {
+	label = "Letter 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_letter02x_bundle",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_letterboxcombo01x"] = {
+	label = "Letter 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_letterboxcombo01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_uniqletterbundle01x"] = {
+	label = "Letter 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_uniqletterbundle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lettertray01x"] = {
+	label = "Letter 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lettertray01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_w_tra_letterbundle01x"] = {
+	label = "Letter 05",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_w_tra_letterbundle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_letterbundlecombo01x"] = {
+	label = "Letter 06",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_letterbundlecombo01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_maple_s_04"] = {
+	label = "Tree 07",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_maple_s_04",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_maple_s_01"] = {
+	label = "Tree 08",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_maple_s_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_joshua_01d"] = {
+	label = "Tree 09",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_joshua_01d",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_cactus_01a"] = {
+	label = "Tree 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_cactus_01a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_magnolia_01"] = {
+	label = "Tree 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_magnolia_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tree_cactus_01b"] = {
+	label = "Tree 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tree_cactus_01b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_counterdoctor01x"] = {
+	label = "Counter 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_counterdoctor01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_deskstand01x"] = {
+	label = "Desk 14",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_deskstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cartstreetvendor01b"] = {
+	label = "Cart 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cartstreetvendor01b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bra_cal_sgn_tress4a"] = {
+	label = "No Tresspassing 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bra_cal_sgn_tress4a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_woodburningstove01x"] = {
+	label = "Wood Burning Stove Crafting",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_woodburningstove01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_canbeans01x"] = {
+	label = "Can of Beans 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_canbeans01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planternbx04c"] = {
+	label = "Planter Box 06",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planternbx04c",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sto_cigarstand01x"] = {
+	label = "Cigar Stand 05",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sto_cigarstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_guitar01x"] = {
+	label = "Guitar 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_guitar01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fireplacetoolset01x"] = {
+	label = "Fireplace Tools",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fireplacetoolset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_disdreamcatcherwind05x"] = {
+	label = "Dream Catcher 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_disdreamcatcherwind05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["sha_man_piano01"] = {
+	label = "Piano 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "sha_man_piano01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_moneystack02x"] = {
+	label = "Money Stack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_moneystack02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_whittlingwolf01d"] = {
+	label = "Wolf Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_whittlingwolf01d",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_guncase04x"] = {
+	label = "Gun Case",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_guncase04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_rugstand01x"] = {
+	label = "Rug Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_rugstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fountain02x"] = {
+	label = "Fountain 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fountain02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pigroast"] = {
+	label = "Pig Roast",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pigroast",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamphanging11x"] = {
+	label = "Hanging Lamp 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamphanging11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sacksugar01x"] = {
+	label = "Sack of Sugar",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sacksugar01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_divider05x"] = {
+	label = "Room Divider 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_divider05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sign01x"] = {
+	label = "Sign 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sign01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sign_open_close02x"] = {
+	label = "Sign 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sign_open_close02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pos_wanteddead01x"] = {
+	label = "Wanted Poster",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pos_wanteddead01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_food01x"] = {
+	label = "Food 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_food01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_salami_a_meat_b"] = {
+	label = "Salami 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_salami_a_meat_b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame07x"] = {
+	label = "Frame 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_planter03x"] = {
+	label = "Planter 43",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_planter03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saloonpropgroup04x"] = {
+	label = "Prop 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saloonpropgroup04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_piano02x"] = {
+	label = "Piano 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_piano02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bra_cal_sgn_tress3b"] = {
+	label = "No Tresspassing Sign 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bra_cal_sgn_tress3b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_drumkit01x"] = {
+	label = "Drum Kit",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_drumkit01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch01x"] = {
+	label = "Couch 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch06x"] = {
+	label = "Couch 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch08x"] = {
+	label = "Couch 12",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch11x"] = {
+	label = "Couch 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_couch09x"] = {
+	label = "Couch 14",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_couch09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bench03x"] = {
+	label = "Bench 30 ",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bench03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_benchnbx02x"] = {
+	label = "Bench 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_benchnbx02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_woodbench02x"] = {
+	label = "Bench 13",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_woodbench02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bench15x"] = {
+	label = "Bench 14",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bench15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bench06x"] = {
+	label = "Bench 15",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bench06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bench17x"] = {
+	label = "Bench 16",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bench17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clockkorrigan01x"] = {
+	label = "Clock 42",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clockkorrigan01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["val_bank_clock"] = {
+	label = "Clock 44",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "val_bank_clock",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_botset20x"] = {
+	label = "Doctor Set 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_botset20x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washbasinregal01x"] = {
+	label = "Wash Basin 41",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washbasinregal01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_doll01x"] = {
+	label = "Dolls",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_doll01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mortarpestle02x"] = {
+	label = "Mortar and Pestle",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mortarpestle02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washstand02x"] = {
+	label = "Wash Basin 42",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washstand02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_newspapergroup02x"] = {
+	label = "Newspaper 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_newspapergroup02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chandelier15x"] = {
+	label = "Chandelier 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chandelier15x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_horsemedsgroup02x"] = {
+	label = "Horse Meds 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_horsemedsgroup02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ashtray02x"] = {
+	label = "Ash Tray",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ashtray02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_bagstrauss01x"] = {
+	label = "Bags",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_bagstrauss01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fireguard02x"] = {
+	label = "Fire Guard",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fireguard02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_displaytux01x"] = {
+	label = "Display Tux",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_displaytux01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_podium02x"] = {
+	label = "Podium",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_podium02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_voodoodrum01x"] = {
+	label = "Voodoo Drum",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_voodoodrum01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_disdreamcatcherwind01x"] = {
+	label = "Dreamcatcher 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_disdreamcatcherwind01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_divider01x"] = {
+	label = "Divider 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_divider01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crucifix02x"] = {
+	label = "Crucifix",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crucifix02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_settee01x"] = {
+	label = "Loveseat 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_settee01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gunrack04x"] = {
+	label = "Gunrack 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gunrack04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_kettlecopper01x"] = {
+	label = "Kettle 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_kettlecopper01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["val_p_shackai_sgn1"] = {
+	label = "Sign 09",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "val_p_shackai_sgn1",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bra_cal_sgn_tress4b"] = {
+	label = "Sign 20",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bra_cal_sgn_tress4b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bw_desk01x"] = {
+	label = "Desk 22",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bw_desk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_desk17x"] = {
+	label = "Desk 23",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_desk17x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamphanging13x"] = {
+	label = "Hanging Lamp 40",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamphanging13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_phonewall01x"] = {
+	label = "Wall Phone",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_phonewall01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamphanging14x"] = {
+	label = "Hanging Lamp 41",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamphanging14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp27x"] = {
+	label = "Lamp 50",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp27x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_toyhorse"] = {
+	label = "Toy Horse",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_toyhorse",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_horsemedsgroup03x"] = {
+	label = "Horse Meds 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_horsemedsgroup03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_horse01"] = {
+	label = "Horse Meds 04",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_horse01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crateweapons02x"] = {
+	label = "Weapon Crate 07",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crateweapons02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_whiskeycrate01x"] = {
+	label = "Whiskey Crate 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_whiskeycrate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crate01x"] = {
+	label = "Crate 05",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_n_grocery_jug02x"] = {
+	label = "Jugs",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_n_grocery_jug02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_foldedblanket01x"] = {
+	label = "Folded Blanket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_foldedblanket01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_tent_trader07x"] = {
+	label = "Tent 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_tent_trader07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_tent_bountyhunter04x"] = {
+	label = "Tent 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_tent_bountyhunter04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambtentburlap01x"] = {
+	label = "Tent 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambtentburlap01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambtentleather01x"] = {
+	label = "Tent 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambtentleather01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_tentplain01x"] = {
+	label = "Tent 7",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_tentplain01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_tent_bountyhunter06x"] = {
+	label = "Tent 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_tent_bountyhunter06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_tent_collector06x"] = {
+	label = "Tent 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_tent_collector06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_tentrandomevent01x"] = {
+	label = "Tent 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_tentrandomevent01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp005_s_posse_tent_trader04x"] = {
+	label = "Tent 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp005_s_posse_tent_trader04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_hanging02"] = {
+	label = "Hanging Pots 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_hanging02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_hanging03"] = {
+	label = "Hanging Pots 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_hanging03",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_hanging01"] = {
+	label = "Hanging Pots 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_hanging01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_fishhangi01x"] = {
+	label = "Fishing Items 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_fishhangi01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_fishing01"] = {
+	label = "Fishing Items 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_fishing01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_veh_pg_vl_fisherman01x"] = {
+	label = "Fishing Items 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_veh_pg_vl_fisherman01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_fishstall01"] = {
+	label = "Fishing Items 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_fishstall01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_bucketfish01x"] = {
+	label = "Fishing Items 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_bucketfish01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washbasinset01x"] = {
+	label = "Wash Basin Set 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washbasinset01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washbasinset01ax"] = {
+	label = "Wash Basin Set 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washbasinset01ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washboard_01"] = {
+	label = "Wash Basin 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washboard_01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_washbasinset01bx"] = {
+	label = "Wash Basin 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_washbasinset01bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_package_soap01x"] = {
+	label = "Soap",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_package_soap01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cart03b"] = {
+	label = "Cart 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cart03b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_servingcart01x"] = {
+	label = "Serving Cart",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_servingcart01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_drsupplycart01x"] = {
+	label = "Supply Cart",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_drsupplycart01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_grindingwheelx"] = {
+	label = "Grinding Wheel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_grindingwheelx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_spinningwheel01x"] = {
+	label = "Spinning Wheel",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_spinningwheel01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr2_bush_pricklypearcactus"] = {
+	label = "Cactus 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr2_bush_pricklypearcactus",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["rdr_bush_decor_ab"] = {
+	label = "Bush 05",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "rdr_bush_decor_ab",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_scarecrow02x"] = {
+	label = "Scarecrow 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_scarecrow02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_sav_cookfire01x"] = {
+	label = "Cooking Fire",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_sav_cookfire01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haybalestack03x"] = {
+	label = "Haybale Stack 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haybalestack03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_woodpile01x"] = {
+	label = "Wood Pile 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_woodpile01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambpelt03x"] = {
+	label = "Pelt 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambpelt03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_logpile01"] = {
+	label = "Log Pile",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_logpile01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_furnace01x"] = {
+	label = "Furnace 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_furnace01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_milkcan01x"] = {
+	label = "Milk Can",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_milkcan01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haybalecover01x"] = {
+	label = "Haybale 07",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haybalecover01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_ambpelt01x"] = {
+	label = "Pelt 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_ambpelt01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dblsconcelight01x"] = {
+	label = "Sconce Light 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dblsconcelight01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_papergroup07x"] = {
+	label = "Paper 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_papergroup07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_clothhorseonwheels01x"] = {
+	label = "Cloth 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_clothhorseonwheels01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_dogtoy01x"] = {
+	label = "Dog Toy",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_dogtoy01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_wellpumpnbx01x"] = {
+	label = "Well pump",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_wellpumpnbx01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_hatstand01x"] = {
+	label = "Hat Stand 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_hatstand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doll01x"] = {
+	label = "Doll",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doll01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_feedbags01x"] = {
+	label = "Feed Bags",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_feedbags01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_filecabinet04bx"] = {
+	label = "File Cabinet 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_filecabinet04bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_corn02group01x"] = {
+	label = "Corn",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_corn02group01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_divider04x"] = {
+	label = "Divider 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_divider04x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp26x"] = {
+	label = "Lamp 26",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp26x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_scarecrow03x"] = {
+	label = "Scare Crow 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_scarecrow03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cauldron01x"] = {
+	label = "Cauldron",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cauldron01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_globe02x"] = {
+	label = "Globe",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_globe02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_int_food02"] = {
+	label = "Food 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_int_food02",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_indiangarlic01x"] = {
+	label = "Garlic",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_indiangarlic01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_scarecrow05x"] = {
+	label = "Scarecrow 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_scarecrow05x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pork_meat_b"] = {
+	label = "Hanging Meat",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pork_meat_b",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_eagle01bx"] = {
+	label = "Eagle Statue",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_eagle01bx",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fanceiling01ax"] = {
+	label = "Ceiling Fan",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fanceiling01ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chandelier14x"] = {
+	label = "Chandelier 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chandelier14x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sawhorse01x"] = {
+	label = "Saw Horse",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sawhorse01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saladplate01x"] = {
+	label = "Salad Plate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saladplate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_booksgroup02x"] = {
+	label = "Books 21",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_booksgroup02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_mp_feedbaghang01x"] = {
+	label = "Feed Bag",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_mp_feedbaghang01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chandelier13x"] = {
+	label = "chandelier 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chandelier13x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_lset01x_sal_sd"] = {
+	label = "Saloon Prop 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_lset01x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_valbasin01"] = {
+	label = "Clothes Basin",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_valbasin01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_sideboard01x"] = {
+	label = "Sideboard 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_sideboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_rhogen_curtain01a"] = {
+	label = "Curtian 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_rhogen_curtain01a",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame04ax"] = {
+	label = "Frame 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame04ax",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chandelier24x"] = {
+	label = "Chandelier 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chandelier24x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_riflerack01x"] = {
+	label = "Rifle Rack",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_riflerack01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_headbust03x"] = {
+	label = "Statue 22",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_headbust03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_lamp28x"] = {
+	label = "Lamp 25",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_lamp28x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_grp_cellar01x_sal_sd"] = {
+	label = "Saloon Prop 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_grp_cellar01x_sal_sd",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pillow08x"] = {
+	label = "Pillow 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pillow08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_fireguard01x"] = {
+	label = "Fireguard 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_fireguard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_bucketmilk02x"] = {
+	label = "Milk Bucket",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_bucketmilk02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pillow11x"] = {
+	label = "Pillow 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pillow11x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_vase06x"] = {
+	label = "Vase 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_vase06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_firegrate01x"] = {
+	label = "Fire Grate 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_firegrate01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_vase01x"] = {
+	label = "Vase 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_vase01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_saloonpropgroup01x"] = {
+	label = "Saloon Prop 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_saloonpropgroup01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_group_newspaperstack"] = {
+	label = "Newspaper Stack 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_group_newspaperstack",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_pillow06x"] = {
+	label = "Pillow 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_pillow06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_basket07x"] = {
+	label = "Basket 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_basket07x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame08x"] = {
+	label = "Frame 30",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_chandelier09x"] = {
+	label = "Chandelier 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_chandelier09x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_duckdead02x"] = {
+	label = "Duck kitchen",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_duckdead02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_crategatling02x"] = {
+	label = "Gatling Crate",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_crategatling02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_helpwanted01x"] = {
+	label = "Help Wanted Sign",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_helpwanted01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_trunkvar01x"] = {
+	label = "Trunk 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_trunkvar01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_apothecary01x"] = {
+	label = "Shelf 33",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_apothecary01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_buffet01x"] = {
+	label = "Buffet 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_buffet01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_cuttingboard01x"] = {
+	label = "Cuttingboard 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_cuttingboard01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone10x"] = {
+	label = "Grave 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone10x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_servingdish01x"] = {
+	label = "Serving Dish",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_servingdish01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir03x"] = {
+	label = "Armoir 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_traveltrunk02x"] = {
+	label = "Traveling Trunk",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_traveltrunk02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_frame02x"] = {
+	label = "Frame 34",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_frame02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_candelabra02x"] = {
+	label = "Candleabra 01",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_candelabra02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cutlery02x"] = {
+	label = "Cutlery",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cutlery02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_susans_grave"] = {
+	label = "Grave 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_susans_grave",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_trunk01x"] = {
+	label = "Trunk 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_trunk01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_piestand01x"] = {
+	label = "Pie Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_piestand01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gravestone02x"] = {
+	label = "Grave 4",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gravestone02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoiroffice66x"] = {
+	label = "Armoir 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoiroffice66x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir02x"] = {
+	label = "Armoir 3",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir08x"] = {
+	label = "Armoir 5",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir08x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_armoir06x"] = {
+	label = "Armoir 6",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_armoir06x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_waterloggedchest01x"] = {
+	label = "Chest 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_waterloggedchest01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_inlaidsecretary01x"] = {
+	label = "Secretary Desk",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_inlaidsecretary01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["s_saddlewinter07_01x"] = {
+	label = "Saddle 1",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "s_saddlewinter07_01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_cs_saddle01x"] = {
+	label = "Saddle 2",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_cs_saddle01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_haybalecover03x"] = {
+	label = "Haybale 60",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_haybalecover03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_gundisplay01x"] = {
+	label = "Gun Display 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_gundisplay01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_doc_botset18x"] = {
+	label = "Doctors Bottles",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_doc_botset18x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_musicstand02x"] = {
+	label = "Music Stand",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_musicstand02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_buffet03x"] = {
+	label = "Buffet 02",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_buffet03x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_buffet02x"] = {
+	label = "Buffet 03",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_buffet02x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_jump_barrellong01"] = {
+	label = "Obstacle 8",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_jump_barrellong01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_jump_fenceshort01"] = {
+	label = "Obstacle 9",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_jump_fenceshort01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["mp001_p_mp_jump_logshort01"] = {
+	label = "Obstacle 10",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "mp001_p_mp_jump_logshort01",
+	client = {
+		image = "furniture.png",
+	},
+	},
+	["p_jumphurdles01x"] = {
+	label = "Obstacle 11",
+	weight = 0,
+	allowArmed = false,
+	stack = false,
+	close = true,
+	description = "furniture for camps",
+	prop = "p_jumphurdles01x",
+	client = {
+		image = "furniture.png",
+	},
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-- Old Camping Props
+	["p_campfire_coloursmoke01x"] = {
+        label = "Camping Campfire",
+		description = "Create your camp",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "Camping Starter",
+        prop = "p_campfire_coloursmoke01x",
+		client = {image = "campfire.png",},
+    },
+	["p_chair_crate02x"] = {
+        label = "Wooden Crate Small Storage",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_chair_crate02x",
+        client = {image = "furniture.png"}
+    },
+    ["s_tent_maropen01b"] = {
+        label = "Normal Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_tent_maropen01b",
+        client = {image = "furniture.png"}
+    },
+    ["mp005_s_posse_tent_bountyhunter07x"] = {
+        label = "Bounty Hunter Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp005_s_posse_tent_bountyhunter07x",
+        client = {image = "furniture.png"}
+    },
+    ["p_hitchingpost01x"] = {
+        label = "Hitching Post",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_hitchingpost01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_table11x"] = {
+        label = "Wooden Table",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_table11x",
+        client = {image = "furniture.png"}
+    },
+    ["p_ambchair01x"] = {
+        label = "Wooden Chair",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_ambchair01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bench03x"] = {
+        label = "Wooden Bench",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bench03x",
+        client = {image = "furniture.png"}
+    },
+    ["p_lantern09xint"] = {
+        label = "Lantern",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_lantern09xint",
+        client = {image = "furniture.png"}
+    },
+    ["p_cot01x"] = {
+        label = "Cot",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_cot01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_tentmountainmen02x"] = {
+        label = "Large Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_tentmountainmen02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_benchwork01x"] = {
+        label = "Ammo Crafting Table",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_benchwork01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bespoketable01x"] = {
+        label = "Wooden Table 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bespoketable01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_stoolfolding01x"] = {
+        label = "Folding Stool",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_stoolfolding01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_target01x"] = {
+        label = "Target",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_target01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_chairfolding02x"] = {
+        label = "Wooden Chair 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_chairfolding02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_chair09x"] = {
+        label = "Wooden Chair 3",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_chair09x",
+        client = {image = "furniture.png"}
+    },
+    ["s_wap_rainsfalls"] = {
+        label = "Tepee",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_wap_rainsfalls",
+        client = {image = "furniture.png"}
+    },
+    ["s_wagoncaravan01a"] = {
+        label = "Caravan",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_wagoncaravan01a",
+        client = {image = "furniture.png"}
+    },
+    ["p_basinwater01x"] = {
+        label = "Water Basin",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_basinwater01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_trunk05x"] = {
+        label = "Trunk",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_trunk05x",
+        client = {image = "furniture.png"}
+    },
+    ["p_dirttub01x"] = {
+        label = "Dirty Water Tub",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_dirttub01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_basketrope01x"] = {
+        label = "Basket with Rope",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_basketrope01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_waterbucket01x"] = {
+        label = "Water Bucket",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_waterbucket01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_sandbagcover01x"] = {
+        label = "Grain Sack 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_sandbagcover01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_floursackstack02x"] = {
+        label = "Grain Sack 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_floursackstack02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_barrel02x"] = {
+        label = "Barrel",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_barrel02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_barricadewood_sml01x"] = {
+        label = "Wooden Barricade",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_barricadewood_sml01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_crate15x"] = {
+        label = "Wooden Crate",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_crate15x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative04x"] = {
+        label = "Totem 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative04x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative07x"] = {
+        label = "Totem 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative07x",
+        client = {image = "furniture.png"}
+    },
+    ["p_staffindian03x"] = {
+        label = "Totem 3",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_staffindian03x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative05x"] = {
+        label = "Totem 4",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative05x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative12x"] = {
+        label = "Totem 5",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative12x",
+        client = {image = "furniture.png"}
+    },
+    ["p_waterpump01x"] = {
+        label = "Pump",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_waterpump01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bedindian02x"] = {
+        label = "Small Bed",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bedindian02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_graveindian01x"] = {
+        label = "Large Bed",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_graveindian01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative02x"] = {
+        label = "Stones with Skull",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative02x",
+        client = {image = "furniture.png"}
+    },
+    ["s_confedtarget"] = {
+        label = "Hay Mannequin",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_confedtarget",
+        client = {image = "furniture.png"}
+    },
+    ["p_fence06ax"] = {
+        label = "Fence 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_fence06ax",
+        client = {image = "furniture.png"}
+    },
+    ["p_fence10cx"] = {
+        label = "Fence 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_fence10cx",
+        client = {image = "furniture.png"}
+    },
+    ["p_fence_wall01x"] = {
+        label = "Fence 3",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_fence_wall01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_fence_wall02x"] = {
+        label = "Fence 4",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_fence_wall02x",
+        client = {image = "furniture.png"}
+    },
+    ["mp005_p_mp_bountyboard02x"] = {
+        label = "Bulletin Board",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp005_p_mp_bountyboard02x",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_haybaleshort01"] = {
+        label = "Obstacle 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_haybaleshort01",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_fenceshort02"] = {
+        label = "Obstacle 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_fenceshort02",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_sackshort01"] = {
+        label = "Obstacle 3",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_sackshort01",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_barrelshort01"] = {
+        label = "Obstacle 4",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_barrelshort01",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_blocksmall01"] = {
+        label = "Obstacle 5",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_blocksmall01",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_jump_dock01"] = {
+        label = "Obstacle 6",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_jump_dock01",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_jumphurdles01x"] = {
+        label = "Obstacle 7",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_jumphurdles01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_lampstreet01x"] = {
+        label = "Street Lamp",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_lampstreet01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_lightpost01x"] = {
+        label = "Lamp 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_lightpost01x",
+        client = {image = "furniture.png"}
+    },
+    ["mp004_p_mptenttanner01x"] = {
+        label = "Gazebo",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp004_p_mptenttanner01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_babystroller"] = {
+        label = "Baby Stroller",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_babystroller",
+        client = {image = "furniture.png"}
+    },
+    ["p_grindingwheel01x"] = {
+        label = "Grinding Wheel",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_grindingwheel01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_coalbin01x"] = {
+        label = "Coal Bin",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_coalbin01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_anvil01x"] = {
+        label = "Anvil",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_anvil01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_stump"] = {
+        label = "Stump for Anvil",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_stump",
+        client = {image = "furniture.png"}
+    },
+    ["p_forge01x"] = {
+        label = "Forge",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_forge01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_sawhorse04x"] = {
+        label = "Log Sawhorse",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_sawhorse04x",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_kettle03_fire01x"] = {
+        label = "Kettle with Logs",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_kettle03_fire01x",
+        client = {image = "furniture.png"}
+    },
+    ["mp006_p_xmastree01x"] = {
+        label = "Christmas Tree",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp006_p_xmastree01x",
+        client = {image = "furniture.png"}
+    },
+    ["mp006_s_markercandycane"] = {
+        label = "Christmas Lollipop",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp006_s_markercandycane",
+        client = {image = "furniture.png"}
+    },
+    ["mp006_s_markergingerbread"] = {
+        label = "Christmas Gingerbread",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp006_s_markergingerbread",
+        client = {image = "furniture.png"}
+    },
+    ["mp006_s_lootablechest03x"] = {
+        label = "Gift",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp006_s_lootablechest03x",
+        client = {image = "furniture.png"}
+    },
+    ["mp006_p_wreath01x"] = {
+        label = "Christmas Wreath",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp006_p_wreath01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_goldcradlestand01x"] = {
+        label = "Gold Panning Large Sifter",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_goldcradlestand01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_gangtentlemoyne01x"] = {
+        label = "Gang Tent with Blanket",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_gangtentlemoyne01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_ambtenthide01b"] = {
+        label = "Small Fur Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_ambtenthide01b",
+        client = {image = "furniture.png"}
+    },
+    ["s_tentbison01x"] = {
+        label = "Large Fur Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_tentbison01x",
+        client = {image = "furniture.png"}
+    },
+    ["mp001_p_mp_finishline_bonfire01x"] = {
+        label = "Bone Fire",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp001_p_mp_finishline_bonfire01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_cookfirestructure02x"] = {
+        label = "Indian Shelter",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_cookfirestructure02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_indianbackrest01x"] = {
+        label = "Resting Place",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_indianbackrest01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bench_log05x"] = {
+        label = "Large Log Bench",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bench_log05x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bench_log03x"] = {
+        label = "Small Log Bench",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bench_log03x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bench_log04x"] = {
+        label = "Medium Log Bench",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bench_log04x",
+        client = {image = "furniture.png"}
+    },
+    ["p_skullpost02x"] = {
+        label = "Skull Cross",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_skullpost02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookyskulls07bx"] = {
+        label = "Spike with Skulls",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookyskulls07bx",
+        client = {image = "furniture.png"}
+    },
+    ["p_indianartifact01x"] = {
+        label = "Stone Tomahawk",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_indianartifact01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_indiandream01x_a"] = {
+        label = "Dreamcatcher",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_indiandream01x_a",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative01x"] = {
+        label = "Spike with Feathers",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookynative09x"] = {
+        label = "Hanging Rattle",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookynative09x",
+        client = {image = "furniture.png"}
+    },
+    ["p_leantopine01x"] = {
+        label = "Branch Shelter",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_leantopine01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_indiandream01x"] = {
+        label = "Dreamcatcher with Beads",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_indiandream01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_indianfan01x"] = {
+        label = "Feather Decoration",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_indianfan01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_dryingmeat01x"] = {
+        label = "Meat Dryer",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_dryingmeat01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_gourdwater01x"] = {
+        label = "Water Container",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_gourdwater01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_group_skull01x"] = {
+        label = "Skull Totem",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_group_skull01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_spookyskulls02x_a"] = {
+        label = "Spike with Skulls and Spikes",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_spookyskulls02x_a",
+        client = {image = "furniture.png"}
+    },
+    ["mp005_p_mp_hideframe02x"] = {
+        label = "Hide Tanner",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp005_p_mp_hideframe02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_ambtentswamp01x"] = {
+        label = "Branch Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_ambtentswamp01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_ambtentmulch01b"] = {
+        label = "Leaf Tent",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_ambtentmulch01b",
+        client = {image = "furniture.png"}
+    },
+    ["p_hangingbones01x"] = {
+        label = "Skull Hanging Dreamcatcher",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_hangingbones01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_target06x"] = {
+        label = "Hanging Totem",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_target06x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bearskin01x"] = {
+        label = "Bear Skin",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bearskin01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_breadoven01x"] = {
+        label = "Bread Oven",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_breadoven01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bedrollopen03x"] = {
+        label = "Sleeping Bag",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bedrollopen03x",
+        client = {image = "furniture.png"}
+    },
+    ["p_ambtentdebris01x"] = {
+        label = "Debris Cover",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_ambtentdebris01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_horsehitchnbd01x"] = {
+        label = "Metal Hitching Post",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_horsehitchnbd01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_cabinet13x"] = {
+        label = "Pedestal 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_cabinet13x",
+        client = {image = "furniture.png"}
+    },
+    ["p_pedestalstand01x"] = {
+        label = "Pedestal 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_pedestalstand01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_cartvend02x"] = {
+        label = "Merchant Wagon",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_cartvend02x",
+        client = {image = "furniture.png"}
+    },
+    ["mp004_p_veh_gunforhire03x"] = {
+        label = "Tipi 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp004_p_veh_gunforhire03x",
+        client = {image = "furniture.png"}
+    },
+    ["mp005_p_mpcover_gunslinger05"] = {
+        label = "Tipi 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "mp005_p_mpcover_gunslinger05",
+        client = {image = "furniture.png"}
+    },
+    ["p_basketindian01x"] = {
+        label = "Basket 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_basketindian01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_basketindian02x"] = {
+        label = "Basket 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_basketindian02x",
+        client = {image = "furniture.png"}
+    },
+    ["p_potteryindian05x"] = {
+        label = "Pottery 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_potteryindian05x",
+        client = {image = "furniture.png"}
+    },
+    ["p_potteryindian08x"] = {
+        label = "Pottery 2",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_potteryindian08x",
+        client = {image = "furniture.png"}
+    },
+    ["p_potteryindian07x"] = {
+        label = "Pottery 3",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_potteryindian07x",
+        client = {image = "furniture.png"}
+    },
+    ["p_bowlna01x"] = {
+        label = "Bowl 1",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_bowlna01x",
+        client = {image = "furniture.png"}
+    },
+    ["s_clothpile01x"] = {
+        label = "Cloth Pile",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_clothpile01x",
+        client = {image = "furniture.png"}
+    },
+    ["s_cvan_hideroll01"] = {
+        label = "Rolled Hide",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "s_cvan_hideroll01",
+        client = {image = "furniture.png"}
+    },
+    ["p_skullcattle03x"] = {
+        label = "Animal Skull",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_skullcattle03x",
+        client = {image = "furniture.png"}
+    },
+    ["p_storagebox01x"] = {
+        label = "Big Storage",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_storagebox01x",
+        client = {image = "furniture.png"}
+    },
+    ["p_fencetall_05a"] = {
+        label = "Fence",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_fencetall_05a",
+        client = {image = "furniture.png"}
+    },
+
+    ["p_coffin04x_sea"] = {
+        label = "Rakev",
+        weight = 0,
+        allowArmed = false,
+        stack = false,
+        close = true,
+        description = "furniture for camps",
+        prop = "p_coffin04x_sea",
+        client = {image = "furniture.png"}
+    },
+
+	["p_bookbible01x"] = {
+		label = "Mission Book",
 		weight = 0,
 		allowArmed = false,
 		stack = false,
 		close = true,
-		description = "furniture for camps",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
+		prop = "p_bookbible01x",
+		description = "Book for camps",
+		client = {image = "furniture.png"}
 	},
-	["camping_3"] = {
-		label = "Bounty Hunter Tent",
-		weight = 0,
-		allowArmed = false,
-		stack = false,
-		close = true,
-		description = "furniture for camps",
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_4"] = {
-		label = "Hitching Post",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_5"] = {
-		label = "Wooden Table",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_6"] = {
-		label = "Wooden Chair",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_7"] = {
-		label = "Wooden Bench",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_8"] = {
-		label = "Lantern",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_9"] = {
-		label = "Cot",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_10"] = {
-		label = "Large Tent",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_11"] = {
-		label = "Ammo Crafting Table",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_12"] = {
-		label = "Wooden Table 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_13"] = {
-		label = "Folding Stool",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_14"] = {
-		label = "Target",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_15"] = {
-		label = "Wooden Chair 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_16"] = {
-		label = "Wooden Chair 3",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_17"] = {
-		label = "Tepee",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_18"] = {
-		label = "Rakev",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_19"] = {
-		label = "Caravan",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_20"] = {
-		label = "Water Basin",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_21"] = {
-		label = "Trunk",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_22"] = {
-		label = "Dirty Water Tub",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_23"] = {
-		label = "Basket with Rope",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_24"] = {
-		label = "Water Bucket",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_25"] = {
-		label = "Grain Sack 1",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_26"] = {
-		label = "Grain Sack 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_27"] = {
-		label = "Barrel",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_28"] = {
-		label = "Wooden Barricade",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_29"] = {
-		label = "Wooden Crate",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_30"] = {
-		label = "Totem 1",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_31"] = {
-		label = "Totem 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_32"] = {
-		label = "Totem 3",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_33"] = {
-		label = "Totem 4",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_34"] = {
-		label = "Totem 5",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_35"] = {
-		label = "Pump",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_36"] = {
-		label = "Small Bed",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_37"] = {
-		label = "Large Bed",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_38"] = {
-		label = "Stones with Skull",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_39"] = {
-		label = "Hay Mannequin",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_40"] = {
-		label = "Fence 1",
-		description = "furniture for camps",
-		weight = 0,
-		stack = false,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_41"] = {
-		label = "Fence 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_42"] = {
-		label = "Fence 3",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_43"] = {
-		label = "Fence 4",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_44"] = {
-		label = "Bulletin Board",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_45"] = {
-		label = "Gun",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_46"] = {
-		label = "Obstacle 1",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_47"] = {
-		label = "Obstacle 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_48"] = {
-		label = "Obstacle 3",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_49"] = {
-		label = "Obstacle 4",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_50"] = {
-		label = "Obstacle 5",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_51"] = {
-		label = "Obstacle 6",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_52"] = {
-		label = "Obstacle 7",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_53"] = {
-		label = "Street Lamp",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_54"] = {
-		label = "Lamp 2",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_55"] = {
-		label = "Gazebo",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_56"] = {
-		label = "Baby Stroller",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_57"] = {
-		label = "Grinding Wheel",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_58"] = {
-		label = "Coal Bin",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_59"] = {
-		label = "Anvil",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_60"] = {
-		label = "Stump for Anvil",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_61"] = {
-		label = "Forge",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_62"] = {
-		label = "Log Sawhorse",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_63"] = {
-		label = "Kettle with Logs",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_64"] = {
-		label = "Christmas Tree",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_65"] = {
-		label = "Christmas Lollipop",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_66"] = {
-		label = "Christmas Gingerbread",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_67"] = {
-		label = "Gift",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_68"] = {
-		label = "Christmas Wreath",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_69"] = {
-		label = "Gold Panning Large Sifter",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_70"] = {
-		label = "Gang Tent with Blanket",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_71"] = {
-		label = "Small Fur Tent",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_72"] = {
-		label = "Large Fur Tent",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_73"] = {
-		label = "Campfire",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_74"] = {
-		label = "Indian Shelter",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_75"] = {
-		label = "Resting Place",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_76"] = {
-		label = "Large Log Bench",
-		description = "furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_77"] = {
-		label = "Small Log Bench",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_78"] = {
-		label = "Medium Log Bench",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_79"] = {
-		label = "Skull Cross",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_80"] = {
-		label = "Spike with Skulls",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_81"] = {
-		label = "Spike with Single Skull",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_82"] = {
-		label = "Small Skull Totem",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_83"] = {
-		label = "Stone Tomahawk",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_84"] = {
-		label = "Dreamcatcher",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_85"] = {
-		label = "Spike with Feathers",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_86"] = {
-		label = "Hanging Rattle",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_87"] = {
-		label = "Branch Shelter",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_88"] = {
-		label = "Dreamcatcher with Beads",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_89"] = {
-		label = "Feather Decoration",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_90"] = {
-		label = "Meat Dryer",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_91"] = {
-		label = "Water Container",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_92"] = {
-		label = "Skull Totem",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_93"] = {
-		label = "Spike with Skulls and Spikes",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_94"] = {
-		label = "Hide Tanner",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_95"] = {
-		label = "Branch Tent",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_96"] = {
-		label = "Camping 96",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_97"] = {
-		label = "Skull Hanging Dreamcatcher",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_98"] = {
-		label = "Hanging Totem",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_99"] = {
-		label = "Bear Skin",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_100"] = {
-		label = "Bread Oven",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_101"] = {
-		label = "Sleeping Bag",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_102"] = {
-		label = "Debris Cover",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_103"] = {
-		label = "Metal Hitching Post",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_104"] = {
-		label = "Pedestal 1",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_105"] = {
-		label = "Pedestal 2",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_120"] = {
-		label = "Merchant Wagon",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-	["camping_121"] = {
-		label = "Tipi 1",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_122"] = {
-		label = "Tipi 2",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_123"] = {
-		label = "Basket 1",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_124"] = {
-		label = "Basket 2",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_125"] = {
-		label = "Pottery 1",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_126"] = {
-		label = "Pottery 2",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_127"] = {
-		label = "Pottery 3",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_128"] = {
-		label = "Bowl 1",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_129"] = {
-		label = "Cloth Pile",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_130"] = {
-		label = "Rolled Hide",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_131"] = {
-		label = "Animal Skull",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_132"] = {
-		label = "Big Storage",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	["camping_133"] = {
-		label = "Moonshine Stand",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		prop = "p_chair02x",
-		client = {
-			image = "furniture.png",
-		},
-	},
-
-	-- Campfire for camps
-	["campfire_1"] = {
-		label = "Small Campfire",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		allowArmed = false,
-		client = {
-			image = "campfire.png",
-		},
-	},
-
-	["campfire_2"] = {
-		label = "Large Campfire",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		allowArmed = false,
-		client = {
-			image = "campfire2.png",
-		},
-	},
 
-	["campfire_3"] = {
+	["p_campfirecombined03x"] = {
 		label = "Cooking Pot",
-		description = "Furniture for camps",
 		weight = 0,
-		stack = true,
-		close = true,
 		allowArmed = false,
-		client = {
-			image = "campfire2.png",
-		},
+		stack = false,
+		close = true,
+		prop = "p_campfirecombined03x",
+		description = "Book for camps",
+		client = {image = "furniture.png"}
 	},
 
-	["campfire_4"] = {
-		label = "Burning Log",
-		description = "Furniture for camps",
-		weight = 0,
-		stack = true,
-		close = true,
-		allowArmed = false,
-		client = {
-			image = "campfire2.png",
-		},
-	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	-- House Robbery
 	["provision_trinket_bat_wing"] = {
 		label = "trinket bat wing",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11690,7 +37786,7 @@ return {
 	["provision_trinket_badger_claw"] = {
 		label = "trinket badger claw",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11700,7 +37796,7 @@ return {
 	["provision_trinket_asteroid_chunk"] = {
 		label = "trinket asteroid chunk",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11710,7 +37806,7 @@ return {
 	["provision_trinket_alligator_skin"] = {
 		label = "trinket alligator skin",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11720,7 +37816,7 @@ return {
 	["provision_tm_squirrel_statue"] = {
 		label = "squirrel statue",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11730,7 +37826,7 @@ return {
 	["provision_thimbleab"] = {
 		label = "thimbleab",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11740,7 +37836,7 @@ return {
 	["provision_talisman_raven_claw"] = {
 		label = "talisman raven claw",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11750,7 +37846,7 @@ return {
 	["provision_talisman_eagle_talon"] = {
 		label = "talisman eagle talon",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11760,7 +37856,7 @@ return {
 	["provision_th_antique_brass_compass"] = {
 		label = "antique brass compass",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11770,7 +37866,7 @@ return {
 	["provision_talisman_buffalo_horn"] = {
 		label = "talisman buffalo horn",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11780,7 +37876,7 @@ return {
 	["provision_talisman_boar_tusk"] = {
 		label = "talisman boar tusk",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11790,7 +37886,7 @@ return {
 	["provision_talisman_bear_claw"] = {
 		label = "talisman bear claw",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11800,7 +37896,7 @@ return {
 	["provision_squirrel_tail"] = {
 		label = "squirrel tail",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11810,7 +37906,7 @@ return {
 	["provision_talisman_alligator_tooth"] = {
 		label = "talisman alligator tooth",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11820,7 +37916,7 @@ return {
 	["provision_ring_silver"] = {
 		label = "ring silver",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11830,7 +37926,7 @@ return {
 	["provision_ring_platinum"] = {
 		label = "ring platinum",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11840,7 +37936,7 @@ return {
 	["provision_reading_glasses"] = {
 		label = "reading glasses",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11850,7 +37946,7 @@ return {
 	["provision_rcm_warveteran_harness"] = {
 		label = "War Veteran harness",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11859,7 +37955,7 @@ return {
 	["provision_rcm_pocket_watch"] = {
 		label = "pocket watch",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11868,7 +37964,7 @@ return {
 	["provision_rcm_old_gun"] = {
 		label = "old gun",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11877,7 +37973,7 @@ return {
 	["provision_rckitty_emerald"] = {
 		label = "Kitty Emerald",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11886,7 +37982,7 @@ return {
 	["provision_rc_slvcatcher_watch"] = {
 		label = "watch",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11895,7 +37991,7 @@ return {
 	["provision_rc_rock_statue"] = {
 		label = "rock statue",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11904,7 +38000,7 @@ return {
 	["provision_rc_quartz_chunk"] = {
 		label = "quartz chunk",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11913,7 +38009,7 @@ return {
 	["provision_pocket_watch_silver"] = {
 		label = "pocket watch silver",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11922,7 +38018,7 @@ return {
 	["provision_pocket_watch_reutlinge"] = {
 		label = "pocket watch reutlinge",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11931,7 +38027,7 @@ return {
 	["provision_pocket_watch_platinum"] = {
 		label = "pocket watch platinum",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11940,7 +38036,7 @@ return {
 	["provision_pocket_watch_gold"] = {
 		label = "pocket watch gold",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11949,7 +38045,7 @@ return {
 	["provision_pocket_watch_gleaming_brass"] = {
 		label = "pocket watch gleaming brass",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11958,7 +38054,7 @@ return {
 	["provision_penelopes_necklace"] = {
 		label = "penelopes necklace",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11967,7 +38063,7 @@ return {
 	["provision_penelopes_bracelet"] = {
 		label = "penelopes bracelet",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11976,7 +38072,7 @@ return {
 	["provision_pen"] = {
 		label = "pen",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11985,7 +38081,7 @@ return {
 	["provision_pearsons_naval_compass"] = {
 		label = "naval compass",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -11994,7 +38090,7 @@ return {
 	["provision_necklace_silver"] = {
 		label = "necklace silver",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12003,7 +38099,7 @@ return {
 	["provision_necklace_platinum"] = {
 		label = "necklace platinum",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12012,7 +38108,7 @@ return {
 	["provision_necklace_pearl"] = {
 		label = "necklace pearl",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12021,7 +38117,7 @@ return {
 	["provision_necklace_gold"] = {
 		label = "necklace gold",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12030,7 +38126,7 @@ return {
 	["provision_necklace"] = {
 		label = "Necklace",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12040,7 +38136,7 @@ return {
 	["provision_mollys_pocket_mirror"] = {
 		label = "Molly's Pocket Mirror",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12050,7 +38146,7 @@ return {
 	["provision_marys_ring"] = {
 		label = "Mary's Ring",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12060,7 +38156,7 @@ return {
 	["provision_marys_brooch"] = {
 		label = "Mary's Brooch",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12070,7 +38166,7 @@ return {
 	["provision_lost_relic"] = {
 		label = "Lost Relic",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12080,7 +38176,7 @@ return {
 	["provision_locket_silver"] = {
 		label = "Locket Silver",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12090,7 +38186,7 @@ return {
 	["provision_loanshark_skins"] = {
 		label = "Loanshark Skins",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12100,7 +38196,7 @@ return {
 	["provision_jewelrybag_sm"] = {
 		label = "Jewelry Bag Small",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12110,7 +38206,7 @@ return {
 	["provision_jewelrybag_lg"] = {
 		label = "Jewelry Bag Large",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12120,7 +38216,7 @@ return {
 	["provision_jewelry_box"] = {
 		label = "Jewelry Box",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12130,7 +38226,7 @@ return {
 	["provision_jail_keys"] = {
 		label = "Jail Keys",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12140,7 +38236,7 @@ return {
 	["provision_goldtooth"] = {
 		label = "Gold Tooth",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1250,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12150,7 +38246,7 @@ return {
 	["provision_goldring"] = {
 		label = "Gold Ring",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12160,18 +38256,26 @@ return {
 	["provision_folder_watches"] = {
 		label = "Folder Watches",
 		description = "Marked for LAW Enforcement seizure.",
-		weight = 1000,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
 		prop = "s_re_goldrelicguama01x",
 	},
 
+
+
+
+
+
+
+
+
 	-- Grave Robbery
 	["rotteneye"] = {
 		label = "Rotten eye",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12181,7 +38285,7 @@ return {
 	["rottenhand"] = {
 		label = "Rotten hand",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12191,7 +38295,7 @@ return {
 	["rottenhead"] = {
 		label = "Rotten head",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500,
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12201,7 +38305,17 @@ return {
 	["rottenleg"] = {
 		label = "Rotten leg",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500,
+		weight = 250,
+		stack = true,
+		close = false,
+		allowArmed = false,
+		prop = "p_boxsmlleather01x",
+	},
+
+	["rustykey"] = {
+		label = "Rusty Key",
+		description = "Marked for Law Enforcement seizure",
+		weight = 250,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12361,7 +38475,7 @@ return {
 	["rustynails"] = {
 		label = "Rusty nails",
 		description = "Marked for Law Enforcement seizure",
-		weight = 500,
+		weight = 1000,
 		stack = true,
 		close = false,
 		allowArmed = false,
@@ -12548,543 +38662,12 @@ return {
 		prop = "p_boxsmlleather01x",
 	},
 
-	-- Packages
-	["ammo_revolver_package"] = {
-		label = "Ammo Revolver Package",
-		description = "Find me at Gun Store",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "ammo_revolver.png",
-		},
-	},
-	["ammo_22_package"] = {
-		label = "Ammo Varmint Package",
-		description = "Find me at Gun Store",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "ammo_22.png",
-		},
-	},
-	["ammo_arrow_package"] = {
-		label = "Arrow Package",
-		description = "Find me at Gun Store",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "ammo_arrow.png",
-		},
-	},
-	["p_baitbread01xpackage"] = {
-		label = "Bait Bread Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["p_baitcorn01xpackage"] = {
-		label = "Bait Corn Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["p_baitcheese01xpackage"] = {
-		label = "Bait Cheese Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["p_baitworm01xpackage"] = {
-		label = "Bait Worm Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["p_baitcricket01xpackage"] = {
-		label = "Bait Cricket Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["p_crawdad01xpackage"] = {
-		label = "Craw Dad Package",
-		description = "Find me at Fish Vendor",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_lgoc_snipper_v6",
-		client = {
-			image = "upgrade_fsh_bait_bread.png",
-		},
-	},
-	["sugarcubepackage"] = {
-		label = "Sugarcube Package",
-		description = "Find me at Horse Trainer Shop",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "s_horsnack_sugarcube01x",
-		client = {
-			image = "sugarcube.png",
-		},
-	},
-	["apple2package"] = {
-		label = "Horse Apple Package",
-		description = "Find me at Horse Trainer Shop",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_apple01x",
-		client = {
-			image = "apple.png",
-		},
-	},
-	["hopseedpackage"] = {
-		label = "Hop Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["carrotseedpackage"] = {
-		label = "Carrot Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["cornseedpackage"] = {
-		label = "Corn Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["sugarseedpackage"] = {
-		label = "Sugar Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["tobaccoseedpackage"] = {
-		label = "Tobacco Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["tomatoseedpackage"] = {
-		label = "Tomato Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["broccoliseedpackage"] = {
-		label = "Broccoli Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["potatoseedpackage"] = {
-		label = "Potato Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["agaritaseedpackage"] = {
-		label = "Agarita Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["wildmintseedpackage"] = {
-		label = "Wild Mint Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["ramsheadseedpackage"] = {
-		label = "Ramshead Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["parasolmushroomseedpackage"] = {
-		label = "Parasol Mushroom Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["hummingbirdsageseedpackage"] = {
-		label = "Hummingbird Sage Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["evergreenhuckleberryseedpackage"] = {
-		label = "Evergreen Huckleberry Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["alaskanginsengseedpackage"] = {
-		label = "Alaskan Ginseng Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["grainseedpackage"] = {
-		label = "Grain Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["indtobaccoseedpackage"] = {
-		label = "Indian Tobacco Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["onionseedpackage"] = {
-		label = "Onion Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["pepperseedpackage"] = {
-		label = "Pepper Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["cabbageseedpackage"] = {
-		label = "Cabbage Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["appleseedpackage"] = {
-		label = "Apple Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["chamomileseedpackage"] = {
-		label = "Chamomile Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["thymeseedpackage"] = {
-		label = "Thyme Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["oreganoseedpackage"] = {
-		label = "Oregano Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["grapeseedpackage"] = {
-		label = "Grape Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["bberrypackage"] = {
-		label = "Black Berry Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-	["fertilizerpackage"] = {
-		label = "Fertilizer Package",
-		description = "Find me at Seeds Market",
-		weight = 1500, -- In Grams
-		stack = true,
-		decay = true,
-		degrade = 4320, -- Minutes
-		close = true, -- if should close inventory when used
-		allowArmed = true, -- should we let them use with weapons?
-		prop = "p_sack05x",
-		client = {
-			image = "seed.png",
-		},
-	},
-
 	--Native Items
 
 	["tatanka"] = {
 		label = "Tatanka",
 		description = "A valuable herb",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -13093,7 +38676,7 @@ return {
 	["ayita"] = {
 		label = "Ayita",
 		description = "A valuable herb",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -13102,16 +38685,7 @@ return {
 	["chaska"] = {
 		label = "Chaska",
 		description = "A valuable herb",
-		weight = 250, -- In Grams
-		stack = true,
-		close = true, -- if should close inventory when used
-		allowArmed = false, -- should we let them use with weapons?
-	},
-
-	["chaska"] = {
-		label = "Chaska",
-		description = "A valuable herb",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -13120,7 +38694,7 @@ return {
 	["agadoli"] = {
 		label = "Agadoli",
 		description = "A valuable herb",
-		weight = 250, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		close = true, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
@@ -13129,7 +38703,7 @@ return {
 	["tamales"] = {
 		label = "Tamales",
 		description = "A plate with fish, roasted potatoes and carrots. Garnish with fresh oregano and an lemon juice if desired.",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -13140,7 +38714,29 @@ return {
 	["succotash"] = {
 		label = "Succotash",
 		description = "A plate with deer meat, onions and corn with tomato sauce.",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+	},
+
+	["jambalaya"] = {
+		label = "Jambalaya",
+		description = "A plate with deer meat, onions and corn with tomato sauce.",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 4320, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+	},
+
+	["cowboybeans"] = {
+		label = "Cowboy Beans",
+		description = "A plate with deer meat, onions and corn with tomato sauce.",
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
@@ -13151,47 +38747,64 @@ return {
 	["berrytea"] = {
 		label = "Berry Tea",
 		description = "A warm cup of tea and Blackberry juice.",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "ginsengtea.png",
-		},
 	},
 
 	["lemontea"] = {
 		label = "Lemon Tea",
 		description = "A warm cup of tea and apple juice.",
-		weight = 150, -- In Grams
+		weight = 100, -- In Grams
 		stack = true,
 		decay = true,
 		degrade = 4320, -- Minutes
 		close = true, -- if should close inventory when used
 		allowArmed = true, -- should we let them use with weapons?
-		client = {
-			image = "ginsengtea.png",
-		},
 	},
 
 	-- Ranch Job
 
-	["rawmilk"] = {
-		label = "Rawmilk",
+	["milk"] = {
+		label = "Milk",
 		description = "used by saloons",
-		weight = 50, -- In Grams
+		weight = 25, -- In Grams
 		stack = true,
 		decay = false,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_bottle001x",
 	},
 
-	["milk"] = {
-		label = "Milk",
+	["cheese"] = {
+		label = "Cheese",
 		description = "used by saloons",
-		weight = 50, -- In Grams
+		weight = 25, -- In Grams
+		stack = true,
+		decay = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_pickup_cheese01x",
+	},
+
+	["salt"] = {
+		label = "Salt",
+		description = "used by saloons",
+		weight = 25, -- In Grams
+		stack = true,
+		decay = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_saltshaker01x",
+	},
+
+	["yogurt"] = {
+		label = "Yogurt",
+		description = "used by saloons",
+		weight = 25, -- In Grams
 		stack = true,
 		decay = false,
 		close = false, -- if should close inventory when used
@@ -13201,100 +38814,24 @@ return {
 	["egg"] = {
 		label = "Egg",
 		description = "used by saloons",
-		weight = 50, -- In Grams
+		weight = 25, -- In Grams
 		stack = true,
 		decay = false,
 		close = false, -- if should close inventory when used
 		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_egg01x",
 	},
 
-
-	-- Items
-	["calf"] = {
-        label = "Calf",
-        description = "",
-        weight = 1000, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-    ["cow"] = {
-        label = "Cow",
-        description = "",
-        weight = 1950, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-
-    ["babychicken"] = {
-        label = "baby chicken",
-        description = "",
-        weight = 1000, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-    ["chicken"] = {
-        label = "chicken",
-        description = "",
-        weight = 1250, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-
-    ["babybighornram"] = {
-        label = "baby big hornram",
-        description = "",
-        weight = 1000, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-    ["bighornram"] = {
-        label = "big hornram",
-        description = "",
-        weight = 1250, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-
-    ["babyboar"] = {
-        label = "baby boar",
-        description = "",
-        weight = 1000, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-    ["boar"] = {
-        label = "boar",
-        description = "",
-        weight = 1650, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-
-    ["babybuffalo"] = {
-        label = "baby buffalo",
-        description = "",
-        weight = 1000, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-    ["buffalo"] = {
-        label = "buffalo",
-        description = "",
-        weight = 2250, -- In Grams
-        stack = true,
-        close = true, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-    },
-
+	["butter"] = {
+		label = "Butter",
+		description = "used by saloons",
+		weight = 25, -- In Grams
+		stack = true,
+		decay = false,
+		close = false, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_pickup_cheese01x",
+	},
 
 	["mdt"] = {
 		label = "MDT",
@@ -13306,14 +38843,10 @@ return {
 		prop = "p_clipboardset01x",
 	},
 
-
-
-
-
 	["oatmeal"] = {
         label = "Oatmeal",
         description = "A staple breakfast food, oatmeal was valued for its ability to provide sustained energy and warmth",
-        weight = 250, -- In Grams
+        weight = 100, -- In Grams
         stack = true,
         decay = true,
         degrade = 4320, -- Minutes
@@ -13324,7 +38857,7 @@ return {
     ["walnuts"] = {
         label = "Walnuts",
         description = "Packed with essential fats and nutrients, walnuts were seen as brain food",
-        weight = 250, -- In Grams
+        weight = 100, -- In Grams
         stack = true,
         decay = true,
         degrade = 4320, -- Minutes
@@ -13335,7 +38868,7 @@ return {
     ["darkchocolate"] = {
         label = "Dark Chocolate",
         description = "They were cherished for their ability to boost mood and provide a sense of indulgence, helping to lift spirits in difficult times",
-        weight = 250, -- In Grams
+        weight = 100, -- In Grams
         stack = true,
         decay = true,
         degrade = 4320, -- Minutes
@@ -13343,10 +38876,21 @@ return {
         allowArmed = true, -- should we let them use with weapons?
         prop = "s_chocolatebar01x",
     },
+    ["twinrockchocolate"] = {
+        label = "Twin Rock Chocolate",
+        description = "They were cherished for their ability to boost mood.",
+        weight = 100, -- In Grams
+        stack = true,
+        decay = true,
+        degrade = 8320, -- Minutes
+        close = true, -- if should close inventory when used
+        allowArmed = true, -- should we let them use with weapons?
+        prop = "s_chocolatebar01x",
+    },
     ["honey"] = {
         label = "Honey",
         description = "A natural sweetener and medicinal staple, honey was thought to have calming properties",
-        weight = 250, -- In Grams
+        weight = 100, -- In Grams
         stack = true,
         decay = true,
         degrade = 4320, -- Minutes
@@ -13357,7 +38901,7 @@ return {
     ["warmmilk"] = {
         label = "Warm Milk",
         description = "A timeless comfort drink, warm milk was often associated with relaxation and bedtime routines",
-        weight = 250, -- In Grams
+        weight = 100, -- In Grams
         stack = true,
         decay = true,
         degrade = 4320, -- Minutes
@@ -13368,21 +38912,1096 @@ return {
     ["alcohol"] = {
         label = "Alcohol",
         description = "When you drink me i give love",
-        weight = 1050, -- In Grams
+        weight = 550, -- In Grams
         stack = true,
         close = true, -- if should close inventory when used
         allowArmed = true, -- should we let them use with weapons?
         prop = "p_bottle001x",
     },
-    ["repairtool"] = {
-        label = "Weapon Repair Tool",
-        description = "Handy if you want to repair your weapon",
-        weight = 5000, -- In Grams
-        decay = true,
-        degrade = 21600, -- Minutes
-        stack = true,
-        close = false, -- if should close inventory when used
-        allowArmed = true, -- should we let them use with weapons?
-        prop = "s_firstaidkit_sm01x",
+
+	["petbox"] = {
+		label = "Pet box",
+		description = "Just a box",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_can06x",
+	},
+	["petfood"] = {
+		label = "Pet food can",
+		description = "Good for your pets needs",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_can06x",
+	},
+	["petwater"] = {
+		label = "Pet water can",
+		description = "Good for your pets needs",
+		weight = 50, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_can06x",
+	},
+	["petheal"] = {
+		label = "Pet Heal",
+		description = "Good for your pets needs",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_can06x",
+	},
+	["petrevive"] = {
+		label = "Pet Medicine",
+		description = "Good for your pets needs",
+		weight = 100, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_can06x",
+	},
+	["recipe"] = {
+		label = "Recipe",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Good and illegal recipe",
+		prop = "s_frozennote01x",
+	},
+	["moonshinekit"] = {
+		label = "Moonshine Stand",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = "Good and illegal moonshine stand",
+		prop = "mp006_p_moonshiner_still01x",
+	},
+	["moonshinemash"] = {
+		label = "Moonshine Mash",
+		weight = 0,
+		allowArmed = false,
+		stack = true,
+		close = true,
+		description = "Good quality moonshine mash",
+		prop = "s_moonshinesack01x",
+	},
+
+
+
+	--Legendary Hutning
+	["legendarymap"] = {
+		label = "Precious Map",
+		description = "An old, weathered map marked with cryptic symbols and claw-shaped scratches.",
+		weight = 1000, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 21600, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_shopmap01x",
+	},
+	["legendarytooth"] = {
+		label = "Big Tooth",
+		description = "A rare and valuable trophy harvested from a legendary animal",
+		weight = 500, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_alligato_tooth01x",
+	},
+
+	--Badges
+	["us_marshal_badge"] = {
+		label = "Badge",
+		description = "MARSHAL",
+		weight = 5, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_badgeusmarshal01x",
+	},
+	["pinkerton_badge"] = {
+		label = "Badge",
+		description = "Pinkerton",
+		weight = 5, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_badgepinkerton01x",
+	},
+	["police_badge"] = {
+		label = "Badge",
+		description = "Police",
+		weight = 5, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_badgepolice01x",
+	},
+	["sheriff_badge"] = {
+		label = "Badge",
+		description = "Sheriff",
+		weight = 5, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "s_badgesherif01x",
+	},
+	["deputy_badge"] = {
+		label = "Badge",
+		description = "Lawman",
+		weight = 5, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_deputybadge01x",
+	},
+	["barricade"] = {
+		label = "Barricade",
+		description = "Law Enforcement Equipment",
+		weight = 5, -- In Grams
+		stack = true,
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_barricade04x",
+	},
+
+
+
+
+
+	-- Oil Company
+	["pureoil"] = {
+		label = "Pure Oil",
+		weight = 150,
+		allowArmed = false,
+		stack = true,
+		close = false,
+		description = "Oil from factory",
+		prop = "p_bucket01x",
+	},
+	["bottledoil"] = {
+		label = "Bottled oil",
+		weight = 100,
+		allowArmed = false,
+		stack = true,
+		close = false,
+		description = "Oil from manager",
+		prop = "p_bottle003x",
+	},
+
+
+	-- Oil Pumps
+	["ricx_oilpump"] = {
+		label = "Oil Pump",
+		weight = 5000,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		description = nil,
+	},
+
+
+	-- Freezer
+	-- ["ricx_freezer"] = {
+	-- 	label = "Freezer Container",
+	-- 	weight = 5000,
+	-- 	allowArmed = false,
+	-- 	stack = false,
+	-- 	close = true,
+	-- 	description = nil,
+	-- },
+	-- ["ice"] = {
+	-- 	label = "Ice",
+	-- 	weight = 5,
+	-- 	allowArmed = false,
+	-- 	stack = true,
+	-- 	close = true,
+	-- 	description = nil,
+	-- },
+
+
+	["goldpan"] = {
+		label = "Goldpan",
+		description = "Worktool",
+		weight = 250, -- In Grams
+		stack = true,
+		decay = true,
+		degrade = 10080, -- Minutes
+		close = true, -- if should close inventory when used
+		allowArmed = true, -- should we let them use with weapons?
+		prop = "p_copperpan02x",
+	},
+	-- Goldcraddle
+	-- ["ricx_goldcradle"] = {
+	-- 	label = "Gold Cradle",
+	-- 	weight = 5000,
+	-- 	allowArmed = false,
+	-- 	stack = false,
+	-- 	close = true,
+	-- 	description = nil,
+	-- 	prop = "p_goldcradle01x",
+	-- },
+	-- ["ricx_goldpan2"] = {
+	-- 	label = "Bronze Goldpan",
+	-- 	description = "Worktool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_copperpan02x",
+	-- },
+	-- ["ricx_goldpan3"] = {
+	-- 	label = "Advanced Goldpan",
+	-- 	description = "Worktool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_copperpan02x",
+	-- },
+	-- ["ricx_basebucket"] = {
+	-- 	label = "Base Bucket",
+	-- 	description = "Worktool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bucket01x",
+	-- },
+	-- ["ricx_bucket2"] = {
+	-- 	label = "Bronze Bucket",
+	-- 	description = "Worktool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bucket01x",
+	-- },
+	-- ["ricx_bucket3"] = {
+	-- 	label = "Advanced Bucket",
+	-- 	description = "Worktool",
+	-- 	weight = 2500, -- In Grams
+	-- 	stack = true,
+	-- 	decay = true,
+	-- 	degrade = 10080, -- Minutes
+	-- 	close = true, -- if should close inventory when used
+	-- 	allowArmed = true, -- should we let them use with weapons?
+	-- 	prop = "p_bucket03x",
+	-- },
+
+
+
+	-- Poster
+	["poster"] = {
+		label = "Piece of paper",
+		weight = 10,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+
+
+
+	-- Armories
+	["armory"] = {
+		label = "Personal Storage",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+		consume = 0,
+		server = {
+			export = "mw_armory.itemuse"
+		},
+		client = {
+			disable = {
+				combat = false
+			},
+		}
+	},
+	["team_armory"] = {
+		label = "Medium Storage",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+		consume = 0,
+		server = {
+			export = "mw_armory.itemuse"
+		},
+		client = {
+			disable = {
+				combat = false
+			},
+		}
+	},
+	["warehouse"] = {
+		label = "Warehouse Large Storage",
+		weight = 0,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+		consume = 0,
+		server = {
+			export = "mw_armory.itemuse"
+		},
+		client = {
+			disable = {
+				combat = false
+			},
+		}
+	},
+
+
+
+	-- Repairs
+	["durabillitystore"] = {
+		label = "Workbench",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_bench03x",
+		consume = 0,
+		client = {
+			export = "mw_repair.use",
+		}
+	},
+
+
+
+	-- Native HEADS
+	["native_hat_long_red"] = {
+		label = "Native Chief Headdress Red",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat_long_green"] = {
+		label = "Native Chief Headdress Green",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat_long_blue"] = {
+		label = "Native Chief Headdress Blue",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat_long_brown"] = {
+		label = "Native Chief Headdress Brown",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat01_red"] = {
+		label = "Native Headdress Red",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat01_green"] = {
+		label = "Native Headdress Green",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat01_blue"] = {
+		label = "Native Headdress Blue",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat02"] = {
+		label = "Native Headdress Red",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat03"] = {
+		label = "Native Headdress L",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat04"] = {
+		label = "Native Headdress M",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat05"] = {
+		label = "Native Headdress H",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat06"] = {
+		label = "Native Headdress Blue",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat07"] = {
+		label = "Native Headdress Brown",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat08"] = {
+		label = "Native Headdress Brown",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_hat09"] = {
+		label = "Native Headdress Red",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_mask01_red"] = {
+		label = "Native Mask White",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_mask01_green"] = {
+		label = "Native Mask Green",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+	["native_mask01_blue"] = {
+		label = "Native Mask Blue",
+		weight = 150,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "s_masknative01x",
+	},
+
+	["cuffs"] = {
+		label = "Cuffs",
+		description = "Law Enforcement Equipment",
+		weight = 100, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_handcuffs02x",
+	},
+
+	["weed_process"] = {
+		label = "Weed Table",
+		description = "Weed Processing Equipment",
+		weight = 100, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_hangrackmix01x",
+	},
+	["cocaine_process"] = {
+		label = "Cocaine Table",
+		description = "Cocaine Processing Equipment",
+		weight = 100, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_still03x",
+	},
+	["moonshine_process"] = {
+		label = "Moonshine Table",
+		description = "Moonshine Processing Equipment",
+		weight = 100, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_still04x",
+	},
+
+	["beatrap"] = {
+		label = "Bear Trap",
+		description = "Useful for lots of stuff",
+		weight = 100, -- In Grams
+		stack = false,
+		close = true, -- if should close inventory when used
+		allowArmed = false, -- should we let them use with weapons?
+		prop = "p_beartrap01x",
+	},
+
+
+
+
+    -- Collector
+    ["oldhelmet"] = {
+        label = "Skullrider Helm",
+        description = "Dark, battle-worn helmet with an intimidating design, built for those who embrace power and survival.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "mp001_p_cs_teddyhelmet01x",
     },
+    ["edogtoy"] = {
+        label = "Stuffed Dog Toy",
+        description = "Adorable plush dog toy made with soft fabric and a cozy design. Perfect for snuggles, playtime, or as a charming decorative piece.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_dogtoy01x",
+    },
+    ["doll"] = {
+        label = "Doll",
+        description = "A dark, eerie doll with an unsettling design that radiates mystery and unease. Perfect for horror collections, spooky décor, or those drawn to the macabre.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_doll01x",
+    },
+    ["fandesk"] = {
+        label = "Vintage Desk Fan",
+        description = "Classic metal desk fan with a sturdy base and retro design. Combines old-school industrial style with practical airflow, making it both a functional piece and a timeless décor accent.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_fandesk01x",
+    },
+    ["taxidermyfox"] = {
+        label = "Nightbound Fox Mount",
+        description = "A striking taxidermy fox posed in a lifelike stance, capturing the cunning spirit of the wild. With rich fur tones and intense detail, this piece brings a dark, rustic elegance to any lodge, study, or collectors space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_foxpheasant01x",
+    },
+    ["skullmoose"] = {
+        label = "Moose Skull",
+        description = "A powerful skull-and-antler wall emblem symbolizing strength, dominance, and primal spirit. With its dark, rugged design and imposing presence, this piece makes a bold statement in any lodge, cabin, or outlaw-themed space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_gen_skullmoose01_tc01",
+    },
+    ["taxidermyheron"] = {
+        label = "Grimwatch Heron",
+        description = "A dark, eerie heron figure captured in a silent, watchful stance. This haunting piece evokes mystery and solitude, making it a striking accent for gothic décor, collectors, or atmospheric displays.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_heron01bx",
+    },
+    ["taxidermyowl"] = {
+        label = "Nightwarden Owl",
+        description = "A haunting owl captured mid-stance, embodying silent vigilance and ancient wisdom. With dark tones and lifelike detail, this taxidermy-style piece brings a powerful, mysterious presence to any collection or décor space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_taxidermyowl01x",
+    },
+    ["taxidermyvulture"] = {
+        label = "Carrion Sovereign",
+        description = "A commanding vulture with wings spread wide, symbolizing death, survival, and dominance. This dark taxidermy-style display piece brings a grim, powerful presence to any gothic, outlaw, or collectors space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_taxidermyvulture01x",
+    },
+    ["telegraphkit"] = {
+        label = "Telegraph Kit",
+        description = "A vintage-style telegraph set housed in a wooden case, evoking the age of coded messages and outlaw communication. A striking collectible that symbolizes secrecy, ingenuity, and the birth of long-distance connection.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_telegraph01x",
+    },
+    ["telescope"] = {
+        label = "Telescope",
+        description = "A classic tripod-mounted telescope designed for quiet observation and distant discovery. With a timeless silhouette and rugged build, it evokes the spirit of explorers, stargazers, and frontier scientists.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_telescope01x",
+    },
+    ["toybike"] = {
+        label = "Toy Tricycle",
+        description = "A rugged, old-fashioned tricycle with a worn metal look that evokes forgotten streets and lost childhoods. A haunting decorative piece perfect for dark décor, collectors, or atmospheric displays.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_tricycle01x",
+    },
+    ["vase1"] = {
+        label = "Ember Reliquary",
+        description = "A small blackened urn that faintly glows with hidden embers, said to hold the ashes of a long-forgotten fire spirit.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_urn01x",
+    },
+    ["vase2"] = {
+        label = "Shadowglyph Urn",
+        description = "An ornate dark urn etched with strange glowing symbols. The markings are said to seal ancient spirits within, their power lingering inside the vessel.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_vase01x",
+    },
+   ["vase3"] = {
+        label = "Mooncrest Urn",
+        description = "A dark ceremonial urn marked with a pale crescent sigil, once used to hold sacred ashes beneath the watch of the night.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_vase06x",
+    },
+   ["mooseantlers"] = {
+        label = "Hunters Trophy Antlers",
+        description = "A mounted pair of large antlers, proudly displayed as a symbol of a hunters greatest catch.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "s_mountedmooseantlers01x",
+    },
+   ["lostrelic"] = {
+        label = "Lost Relic",
+        description = "A weathered stone idol believed to be a relic of a vanished jungle tribe. Its hollow eyes are said to watch over forgotten lands and buried secrets.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "s_re_relicguama02x",
+    },
+   ["ashurn"] = {
+        label = "Sealed Ash Urn",
+        description = "A clay urn bound with a tight lid, used long ago to store ashes or sacred remains, its contents undisturbed for ages.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "s_urndiscoverable01x",
+    },
+   ["toyship1"] = {
+        label = "Wreck of the Iron Tide",
+        description = "The shattered remains of a once-mighty warship, now left to rust and rot after a forgotten battle at sea.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "s_warship01x",
+    },
+    ["toyship2"] = {
+        label = "Dreadwake Battleship",
+        description = "A massive warship built for heavy naval combat, its armored hull and large cannons once dominating the open seas.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "s_warship02x",
+    },
+    ["guncleaningkit"] = {
+        label = "Gun Cleaning Kit",
+        description = "Compact kit with brushes, rods, patches, and solvent to keep your firearm clean, accurate, and reliable. Works with multiple calibers and stores neatly in a portable case.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "mp005_s_posse_guncleaningkit_01x",
+    },
+    ["ashtray"] = {
+        label = "Ashtray",
+        description = "Durable ashtray with a deep bowl and cigarette rests to keep ash contained. Suitable for indoor or outdoor use.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_ashtray01x",
+    },
+    ["raretequila"] = {
+        label = "El Maldito",
+        description = "A bold, dark tequila with smooth agave, subtle smoke, and a haunting finish. Crafted for those who walk their own path.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_bottlesnakeoil03x",
+    },
+    ["silvercross"] = {
+        label = "Crucifix",
+        description = "Crafted with care, this crucifix represents devotion, strength, and spiritual protection. A meaningful piece for personal prayer, home décor, or as a thoughtful gift.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_crucifix02x",
+    },
+    ["ironcross"] = {
+        label = "Iron Crucifix",
+        description = "Solid iron crucifix with a rugged, timeless design that symbolizes faith, protection, and endurance. A powerful piece for home, altar, or personal space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_iconcross03x",
+    },
+    ["goldcross"] = {
+        label = "Golden Crucifix",
+        description = "Beautifully crafted gold crucifix symbolizing faith, devotion, and spiritual grace. A timeless piece for personal wear, home décor, or a meaningful gift.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_goldcrucifix_01x",
+    },
+    ["guncase"] = {
+        label = "Gun Case",
+        description = "Durable wooden case with a smooth finish and soft interior lining to protect and store your firearm in classic style.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_guncase01x",
+    },
+    ["kerosenetablelamp"] = {
+        label = "Kerosene Table Lamp",
+        description = "Classic kerosene table lamp with a timeless design, casting a warm and inviting light. Perfect for rustic décor, ambient lighting, or adding old-world charm to any space.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_kerosenetablelamp01x",
+    },
+    ["mirror1"] = {
+        label = "Ornate Wall Mirror",
+        description = "Beautifully detailed frame with a classic antique-inspired design that adds character and charm to any room. Perfect as a statement piece or decorative accent.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_mirror04x",
+    },
+
+
+
+
+
+
+
+	--USED
+	["deathcard"] = {
+        label = "Death Card",
+        description = "If you hold this…you are already involved.",
+        weight = 5, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_crd_j_d01x_van",
+    },
+    ["hariscoin"] = {
+        label = "Ancient Coin",
+        description = "A coin for a favour.",
+        weight = 50, -- In Grams
+        stack = true,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_coin01x",
+    },
+    ["kukuitem"] = {
+        label = "Wailing Tissues",
+        description = "A rare item for hard times.",
+        weight = 1, -- In Grams
+        stack = true,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_cs_giftbox01x",
+    },
+    ["donator"] = {
+        label = "Donator",
+        description = "A badge for a person that donate to the state.",
+        weight = 100, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        prop = "p_coin01x",
+    },
+
+	-- Telegram Inventtory
+	["telegram_inventory"] = {
+		label = "Telegram Bird",
+		weight = 1000,
+		allowArmed = false,
+		stack = true,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+
+
+
+	["less_dmg_book"] = {
+		label = "Damage Book",
+		weight = 1500,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+	["health_reg_book"] = {
+		label = "health regen Book",
+		weight = 1500,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+	["stamina_reg_book"] = {
+		label = "Stamina Regen Book",
+		weight = 1500,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+	["speed_mult_book"] = {
+		label = "Speed Multiplier Book",
+		weight = 1500,
+		allowArmed = false,
+		stack = false,
+		close = true,
+		prop = "p_cs_note02x",
+	},
+
+
+
+
+
+	["k_weapon_permit"] = {
+        label = "Weapon permit",
+        description = "...",
+        weight = 10,        -- In Grams
+        stack = false,
+        close = true,       -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        decay = false,
+        prop = "p_paper02x",
+        client = {
+            image = "permit_clear_sm3.png",
+        },
+    },
+
+    ["k_official_paper"] = {
+        label = "Official paper",
+        description = "...",
+        weight = 10,        -- In Grams
+        stack = false,
+        close = true,       -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        decay = false,
+        prop = "p_paper02x",
+        client = {
+            image = "permit_clear_sm3.png",
+        },
+    },
+
+    ["mdt_ledger"] = {
+        label = "MDT",
+        description = "Laws most trusted friend.",
+        weight = 15,        -- In Grams
+        stack = false,
+        close = true,       -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        decay = false,
+        prop = "p_paper02x",
+        client = {
+            image = "mdtbook.png",
+        },
+    },
+
+    ["investigation_paper_stack"] = {
+        label = "Investigation Folder",
+        description = "A sealed investigation folder, treat carefully.",
+        weight = 10,        -- In Grams
+        stack = false,
+        close = true,       -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        decay = false,
+        prop = "p_paper02x",
+        client = {
+            image = "paper_stack_sm.png",
+        },
+    },
+
+    ["paper_binder"] = {
+        label       = "Paper Binder",
+        description = "A leather binder for documents and papers.",
+        weight      = 50, -- In Grams
+        stack       = false,
+        close       = true,
+        allowArmed  = false,
+        decay       = false,
+        prop        = "p_paper02x",
+        client      = {
+            image = "mdt2_icon_sm_clear.png",
+        },
+    },
+
+    ["bountypaper_2"] = {
+        label = "Bounty Paper",
+        description = "Dead or Alive",
+        weight = 1000,      -- In Grams
+        stack = false,
+        close = true,       -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+        decay = true,
+        degrade = 1440,     -- Minutes
+        prop = "p_paper02x",
+        client = {
+            image = "bountypaper_2.png",
+        },
+    },
+
+    ["newspaper"] = {
+        label = "Newspaper",
+        description = "Today's news.",
+        weight = 50, -- In Grams
+        stack = true,
+        close = false,
+        allowArmed = true,
+        consume = 0,
+        prop = "p_newspaper01x",
+        client = {
+            image = "k_newspaper.png",
+            export = "kiri_newspaper.use",
+        },
+    },
+
+    ["rescuepaper"] = {
+        label = "Rescue Paper",
+        description = ".......",
+        weight = 1000, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+		decay = false,
+		degrade = 1440, -- Minutes
+        prop = "p_paper02x",
+		client = {
+			image = "rescuepaper.png",
+		},
+    },
+
+	["rescuepaper_memoir"] = {
+        label = "Rescue Memoir",
+        description = ".......",
+        weight = 0, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+		decay = false,
+        prop = "p_paper02x",
+		client = {
+			image = "rescuepaper_complete.png",
+		},
+    },
+
+	["rescue_proof"] = {
+        label = "Thank you letter",
+        description = "A proof of completing succesfully a rescue mission",
+        weight = 0, -- In Grams
+        stack = false,
+        close = true, -- if should close inventory when used
+        allowArmed = false, -- should we let them use with weapons?
+		decay = false,
+        prop = "p_paper02x",
+		client = {
+			image = "rescue_reward.png",
+		},
+    },
+
+
+
+
+
+
+
+
 }
+
+return items

@@ -22,7 +22,7 @@ end
 ---@param properties ItemContainerProperties
 ---@todo Rework containers for flexibility, improved data structure; then export this method.
 local function setContainerProperties(itemName, properties)
-	local blacklist, whitelist = properties.blacklist, properties.whitelist
+	local blacklist, whitelist, explodeWeight = properties.blacklist, properties.whitelist, properties.explodeWeight
 
 	if blacklist then
 		local tableType = table.type(blacklist)
@@ -46,26 +46,35 @@ local function setContainerProperties(itemName, properties)
 
 	containers[itemName] = {
 		size = { properties.slots, properties.maxWeight },
+		explodeWeight = explodeWeight,
 		blacklist = blacklist,
 		whitelist = whitelist,
 	}
 end
 
-
 setContainerProperties('cigarbox', {
-	slots = 5,
+	slots = 25,
 	maxWeight = 5000,
-	whitelist = { 'cigar1', 'cigar2', 'cigar3', 'cigarette' }
+	explodeWeight = false,
+	whitelist = { 'cigar1', 'cigar2', 'cigar3', 'cigar4', 'cigarette' }
 })
 
 setContainerProperties('doctorsatchel', {
 	slots = 10,
-	maxWeight = 40000,
+	maxWeight = 50000,
+	explodeWeight = true,
 	whitelist = {
 		'self_revive',
 		'processedopium',
 		'herbalremedies'
 	}
+})
+
+setContainerProperties('paper_binder', {
+	slots        = 50,
+	maxWeight    = 500,
+	explodeWeight = false,
+	whitelist    = { 'k_official_paper', 'k_weapon_permit', 'cwnote' }
 })
 
 return containers

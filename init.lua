@@ -17,8 +17,15 @@ shared = {
     framework = GetConvar('inventory:framework', 'rsg'),
     playerslots = GetConvarInt('inventory:slots', 30),
     playerweight = GetConvarInt('inventory:weight', 50000),
+    playerslotsVIP = GetConvarInt('inventory:slotsVIP', 55),
+    playerweightVIP = GetConvarInt('inventory:weightVIP', 75000),
+    playerslotsServerTag = GetConvarInt('inventory:slotsServerTag', 40),
+    playerweightServerTag = GetConvarInt('inventory:weightServerTag', 60000),
+    serverTag = GetConvar('inventory:serverTag', 'GOLD'), -- Discord clan tag that grants Noon perks
+    serverTagRefreshInterval = GetConvarInt('inventory:serverTagRefreshInterval', 5), -- minutes between live tag checks
     target = GetConvarInt('inventory:target', 0) == 1,
     police = json.decode(GetConvar('inventory:police', '["police"]')),
+    pinkerton = json.decode(GetConvar('inventory:pinkerton', '["pinkerton"]')),
     medic = json.decode(GetConvar('inventory:medic', '["medic"]')),
     persistent_items = GetConvarInt('inventory:persistent_items', 0) == 1 -- for REDM only
 }
@@ -35,6 +42,20 @@ do
     end
 
     shared.police = police
+end
+
+do
+    if type(shared.pinkerton) == 'string' then
+        shared.pinkerton = { shared.pinkerton }
+    end
+
+    local pinkerton = table.create(0, shared.pinkerton and #shared.pinkerton or 0)
+
+    for i = 1, #shared.pinkerton do
+        pinkerton[shared.pinkerton[i]] = 0
+    end
+
+    shared.pinkerton = pinkerton
 end
 
 if IsDuplicityVersion() then
@@ -90,7 +111,7 @@ else
         weaponanims = GetConvarInt('inventory:weaponanims', 1) == 1,
         itemnotify = GetConvarInt('inventory:itemnotify', 1) == 1,
         weaponnotify = GetConvarInt('inventory:weaponnotify', 1) == 1,
-        imagepath = GetConvar('inventory:imagepath', 'nui://ox_inventory/web/images'),
+        imagepath = GetConvar('inventory:imagepath', 'nui://gm_inventory/web/images'),
         dropprops = GetConvarInt('inventory:dropprops', 0) == 1,
         dropmodel = joaat(GetConvar('inventory:dropmodel', 'prop_med_bag_01b')),
         weaponmismatch = GetConvarInt('inventory:weaponmismatch', 1) == 1,

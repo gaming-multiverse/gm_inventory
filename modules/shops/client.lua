@@ -20,22 +20,29 @@ for shopType, shopData in pairs(lib.load('data.shops') --[[@as table<string, OxS
 		shop.locations = shopData.locations
 	end
 
+	-- if shopData.pedData then
+    --     local model = shopData.pedData.model
+    --     local locs  = shopData.pedData.locations or {}
+    --     local i = 0
+
+    --     for k, v in pairs(locs) do
+    --         i = i + 1
+    --         -- 👇 build a unique name inline
+    --         local suffix = (type(v) == "table" and v.name) or (type(k) == "string" and k) or i
+    --         local pedName = ((shopData.name or shopType) .. "_" .. tostring(suffix))
+    --             :gsub("%s+", "_")
+    --             :gsub("[^%w_]", "")
+    --             :lower()
+    --         exports.gm_core:SpawnPed(pedName, v, model, 10.0, 15.0)
+    --     end
+    -- end
+
 	shopTypes[shopType] = shop
 	local blip = shop.blip
 
 	if blip then
 		blip.name = ('ox_shop_%s'):format(shop.name)
 		AddTextEntry(blip.name, shop.name or shopType)
-	end
-end
-
----@param point CPoint
-local function nearbyShop(point)
-	---@diagnostic disable-next-line: param-type-mismatch
-	DrawMarker(-1795314153, point.coords.x, point.coords.y, point.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 30, 150, 30, 222, false, false, 0, true, false, false, false)
-
-	if point.isClosest and point.currentDistance < 1.2 and IsControlJustReleased(0, 38) then
-		client.openInventory('shop', { id = point.invId, type = point.type })
 	end
 end
 
@@ -70,18 +77,6 @@ local function onEnterShop(point)
 
 		point.entity = entity
 	end
-end
-
-local function promptCreate(point)
-    exports['rsg-core']:createPrompt("Prompt_" .. point.promptName .. "_" .. point.id, point.coords, 0xF3830D8E, point.promptName, {
-        type = 'client',
-        event = 'inventory:client:OpenInventory',
-        args = { 'shop', {id = point.invId, type = point.type} },
-    })
-end
-
-local function promptDelete(point)
-	exports['rsg-core']:deletePrompt("Prompt_" .. point.promptName .. "_" .. point.id)
 end
 
 local Utils = require 'modules.utils.client'
@@ -205,6 +200,12 @@ local function refreshShops()
 
 			for i = 1, #shop.locations do
 				local coords = shop.locations[i]
+				local groupName = ('shop_%s_%s'):format(type, i)
+				local promptKey = shop.promptKey or 0x5415BE48
+				local promptLabel = label
+
+				jo.prompt.create(groupName, promptLabel, promptKey, 1000)
+
 				id += 1
 
 				shops[id] = lib.points.new(coords, 16, {
@@ -213,11 +214,15 @@ local function refreshShops()
 					inv = 'shop',
 					invId = i,
 					type = type,
-					-- nearby = nearbyShop,
-					promptName = shop.name,
-					promptKey = shop.promptKey,
-					onEnter = promptCreate,
-					onExit = promptDelete,
+					nearby = function(self)
+						if self.currentDistance < 1.5 then
+							jo.prompt.displayGroup(groupName)
+							if jo.prompt.isCompleted(groupName, promptKey) then
+								client.openInventory('shop', { id = self.invId, type = self.type })
+							end
+						end
+					end,
+					groups = shop.groups,
 					blip = blip and createBlip(blip, coords)
 				})
 			end

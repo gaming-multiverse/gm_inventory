@@ -7,6 +7,7 @@ import { fetchNui } from '../../utils/fetchNui';
 import { Locale } from '../../store/locale';
 import { isSlotWithItem } from '../../helpers';
 import { setClipboard } from '../../utils/setClipboard';
+import { placeItemsEnabled } from '../../store/placeItems';
 import { useAppSelector } from '../../store';
 import React from 'react';
 import { Menu, MenuItem } from '../utils/menu/Menu';
@@ -98,11 +99,10 @@ const InventoryContext: React.FC = () => {
       <Menu>
         <MenuItem onClick={() => handleClick({ action: 'use' })} label={Locale.ui_use || 'Use'} />
         <MenuItem onClick={() => handleClick({ action: 'give' })} label={Locale.ui_give || 'Give'} />
-        {/* {<MenuItem onClick={() => handleClick({ action: 'place' })} label={Locale.ui_place || 'Place'} />} */}
+        {placeItemsEnabled && (
+          <MenuItem onClick={() => handleClick({ action: 'place' })} label={Locale.ui_place || 'Place'} />
+        )}
         <MenuItem onClick={() => handleClick({ action: 'drop' })} label={Locale.ui_drop || 'Drop'} />
-        {/* {item && item.metadata?.ammo > 0 && (
-          <MenuItem onClick={() => handleClick({ action: 'removeAmmo' })} label={Locale.ui_remove_ammo} />
-        )} */}
         {item && item.metadata?.serial && (
           <MenuItem
             onClick={() => handleClick({ action: 'copy', serial: item.metadata?.serial })}

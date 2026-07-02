@@ -10,8 +10,8 @@ import Divider from '../utils/Divider';
 
 const SlotTooltip: React.ForwardRefRenderFunction<
   HTMLDivElement,
-  { item: SlotWithItem; inventoryType: Inventory['type']; style: React.CSSProperties }
-> = ({ item, inventoryType, style }, ref) => {
+  { item: SlotWithItem; inventoryType: Inventory['type']; }
+> = ({ item, inventoryType }, ref) => {
   const additionalMetadata = useAppSelector((state) => state.inventory.additionalMetadata);
   const itemData = useMemo(() => Items[item.name], [item]);
   const ingredients = useMemo(() => {
@@ -24,25 +24,25 @@ const SlotTooltip: React.ForwardRefRenderFunction<
   return (
     <>
       {!itemData ? (
-        <div className="tooltip-wrapper" ref={ref} style={style}>
+        <div className="tooltip-wrapper">
           <div className="tooltip-header-wrapper">
             <p>{item.name}</p>
             {/* <p>
-                {item.weight > 0
-                  ? item.weight >= 1000
-                    ? `${(item.weight / 1000).toLocaleString('en-us', {
-                        minimumFractionDigits: 2,
-                      })}kg `
-                    : `${item.weight.toLocaleString('en-us', {
-                        minimumFractionDigits: 0,
-                      })}g `
-                  : ''}
-              </p> */}
+              <div className='tooltip-weight-image'></div>
+              {item.weight > 0
+                ? item.weight >= 1000
+                  ? `${(item.weight / 1000).toLocaleString('en-us', {
+                      minimumFractionDigits: 2,
+                    })} kg `
+                  : `${item.weight.toLocaleString('en-us', {
+                      minimumFractionDigits: 0,
+                    })} g `
+                : ''}
+            </p> */}
           </div>
-          <Divider />
         </div>
       ) : (
-        <div style={{ ...style }} className="tooltip-wrapper" ref={ref}>
+        <div className="tooltip-wrapper" ref={ref}>
           <div className="tooltip-header-wrapper">
             <p>{item.metadata?.label || itemData.label || item.name}</p>
             {inventoryType === 'crafting' ? (
@@ -54,7 +54,7 @@ const SlotTooltip: React.ForwardRefRenderFunction<
               <p>{item.metadata?.type}</p>
             )}
           </div>
-          <Divider />
+          {/* <Divider /> */}
           {description && (
             <div className="tooltip-description">
               <ReactMarkdown className="tooltip-markdown">{description}</ReactMarkdown>
@@ -62,7 +62,7 @@ const SlotTooltip: React.ForwardRefRenderFunction<
           )}
           {inventoryType !== 'crafting' ? (
             <>
-              {!item.degradation ? item.durability !== undefined && (
+              {/* {!item.degradation ? item.durability !== undefined && (
                 <p>
                   {Locale.ui_durability}: {Math.trunc(item.durability)}
                 </p>
@@ -71,20 +71,34 @@ const SlotTooltip: React.ForwardRefRenderFunction<
                 <p>
                   {Locale.ui_durability}: {Math.trunc(item.degradation)}
                 </p>
-              )}
-              {item.metadata?.ammo !== undefined && (
+              )} */}
+              {/* {item.metadata?.ammo !== undefined && (
                 <p>
                   {Locale.ui_ammo}: {item.metadata.ammo}
                 </p>
-              )}
-              {ammoName && (
+              )} */}
+              {/* {ammoName && (
                 <p>
                   {Locale.ammo_type}: {ammoName}
                 </p>
-              )}
+              )} */}
               {item.metadata?.serial && (
                 <p>
                   {Locale.ui_serial}: {item.metadata.serial}
+                </p>
+              )}
+              {item.weight !== undefined && (
+                <p className='weight-shit'>
+                  {item.weight > 0
+                    ? item.weight >= 1000
+                      ? `${(item.weight / 1000).toLocaleString('en-us', {
+                          minimumFractionDigits: 2,
+                        })} kg`
+                      : `${item.weight.toLocaleString('en-us', {
+                          minimumFractionDigits: 0,
+                        })} g`
+                    : ''}
+                  <div className='tooltip-weight-image'></div>
                 </p>
               )}
               {item.metadata?.components && item.metadata?.components[0] && (
@@ -111,24 +125,25 @@ const SlotTooltip: React.ForwardRefRenderFunction<
               ))}
             </>
           ) : (
-            <div className="tooltip-ingredients">
-              {ingredients &&
-                ingredients.map((ingredient) => {
-                  const [item, count] = [ingredient[0], ingredient[1]];
-                  return (
-                    <div className="tooltip-ingredient" key={`ingredient-${item}`}>
-                      <img src={item ? getItemUrl(item) : 'none'} alt="item-image" />
-                      <p>
-                        {count >= 1
-                          ? `${count}x ${Items[item]?.label || item}`
-                          : count === 0
-                          ? `${Items[item]?.label || item}`
-                          : count < 1 && `${count * 100}% ${Items[item]?.label || item}`}
-                      </p>
-                    </div>
-                  );
-                })}
-            </div>
+            // <div className="tooltip-ingredients">
+            //   {ingredients &&
+            //     ingredients.map((ingredient) => {
+            //       const [item, count] = [ingredient[0], ingredient[1]];
+            //       return (
+            //         <div className="tooltip-ingredient" key={`ingredient-${item}`}>
+            //           <img src={item ? getItemUrl(item) : 'none'} alt="item-image" />
+            //           <p>
+            //             {count >= 1
+            //               ? `${count}x ${Items[item]?.label || item}`
+            //               : count === 0
+            //               ? `${Items[item]?.label || item}`
+            //               : count < 1 && `${count * 100}% ${Items[item]?.label || item}`}
+            //           </p>
+            //         </div>
+            //       );
+            //     })}
+            // </div>
+            null
           )}
         </div>
       )}

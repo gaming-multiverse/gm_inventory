@@ -90,8 +90,13 @@ end)
 local TriggerEventHooks = require 'modules.hooks.server'
 
 lib.callback.register('ox_inventory:craftItem', function(source, id, index, recipeId, toSlot)
-	local left, bench = Inventory(source), CraftingBenches[id]
-
+	local left = Inventory(source)
+	for k, v in pairs(CraftingBenches) do
+		if v.id == id then
+			bench = v
+			break
+		end
+	end
 	if not left then return end
 
 	if bench then
@@ -163,7 +168,7 @@ lib.callback.register('ox_inventory:craftItem', function(source, id, index, reci
 				end
 			end
 
-			if newWeight > left.maxWeight then
+			if not Inventory.CanCarryItem(left, craftedItem, craftCount, recipe.metadata) then
 				return false, 'cannot_carry'
 			end
 
@@ -176,11 +181,15 @@ lib.callback.register('ox_inventory:craftItem', function(source, id, index, reci
 				toSlot = toSlot,
 			}) then return false end
 
-			local success = lib.callback.await('ox_inventory:startCrafting', source, id, recipeId)
+			local success = lib.callback.await('ox_inventory:startCrafting', source, id, recipe)
 
 			if success then
 				for name, needs in pairs(recipe.ingredients) do
 					if Inventory.GetItem(left, name, nil, true) < needs then return end
+				end
+
+				if not Inventory.CanCarryItem(left, craftedItem, craftCount, recipe.metadata) then
+					return false, 'cannot_carry'
 				end
 
 				for slot, count in pairs(tbl) do

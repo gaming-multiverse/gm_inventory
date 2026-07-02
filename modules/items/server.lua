@@ -169,22 +169,22 @@ CreateThread(function()
 				---@todo separate into functions for reusability, properly handle nil values
 				local itemFormat = [[
 
-	[%q] = {
-		label = %q,
-		weight = %s,
-		stack = %s,
-		close = %s,
-		description = %q,
-		client = {
-			status = {
-				hunger = %s,
-				thirst = %s,
-				stress = %s
-			},
-			image = %q,
-		}
-	},
-]]
+						[%q] = {
+							label = %q,
+							weight = %s,
+							stack = %s,
+							close = %s,
+							description = %q,
+							client = {
+								status = {
+									hunger = %s,
+									thirst = %s,
+									stress = %s
+								},
+								image = %q,
+							}
+						},
+					]]
 
 				local fileSize = #file
 
@@ -278,7 +278,7 @@ function Items.Metadata(inv, item, metadata, count)
 		if type(metadata) ~= 'table' then metadata = {} end
 		if not metadata.durability then metadata.durability = 100 end
 		if not metadata.ammo and item.ammoname then metadata.ammo = 0 end
-		if not metadata.components then metadata.components = {} end
+		-- if not metadata.components then metadata.components = {} end
 
 		if metadata.registered ~= false and (metadata.ammo or item.name == 'WEAPON_STUNGUN') then
 			local registered = type(metadata.registered) == 'string' and metadata.registered or inv?.player?.name
@@ -286,7 +286,7 @@ function Items.Metadata(inv, item, metadata, count)
 			metadata.serial = GenerateSerial(metadata.serial)
 		end
 
-		if item.hash == `WEAPON_PETROLCAN` or item.hash == `WEAPON_HAZARDCAN` or item.hash == `WEAPON_FERTILIZERCAN` or item.hash == `WEAPON_FIREEXTINGUISHER` then
+		if item.hash == `WEAPON_MOONSHINEJUG_MP` or item.hash == `WEAPON_HAZARDCAN` or item.hash == `WEAPON_FERTILIZERCAN` or item.hash == `WEAPON_FIREEXTINGUISHER` then
 			metadata.ammo = metadata.durability
 		end
 	else
@@ -365,37 +365,37 @@ function Items.CheckMetadata(metadata, item, name, ostime)
 		metadata = setItemDurability(item, metadata)
 	end
 
-	if item.weapon then
-		if metadata.components then
-			if table.type(metadata.components) == 'array' then
-				for i = #metadata.components, 1, -1 do
-					if not ItemList[metadata.components[i]] then
-						table.remove(metadata.components, i)
-					end
-				end
-			else
-				local components = {}
-				local size = 0
+	-- if item.weapon then
+	-- 	if metadata.components then
+	-- 		if table.type(metadata.components) == 'array' then
+	-- 			for i = #metadata.components, 1, -1 do
+	-- 				if not ItemList[metadata.components[i]] then
+	-- 					table.remove(metadata.components, i)
+	-- 				end
+	-- 			end
+	-- 		else
+	-- 			local components = {}
+	-- 			local size = 0
 
-				for _, component in pairs(metadata.components) do
-					if component and ItemList[component] then
-						size += 1
-						components[size] = component
-					end
-				end
+	-- 			for _, component in pairs(metadata.components) do
+	-- 				if component and ItemList[component] then
+	-- 					size += 1
+	-- 					components[size] = component
+	-- 				end
+	-- 			end
 
-				metadata.components = components
-			end
-		end
+	-- 			metadata.components = components
+	-- 		end
+	-- 	end
 
-		if metadata.serial and item.throwable then
-			metadata.serial = nil
-		end
+	-- 	if metadata.serial and item.throwable then
+	-- 		metadata.serial = nil
+	-- 	end
 
-		if metadata.specialAmmo and type(metadata.specialAmmo) ~= 'string' then
-			metadata.specialAmmo = nil
-		end
-	end
+	-- 	if metadata.specialAmmo and type(metadata.specialAmmo) ~= 'string' then
+	-- 		metadata.specialAmmo = nil
+	-- 	end
+	-- end
 
 	return metadata
 end
@@ -447,7 +447,7 @@ end
 -- Serverside item functions
 -----------------------------------------------------------------------------------------------
 
--- Item('testburger', function(event, item, inventory, slot, data)
+-- Item('bread', function(event, item, inventory, slot, data)
 -- 	if event == 'usingItem' then
 -- 		if Inventory.GetItem(inventory, item, inventory.items[slot].metadata, true) > 0 then
 -- 			-- if we return false here, we can cancel item use

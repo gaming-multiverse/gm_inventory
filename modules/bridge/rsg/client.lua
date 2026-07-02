@@ -33,6 +33,24 @@ RegisterNetEvent('RSGCore:Player:SetPlayerData', function(data)
     end
 end)
 
+---@return number
+---@diagnostic disable-next-line: duplicate-set-field
+function client.getPlayerCash()
+    return RSGCore.Functions.GetPlayerData().money.cash
+end
+
+---Runs the "steal from player" progress bar and calls onFinish when it completes.
+---@param onFinish? fun()
+---@diagnostic disable-next-line: duplicate-set-field
+function client.stealProgress(onFinish)
+    RSGCore.Functions.Progressbar("steal-action", "Stealing", 8000, true, true, {
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, onFinish)
+end
+
 ---@diagnostic disable-next-line: duplicate-set-field
 function client.setPlayerStatus(values)
     for name, value in pairs(values) do
@@ -57,7 +75,7 @@ function client.setPlayerStatus(values)
 end
 
 RegisterNetEvent("inventory:client:OpenInventory", function(name, data)
-    exports.ox_inventory:openInventory(name, data)
+    exports.gm_inventory:openInventory(name, data)
 end)
 
 AddStateBagChangeHandler('inv_busy', ('player:%s'):format(cache.serverId), function(_, _, value)

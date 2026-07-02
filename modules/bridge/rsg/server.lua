@@ -43,6 +43,15 @@ local function setupPlayer(Player)
     Player.PlayerData.name = ('%s %s'):format(Player.PlayerData.charinfo.firstname, Player.PlayerData.charinfo.lastname)
     server.setPlayerInventory(Player.PlayerData)
 
+    -- Discord tag lookup can fail at join time if the identifier isn't ready yet.
+    -- Re-check after a short delay to apply the correct limits without a restart.
+    local src = Player.PlayerData.source
+    SetTimeout(500, function()
+        if GetPlayerName(src) then
+            server.refreshVipInventory(src)
+        end
+    end)
+
     -- Inventory.SetItem(Player.PlayerData.source, 'money', Player.PlayerData.money.cash)
 
     RSGCore.Functions.AddPlayerMethod(Player.PlayerData.source, "AddItem", function(item, amount, slot, info)
@@ -93,11 +102,35 @@ SetTimeout(500, function()
     end ]]
 
     for _, Player in pairs(RSGCore.Functions.GetRSGPlayers()) do setupPlayer(Player) end
+
+    CreateThread(function()
+        local interval = shared.serverTagRefreshInterval * 60 * 1000
+        while true do
+            Wait(interval)
+            for _, Player in pairs(RSGCore.Functions.GetRSGPlayers()) do
+                server.refreshVipInventory(Player.PlayerData.source)
+            end
+        end
+    end)
 end)
 
 function server.UseItem(source, itemName, data)
     local cb = RSGCore.Functions.CanUseItem(itemName)
     return cb and cb(source, data)
+end
+
+---@param source number
+---@return string?
+---@diagnostic disable-next-line: duplicate-set-field
+function server.getUserTag(source)
+    return nil
+end
+
+---@param source number
+---@return boolean
+---@diagnostic disable-next-line: duplicate-set-field
+function server.hasVIP(source)
+    return nil
 end
 
 AddEventHandler('RSGCore:Server:OnMoneyChange', function(src, account, amount, changeType)
@@ -265,8 +298,31 @@ end)
 export('rsg-inventory.SetInventory')
 export('rsg-inventory.SetItemData')
 export('rsg-inventory.UseItem')
-export('rsg-inventory.GetSlotsByItem')
-export('rsg-inventory.GetFirstSlotByItem')
+export('rsg-inventory.GetSlotsByItem', function(inventoryOrSource, itemName)
+    if type(inventoryOrSource) == 'table' then
+        local slots = {}
+        for slot, item in pairs(inventoryOrSource) do
+            if item and item.name == itemName then
+                slots[#slots + 1] = slot
+            end
+        end
+        return slots
+    end
+    return Inventory.Search(inventoryOrSource, 'slots', itemName)
+end)
+
+export('rsg-inventory.GetFirstSlotByItem', function(inventoryOrSource, itemName)
+    if type(inventoryOrSource) == 'table' then
+        for slot, item in pairs(inventoryOrSource) do
+            if item and item.name == itemName then
+                return slot
+            end
+        end
+        return nil
+    end
+    local slots = Inventory.Search(inventoryOrSource, 'slots', itemName)
+    return slots and slots[1]
+end)
 
 export('rsg-inventory.GetItemBySlot', function(playerId, slotId)
     return Inventory.GetSlot(playerId, slotId)

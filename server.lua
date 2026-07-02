@@ -15,6 +15,28 @@ local Inventory = require 'modules.inventory.server'
 require 'modules.crafting.server'
 require 'modules.shops.server'
 
+---Resolves the correct slots and weight for a player based on VIP and discord clan tag.
+---Tag and VIP lookups are provided by the active framework bridge.
+---@param source number
+---@return number slots, number weight
+local function resolvePlayerLimits(source)
+	local slots = shared.playerslots
+	local weight = shared.playerweight
+
+	-- Live Discord tag check
+	if server.getUserTag(source) == shared.serverTag then
+		slots = shared.playerslotsServerTag
+		weight = shared.playerweightServerTag
+	end
+
+	if server.hasVIP(source) then
+		slots = shared.playerslotsVIP
+		weight = shared.playerweightVIP
+	end
+
+	return slots, weight
+end
+
 ---@param player table
 ---@param data table?
 --- player requires source, identifier, and name
@@ -23,7 +45,7 @@ function server.setPlayerInventory(player, data)
 	while not shared.ready do Wait(0) end
 
 	if not data then
-		data = db.loadPlayer(player.identifier)
+		data = db.loadPlayer(player.characterid or player.citizenid)
 	end
 
 	local inventory = {}
@@ -55,7 +77,10 @@ function server.setPlayerInventory(player, data)
 	end
 
 	player.source = tonumber(player.source)
-	local inv = Inventory.Create(player.source, player.name, 'player', shared.playerslots, totalWeight, shared.playerweight, player.identifier, inventory)
+
+	local playerSlots, playerWeight = resolvePlayerLimits(player.source)
+
+	local inv = Inventory.Create(player.source, player.name, 'player', playerSlots, totalWeight, playerWeight, player.characterid or player.citizenid, inventory)
 
 	if inv then
 		inv.player = server.setPlayerData(player)
@@ -63,10 +88,41 @@ function server.setPlayerInventory(player, data)
 
 		if server.syncInventory then server.syncInventory(inv) end
 		TriggerClientEvent('ox_inventory:setPlayerInventory', player.source, Inventory.Drops, inventory, totalWeight, inv.player)
+
+		-- Push the correct VIP/tag maxWeight to the client immediately.
+		-- The base ox_inventory:setPlayerInventory event does not carry maxWeight,
+		-- so the client would otherwise always show shared.playerweight.
+		if playerWeight ~= shared.playerweight then
+			TriggerClientEvent('ox_inventory:refreshMaxWeight', player.source, { inventoryId = player.source, maxWeight = playerWeight })
+		end
 	end
 end
 exports('setPlayerInventory', server.setPlayerInventory)
 AddEventHandler('ox_inventory:setPlayerInventory', server.setPlayerInventory)
+
+local playerLimitsCache = {}
+
+AddEventHandler('playerDropped', function()
+	playerLimitsCache[source] = nil
+end)
+
+---Refreshes a player's inventory slots and weight based on their current VIP status and discord clan tag.
+---Call this whenever a player's VIP status changes or to force a live tag re-check.
+---@param source number
+function server.refreshVipInventory(source)
+	source = tonumber(source)
+	if not source then return end
+
+	local targetSlots, targetWeight = resolvePlayerLimits(source)
+
+	local cached = playerLimitsCache[source]
+	if cached and cached.slots == targetSlots and cached.weight == targetWeight then return end
+
+	playerLimitsCache[source] = { slots = targetSlots, weight = targetWeight }
+	exports.gm_inventory:SetSlotCount(source, targetSlots)
+	exports.gm_inventory:SetMaxWeight(source, targetWeight)
+end
+exports('refreshVipInventory', server.refreshVipInventory)
 
 ---@param playerPed number
 ---@param coordinates vector3|vector3[]
@@ -219,15 +275,9 @@ end)
 
 lib.callback.register('ox_inventory:checkOtherPlayersMoney', function(source, data)
 	local RSGCore = exports['rsg-core']:GetCoreObject()
-	local otherPlayerMoney = nil
-
-	for _, Player in pairs(RSGCore.Functions.GetRSGPlayers()) do
-		if Player.PlayerData.source == data then
-			otherPlayerMoney = Player.PlayerData.money.cash
-		end
-	end
-
-	return otherPlayerMoney
+	local player = RSGCore.Functions.GetPlayer(data)
+	if not player then return 0 end
+	return player.Functions.GetMoney("cash")
 end)
 
 ---@param netId number
@@ -297,18 +347,6 @@ RegisterNetEvent('ox_inventory:usedItemInternal', function(slot)
     TriggerEvent('ox_inventory:usedItem', inventory.id, item.name, item.slot, next(item.metadata) and item.metadata)
 
     inventory.usingItem = nil
-end)
-
-RegisterNetEvent("oxr_inventory:server:RemoveTrownWeapon", function(item)
-	local RemoveItem = Inventory.RemoveItem(source, item, 1)
-end)
-
-RegisterNetEvent("oxr_inventory:server:SetLassoDurability", function()
-	local weapon = Inventory.GetCurrentWeapon(source)
-    if weapon.name == 'WEAPON_LASSO' then
-        local dur = weapon.metadata.durability - 20
-        Inventory.SetDurability(source, weapon.slot, dur)
-    end
 end)
 
 ---@param source number
@@ -459,6 +497,10 @@ lib.callback.register('ox_inventory:useItem', function(source, itemName, slot, m
 	end
 end)
 
+RegisterNetEvent("gm_inventory:server:forceRemoveWeaponFromID", function(targetServerId, weaponName)
+    TriggerClientEvent("gm_inventory:client:forceRemoveWeaponFromID", targetServerId, weaponName)
+end)
+
 local function conversionScript()
 	shared.ready = false
 
@@ -482,7 +524,6 @@ RegisterCommand('convertinventory', function(source, args)
 
 	CreateThread(convert)
 end, true)
-
 
 lib.addCommand({'additem', 'giveitem'}, {
 	help = 'Gives an item to a player with the given id',
@@ -508,7 +549,7 @@ lib.addCommand({'additem', 'giveitem'}, {
 
 		source = Inventory(source) or { label = 'console', owner = 'console' }
 
-        TriggerEvent('rsg-log:server:CreateLog', 'admin-give-item', 'Admin gave item', 'green', '**Admin name**: ' .. GetPlayerName(src) .. "\n" .. "**Gave Item**: " .. item.name .. "\n **Amount**: " .. count .. "\n **To Player**: " .. GetPlayerName(args.target) .. "\n **With ID**: " .. args.target, false)
+        TriggerEvent('rsg-log:server:CreateLog', 'admin-give-item', 'Admin Gave Item', 'green', '**Admin name**: ' .. GetPlayerName(src) .. "\n" .. "**Gave Item**: " .. item.name .. "\n **Amount**: " .. count .. "\n **To Player**: " .. GetPlayerName(args.target) .. "\n **With ID**: " .. args.target)
 
 		if server.loglevel > 0 then
 			lib.logger(source.owner, 'admin', ('"%s" gave %sx %s to "%s"'):format(source.label, count, item.name, inventory.label))
@@ -585,7 +626,7 @@ lib.addCommand('clearevidence', {
 	local hasPermission = group and server.isPlayerBoss(source, group, grade)
 
 	if hasPermission then
-		MySQL.query('DELETE FROM ox_inventory WHERE name = ?', {('evidence-%s'):format(args.locker)})
+		MySQL.query('DELETE FROM gm_inventory WHERE name = ?', {('evidence-%s'):format(args.locker)})
 	end
 end)
 

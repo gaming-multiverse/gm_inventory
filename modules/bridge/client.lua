@@ -8,7 +8,6 @@ end
 
 function client.hasGroup(group)
 	if not PlayerData.loaded then return end
-
 	if type(group) == 'table' then
 		for name, rank in pairs(group) do
 			local groupRank = PlayerData.groups[name]
@@ -21,6 +20,27 @@ function client.hasGroup(group)
 		if groupRank then
 			return group, groupRank
 		end
+	end
+end
+
+---Returns the player's cash on hand. Frameworks that expose money should override this.
+---@return number
+function client.getPlayerCash()
+	return 0
+end
+
+---Runs the "steal from player" progress bar and calls onFinish when it completes.
+---Framework bridges may override this with their own progress bar.
+---@param onFinish? fun()
+function client.stealProgress(onFinish)
+	if lib.progressBar({
+		duration = 8000,
+		label = 'Stealing',
+		useWhileDead = false,
+		canCancel = true,
+		disable = { move = true, car = true, combat = true },
+	}) and onFinish then
+		onFinish()
 	end
 end
 

@@ -30,6 +30,7 @@ import {
 } from '@floating-ui/react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../../store';
+import Divider from '../Divider';
 
 const MenuContext = React.createContext<{
   getItemProps: (userProps?: React.HTMLProps<HTMLElement>) => Record<string, unknown>;

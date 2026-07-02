@@ -3,6 +3,8 @@ import useNuiEvent from './hooks/useNuiEvent';
 import { Items } from './store/items';
 import { Locale } from './store/locale';
 import { setImagePath } from './store/imagepath';
+import { setPlaceItemsEnabled } from './store/placeItems';
+import { setTelegramEnabled } from './store/telegram';
 import { setupInventory } from './store/inventory';
 import { Inventory } from './typings';
 import { useAppDispatch } from './store';
@@ -20,7 +22,7 @@ debugData([
         id: 'test',
         type: 'player',
         slots: 50,
-        label: 'Bob Smith',
+        label: 'Satchel',
         weight: 3000,
         maxWeight: 5000,
         items: [
@@ -31,7 +33,7 @@ debugData([
             count: 1,
             metadata: {
               label: 'Russian Cream',
-              durability: 0,
+              durability: 10,
             },
           },
           {
@@ -45,41 +47,41 @@ debugData([
               imageurl: 'https://i.imgur.com/2xHhTTz.png',
             },
           },
-          {
-            slot: 3,
-            name: 'backwoods',
-            weight: 100,
-            count: 1,
-            metadata: {
-              label: 'Russian Cream',
-              imageurl: 'https://i.imgur.com/2xHhTTz.png',
-            },
-          },
-          {
-            slot: 4,
-            name: 'backwoods',
-            weight: 100,
-            count: 1,
-            metadata: {
-              label: 'Russian Cream',
-              imageurl: 'https://i.imgur.com/2xHhTTz.png',
-            },
-          },
-          {
-            slot: 5,
-            name: 'backwoods',
-            weight: 100,
-            count: 1,
-            metadata: {
-              label: 'Russian Cream',
-              imageurl: 'https://i.imgur.com/2xHhTTz.png',
-            },
-          },
+          // {
+          //   slot: 3,
+          //   name: 'backwoods',
+          //   weight: 100,
+          //   count: 1,
+          //   metadata: {
+          //     label: 'Russian Cream',
+          //     imageurl: 'https://i.imgur.com/2xHhTTz.png',
+          //   },
+          // },
+          // {
+          //   slot: 4,
+          //   name: 'backwoods',
+          //   weight: 100,
+          //   count: 1,
+          //   metadata: {
+          //     label: 'Russian Cream',
+          //     imageurl: 'https://i.imgur.com/2xHhTTz.png',
+          //   },
+          // },
+          // {
+          //   slot: 5,
+          //   name: 'backwoods',
+          //   weight: 100,
+          //   count: 1,
+          //   metadata: {
+          //     label: 'Russian Cream',
+          //     imageurl: 'https://i.imgur.com/2xHhTTz.png',
+          //   },
+          // },
           {
             slot: 6,
             name: 'backwoods',
             weight: 100,
-            count: 1,
+            count: 5,
             metadata: {
               label: 'Russian Cream',
               imageurl: 'https://i.imgur.com/2xHhTTz.png',
@@ -89,9 +91,9 @@ debugData([
       },
       rightInventory: {
         id: 'player',
-        type: 'otherplayer',
-        slots: 5000,
-        label: '',
+        type: 'shop',
+        label: 'test',
+        slots: 60,
         weight: 3000,
         maxWeight: 5000,
         items: [
@@ -124,11 +126,15 @@ const App: React.FC = () => {
     items: typeof Items;
     leftInventory: Inventory;
     imagepath: string;
-  }>('init', ({ locale, items, leftInventory, imagepath }) => {
+    placeItemsEnabled?: boolean;
+    telegramEnabled?: boolean;
+  }>('init', ({ locale, items, leftInventory, imagepath, placeItemsEnabled, telegramEnabled }) => {
     for (const name in locale) Locale[name] = locale[name];
     for (const name in items) Items[name] = items[name];
 
     setImagePath(imagepath);
+    setPlaceItemsEnabled(!!placeItemsEnabled);
+    setTelegramEnabled(!!telegramEnabled);
     dispatch(setupInventory({ leftInventory }));
   });
 
