@@ -53,7 +53,6 @@ files {
     'web/build/assets/*.png',
     'web/build/assets/*.ttf',
     'web/images/*.png',
-    'web/images/kiri/*.png',
     'modules/**/shared.lua',
     'modules/**/client.lua',
     'modules/bridge/**/client.lua',
