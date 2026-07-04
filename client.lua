@@ -1150,7 +1150,7 @@ local function registerCommands()
 							DisableControlAction(0, `INPUT_OPEN_WHEEL_MENU`, true)
 
 							SetPedConfigFlag(PlayerPedId(), 334, true)
-							if IsDisabledControlJustPressed(0, controlHash) and not exports.gm_telegram:isTelegramOpen() --[[ and not exports.gm_banking:isBankingOpen() ]] then
+							if IsDisabledControlJustPressed(0, controlHash) then
 								local hotkey = mapping[1]
 
 								useHotKeyByControl(hotkey)
@@ -2122,11 +2122,11 @@ local function giveItemToTarget(serverId, slotId, count)
 
 	TriggerServerEvent('ox_inventory:giveItem', slotId, serverId, count or 0)
 
-	if IS_GTAV then
-    	Utils.PlayAnim(0, 'mp_common', 'givetake1_a', 1.0, 1.0, 2000, 50, 0.0, 0, 0, 0)
-	else
-		Utils.PlayAnim(0, 'script_re@new_love@give_money', 'give_money_player', 1.0, 1.0, 8000, 16, 0.0, 0, 0, 0)
-	end
+	-- if IS_GTAV then
+    -- 	Utils.PlayAnim(0, 'mp_common', 'givetake1_a', 1.0, 1.0, 2000, 50, 0.0, 0, 0, 0)
+	-- else
+	-- 	Utils.PlayAnim(0, 'script_re@new_love@give_money', 'give_money_player', 1.0, 1.0, 8000, 16, 0.0, 0, 0, 0)
+	-- end
 end
 
 RegisterNetEvent("play:anim", function()
@@ -2138,6 +2138,156 @@ RegisterNetEvent("play:anim", function()
 end)
 
 exports('giveItemToTarget', giveItemToTarget)
+
+AddStateBagChangeHandler("attachEntity", ("player:%s"):format(cache.serverId), function(_, _, value)
+	if type(value) ~= "table" then
+		return
+	end
+	if value.entity then
+		-- while not NetworkDoesEntityExistWithNetworkId(value.entity) do
+		--     Wait(25)
+		-- end
+
+		local entity = NetworkGetEntityFromNetworkId(value.entity)
+
+		if entity == 0 or not DoesEntityExist(entity) then
+			return
+		end
+
+		if NetworkGetEntityOwner(entity) ~= cache.playerId then
+			while NetworkGetEntityOwner(entity) ~= cache.playerId do
+				NetworkRequestControlOfEntity(entity)
+				Wait(25)
+			end
+		end
+
+		if value.bone then
+			local offset, rotation = value.offset, value.rotation
+			-- lib.playAnim(cache.ped, 'script_re@new_love@give_money', 'give_money_player', 1.0, 1.0, 8000, 16, 0.0, 0, 0, 0)
+			AttachEntityToEntity(
+				entity,
+				cache.ped,
+				GetPedBoneIndex(cache.ped, value.bone),
+				offset.x,
+				offset.y,
+				offset.z,
+				rotation.x,
+				rotation.y,
+				rotation.z,
+				true,
+				true,
+				value.collision or false,
+				false,
+				value.rotOrder or 1,
+				true
+			)
+			Wait(3000)
+			ClearPedTasks(cache.ped)
+			DeleteEntity(entity)
+		end
+	end
+end)
+
+RegisterNetEvent("gm_inventory:client:animation", function()
+	lib.playAnim(cache.ped, "script_re@new_love@give_money", "give_money_player", 1.0, 1.0, 8000, 16, 0.0, 0, 0, 0)
+end)
+
+function RotationToDirection(rotation)
+	local adjustedRotation =
+	{
+		x = (math.pi / 180) * rotation.x,
+		y = (math.pi / 180) * rotation.y,
+		z = (math.pi / 180) * rotation.z
+	}
+	local direction =
+	{
+		x = -math.sin(adjustedRotation.z) * math.abs(math.cos(adjustedRotation.x)),
+		y = math.cos(adjustedRotation.z) * math.abs(math.cos(adjustedRotation.x)),
+		z = math.sin(adjustedRotation.x)
+	}
+	return direction
+end
+
+function RayCastGamePlayCamera(distance)
+	local cameraRotation = GetGameplayCamRot()
+	local cameraCoord = GetGameplayCamCoord()
+	local direction = RotationToDirection(cameraRotation)
+	local destination =
+	{
+		x = cameraCoord.x + direction.x * distance,
+		y = cameraCoord.y + direction.y * distance,
+		z = cameraCoord.z + direction.z * distance
+	}
+	local a, b, c, d, e = GetShapeTestResult(StartShapeTestRay(cameraCoord.x, cameraCoord.y, cameraCoord.z, destination
+		.x, destination.y, destination.z, -1, PlayerPedId(), 0))
+	return b, c, e
+end
+
+local keys = {
+	["MOUSE1"] = 0x07CE1E61,
+	["BACKSPACE"] = 0x156F7119,
+	["ESC"] = 0x3E89055A,
+}
+local selectingTarget = false
+local function giveItem(slot, count)
+	local startCoords = GetEntityCoords(PlayerPedId())
+
+	selectingTarget = true
+	exports.gm_inventory:closeInventory()
+	local group = "giveitem"
+	local keyLabel = "CANCEL ACTION"
+	local key = "INPUT_CONTEXT_LT"
+	jo.prompt.create(group, keyLabel, key, false)
+	local _keyLabel = "GIVE ITEM"
+	local key2 = "INPUT_CONTEXT_RT"
+	jo.prompt.create(group, _keyLabel, key2, false)
+
+	local function endPromt()
+		selectingTarget = false
+		jo.prompt.deletePrompt(group, key)
+		jo.prompt.deletePrompt(group, key2)
+	end
+
+	while selectingTarget do
+		Wait(0)
+		DisableControlAction(0, keys["MOUSE1"], true)
+
+		local currentCoords = GetEntityCoords(PlayerPedId())
+		local dist = #(currentCoords - startCoords)
+		if dist > 5.0 then
+			endPromt()
+			break
+		end
+
+		local hit, endCoords, entityHit = RayCastGamePlayCamera(8.0)
+
+		jo.prompt.displayGroup(group, title)
+
+		if IsPauseMenuActive() then
+			endPromt()
+		end
+		if jo.prompt.isCompleted(group, key) then
+			endPromt()
+		end
+
+		if hit and entityHit ~= 0 and IsEntityAPed(entityHit) and IsPedAPlayer(entityHit) then
+			DrawMarker(
+				0x50638AB9, endCoords.x, endCoords.y, endCoords.z,
+				0.0, 0.0, 0.0,
+				0.0, 0.0, 0.0,
+				0.05, 0.05, 0.05,
+				255, 255, 255, 100,
+				false, true, 2, false, nil, nil, nil
+			)
+
+			if jo.prompt.isCompleted(group, key2) then
+				local target = GetPlayerServerId(NetworkGetPlayerIndexFromPed(entityHit))
+				exports.gm_inventory:giveItemToTarget(target, slot, count)
+				endPromt()
+			end
+		end
+	end
+end
 
 local function isGiveTargetValid(ped, coords)
 	if cache.vehicle and GetVehiclePedIsIn(ped, false) == cache.vehicle then
@@ -2161,7 +2311,8 @@ RegisterNUICallback('giveItem', function(data, cb)
 
 		return giveItemToTarget(GetPlayerServerId(option.id), data.slot, data.count)
 	elseif nearbyCount >= 2 then
-		lib.notify({ type = 'error', description = "More than 1 player nearby" })
+		-- Ambiguous: more than one player nearby, let the giver aim at a target
+		giveItem(data.slot, data.count)
 	end
 end)
 

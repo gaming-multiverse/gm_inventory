@@ -55,6 +55,23 @@ end
 
 local Inventory = require 'modules.inventory.server'
 
+---Returns a stable identifier for the player, used for logging/anti-cheat traces.
+---Framework bridges may override this; defaults to the inventory owner id.
+---@param source number
+---@return string|number|nil
+function server.getPlayerIdentifier(source)
+	local inv = Inventory(source)
+	return inv and inv.owner or source
+end
+
+---Returns the player's cash on hand.
+---Framework bridges should override this; defaults to 0.
+---@param source number
+---@return number
+function server.getPlayerCash(source)
+	return 0
+end
+
 function server.playerDropped(source)
 	local inv = Inventory(source) --[[@as OxInventory]]
 

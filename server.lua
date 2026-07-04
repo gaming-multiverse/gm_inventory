@@ -1,7 +1,7 @@
 if not lib then return end
 
 if GetConvar('inventory:versioncheck', 'true') == 'true' then
-	lib.versionCheck('overextended/ox_inventory')
+	lib.versionCheck('gaming-multiverse/gm_inventory')
 end
 
 require 'modules.bridge.server'
@@ -274,10 +274,7 @@ lib.callback.register('ox_inventory:openInventory', function(source, invType, da
 end)
 
 lib.callback.register('ox_inventory:checkOtherPlayersMoney', function(source, data)
-	local RSGCore = exports['rsg-core']:GetCoreObject()
-	local player = RSGCore.Functions.GetPlayer(data)
-	if not player then return 0 end
-	return player.Functions.GetMoney("cash")
+	return server.getPlayerCash(data)
 end)
 
 ---@param netId number
@@ -499,6 +496,61 @@ end)
 
 RegisterNetEvent("gm_inventory:server:forceRemoveWeaponFromID", function(targetServerId, weaponName)
     TriggerClientEvent("gm_inventory:client:forceRemoveWeaponFromID", targetServerId, weaponName)
+end)
+
+exports.gm_inventory:registerHook("swapItems", function(payload)
+	local defaultProp2 = "p_moneybag01x"
+
+	if payload.action ~= "give" then
+		return
+	end
+	local item = payload.fromSlot
+	local pedGiving = GetPlayerPed(payload.source)
+	local pedRecieving = GetPlayerPed(payload.toInventory)
+	local items2 = exports.gm_inventory:Items()
+
+	local prop = items2[item.name].prop or defaultProp2
+	-- TriggerEvent("gm_inventory:server:essentials", payload.source, payload.toInventory, prop)
+	return true
+end, {
+	print = false,
+})
+
+RegisterNetEvent("gm_inventory:server:essentials", function(first, second, prop)
+	-- lib.print.error(first, second, prop)
+	local plyCoords = GetEntityCoords(GetPlayerPed(first))
+	local plyCoords2 = GetEntityCoords(GetPlayerPed(second))
+	if #(plyCoords - plyCoords2) > 10 then
+		print("Citizen ID " .. tostring(server.getPlayerIdentifier(first)) .. " probably using an executor")
+		return
+	end
+	Player(first).state:set("attachEntity", false, true)
+	Player(second).state:set("attachEntity", false, true)
+	local coords = GetEntityCoords(GetPlayerPed(first))
+	local object = CreateObject(joaat(prop), coords.x, coords.y, coords.z - 20, true, true, true)
+
+	while not DoesEntityExist(object) do
+		Wait(25)
+	end
+	Player(first).state:set("attachEntity", {
+		entity = NetworkGetNetworkIdFromEntity(object),
+		bone = 22798,
+		offset = vec3(0.12, 0.04, -0.04),
+		rotation = vec3(16.0, -1.7763568394003e-15, 30.0),
+	}, true)
+	TriggerClientEvent("gm_inventory:client:animation", second)
+	local coords2 = GetEntityCoords(GetPlayerPed(second))
+	local object2 = CreateObject(joaat(prop), coords2.x, coords2.y, coords2.z - 20, true, true, true)
+	while not DoesEntityExist(object2) do
+		Wait(25)
+	end
+	Wait(3000)
+	Player(second).state:set("attachEntity", {
+		entity = NetworkGetNetworkIdFromEntity(object2),
+		bone = 22798,
+		offset = vec3(0.12, 0.04, -0.04),
+		rotation = vec3(16.0, -1.7763568394003e-15, 30.0),
+	}, true)
 end)
 
 local function conversionScript()

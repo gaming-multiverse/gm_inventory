@@ -24,7 +24,7 @@ shared = {
     serverTag = GetConvar('inventory:serverTag', 'GOLD'), -- Discord clan tag that grants Noon perks
     serverTagRefreshInterval = GetConvarInt('inventory:serverTagRefreshInterval', 5), -- minutes between live tag checks
     target = GetConvarInt('inventory:target', 0) == 1,
-    police = json.decode(GetConvar('inventory:police', '["police"]')),
+    police = json.decode(GetConvar('inventory:police', '["vallaw"]')), -- For mulitple police jobs example: police = json.decode(GetConvar('inventory:police', '["police","testjob2","testjob3"]')),
     pinkerton = json.decode(GetConvar('inventory:pinkerton', '["pinkerton"]')),
     medic = json.decode(GetConvar('inventory:medic', '["medic"]')),
     persistent_items = GetConvarInt('inventory:persistent_items', 0) == 1 -- for REDM only

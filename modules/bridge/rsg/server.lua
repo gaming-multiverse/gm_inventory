@@ -266,6 +266,22 @@ function server.isPlayerBoss(playerId)
     return Player.PlayerData.job.isboss or Player.PlayerData.gang.isboss
 end
 
+---@param source number
+---@return string?
+---@diagnostic disable-next-line: duplicate-set-field
+function server.getPlayerIdentifier(source)
+    local Player = RSGCore.Functions.GetPlayer(source)
+    return Player and Player.PlayerData.citizenid
+end
+
+---@param source number
+---@return number
+---@diagnostic disable-next-line: duplicate-set-field
+function server.getPlayerCash(source)
+    local Player = RSGCore.Functions.GetPlayer(source)
+    return Player and Player.Functions.GetMoney("cash") or 0
+end
+
 local function export(exportName, func)
     AddEventHandler(('__cfx_export_%s_%s'):format(string.strsplit('.', exportName, 2)), function(setCB)
         setCB(func or function()

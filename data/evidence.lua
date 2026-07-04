@@ -1,4 +1,7 @@
-return {
+return { 
+	-- If you need a evidence stash for police uncomment below
+	-- You can find job lock at gm_inventory/init.lua/ line 27
+
 	-- {
 	-- 	name = "Evidence",
 	-- 	promptKey = 0x5415BE48,
@@ -12,7 +15,6 @@ return {
 	-- 		vec3(-1813.95, -354.84, 164.67), -- Strawberry
 	-- 		vec3(2510.08, -1304.58, 48.95), -- SaintDenis
 	-- 		vec3(2908.07, 1308.60, 44.93), -- annes
-
 	-- 		vec(367.63, 1490.53, 180.68), -- Marshal’s Quarters – Fort Wallace
 	-- 	},
 	-- }

@@ -4,6 +4,7 @@
 This is a modified version of the `ox_inventory` script originally created by the Overextended team. The script includes the following changes:
 
 - Full RSG Support
+- If you use the latest RSGCore go in the config.lua and disable this: RSGConfig.Money.EnableMoneyItems = false
 - Compatibility with rdr3 natives
 - Bug fixes found in the original [fork of this repository](https://github.com/Faroeste-Roleplay/ox_inventory)
 
