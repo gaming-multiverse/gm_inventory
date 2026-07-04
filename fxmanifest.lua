@@ -30,6 +30,7 @@ ox_libs {
 
 jo_libs {
     'prompt',
+    'dataview'
 }
 
 server_scripts {
