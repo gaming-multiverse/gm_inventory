@@ -43,12 +43,15 @@ end
 ---@param onFinish? fun()
 ---@diagnostic disable-next-line: duplicate-set-field
 function client.stealProgress(onFinish)
-    RSGCore.Functions.Progressbar("steal-action", "Stealing", 8000, true, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {}, {}, {}, onFinish)
+    if lib.progressBar({
+        duration = 8000,
+        label = 'Stealing',
+        useWhileDead = false,
+        canCancel = true,
+        disable = { move = true, car = true, combat = true },
+    }) and onFinish then
+        onFinish()
+    end
 end
 
 ---@diagnostic disable-next-line: duplicate-set-field
