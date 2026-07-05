@@ -5,6 +5,7 @@ This is a modified version of the `ox_inventory` script originally created by th
 
 - Full RSG Support
 - If you use the latest RSGCore go in the config.lua and disable this: RSGConfig.Money.EnableMoneyItems = false
+- Replace rsg-weapons with [gm_weapons](https://github.com/gaming-multiverse/gm_weapons) for better compatibility with this resource
 - Compatibility with rdr3 natives
 - Bug fixes found in the original [fork of this repository](https://github.com/Faroeste-Roleplay/ox_inventory)
 
