@@ -18,6 +18,29 @@ local items = {
 		prop = "p_moneystack03x",
 	},
 
+    
+
+	["repairtool"] = { 
+        label = "Weapon Repair Tool",
+        description = "Handy if you want to repair your weapon",
+        weight = 250, -- In Grams
+        decay = true,
+        degrade = 21600, -- Minutes
+        close = true, -- if should close inventory when used
+        allowArmed = true, -- should we let them use with weapons?
+        prop = "s_firstaidkit_sml01x",
+    },
+	["cleaningkitgun"] = { 
+        label = "Weapon Cleaning Tool",
+        description = "Clean your dirty weapons cowboy",
+        weight = 250, -- In Grams
+        decay = true,
+        degrade = 21600, -- Minutes
+        close = true, -- if should close inventory when used
+        allowArmed = true, -- should we let them use with weapons?
+        prop = "s_firstaidkit_sml01x",
+    },
+    
 	-- General Store Items
 
 	["bread"] = {
