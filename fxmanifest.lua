@@ -35,7 +35,8 @@ jo_libs {
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-    'init.lua'
+    'init.lua',
+    'version_check.lua'
 }
 
 client_script {
