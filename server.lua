@@ -1,9 +1,5 @@
 if not lib then return end
 
-if GetConvar('inventory:versioncheck', 'true') == 'true' then
-	lib.versionCheck('gaming-multiverse/gm_inventory')
-end
-
 require 'modules.bridge.server'
 require 'modules.pefcl.server'
 

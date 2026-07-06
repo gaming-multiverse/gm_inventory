@@ -5,7 +5,7 @@ games { 'rdr3', 'gta5' }
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 name 'gm_inventory'
 author 'Gaming Multivrse'
-version '1.1.8'
+version '1.1.9'
 repository 'https://github.com/gaming-multiverse/gm_inventory'
 description 'Slot-based inventory with item metadata support'
 
