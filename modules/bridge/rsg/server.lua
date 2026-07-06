@@ -80,7 +80,7 @@ local function setupPlayer(Player)
 
     RSGCore.Functions.AddPlayerMethod(Player.PlayerData.source, "SetInventory", function()
         -- ox_inventory's item structure is not compatible with rsg-inventory's one so we don't support it
-        error('Player.Functions.SetInventory is unsupported for ox_inventory. Try ClearInventory, then add the desired items.')
+        error('Player.Functions.SetInventory is unsupported for gm_inventory. Try ClearInventory, then add the desired items.')
     end)
 end
 
@@ -285,7 +285,7 @@ end
 local function export(exportName, func)
     AddEventHandler(('__cfx_export_%s_%s'):format(string.strsplit('.', exportName, 2)), function(setCB)
         setCB(func or function()
-            error(("export '%s' is not supported when using ox_inventory"):format(exportName))
+            error(("export '%s' is not supported when using gm_inventory"):format(exportName))
         end)
     end)
 end
